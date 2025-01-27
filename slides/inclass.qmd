@@ -1,0 +1,32 @@
+---
+title: "In class assignment - SLR"
+author: "Barboza-Salerno"
+editor: visual
+date: Jan 27, 2025 
+---
+
+# In Class assignment – Simple Linear Regression Mechanics
+
+This file uses data from the 2021 BRFSS that is available for download [here](https://www.cdc.gov/brfss/annual_data/annual_data.htm)
+
+For this assignment, download the subsetted [SPSS file](brfss_aces_subset.sav) I created, and follow these steps:
+
+1.	The BRFSS data contains information on 11 separate ACEs. The file codes them as follows 1 = the respondent endorsed the ACE; 2 = the respondent did not endorse the ACE. Create a scale that ranges from 0 (No ACEs) to 11 (ALL ACEs) representing the ACEs sum score (i.e. cumulative risk). 
+
+2.	Report the mean, range and standard deviation of your ACEs scale.
+
+3.	Report the correlations between all ACEs except for the three sexual abuse/assault variables (note how these variables are measured)
+
+4.	Run a simple linear regression that predicts 1) the number of days the respondent reported being in poor mental health in the past 30 days; 2) the number of days the respondent reported being in poor physical health in the past 30 days; and 3) binge drinking. Then answer the following questions
+
+a.	How many days on average did Respondents with no ACEs report having poor mental health? 
+
+b.	How many days on average did Respondents with no ACEs report having poor mental health?
+
+c.	How many days on average did the respondent report binge drinking?
+
+d.	Interpret the slope parameter for each model. What is the null hypothesis. Comment on the statistical significance of the slope parameter.
+
+e.	How much of the variation in mental health, physical health and binge drinking is explained by ACEs for each model respectively. What factors should be considered when interpreting R square?
+
+---

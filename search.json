@@ -1,0 +1,1112 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistics for Social Justice",
+    "section": "",
+    "text": "1 Welcome to Statistics for Social Justice\nThis book integrates statistical concepts with real-world social justice applications, focusing on equitable data analysis and actionable insights. It is designed for social work researchers, activists, and students seeking to harness the power of data for transformative change.\nThe book is built for my Stats II course in the College of Social Work at The Ohio State University.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Statistics for Social Justice</span>"
+    ]
+  },
+  {
+    "objectID": "01-introduction.html",
+    "href": "01-introduction.html",
+    "title": "Introduction to the Course",
+    "section": "",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to the Course</span>"
+    ]
+  },
+  {
+    "objectID": "01-introduction.html#running-code",
+    "href": "01-introduction.html#running-code",
+    "title": "Introduction to the Course",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to the Course</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html",
+    "href": "02-simple-regression.html",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "",
+    "text": "Week 4: January 27, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#todays-reading",
+    "href": "02-simple-regression.html#todays-reading",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading\n\nDiez et al., Chapter 8, pp. 304-340. Intro to linear regression. Be sure to check out the embedded videos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#simple-linear-regression-introduction-to-the-topic",
+    "href": "02-simple-regression.html#simple-linear-regression-introduction-to-the-topic",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Simple Linear Regression – Introduction to the Topic",
+    "text": "Simple Linear Regression – Introduction to the Topic\nThis week, we will delve into Simple Linear Regression, a foundational tool in statistical analysis that allows us to model relationships between two variables. Students will learn how to interpret the slope, intercept, and residuals, and use regression output to draw meaningful conclusions about data. Through this process, students will develop a deeper understanding of how regression can be used to predict outcomes and test hypotheses in social work research.\nIn this unit we will learn to quantify the relationship between two numerical variables, as well as modeling numerical response variables using a numerical or categorical explanatory variable.\n\n\nWhat will students learn this week?\n\nThe fundamental components of a simple linear regression model (slope, intercept, and residuals).\nHow to interpret regression output, including unstandardized and standardized coefficients.\nThe practical steps to fit a simple linear regression model in R using lm().\nHow to visualize regression results and residuals using ggplot2.\n\n\n\n\nWhy is this topic important?\nSimple Linear Regression serves as the building block for more advanced statistical methods, such as multiple regression, moderation, and mediation analysis. It allows social work researchers to identify relationships between variables, predict outcomes, and inform data-driven decision-making. Mastering this concept is essential for understanding more complex techniques later in the course.\n\n\n\nHow does it relate to previous or future content?\n\nTies to previous content: Builds upon last week’s review of descriptive statistics and introduces the concept of relationships between variables.\nPrepares for future topics: Provides a foundation for upcoming topics like multiple regression (Week 5), where we will expand from one predictor to multiple predictors, and interaction effects (Week 9), where regression will be used to explore moderating relationships.\n\n\nThis session emphasizes the practical and theoretical importance of regression analysis, helping students connect statistical techniques to real-world social work applications.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#class-files",
+    "href": "02-simple-regression.html#class-files",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Class Files",
+    "text": "Class Files\n\nLecture Notes\n\nToday’s Lecture Notes\n\n\n\nR Code\n\nIntroduction to R",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#resources",
+    "href": "02-simple-regression.html#resources",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Resources",
+    "text": "Resources\n\nHere is my annotated file for correlation and SLR\nHere is the data I used if you want to replicate it in SPSS",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#todays-reading-1",
+    "href": "02-simple-regression.html#todays-reading-1",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading\n\nPrimary Reading: Simple Linear Regression\nOptional Reading: Extrapolatoin - an example of what not to do despite the potential publication in a highly regarded journal",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#r-lab-files",
+    "href": "02-simple-regression.html#r-lab-files",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "R Lab Files",
+    "text": "R Lab Files\n\nLab Instructions\nLab Dataset\nLab Solution Code",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#additional-notes",
+    "href": "02-simple-regression.html#additional-notes",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Additional Notes",
+    "text": "Additional Notes\n\nRemain calm",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "03-multiple-regression.html",
+    "href": "03-multiple-regression.html",
+    "title": "Multiple Linear Regression",
+    "section": "",
+    "text": "Week 5: February 3, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Multiple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "03-multiple-regression.html#reading",
+    "href": "03-multiple-regression.html#reading",
+    "title": "Multiple Linear Regression",
+    "section": "Reading",
+    "text": "Reading\n\nDiez et al. Chapter 9: Multiple Regression, up through pp 371; sec. 9.5",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Multiple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "03-multiple-regression.html#week-5-multiple-linear-regression-introduction-to-the-topic",
+    "href": "03-multiple-regression.html#week-5-multiple-linear-regression-introduction-to-the-topic",
+    "title": "Multiple Linear Regression",
+    "section": "Week 5: Multiple Linear Regression – Introduction to the Topic",
+    "text": "Week 5: Multiple Linear Regression – Introduction to the Topic\nThis week, we will explore Multiple Linear Regression, a powerful extension of simple regression that allows us to analyze relationships between a dependent variable and multiple predictors. Students will learn how to specify, fit, and interpret multiple regression models, including how to assess their statistical significance and practical relevance. This week’s focus is on building and refining regression models that capture the complexity of real-world social work research.\n\n\nWhat will students learn this week?\n\nThe core components of multiple regression models, including F-tests, p-values, R², and adjusted R².\n\nHow to specify hypotheses in a multiple regression context.\n\nHow to fit and interpret multiple regression models in R using lm().\n\nTechniques to evaluate assumptions and diagnose issues in multiple regression models.\n\n\n\n\nWhy is this topic important?\nMultiple Linear Regression is one of the most widely used tools in statistical analysis. It enables social work researchers to: - Explore complex relationships between multiple predictors and outcomes. - Control for confounding variables and better isolate the effect of specific predictors. - Answer nuanced research questions that cannot be addressed with simple regression.\nBy mastering multiple regression, students gain the ability to analyze more realistic and multifaceted data, making their findings more robust and applicable to real-world settings.\n\n\n\nHow does it relate to previous or future content?\n\nTies to previous content: Builds on the foundation of Simple Linear Regression by introducing multiple predictors and exploring how they contribute to variance in outcomes.\n\nPrepares for future topics: Sets the stage for advanced methods like Effect Sizes and Confidence Intervals, Mediation Analysis, and Hierarchical Regression, where multiple predictors and their relationships play an even greater role.\n\n\nThis week’s topic bridges the gap between basic ## Class Files\n\n\nLecture Notes\n\nToday’s Lecture Notes\n\n\n\nR Code\n\nScript 1: Analysis Code\nScript 2: Visualization Code\n\n\n\nData Sets\n\nDataset 1: Descriptive Statistics\nDataset 2: Regression Analysis",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Multiple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "03-multiple-regression.html#resources",
+    "href": "03-multiple-regression.html#resources",
+    "title": "Multiple Linear Regression",
+    "section": "Resources",
+    "text": "Resources\n\nRecommended Video: Topic Overview\nSupplementary Article\nAdditional Book Chapter (PDF)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Multiple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "03-multiple-regression.html#todays-reading",
+    "href": "03-multiple-regression.html#todays-reading",
+    "title": "Multiple Linear Regression",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading\n\nPrimary Reading: Article Title\nOptional Reading: Supplementary Material",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Multiple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "03-multiple-regression.html#r-lab-files",
+    "href": "03-multiple-regression.html#r-lab-files",
+    "title": "Multiple Linear Regression",
+    "section": "R Lab Files",
+    "text": "R Lab Files\n\nLab Instructions\nLab Dataset\nLab Solution Code",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Multiple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "03-multiple-regression.html#additional-notes",
+    "href": "03-multiple-regression.html#additional-notes",
+    "title": "Multiple Linear Regression",
+    "section": "Additional Notes",
+    "text": "Additional Notes",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Multiple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html",
+    "href": "04-effect-sizes.html",
+    "title": "Effect Sizes",
+    "section": "",
+    "text": "Week 6: February 10, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#introduction-to-the-topic",
+    "href": "04-effect-sizes.html#introduction-to-the-topic",
+    "title": "Effect Sizes",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we delve into the critical concepts of effect sizes and confidence intervals, two foundational elements in interpreting statistical results. These tools play a central role in assessing the strength of relationships and the precision of estimates, bridging the gap between raw statistical outputs and meaningful real-world insights.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#key-concepts",
+    "href": "04-effect-sizes.html#key-concepts",
+    "title": "Effect Sizes",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nEffect Sizes: Quantify the magnitude of a relationship or difference, providing context beyond mere statistical significance.\nConfidence Intervals (CIs): Represent the range within which a population parameter is likely to fall, offering a measure of result precision.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#relevance",
+    "href": "04-effect-sizes.html#relevance",
+    "title": "Effect Sizes",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to interpret and calculate effect sizes, understanding their role in evaluating practical significance.\nStudents will explore confidence intervals as tools for assessing the reliability and variability of parameter estimates.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#why-this-is-important",
+    "href": "04-effect-sizes.html#why-this-is-important",
+    "title": "Effect Sizes",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nEffect sizes complement p-values by answering how much rather than just if there is an effect.\nConfidence intervals provide critical information about the certainty of results, promoting better decision-making and interpretation.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#how-this-ties-into-the-overall-course",
+    "href": "04-effect-sizes.html#how-this-ties-into-the-overall-course",
+    "title": "Effect Sizes",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon last week’s exploration of hypothesis testing and statistical significance.\nPrepares students for future modules on meta-analysis and advanced modeling techniques, where effect sizes and confidence intervals are integral.\n\nBy the end of this week, students will have the skills to interpret effect sizes and confidence intervals confidently, ensuring they can evaluate research findings critically and apply these concepts to their own analyses.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#class-files",
+    "href": "04-effect-sizes.html#class-files",
+    "title": "Effect Sizes",
+    "section": "Class Files",
+    "text": "Class Files\n\nLecture Notes\n\n\nR Code\n\n\nData Sets",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#resources",
+    "href": "04-effect-sizes.html#resources",
+    "title": "Effect Sizes",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#todays-reading",
+    "href": "04-effect-sizes.html#todays-reading",
+    "title": "Effect Sizes",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#r-lab-files",
+    "href": "04-effect-sizes.html#r-lab-files",
+    "title": "Effect Sizes",
+    "section": "R Lab Files",
+    "text": "R Lab Files",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "04-effect-sizes.html#additional-notes",
+    "href": "04-effect-sizes.html#additional-notes",
+    "title": "Effect Sizes",
+    "section": "Additional Notes",
+    "text": "Additional Notes",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Effect Sizes</span>"
+    ]
+  },
+  {
+    "objectID": "05-assumptions.html",
+    "href": "05-assumptions.html",
+    "title": "Regression Assumptions",
+    "section": "",
+    "text": "Week 7: February 17, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Regression Assumptions</span>"
+    ]
+  },
+  {
+    "objectID": "05-assumptions.html#introduction-to-the-topic",
+    "href": "05-assumptions.html#introduction-to-the-topic",
+    "title": "Regression Assumptions",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we focus on regression assumptions, the foundational principles that must be met for linear regression models to provide valid and reliable results. Understanding and testing these assumptions is essential for sound statistical inference.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Regression Assumptions</span>"
+    ]
+  },
+  {
+    "objectID": "05-assumptions.html#key-concepts",
+    "href": "05-assumptions.html#key-concepts",
+    "title": "Regression Assumptions",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nLinearity: The relationship between predictors and the outcome variable should be linear.\nIndependence: Observations should be independent of each other.\nHomoscedasticity: The variance of errors should be consistent across levels of predictors.\nNormality of Residuals: Residuals (errors) should follow a normal distribution.\nMulticollinearity: Predictors should not be highly correlated with each other.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Regression Assumptions</span>"
+    ]
+  },
+  {
+    "objectID": "05-assumptions.html#relevance",
+    "href": "05-assumptions.html#relevance",
+    "title": "Regression Assumptions",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to evaluate each regression assumption using diagnostic tests and visualizations.\nStudents will gain skills to address violations of assumptions, such as transforming variables or using robust regression methods.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Regression Assumptions</span>"
+    ]
+  },
+  {
+    "objectID": "05-assumptions.html#why-this-is-important",
+    "href": "05-assumptions.html#why-this-is-important",
+    "title": "Regression Assumptions",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nViolations of regression assumptions can lead to biased estimates, incorrect conclusions, and reduced model reliability.\nBy understanding these assumptions, students can ensure the validity of their regression analyses and effectively communicate findings.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Regression Assumptions</span>"
+    ]
+  },
+  {
+    "objectID": "05-assumptions.html#how-this-ties-into-the-overall-course",
+    "href": "05-assumptions.html#how-this-ties-into-the-overall-course",
+    "title": "Regression Assumptions",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon prior topics like linear regression by adding a deeper layer of model evaluation and diagnostics.\nPrepares students for advanced topics like generalized linear models and robust regression techniques, which relax some assumptions.\n\nBy the end of this week, students will be able to test and address regression assumptions, ensuring their models meet the necessary criteria for accurate and reliable results.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Regression Assumptions</span>"
+    ]
+  },
+  {
+    "objectID": "06-hierarchical-regression.html",
+    "href": "06-hierarchical-regression.html",
+    "title": "Hierarchical Regression and Dummy Variables",
+    "section": "",
+    "text": "Week 8: February 24, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Hierarchical Regression and Dummy Variables</span>"
+    ]
+  },
+  {
+    "objectID": "06-hierarchical-regression.html#introduction-to-the-topic",
+    "href": "06-hierarchical-regression.html#introduction-to-the-topic",
+    "title": "Hierarchical Regression and Dummy Variables",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nProvide a brief overview of the week’s topic. Include key concepts, relevance, and how it ties into the overall course. For example: - What will students learn this week? - Why is this topic important? - How does it relate to previous or future content?\nExample: This week, we will explore the fundamentals of regression analysis, focusing on its applications in predicting outcomes and modeling relationships between variables. This builds upon last week’s introduction to descriptive statistics and prepares us for next week’s work on multivariate techniques.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Hierarchical Regression and Dummy Variables</span>"
+    ]
+  },
+  {
+    "objectID": "06-hierarchical-regression.html#class-files",
+    "href": "06-hierarchical-regression.html#class-files",
+    "title": "Hierarchical Regression and Dummy Variables",
+    "section": "Class Files",
+    "text": "Class Files\n\nLecture Notes\n\nToday’s Lecture Notes\n\n\n\nR Code\n\nScript 1: Analysis Code\nScript 2: Visualization Code\n\n\n\nData Sets\n\nDataset 1: Descriptive Statistics\nDataset 2: Regression Analysis",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Hierarchical Regression and Dummy Variables</span>"
+    ]
+  },
+  {
+    "objectID": "06-hierarchical-regression.html#resources",
+    "href": "06-hierarchical-regression.html#resources",
+    "title": "Hierarchical Regression and Dummy Variables",
+    "section": "Resources",
+    "text": "Resources\n\nRecommended Video: Topic Overview\nSupplementary Article\nAdditional Book Chapter (PDF)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Hierarchical Regression and Dummy Variables</span>"
+    ]
+  },
+  {
+    "objectID": "06-hierarchical-regression.html#todays-reading",
+    "href": "06-hierarchical-regression.html#todays-reading",
+    "title": "Hierarchical Regression and Dummy Variables",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading\n\nPrimary Reading: Article Title\nOptional Reading: Supplementary Material",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Hierarchical Regression and Dummy Variables</span>"
+    ]
+  },
+  {
+    "objectID": "06-hierarchical-regression.html#r-lab-files",
+    "href": "06-hierarchical-regression.html#r-lab-files",
+    "title": "Hierarchical Regression and Dummy Variables",
+    "section": "R Lab Files",
+    "text": "R Lab Files\n\nLab Instructions\nLab Dataset\nLab Solution Code",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Hierarchical Regression and Dummy Variables</span>"
+    ]
+  },
+  {
+    "objectID": "06-hierarchical-regression.html#additional-notes",
+    "href": "06-hierarchical-regression.html#additional-notes",
+    "title": "Hierarchical Regression and Dummy Variables",
+    "section": "Additional Notes",
+    "text": "Additional Notes\n\nAssignment Due: Assignment 1 (Submit by [Date])\nQuiz: Link to Quiz\nOffice Hours: [Time and Location]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Hierarchical Regression and Dummy Variables</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html",
+    "href": "07-logistic-regression.html",
+    "title": "Logistic Regression",
+    "section": "",
+    "text": "Week 9: March 3, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#reading",
+    "href": "07-logistic-regression.html#reading",
+    "title": "Logistic Regression",
+    "section": "Reading",
+    "text": "Reading\n\nDiez et al. Chapter 9: Logistic Regression, from pp 371; sec. 9.5",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#introduction-to-the-topic",
+    "href": "07-logistic-regression.html#introduction-to-the-topic",
+    "title": "Logistic Regression",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we focus on logistic regression, a statistical method used to model binary outcomes and predict probabilities. Logistic regression is a cornerstone technique in statistical modeling, particularly for research questions involving categorical dependent variables.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#key-concepts",
+    "href": "07-logistic-regression.html#key-concepts",
+    "title": "Logistic Regression",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nLogistic Regression Models: Analyze the relationship between independent variables and a binary dependent variable (e.g., success vs. failure).\nOdds Ratios: Interpret the effect of predictors on the likelihood of the outcome.\nModel Fit and Diagnostics: Evaluate the accuracy and robustness of logistic regression models.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#relevance",
+    "href": "07-logistic-regression.html#relevance",
+    "title": "Logistic Regression",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to build logistic regression models and interpret their results, including coefficients, odds ratios, and predicted probabilities.\nStudents will explore model evaluation techniques, such as goodness-of-fit measures and ROC curves.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#why-this-is-important",
+    "href": "07-logistic-regression.html#why-this-is-important",
+    "title": "Logistic Regression",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nLogistic regression is widely used in various fields, including social sciences, medicine, and marketing, to answer questions about classification and prediction.\nUnderstanding logistic regression provides the foundation for advanced modeling techniques like multinomial and ordinal regression.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#how-this-ties-into-the-overall-course",
+    "href": "07-logistic-regression.html#how-this-ties-into-the-overall-course",
+    "title": "Logistic Regression",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon previous weeks’ focus on linear regression and effect sizes, extending these concepts to binary outcomes.\nPrepares students for upcoming topics like machine learning classification models and survival analysis, where logistic regression plays a foundational role.\n\nBy the end of this week, students will be able to confidently apply logistic regression to real-world problems, interpret model outputs, and evaluate model performance for binary classification tasks.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#class-files",
+    "href": "07-logistic-regression.html#class-files",
+    "title": "Logistic Regression",
+    "section": "Class Files",
+    "text": "Class Files\n\nLecture Notes\n\n\nR Code\n\n\nData Sets",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#resources",
+    "href": "07-logistic-regression.html#resources",
+    "title": "Logistic Regression",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#todays-reading",
+    "href": "07-logistic-regression.html#todays-reading",
+    "title": "Logistic Regression",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#r-lab-files",
+    "href": "07-logistic-regression.html#r-lab-files",
+    "title": "Logistic Regression",
+    "section": "R Lab Files",
+    "text": "R Lab Files",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "07-logistic-regression.html#additional-notes",
+    "href": "07-logistic-regression.html#additional-notes",
+    "title": "Logistic Regression",
+    "section": "Additional Notes",
+    "text": "Additional Notes",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "08-measurement-scale.html",
+    "href": "08-measurement-scale.html",
+    "title": "Measurement and Scale Creation",
+    "section": "",
+    "text": "Week 12: March 24, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measurement and Scale Creation</span>"
+    ]
+  },
+  {
+    "objectID": "08-measurement-scale.html#introduction-to-the-topic",
+    "href": "08-measurement-scale.html#introduction-to-the-topic",
+    "title": "Measurement and Scale Creation",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nProvide a brief overview of the week’s topic. Include key concepts, relevance, and how it ties into the overall course. For example: - What will students learn this week? - Why is this topic important? - How does it relate to previous or future content?\nExample: This week, we will explore the fundamentals of regression analysis, focusing on its applications in predicting outcomes and modeling relationships between variables. This builds upon last week’s introduction to descriptive statistics and prepares us for next week’s work on multivariate techniques.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measurement and Scale Creation</span>"
+    ]
+  },
+  {
+    "objectID": "08-measurement-scale.html#class-files",
+    "href": "08-measurement-scale.html#class-files",
+    "title": "Measurement and Scale Creation",
+    "section": "Class Files",
+    "text": "Class Files\n\nLecture Notes\n\nToday’s Lecture Notes\n\n\n\nR Code\n\nScript 1: Analysis Code\nScript 2: Visualization Code\n\n\n\nData Sets\n\nDataset 1: Descriptive Statistics\nDataset 2: Regression Analysis",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measurement and Scale Creation</span>"
+    ]
+  },
+  {
+    "objectID": "08-measurement-scale.html#resources",
+    "href": "08-measurement-scale.html#resources",
+    "title": "Measurement and Scale Creation",
+    "section": "Resources",
+    "text": "Resources\n\nRecommended Video: Topic Overview\nSupplementary Article\nAdditional Book Chapter (PDF)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measurement and Scale Creation</span>"
+    ]
+  },
+  {
+    "objectID": "08-measurement-scale.html#todays-reading",
+    "href": "08-measurement-scale.html#todays-reading",
+    "title": "Measurement and Scale Creation",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading\n\nPrimary Reading: Article Title\nOptional Reading: Supplementary Material",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measurement and Scale Creation</span>"
+    ]
+  },
+  {
+    "objectID": "08-measurement-scale.html#r-lab-files",
+    "href": "08-measurement-scale.html#r-lab-files",
+    "title": "Measurement and Scale Creation",
+    "section": "R Lab Files",
+    "text": "R Lab Files\n\nLab Instructions\nLab Dataset\nLab Solution Code",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measurement and Scale Creation</span>"
+    ]
+  },
+  {
+    "objectID": "08-measurement-scale.html#additional-notes",
+    "href": "08-measurement-scale.html#additional-notes",
+    "title": "Measurement and Scale Creation",
+    "section": "Additional Notes",
+    "text": "Additional Notes\n\nAssignment Due: Assignment 1 (Submit by [Date])\nQuiz: Link to Quiz\nOffice Hours: [Time and Location]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measurement and Scale Creation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html",
+    "href": "09-mediation.html",
+    "title": "Mediation",
+    "section": "",
+    "text": "Week 11: March 17, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#introduction-to-the-topic",
+    "href": "09-mediation.html#introduction-to-the-topic",
+    "title": "Mediation",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we explore mediation analysis, a statistical approach used to understand the mechanisms through which an independent variable influences a dependent variable via a third variable, known as the mediator. Mediation analysis is essential for uncovering causal pathways in research.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#key-concepts",
+    "href": "09-mediation.html#key-concepts",
+    "title": "Mediation",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nDirect Effects: The relationship between the independent variable and the dependent variable, excluding the mediator.\nIndirect Effects: The portion of the relationship explained through the mediator.\nTotal Effects: The combined impact of direct and indirect effects.\nBootstrapping: A resampling method for testing the significance of indirect effects.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#relevance",
+    "href": "09-mediation.html#relevance",
+    "title": "Mediation",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to identify and test mediating variables in a causal framework.\nStudents will explore how to decompose total effects into direct and indirect components to better understand relationships among variables.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#why-this-is-important",
+    "href": "09-mediation.html#why-this-is-important",
+    "title": "Mediation",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nMediation analysis allows researchers to move beyond simple relationships to uncover how and why effects occur.\nUnderstanding mediation is critical for testing theoretical models in fields like psychology, sociology, and public health.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#how-this-ties-into-the-overall-course",
+    "href": "09-mediation.html#how-this-ties-into-the-overall-course",
+    "title": "Mediation",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon previous topics, such as regression and effect sizes, by extending these tools to explore causal pathways.\nPrepares students for advanced concepts like moderated mediation and structural equation modeling (SEM), where mediation analysis is a core component.\n\nBy the end of this week, students will be able to conduct mediation analyses, interpret direct and indirect effects, and evaluate the significance of mediators using bootstrapping methods.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#class-files",
+    "href": "09-mediation.html#class-files",
+    "title": "Mediation",
+    "section": "Class Files",
+    "text": "Class Files",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#class-files-1",
+    "href": "09-mediation.html#class-files-1",
+    "title": "Mediation",
+    "section": "Class Files",
+    "text": "Class Files\n\nLecture Notes\n\n\nR Code\n\n\nData Sets",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#resources",
+    "href": "09-mediation.html#resources",
+    "title": "Mediation",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#todays-reading",
+    "href": "09-mediation.html#todays-reading",
+    "title": "Mediation",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#r-lab-files",
+    "href": "09-mediation.html#r-lab-files",
+    "title": "Mediation",
+    "section": "R Lab Files",
+    "text": "R Lab Files",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "09-mediation.html#additional-notes",
+    "href": "09-mediation.html#additional-notes",
+    "title": "Mediation",
+    "section": "Additional Notes",
+    "text": "Additional Notes",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Mediation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html",
+    "href": "10-moderation.html",
+    "title": "Moderation",
+    "section": "",
+    "text": "Week 12: March 24, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#introduction-to-the-topic",
+    "href": "10-moderation.html#introduction-to-the-topic",
+    "title": "Moderation",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we focus on moderation analysis, a statistical approach used to examine whether the relationship between an independent variable and a dependent variable depends on the value of a third variable, known as the moderator. Moderation analysis is key for understanding conditional effects in research.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#key-concepts",
+    "href": "10-moderation.html#key-concepts",
+    "title": "Moderation",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nInteraction Effects: How the relationship between two variables changes depending on the level of the moderator.\nModerators: Variables that influence the strength or direction of an effect.\nCentering: Preparing variables to reduce multicollinearity in moderation models.\nSimple Slopes Analysis: Breaking down interaction effects to interpret conditional relationships.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#relevance",
+    "href": "10-moderation.html#relevance",
+    "title": "Moderation",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to test for and interpret interaction effects in moderation models.\nStudents will explore tools like simple slopes analysis and visualization to communicate results effectively.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#why-this-is-important",
+    "href": "10-moderation.html#why-this-is-important",
+    "title": "Moderation",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nModeration analysis provides insights into when and for whom certain effects occur, enabling more nuanced interpretations of data.\nUnderstanding moderation is critical in areas like policy evaluation, intervention design, and theory testing.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#how-this-ties-into-the-overall-course",
+    "href": "10-moderation.html#how-this-ties-into-the-overall-course",
+    "title": "Moderation",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon prior topics like regression and effect sizes by extending these methods to account for conditional effects.\nSets the stage for future topics like moderated mediation and multilevel modeling, where interaction effects are a core focus.\n\nBy the end of this week, students will be able to identify and test moderation effects, interpret interaction terms, and visualize conditional relationships to better understand complex variable interactions.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#class-files",
+    "href": "10-moderation.html#class-files",
+    "title": "Moderation",
+    "section": "Class Files",
+    "text": "Class Files\n\nLecture Notes\n\n\nR Code\n\n\nData Sets",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#resources",
+    "href": "10-moderation.html#resources",
+    "title": "Moderation",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#todays-reading",
+    "href": "10-moderation.html#todays-reading",
+    "title": "Moderation",
+    "section": "Today’s Reading",
+    "text": "Today’s Reading",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#r-lab-files",
+    "href": "10-moderation.html#r-lab-files",
+    "title": "Moderation",
+    "section": "R Lab Files",
+    "text": "R Lab Files",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "10-moderation.html#additional-notes",
+    "href": "10-moderation.html#additional-notes",
+    "title": "Moderation",
+    "section": "Additional Notes",
+    "text": "Additional Notes",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Moderation</span>"
+    ]
+  },
+  {
+    "objectID": "11-efa.html",
+    "href": "11-efa.html",
+    "title": "EFA",
+    "section": "",
+    "text": "Week 13: March 31, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>EFA</span>"
+    ]
+  },
+  {
+    "objectID": "11-efa.html#reading",
+    "href": "11-efa.html#reading",
+    "title": "EFA",
+    "section": "Reading",
+    "text": "Reading\n\nPituch et al. Chapter 9: Exploratory Factor Analysis, from pp 339",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>EFA</span>"
+    ]
+  },
+  {
+    "objectID": "11-efa.html#introduction-to-the-topic",
+    "href": "11-efa.html#introduction-to-the-topic",
+    "title": "EFA",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we focus on Exploratory Factor Analysis (EFA), a statistical method used to uncover the underlying structure of a set of observed variables. EFA is a critical tool for identifying latent constructs in datasets.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>EFA</span>"
+    ]
+  },
+  {
+    "objectID": "11-efa.html#key-concepts",
+    "href": "11-efa.html#key-concepts",
+    "title": "EFA",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nLatent Variables: Unobserved factors inferred from observed variables.\nFactor Loadings: The relationship between observed variables and underlying factors.\nEigenvalues and Scree Plots: Tools for determining the number of factors to retain.\nRotation Methods: Techniques (e.g., Varimax, Promax) to simplify factor structure.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>EFA</span>"
+    ]
+  },
+  {
+    "objectID": "11-efa.html#relevance",
+    "href": "11-efa.html#relevance",
+    "title": "EFA",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to conduct EFA to explore latent structures in data.\nStudents will gain skills to evaluate factor solutions and interpret factor loadings.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>EFA</span>"
+    ]
+  },
+  {
+    "objectID": "11-efa.html#why-this-is-important",
+    "href": "11-efa.html#why-this-is-important",
+    "title": "EFA",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nEFA helps researchers identify patterns and groupings in data without predefined hypotheses.\nIt is widely used in psychology, education, and social sciences to develop and validate measurement tools.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>EFA</span>"
+    ]
+  },
+  {
+    "objectID": "11-efa.html#how-this-ties-into-the-overall-course",
+    "href": "11-efa.html#how-this-ties-into-the-overall-course",
+    "title": "EFA",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon prior topics like correlations and covariance by introducing latent structures.\nPrepares students for Confirmatory Factor Analysis (CFA), where hypothesized factor structures are tested.\n\nBy the end of this week, students will be able to perform EFA, determine the number of factors to retain, and interpret factor loadings to uncover meaningful constructs.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>EFA</span>"
+    ]
+  },
+  {
+    "objectID": "12-cfa.html",
+    "href": "12-cfa.html",
+    "title": "CFA",
+    "section": "",
+    "text": "Week 14: April 7, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>CFA</span>"
+    ]
+  },
+  {
+    "objectID": "12-cfa.html#reading",
+    "href": "12-cfa.html#reading",
+    "title": "CFA",
+    "section": "Reading",
+    "text": "Reading\n\nHahs-Vaughn, Chapter 10.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>CFA</span>"
+    ]
+  },
+  {
+    "objectID": "12-cfa.html#introduction-to-the-topic",
+    "href": "12-cfa.html#introduction-to-the-topic",
+    "title": "CFA",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we transition to Confirmatory Factor Analysis (CFA), a method used to test hypotheses about the relationships between observed variables and latent constructs. CFA is essential for validating measurement models.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>CFA</span>"
+    ]
+  },
+  {
+    "objectID": "12-cfa.html#key-concepts",
+    "href": "12-cfa.html#key-concepts",
+    "title": "CFA",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nMeasurement Models: Predefined structures relating observed variables to latent factors.\nModel Fit Indices: Tools (e.g., CFI, RMSEA, SRMR) to assess how well the model fits the data.\nStandardized Loadings: Interpreting the strength of relationships between observed and latent variables.\nModification Indices: Suggestions for improving model fit.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>CFA</span>"
+    ]
+  },
+  {
+    "objectID": "12-cfa.html#relevance",
+    "href": "12-cfa.html#relevance",
+    "title": "CFA",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to specify and test measurement models using CFA.\nStudents will gain skills to evaluate model fit and refine models as needed.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>CFA</span>"
+    ]
+  },
+  {
+    "objectID": "12-cfa.html#why-this-is-important",
+    "href": "12-cfa.html#why-this-is-important",
+    "title": "CFA",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nCFA allows researchers to validate scales and ensure measurements are reliable and valid.\nIt provides a foundation for structural equation modeling (SEM), which combines measurement and path models.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>CFA</span>"
+    ]
+  },
+  {
+    "objectID": "12-cfa.html#how-this-ties-into-the-overall-course",
+    "href": "12-cfa.html#how-this-ties-into-the-overall-course",
+    "title": "CFA",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon EFA by moving from exploration to hypothesis testing.\nPrepares students for advanced SEM techniques and latent class analysis (LCA).\n\nBy the end of this week, students will be able to conduct CFA, assess model fit, and refine measurement models for research applications.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>CFA</span>"
+    ]
+  },
+  {
+    "objectID": "13-lca.html",
+    "href": "13-lca.html",
+    "title": "LCA",
+    "section": "",
+    "text": "Week 15: April 14, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>LCA</span>"
+    ]
+  },
+  {
+    "objectID": "13-lca.html#introduction-to-the-topic",
+    "href": "13-lca.html#introduction-to-the-topic",
+    "title": "LCA",
+    "section": "Introduction to the Topic",
+    "text": "Introduction to the Topic\nThis week, we dive into Latent Class Analysis (LCA), a method used to identify subgroups or classes within a population based on observed data. LCA is essential for uncovering hidden heterogeneity in data.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>LCA</span>"
+    ]
+  },
+  {
+    "objectID": "13-lca.html#key-concepts",
+    "href": "13-lca.html#key-concepts",
+    "title": "LCA",
+    "section": "Key Concepts:",
+    "text": "Key Concepts:\n\nLatent Classes: Unobserved subgroups identified through patterns in the data.\nClass Membership Probabilities: The likelihood that an individual belongs to a specific class.\nModel Fit: Using tools like BIC and AIC to determine the optimal number of classes.\nInterpreting Profiles: Understanding differences between identified classes.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>LCA</span>"
+    ]
+  },
+  {
+    "objectID": "13-lca.html#relevance",
+    "href": "13-lca.html#relevance",
+    "title": "LCA",
+    "section": "Relevance:",
+    "text": "Relevance:\n\nStudents will learn how to use LCA to identify meaningful subgroups in their data.\nStudents will explore applications of LCA in areas like health disparities, education, and consumer behavior.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>LCA</span>"
+    ]
+  },
+  {
+    "objectID": "13-lca.html#why-this-is-important",
+    "href": "13-lca.html#why-this-is-important",
+    "title": "LCA",
+    "section": "Why This Is Important:",
+    "text": "Why This Is Important:\n\nLCA provides insights into population heterogeneity, allowing researchers to identify distinct subgroups with unique characteristics.\nIt is a powerful tool for tailoring interventions and understanding diverse outcomes.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>LCA</span>"
+    ]
+  },
+  {
+    "objectID": "13-lca.html#how-this-ties-into-the-overall-course",
+    "href": "13-lca.html#how-this-ties-into-the-overall-course",
+    "title": "LCA",
+    "section": "How This Ties Into the Overall Course:",
+    "text": "How This Ties Into the Overall Course:\n\nBuilds upon prior topics like CFA by extending latent variable modeling to categorical data.\nPrepares students for advanced mixture modeling techniques and combining LCA with SEM.\n\nBy the end of this week, students will be able to perform LCA, interpret latent class solutions, and use these insights to answer research questions about population heterogeneity.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>LCA</span>"
+    ]
+  },
+  {
+    "objectID": "14-final-project.html",
+    "href": "14-final-project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "Week 16: April 21, 2025",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Final Project</span>"
+    ]
+  },
+  {
+    "objectID": "14-final-project.html#final-project-presentations",
+    "href": "14-final-project.html#final-project-presentations",
+    "title": "Final Project",
+    "section": "Final Project Presentations",
+    "text": "Final Project Presentations",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Final Project</span>"
+    ]
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus: Statistics for Social Justice",
+    "section": "",
+    "text": "Miscellaneous Course Policies\nPlease download the OSU and CSW course policies that are incorporated by reference within this course.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Syllabus: Statistics for Social Justice</span>"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-information",
+    "href": "syllabus.html#course-information",
+    "title": "Syllabus: Statistics for Social Justice",
+    "section": "Course Information",
+    "text": "Course Information\nCourse Title: Statistics II: Equity-Focused Data Analysis\nInstructor: Dr. Gia Elise Barboza-Salerno\nInstitution: College of Social Work, The Ohio State University\nTerm: Spring 2025",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Syllabus: Statistics for Social Justice</span>"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#contact-information",
+    "href": "syllabus.html#contact-information",
+    "title": "Syllabus: Statistics for Social Justice",
+    "section": "Contact Information",
+    "text": "Contact Information\nOffice Hours: Mondays 2–4 PM, or by appointment.\nEmail: barboza-salerno@osu.edu",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Syllabus: Statistics for Social Justice</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Reading List\nThis paper Razak (2019) provides an example of Simple Linear Regression. This paper Littleton et al. (2024) provides an example of using Historic Redlining Scores to understand higher rates of child welfare reporting.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
+    "objectID": "references.html#reading-list",
+    "href": "references.html#reading-list",
+    "title": "References",
+    "section": "",
+    "text": "Littleton, T., Freisthler, B., Boyd, R., Smith, A. M., & Barboza-Salerno, G. (2024). Historical redlining, neighborhood disadvantage, and reports of child maltreatment in a large urban county. Child Abuse & Neglect, 156, 107011.\n\n\nRazak, M. R. R. (2019). Child social welfare institution participation in the implementation of good governance.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>References</span>"
+    ]
+  }
+]
