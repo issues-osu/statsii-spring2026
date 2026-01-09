@@ -1,0 +1,27 @@
+---
+title: "EFA Part II"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 13: April 7, 2026  
+
+## Reading
+- Last day of class!
+
+## EFA Part II
+
+Today we are going to finish our example from last week, and then review how to conduct EFA using R.
+
+---
+
+## Key Concepts:
+- **Reliability**: 
+
+---
+
+---
+## R code

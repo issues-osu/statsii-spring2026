@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Gia Elise Barboza-Salerno">
 
-<title>References – Statistics for Social Justice</title>
+<title>References – Statistics for Social Work</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,16 +51,19 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./syllabus.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<link href="./ass1writeup.html" rel="next">
+<link href="./reading.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1ccbc09170d6d559ed2114ae69d8a77e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e36a2370e89736b0049a41eecb653fc1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -89,10 +92,39 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -101,7 +133,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reading.html"><strong>Additional Resources</strong></a></li><li class="breadcrumb-item"><a href="./references.html"><span class="chapter-title">References</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -116,7 +148,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Statistics for Social Justice</a> 
+      <a href="./">Statistics for Social Work</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -128,106 +160,247 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics for Social Justice</span></span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Statistics for Social Work</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Course Overview</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to the Course</span></span></a>
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syllabus: Statistics for Social Work</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-simple-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
+  <a href="./Assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignments and Due Dates</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-multiple-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multiple Linear Regression</span></span></a>
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to the Course</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Regression Mechanics</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Effect Sizes</span></span></a>
+  <a href="./02-simple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to Simple Linear Regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-assumptions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Regression Assumptions</span></span></a>
+  <a href="./03-multiple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Multiple Linear Regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-hierarchical-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Hierarchical Regression and Dummy Variables</span></span></a>
+  <a href="./04-effect-sizes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Effect Sizes</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  <a href="./05-assumptions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regression Assumptions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Advanced Regression Techniques</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-measurement-scale.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Measurement and Scale Creation</span></span></a>
+  <a href="./07-logistic-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Logistic Regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Mediation</span></span></a>
+  <a href="./06-mediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 1)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Moderation</span></span></a>
+  <a href="./07-moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 2)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-efa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">EFA</span></span></a>
+  <a href="./07a-moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 3)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Measurement &amp; Factor Analysis</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-cfa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">CFA</span></span></a>
+  <a href="./11-efa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EFA</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-lca.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LCA</span></span></a>
+  <a href="./efa_R.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EFA in R</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-final-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Final Project</span></span></a>
+  <a href="./13-lca.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LCA</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Applications</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Syllabus: Statistics for Social Justice</span></span></a>
+  <a href="./14-final-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Final Project</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  <a href="./assignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 1</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/inclass.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">In Class Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/medmod/mediationR.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Simple Mediation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Logistic Regression Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/moderation/moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Moderation Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Case Studies &amp; Data Applications</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infant_mortality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Infant Mortality Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PRAMS_Correlation_Analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cohensd.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analysis of Area Deprivation Disparities Using Cohen’s D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./admissions_R_ex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Admissions Data Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nscaw.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">NSCAW I In-Class Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Additional Resources</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Required Course Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Assignments</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ass1writeup.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 1 Write-up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assign2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Final Stats II Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -238,14 +411,24 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#reading-list" id="toc-reading-list" class="nav-link active" data-scroll-target="#reading-list">Reading List</a></li>
+  <li><a href="#reading-list" id="toc-reading-list" class="nav-link active" data-scroll-target="#reading-list">Reading List</a>
+  <ul class="collapse">
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression">Linear Regression</a></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic Regression</a></li>
+  <li><a href="#mediation-and-moderation" id="toc-mediation-and-moderation" class="nav-link" data-scroll-target="#mediation-and-moderation">Mediation and Moderation</a></li>
+  <li><a href="#factor-analysis" id="toc-factor-analysis" class="nav-link" data-scroll-target="#factor-analysis">Factor Analysis</a></li>
+  <li><a href="#power-analysis" id="toc-power-analysis" class="nav-link" data-scroll-target="#power-analysis">Power Analysis</a></li>
+  <li><a href="#dummy-variable-coding" id="toc-dummy-variable-coding" class="nav-link" data-scroll-target="#dummy-variable-coding">Dummy Variable Coding</a></li>
+  <li><a href="#social-justice-applications" id="toc-social-justice-applications" class="nav-link" data-scroll-target="#social-justice-applications">Social Justice Applications</a></li>
+  </ul></li>
+  <li><a href="#while-not-directly-stating-it-in-this-paper-barboza2020cognitive-i-found-increases-in-post-partum-parenting-stress-is-linked-to-poor-socio-emotional-adjustment-in-children.-my-examination-of-the-prams-data-set-suggests-that-psychosocial-stressors-during-pregnancy-a-vulnerable-period-for-many-increases-the-risk-of-intimate-partner-violence." id="toc-while-not-directly-stating-it-in-this-paper-barboza2020cognitive-i-found-increases-in-post-partum-parenting-stress-is-linked-to-poor-socio-emotional-adjustment-in-children.-my-examination-of-the-prams-data-set-suggests-that-psychosocial-stressors-during-pregnancy-a-vulnerable-period-for-many-increases-the-risk-of-intimate-partner-violence." class="nav-link" data-scroll-target="#while-not-directly-stating-it-in-this-paper-barboza2020cognitive-i-found-increases-in-post-partum-parenting-stress-is-linked-to-poor-socio-emotional-adjustment-in-children.-my-examination-of-the-prams-data-set-suggests-that-psychosocial-stressors-during-pregnancy-a-vulnerable-period-for-many-increases-the-risk-of-intimate-partner-violence.">While not directly stating it, in this paper <span class="citation" data-cites="barboza2020cognitive">Barboza-Salerno (2020)</span> I found increases in post-partum parenting stress is linked to poor socio-emotional adjustment in children. My examination of the PRAMS data set suggests that psychosocial stressors during pregnancy, a vulnerable period for many, increases the risk of intimate partner violence.</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reading.html"><strong>Additional Resources</strong></a></li><li class="breadcrumb-item"><a href="./references.html"><span class="chapter-title">References</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-title">References</span></h1>
 </div>
@@ -272,251 +455,338 @@ div.csl-indent {
 
 <section id="reading-list" class="level2">
 <h2 class="anchored" data-anchor-id="reading-list">Reading List</h2>
-<p>This paper <span class="citation" data-cites="razak2019child">Razak (<a href="#ref-razak2019child" role="doc-biblioref">2019</a>)</span> provides an example of <a href="./02-simple-regression.html">Simple Linear Regression</a>. This paper <span class="citation" data-cites="littleton2024historical">Littleton et al. (<a href="#ref-littleton2024historical" role="doc-biblioref">2024</a>)</span> provides an example of using <a href="escape_room_redlining.Rmd">Historic Redlining Scores</a> to understand higher rates of child welfare reporting.</p>
+<section id="linear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="linear-regression">Linear Regression</h3>
+<ul>
+<li>This paper <span class="citation" data-cites="razak2019child">Razak (<a href="#ref-razak2019child" role="doc-biblioref">2019</a>)</span> provides an example of <a href="./02-simple-regression.html">Simple Linear Regression</a>.</li>
+<li>This paper <span class="citation" data-cites="littleton2024historical">Littleton et al. (<a href="#ref-littleton2024historical" role="doc-biblioref">2024</a>)</span> provides an example of using <a href="escape_room_redlining.Rmd">Historic Redlining Scores</a> to understand higher rates of child welfare reporting.</li>
+<li>Penn State has a nice <a href="https://online.stat.psu.edu/stat501/lesson/5">tutorial</a> with examples on how to conduct linear regression in R</li>
+</ul>
+</section>
+<section id="logistic-regression" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h3>
+<ul>
+<li>This paper uses the <code>glm</code> function to model the presence of fictional fantastic characters <span class="citation" data-cites="corlattiRegressionModelsFantastic2021">Corlatti (<a href="#ref-corlattiRegressionModelsFantastic2021" role="doc-biblioref">2021</a>)</span>. Super cool.</li>
+<li>While we do not cover it here, this paper explains how to use multilevel modeling with a categorical dependent variable: <span class="citation" data-cites="merloBriefConceptualTutorial2006">Merlo et al. (<a href="#ref-merloBriefConceptualTutorial2006" role="doc-biblioref">2006</a>)</span>.</li>
+<li>A recent co-authored manuscript used logistic regression, you can read it: <span class="citation" data-cites="meshelemiah2024adverse">Meshelemiah et al. (<a href="#ref-meshelemiah2024adverse" role="doc-biblioref">2024</a>)</span></li>
+</ul>
+</section>
+<section id="mediation-and-moderation" class="level3">
+<h3 class="anchored" data-anchor-id="mediation-and-moderation">Mediation and Moderation</h3>
+<ul>
+<li>This paper <span class="citation" data-cites="livingstonGentleIntroductionMediation2019">Livingston &amp; Haardörfer (<a href="#ref-livingstonGentleIntroductionMediation2019" role="doc-biblioref">2019</a>)</span> should be read together with <span class="citation" data-cites="glickDischargeInstructionComprehension2019">Glick et al. (<a href="#ref-glickDischargeInstructionComprehension2019" role="doc-biblioref">2019</a>)</span>.</li>
+<li>This paper is a tutorial on how to use the SPSS PROCESS macro by Hayes <span class="citation" data-cites="clementStepbystepTutorialPerforming2022">Clement &amp; Bradley-Garcia (<a href="#ref-clementStepbystepTutorialPerforming2022" role="doc-biblioref">2022</a>)</span></li>
+<li>I have used moderation and mediation in several papers, here is one example: <span class="citation" data-cites="barboza2024associations">Barboza-Salerno &amp; Meshelemiah (<a href="#ref-barboza2024associations" role="doc-biblioref">2024</a>)</span></li>
+</ul>
+</section>
+<section id="factor-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="factor-analysis">Factor Analysis</h3>
+<ul>
+<li>This paper has some cool visualizations: <span class="citation" data-cites="StiglicCilarBudlerWatson">Štiglic et al. (<a href="#ref-StiglicCilarBudlerWatson" role="doc-biblioref">2023</a>)</span> and I downloaded it <a href="static/ABeginnersGuidetoFactorAnalysis_FocusingonExploratoryFactorAnalysis.pdf">here</a></li>
+<li>I have used factor analytic techniques in many papers, here is one example: <span class="citation" data-cites="elise2021child">Elise Barboza &amp; Siller (<a href="#ref-elise2021child" role="doc-biblioref">2021</a>)</span></li>
+</ul>
+</section>
+<section id="power-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="power-analysis">Power Analysis</h3>
+<p>This paper is good to follow if you need to calculate power for causal models <span class="citation" data-cites="qinSampleSizePower2023">Qin (<a href="#ref-qinSampleSizePower2023" role="doc-biblioref">2023</a>)</span></p>
+</section>
+<section id="dummy-variable-coding" class="level3">
+<h3 class="anchored" data-anchor-id="dummy-variable-coding">Dummy Variable Coding</h3>
+<p><a href="static/johfre-freese-2021-reconsidering-the-reference-category.pdf">This paper</a> is a must read <span class="citation" data-cites="johfre2021reconsidering">Johfre &amp; Freese (<a href="#ref-johfre2021reconsidering" role="doc-biblioref">2021</a>)</span></p>
+</section>
+<section id="social-justice-applications" class="level3">
+<h3 class="anchored" data-anchor-id="social-justice-applications">Social Justice Applications</h3>
+</section>
+</section>
+<section id="while-not-directly-stating-it-in-this-paper-barboza2020cognitive-i-found-increases-in-post-partum-parenting-stress-is-linked-to-poor-socio-emotional-adjustment-in-children.-my-examination-of-the-prams-data-set-suggests-that-psychosocial-stressors-during-pregnancy-a-vulnerable-period-for-many-increases-the-risk-of-intimate-partner-violence." class="level2">
+<h2 class="anchored" data-anchor-id="while-not-directly-stating-it-in-this-paper-barboza2020cognitive-i-found-increases-in-post-partum-parenting-stress-is-linked-to-poor-socio-emotional-adjustment-in-children.-my-examination-of-the-prams-data-set-suggests-that-psychosocial-stressors-during-pregnancy-a-vulnerable-period-for-many-increases-the-risk-of-intimate-partner-violence.">While not directly stating it, in this paper <span class="citation" data-cites="barboza2020cognitive">Barboza-Salerno (<a href="#ref-barboza2020cognitive" role="doc-biblioref">2020</a>)</span> I found increases in post-partum parenting stress is linked to poor socio-emotional adjustment in children. My examination of the PRAMS data set suggests that psychosocial stressors during pregnancy, a vulnerable period for many, increases the risk of intimate partner violence.</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-barboza2020cognitive" class="csl-entry" role="listitem">
+Barboza-Salerno, G. E. (2020). Cognitive readiness to parent, stability and change in postpartum parenting stress and social-emotional problems in early childhood: A second order growth curve model. <em>Children and Youth Services Review</em>, <em>113</em>, 104958.
+</div>
+<div id="ref-barboza2024associations" class="csl-entry" role="listitem">
+Barboza-Salerno, G. E., &amp; Meshelemiah, J. C. (2024). Associations between early child adversity and lifetime suicide attempts among gender diverse individuals: A moderated mediation. <em>Child Abuse &amp; Neglect</em>, <em>149</em>, 106705.
+</div>
+<div id="ref-clementStepbystepTutorialPerforming2022" class="csl-entry" role="listitem">
+Clement, L. M., &amp; Bradley-Garcia, M. (2022). A step-by-step tutorial for performing a moderated mediation analysis using <span>PROCESS</span>. <em>The Quantitative Methods for Psychology</em>, <em>18</em>(3), 258–271.
+</div>
+<div id="ref-corlattiRegressionModelsFantastic2021" class="csl-entry" role="listitem">
+Corlatti, L. (2021). Regression <span>Models</span>, <span>Fantastic Beasts</span>, and <span>Where</span> to <span>Find Them</span>: <span>A Simple Tutorial</span> for <span>Ecologists Using R</span>. <em>Bioinformatics and Biology Insights</em>, <em>15</em>, 11779322211051522. <a href="https://doi.org/10.1177/11779322211051522">https://doi.org/10.1177/11779322211051522</a><div class="csl-block">Regression modeling is a workhorse of statistical ecology that allows to find relationships between a response variable and a set of explanatory variables. Despite being one of the fundamental statistical ideas in ecological curricula, regression modeling can be complex and subtle. This paper is intended as an applied protocol to help students understand the data, select the most appropriate models, verify assumptions, and interpret the output. Basic ecological questions are tackled using data from a fictional series, ?Fantastic beasts and where to find them,? with the aim to show how statistical thinking can foster curiosity, creativity and imagination in ecology, from the formulation of hypotheses to the interpretation of results.</div>
+</div>
+<div id="ref-elise2021child" class="csl-entry" role="listitem">
+Elise Barboza, G., &amp; Siller, L. A. (2021). Child maltreatment, school bonds, and adult violence: A serial mediation model. <em>Journal of Interpersonal Violence</em>, <em>36</em>(11-12), NP5839–NP5873.
+</div>
+<div id="ref-glickDischargeInstructionComprehension2019" class="csl-entry" role="listitem">
+Glick, A. F., Farkas, J. S., Mendelsohn, A. L., Fierman, A. H., Tomopoulos, S., Rosenberg, R. E., Dreyer, B. P., Melgar, J., Varriano, J., &amp; Yin, H. S. (2019). Discharge <span>Instruction Comprehension</span> and <span>Adherence Errors</span>: <span>Interrelationship Between Plan Complexity</span> and <span>Parent Health Literacy</span>. <em>The Journal of Pediatrics</em>, <em>214</em>, 193–200.e3. <a href="https://doi.org/10.1016/j.jpeds.2019.04.052">https://doi.org/10.1016/j.jpeds.2019.04.052</a><div class="csl-block">Objective To examine associations between parent health literacy, discharge plan complexity, and parent comprehension of and adherence to inpatient discharge instructions. Study design This was a prospective cohort study of English/Spanish-speaking parents (n&nbsp;=&nbsp;165) of children <span><span class="math inline">\(\leq\)</span></span>12&nbsp;years discharged on <span><span class="math inline">\(\geq\)</span></span>1 daily medication from an urban, public hospital. Outcome variables were parent comprehension (survey) of and adherence (survey, in-person dosing assessment, chart review) to discharge instructions. Predictor variables included low parent health literacy (Newest Vital Sign score 0-3) and plan complexity. Generalized estimating equations were used to account for the assessment of multiple types of comprehension and adherence errors for each subject, adjusting for ethnicity, language, child age, length of stay, and chronic disease status. Similar analyses were performed to assess for mediation and moderation. Results Error rates were highest for comprehension of medication side effects (50%), adherence to medication dose (34%), and return precaution (78%) instructions. Comprehension errors were associated with adherence errors (aOR, 8.7; 95% CI, 5.9-12.9). Discharge plan complexity was associated with comprehension (aOR, 7.0; 95% CI, 5.4-9.1) and adherence (aOR, 5.5; 95% CI, 4.0-7.6) errors. Low health literacy was indirectly associated with adherence errors through comprehension errors. The association between plan complexity and comprehension errors was greater in parents with low (aOR, 8.3; 95% CI, 6.2-11.2) compared with adequate (aOR, 3.8; 95% CI, 2.2-6.5) health literacy (interaction term P&nbsp;=&nbsp;.004). Conclusions Parent health literacy and discharge plan complexity play key roles in comprehension and adherence errors. Future work will focus on the development of health literacy-informed interventions to promote discharge plan comprehension.</div>
+</div>
+<div id="ref-johfre2021reconsidering" class="csl-entry" role="listitem">
+Johfre, S. S., &amp; Freese, J. (2021). Reconsidering the reference category. <em>Sociological Methodology</em>, <em>51</em>(2), 253–269.
+</div>
 <div id="ref-littleton2024historical" class="csl-entry" role="listitem">
 Littleton, T., Freisthler, B., Boyd, R., Smith, A. M., &amp; Barboza-Salerno, G. (2024). Historical redlining, neighborhood disadvantage, and reports of child maltreatment in a large urban county. <em>Child Abuse &amp; Neglect</em>, <em>156</em>, 107011.
 </div>
+<div id="ref-livingstonGentleIntroductionMediation2019" class="csl-entry" role="listitem">
+Livingston, M. D., &amp; Haardörfer, R. (2019). A gentle introduction to mediation and moderation. <em>The Journal of Pediatrics</em>, <em>214</em>, 246–248.
+</div>
+<div id="ref-merloBriefConceptualTutorial2006" class="csl-entry" role="listitem">
+Merlo, J., Chaix, B., Ohlsson, H., Beckman, A., Johnell, K., Hjerpe, P., Råstam, L., &amp; Larsen, K. (2006). A brief conceptual tutorial of multilevel analysis in social epidemiology: Using measures of clustering in multilevel logistic regression to investigate contextual phenomena. <em>Journal of Epidemiology &amp; Community Health</em>, <em>60</em>(4), 290–297.
+</div>
+<div id="ref-meshelemiah2024adverse" class="csl-entry" role="listitem">
+Meshelemiah, J. C., Dellor, E., Karandikar, S., Munshi, A., Barboza-Salerno, G., &amp; Steinke, H. R. (2024). Adverse childhood experiences, women who are sex trafficked, and social service utilization: Implications for social work. <em>Social Work</em>, swae024.
+</div>
+<div id="ref-qinSampleSizePower2023" class="csl-entry" role="listitem">
+Qin, X. (2023). Sample size and power calculations for causal mediation analysis: <span>A Tutorial</span> and <span>Shiny App</span>. <em>Behavior Research Methods</em>, <em>56</em>(3), 1738–1769. <a href="https://doi.org/10.3758/s13428-023-02118-0">https://doi.org/10.3758/s13428-023-02118-0</a>
+</div>
 <div id="ref-razak2019child" class="csl-entry" role="listitem">
 Razak, M. R. R. (2019). <em>Child social welfare institution participation in the implementation of good governance</em>.
+</div>
+<div id="ref-StiglicCilarBudlerWatson" class="csl-entry" role="listitem">
+Štiglic, G., Budler, L. C., &amp; Watson, R. (2023). 15 running a confirmatory factor analysis in r: A step-by-step tutorial. In K. Č. Trifkovič, M. Lorber, N. M. Reljić, &amp; G. Štiglic (Eds.), <em>Education and research</em> (pp. 207–222). De Gruyter. <a href="https://doi.org/doi:10.1515/9783110786088-015">https://doi.org/doi:10.1515/9783110786088-015</a>
 </div>
 </div>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -524,192 +794,171 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./syllabus.html" class="pagination-link" aria-label="Syllabus: Statistics for Social Justice">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Syllabus: Statistics for Social Justice</span></span>
+      <a href="./reading.html" class="pagination-link" aria-label="Required Course Materials">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Required Course Materials</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ass1writeup.html" class="pagination-link" aria-label="Assignment 1 Write-up">
+        <span class="nav-page-text"><span class="chapter-title">Assignment 1 Write-up</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

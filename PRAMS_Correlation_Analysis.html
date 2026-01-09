@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Barboza-Salerno">
+<meta name="dcterms.date" content="2026-01-08">
+
+<title>Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data – Statistics for Social Work</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cohensd.html" rel="next">
+<link href="./infant_mortality.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e36a2370e89736b0049a41eecb653fc1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infant_mortality.html">**Case Studies &amp; Data Applications**</a></li><li class="breadcrumb-item"><a href="./PRAMS_Correlation_Analysis.html"><span class="chapter-title">Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Statistics for Social Work</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Statistics for Social Work</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Course Overview</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syllabus: Statistics for Social Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignments and Due Dates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to the Course</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Regression Mechanics</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-simple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to Simple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-multiple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Multiple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-effect-sizes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Effect Sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-assumptions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regression Assumptions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Advanced Regression Techniques</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-logistic-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Logistic Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-mediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 1)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 2)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07a-moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 3)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Measurement &amp; Factor Analysis</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-efa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa_R.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EFA in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-lca.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LCA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Applications</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-final-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Final Project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/inclass.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">In Class Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/medmod/mediationR.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Simple Mediation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Logistic Regression Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/moderation/moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Moderation Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Case Studies &amp; Data Applications</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infant_mortality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Infant Mortality Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PRAMS_Correlation_Analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cohensd.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analysis of Area Deprivation Disparities Using Cohen’s D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./admissions_R_ex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Admissions Data Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nscaw.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">NSCAW I In-Class Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Additional Resources</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Required Course Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Assignments</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ass1writeup.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 1 Write-up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assign2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Final Stats II Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link active" data-scroll-target="#dataset-description">Dataset Description</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a>
+  <ul class="collapse">
+  <li><a href="#data-and-variables" id="toc-data-and-variables" class="nav-link" data-scroll-target="#data-and-variables">Data and Variables</a></li>
+  </ul></li>
+  <li><a href="#explanation-of-correlation-types" id="toc-explanation-of-correlation-types" class="nav-link" data-scroll-target="#explanation-of-correlation-types">Explanation of Correlation Types</a>
+  <ul class="collapse">
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a></li>
+  <li><a href="#partial-correlation" id="toc-partial-correlation" class="nav-link" data-scroll-target="#partial-correlation">Partial Correlation</a></li>
+  <li><a href="#semi-partial-part-correlation" id="toc-semi-partial-part-correlation" class="nav-link" data-scroll-target="#semi-partial-part-correlation">Semi-Partial (Part) Correlation</a></li>
+  </ul></li>
+  <li><a href="#data-import-and-preprocessing" id="toc-data-import-and-preprocessing" class="nav-link" data-scroll-target="#data-import-and-preprocessing">Data Import and Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#computed-correlation-matrix" id="toc-computed-correlation-matrix" class="nav-link" data-scroll-target="#computed-correlation-matrix"><strong>Computed Correlation Matrix</strong></a></li>
+  </ul></li>
+  <li><a href="#compute-partial-and-semi-partial-correlations" id="toc-compute-partial-and-semi-partial-correlations" class="nav-link" data-scroll-target="#compute-partial-and-semi-partial-correlations">Compute Partial and Semi-Partial Correlations</a></li>
+  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis">Correlation Analysis</a></li>
+  <li><a href="#results-and-interpretation" id="toc-results-and-interpretation" class="nav-link" data-scroll-target="#results-and-interpretation"><strong>Results and Interpretation</strong></a>
+  <ul class="collapse">
+  <li><a href="#regular-zero-order-correlation-from-above" id="toc-regular-zero-order-correlation-from-above" class="nav-link" data-scroll-target="#regular-zero-order-correlation-from-above"><strong>Regular (Zero-Order) Correlation</strong> from above</a></li>
+  <li><a href="#partial-correlation-1" id="toc-partial-correlation-1" class="nav-link" data-scroll-target="#partial-correlation-1"><strong>Partial Correlation</strong></a></li>
+  <li><a href="#implication-of-partial-correlation" id="toc-implication-of-partial-correlation" class="nav-link" data-scroll-target="#implication-of-partial-correlation"><strong>Implication of Partial Correlation</strong></a></li>
+  <li><a href="#semi-partial-correlation-controlling-for-meduc-only-in-stress" id="toc-semi-partial-correlation-controlling-for-meduc-only-in-stress" class="nav-link" data-scroll-target="#semi-partial-correlation-controlling-for-meduc-only-in-stress"><strong>Semi-Partial Correlation (Controlling for Meduc Only in STRESS)</strong></a></li>
+  <li><a href="#implication-of-semi-partial-correlation" id="toc-implication-of-semi-partial-correlation" class="nav-link" data-scroll-target="#implication-of-semi-partial-correlation"><strong>Implication of Semi-Partial Correlation</strong></a></li>
+  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><strong>Key Takeaways</strong></a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infant_mortality.html">**Case Studies &amp; Data Applications**</a></li><li class="breadcrumb-item"><a href="./PRAMS_Correlation_Analysis.html"><span class="chapter-title">Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Barboza-Salerno </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 8, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="dataset-description" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-description">Dataset Description</h2>
+<p>The <strong>Pregnancy Risk Assessment Monitoring System (PRAMS) Phase 8</strong> dataset collects data on maternal behaviors and experiences before, during, and after pregnancy. The sample is drawn from birth certificate records across multiple jurisdictions, covering 81% of U.S. live births. I would provide the link to the data but of course it is now gone due to the censorship happening with our government currently, which has substantial implications for the reproductive health of women and other persons regardless of their pregnancy status.</p>
+<p>This analysis uses the data from Kansas. These data were used because I wanted to focus on associations between ACEs, maternal education, parenting stress, and intimate partner violence. Each state administers its own modules, and for some reason Kansas asked these. If you would like to read a summary of the findings from these data, check out <a href="kdhe.ks.gov/ArchiveCenter/ViewFile/Item/2841">this website</a>.</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Understanding how early-life adversity, maternal education, and stress during pregnancy interact is crucial for maternal and child health research. This analysis examines the relationships between <strong>Adverse Childhood Experiences (ACEs)</strong>, <strong>Stress During Pregnancy (STRESS)</strong>, and <strong>Maternal education (Meduc)</strong> using <strong>partial and semi-partial correlation</strong> techniques. The goal is to determine whether maternal education during pregnancy influences stress levels beyond what can be explained by prior adverse experiences (ACEs).</p>
+</section>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
+<ul>
+<li>Does <strong>Maternal Education</strong> predict <strong>Stress During Pregnancy</strong> after controlling for <strong>Adverse Childhood Experiences (ACEs)?</strong></li>
+<li>Does <strong>dverse Childhood Experiences (ACEs)</strong> predict <strong>Stress During Pregnancy</strong> after controlling for <strong>Maternal Education?</strong></li>
+<li>How does the relationship between <strong>ACEs and Stress</strong> change when we control for education in both variables (Partial Correlation) vs.&nbsp;when we remove the effect of education only from Stress (Semi-Partial Correlation)?</li>
+</ul>
+<section id="data-and-variables" class="level3">
+<h3 class="anchored" data-anchor-id="data-and-variables">Data and Variables</h3>
+<p><a href="data/KSPRAMS_SUB_COR.csv">Click here</a> for the dataset used in the analysis.</p>
+<p><a href="slides/MLR/correlate.R">Click here</a> for the R script for which this example is based.</p>
+<p>The table below provides an overview of the key variables used in this analysis:</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'knitr' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>PRAMS Phase 8 Variable Descriptions</caption>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 48%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable_Name</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Recodes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NEED_TRAN</td>
+<td style="text-align: left;">Access to Basic Needs - Affordable Transportation</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NEED_FOOD</td>
+<td style="text-align: left;">Basic Needs - Food Insecurity</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NEED_SHOUS</td>
+<td style="text-align: left;">Basic Needs - Safe Housing</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NEED_CHOUS</td>
+<td style="text-align: left;">Basic Needs - Consistent Housing</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NEED_CROWD</td>
+<td style="text-align: left;">Basic Needs - Crowded Housing</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NEED_UTIL</td>
+<td style="text-align: left;">Basic Needs - Utilities</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NEED_PHON</td>
+<td style="text-align: left;">Basic Needs - Phone Access</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NEED_OTH</td>
+<td style="text-align: left;">Basic Needs - Other Unmet Needs</td>
+<td style="text-align: left;">Material Hardship</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HDP_SAF</td>
+<td style="text-align: left;">Partner Threatened Safety</td>
+<td style="text-align: left;">Intimate Partner Violence</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HDP_ANGR</td>
+<td style="text-align: left;">Partner Anger/Threats</td>
+<td style="text-align: left;">Intimate Partner Violence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HDP_CTRL</td>
+<td style="text-align: left;">Partner Control of Activities</td>
+<td style="text-align: left;">Intimate Partner Violence</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HDP_SEX</td>
+<td style="text-align: left;">Partner Forced Sexual Activity</td>
+<td style="text-align: left;">Intimate Partner Violence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STRS_FM3</td>
+<td style="text-align: left;">Close Family Member Hospitalized</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STRS_DV3</td>
+<td style="text-align: left;">Divorce or Separation</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STRS_MOV</td>
+<td style="text-align: left;">Moved to a New Address</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STRSHOME</td>
+<td style="text-align: left;">Homelessness</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STRS_JOB</td>
+<td style="text-align: left;">Partner Lost Job</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STRS_WRK</td>
+<td style="text-align: left;">Lost Job Despite Wanting to Work</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STRS_PAY</td>
+<td style="text-align: left;">Cut in Work Hours or Pay</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STRS_AWY</td>
+<td style="text-align: left;">Separated from Partner Due to Deployment/Travel</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STRS_ARG</td>
+<td style="text-align: left;">Frequent Arguments with Partner</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STRS_PG</td>
+<td style="text-align: left;">Partner Did Not Want Pregnancy</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STRS_BIL</td>
+<td style="text-align: left;">Problems Paying Rent/Mortgage</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STRS_DRG</td>
+<td style="text-align: left;">Close Person Had a Drug or Alcohol Problem</td>
+<td style="text-align: left;">Social Stressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STRS_DH3</td>
+<td style="text-align: left;">Close Person Died</td>
+<td style="text-align: left;">Adverse Childhood Experiences</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CDHD_DVRC</td>
+<td style="text-align: left;">Parent or Guardian Divorced/Separated</td>
+<td style="text-align: left;">Adverse Childhood Experiences</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CDHD_HOUS</td>
+<td style="text-align: left;">Moved Due to Rent/Mortgage Issues</td>
+<td style="text-align: left;">Adverse Childhood Experiences</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CDHD_FOOD</td>
+<td style="text-align: left;">Went Hungry Due to Food Insecurity</td>
+<td style="text-align: left;">Adverse Childhood Experiences</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CDHD_JAIL</td>
+<td style="text-align: left;">Parent or Guardian Involved in Legal System</td>
+<td style="text-align: left;">Adverse Childhood Experiences</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CDHD_SUBS</td>
+<td style="text-align: left;">Parent or Guardian Had Substance Use Issues</td>
+<td style="text-align: left;">Adverse Childhood Experiences</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CDHD_FSTR</td>
+<td style="text-align: left;">Experience in Foster Care</td>
+<td style="text-align: left;">Adverse Childhood Experiences</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CIG_1TRI</td>
+<td style="text-align: left;">Cigarettes Smoked Daily - 1st Trimester</td>
+<td style="text-align: left;">Cigarettes Smoked Daily - 1st Trimester</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MAT_ED</td>
+<td style="text-align: left;">Maternal Years of Education</td>
+<td style="text-align: left;">Maternal Education</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="explanation-of-correlation-types" class="level2">
+<h2 class="anchored" data-anchor-id="explanation-of-correlation-types">Explanation of Correlation Types</h2>
+<section id="correlation" class="level3">
+<h3 class="anchored" data-anchor-id="correlation">Correlation</h3>
+<p><strong>Definition:</strong> Measures the direct (linear) relationship between two variables without controlling for other influences.</p>
+<ul>
+<li><p><strong>What does it ask?</strong> “How strongly are two variables associated?” “When one variable increases, does the other also increase (positive correlation), decrease (negative correlation), or are the variables not linearly related?”</p></li>
+<li><p><strong>Why does this matter?</strong></p></li>
+</ul>
+<ol type="1">
+<li><p><em>Identifies basic associations</em>: Helps determine whether two variables have a relationship worth further investigation.</p></li>
+<li><p><em>Guides hypothesis development</em>: Provides an initial understanding before applying more complex statistical techniques like partial correlation or regression.</p></li>
+<li><p><em>Does not imply causation</em>: A strong correlation does not mean one variable causes changes in the other; it simply indicates they move together.</p></li>
+</ol>
+<ul>
+<li><p><strong>Example Interpretation:</strong> If ACEs and Stress During Pregnancy have a positive correlation, it suggests that individuals with higher adverse childhood experiences tend to experience more stress during pregnancy. However, other factors (e.g., education, income) could be influencing this relationship.</p></li>
+<li><p>Positive values indicate a direct relationship (when one increases, the other also increases).</p></li>
+<li><p>Negative values indicate an inverse relationship (when one increases, the other decreases).</p></li>
+<li><p>Values closer to 0 suggest a weak or no linear association between the variables. <em>This DOES NOT mean</em> that no relationship exists.</p></li>
+</ul>
+</section>
+<section id="partial-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="partial-correlation">Partial Correlation</h3>
+<p><strong>Definition:</strong> Measures the direct relationship between two variables while controlling for the effect of a third variable.</p>
+<ul>
+<li><p><strong>What does it ask?</strong> “What is the association between <strong>Maternal Education</strong> and <strong>Stress During Pregnancy</strong>, after removing the effect of <strong>ACEs</strong> from both?”<br>
+</p></li>
+<li><p><strong>Why does this matter?</strong> If the correlation remains significant, this suggests that education independently contributes to stress beyond what can be explained by early-life adversity.</p></li>
+</ul>
+</section>
+<section id="semi-partial-part-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="semi-partial-part-correlation">Semi-Partial (Part) Correlation</h3>
+<p><strong>Definition:</strong> Measures the relationship between two variables while controlling for a third variable’s effect on just one of them.</p>
+<ul>
+<li><p><strong>What does it ask?</strong> “What is the association between <strong>Maternal Education</strong> and <strong>Stress During Pregnancy</strong>, after removing the effect of <strong>ACEs</strong> only from <strong>Stress During Pregnancy</strong>?”</p></li>
+<li><p><strong>Why does this matter?</strong> If the relationship weakens, it suggests that ACEs account for some of the variance in how education affects stress. Another way to think about this is that ACEs partly explain how education effects stress. And, yet another ‘connect-the-dots’ moment is that tf the relationship weakens, then ACEs <a href="09-mediation.qmd">mediate</a> some of the observed effects of education on stress</p></li>
+</ul>
+</section>
+</section>
+<section id="data-import-and-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="data-import-and-preprocessing">Data Import and Preprocessing</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ppcor) <span class="co"># For partial and semi-partial correlation</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/KSPRAMS_SUB_COR.csv"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Select relevant columns</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data_subset <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(ACEs, STRESS, Meduc) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check summary statistics</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data_subset)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      ACEs           STRESS           Meduc      
+ Min.   :0.000   Min.   : 0.000   Min.   :1.000  
+ 1st Qu.:0.000   1st Qu.: 0.000   1st Qu.:3.000  
+ Median :0.000   Median : 1.000   Median :4.000  
+ Mean   :1.043   Mean   : 1.892   Mean   :3.916  
+ 3rd Qu.:2.000   3rd Qu.: 3.000   3rd Qu.:5.000  
+ Max.   :6.000   Max.   :14.000   Max.   :5.000  </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please pay particular attention to the handling of missing data in R. There are many ways to handle missing data with significant implications for your analysis. For some good guides to handling missing data in R see <a href="https://stats.oarc.ucla.edu/r/faq/how-does-r-handle-missing-values/">How does R handle missing data</a> from UCLA and <a href="https://libguides.princeton.edu/R-Missingdata">Missing data tutorial in R</a> from Princeton University.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Pearson correlation matrix</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data_subset, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print correlation matrix</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             ACEs     STRESS      Meduc
+ACEs    1.0000000  0.3411429 -0.2399357
+STRESS  0.3411429  1.0000000 -0.2105974
+Meduc  -0.2399357 -0.2105974  1.0000000</code></pre>
+</div>
+</div>
+<section id="computed-correlation-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="computed-correlation-matrix"><strong>Computed Correlation Matrix</strong></h3>
+<p>The table below presents Pearson correlation coefficients between ACEs (Adverse Childhood Experiences), STRESS (Stress During Pregnancy), and Meduc (Maternal Education Level). Each correlation value ranges from -1 to 1.</p>
+<p>Below is the <strong>Pearson correlation matrix</strong> for the selected variables:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>ACEs</th>
+<th>STRESS</th>
+<th>Meduc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ACEs</strong></td>
+<td>1.00</td>
+<td>0.341</td>
+<td>-0.239</td>
+</tr>
+<tr class="even">
+<td><strong>STRESS</strong></td>
+<td>0.341</td>
+<td>1.00</td>
+<td>-0.210</td>
+</tr>
+<tr class="odd">
+<td><strong>Meduc</strong></td>
+<td>-0.239</td>
+<td>-0.210</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interpretation of Results:</strong></p>
+<ol type="1">
+<li><strong>ACEs and STRESS</strong> ( r = 0.341 ):</li>
+</ol>
+<ul>
+<li>There is a <strong>moderate positive correlation</strong> between adverse childhood experiences and stress during pregnancy.</li>
+<li>This suggests that individuals who report more childhood adversity tend to experience higher stress levels during pregnancy.</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>ACEs and Meduc</strong> ( r = -0.239 ):</li>
+</ol>
+<ul>
+<li>There is a <strong>moderate negative correlation</strong> between ACEs and maternal education.</li>
+<li>This indicates that individuals with higher levels of childhood adversity tend to have <strong>lower levels of educational attainment</strong>.</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>STRESS and Meduc</strong> ( r = -0.210 ):</li>
+</ol>
+<ul>
+<li>A <strong>moderate negative correlation</strong> exists between stress and maternal education.</li>
+<li>This suggests that individuals with lower educational attainment tend to experience <strong>higher stress levels</strong> during pregnancy.</li>
+</ul>
+<hr>
+<section id="summary-implications" class="level4">
+<h4 class="anchored" data-anchor-id="summary-implications">Summary &amp; Implications</h4>
+<p>Women with more Adverse Childhood Experiences (ACEs) tend to experience higher levels of stress during pregnancy and have lower education levels. Higher maternal education is linked to lower stress, potentially due to greater access to resources, stability, or support systems. This is important. When interpreting results, it is very important to go back to the original operationalization of the variables so we are on the same page. How is stress defined here? And, what may be some limitations both methodologicall and conceptually? Whereas we know this analysis is not causal, we can begin linking the results to some important policy implications See <span class="citation" data-cites="barboza2020cognitive">Barboza-Salerno (<a href="#ref-barboza2020cognitive" role="doc-biblioref">2020</a>)</span> <a href="static/1-s2.0-S0190740919311533-main.pdf">here</a> .</p>
+</section>
+</section>
+</section>
+<section id="compute-partial-and-semi-partial-correlations" class="level2">
+<h2 class="anchored" data-anchor-id="compute-partial-and-semi-partial-correlations">Compute Partial and Semi-Partial Correlations</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Partial Correlation (controlling for ACEs)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>partial_corr <span class="ot">&lt;-</span> <span class="fu">pcor</span>(data_subset)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Partial Correlation Matrix:"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Partial Correlation Matrix:"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(partial_corr<span class="sc">$</span>estimate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             ACEs     STRESS      Meduc
+ACEs    1.0000000  0.3062254 -0.1829213
+STRESS  0.3062254  1.0000000 -0.1410824
+Meduc  -0.1829213 -0.1410824  1.0000000</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Semi-Partial Correlation (controlling for ACEs only in STRESS)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>semi_partial_corr <span class="ot">&lt;-</span> <span class="fu">spcor</span>(data_subset)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Semi-Partial Correlation Matrix:"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Semi-Partial Correlation Matrix:"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(semi_partial_corr<span class="sc">$</span>estimate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             ACEs     STRESS      Meduc
+ACEs    1.0000000  0.2972802 -0.1719481
+STRESS  0.2993577  1.0000000 -0.1326190
+Meduc  -0.1788189 -0.1369612  1.0000000</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="correlation-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-analysis">Correlation Analysis</h2>
+<p>We computed three types of correlation matrices:</p>
+<ol type="1">
+<li><strong>Zero-Order (Regular) Correlation</strong>: The direct correlation between variables.</li>
+<li><strong>Partial Correlation</strong>: The correlation between two variables while controlling for a third variable (Meduc).</li>
+<li><strong>Semi-Partial Correlation</strong>: The correlation between two variables while controlling for a third variable’s influence on just one of them.</li>
+</ol>
+</section>
+<section id="results-and-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-interpretation"><strong>Results and Interpretation</strong></h2>
+<section id="regular-zero-order-correlation-from-above" class="level3">
+<h3 class="anchored" data-anchor-id="regular-zero-order-correlation-from-above"><strong>Regular (Zero-Order) Correlation</strong> from above</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>ACEs</th>
+<th>STRESS</th>
+<th>Meduc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ACEs</strong></td>
+<td>1.00</td>
+<td>0.341</td>
+<td>-0.239</td>
+</tr>
+<tr class="even">
+<td><strong>STRESS</strong></td>
+<td>0.341</td>
+<td>1.00</td>
+<td>-0.210</td>
+</tr>
+<tr class="odd">
+<td><strong>Meduc</strong></td>
+<td>-0.239</td>
+<td>-0.210</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ACEs and STRESS</strong>: ( r = 0.341 ) → A <strong>moderate positive correlation</strong>, indicating that individuals with higher ACEs tend to experience higher stress levels during pregnancy.</li>
+<li><strong>ACEs and Meduc</strong>: ( r = -0.239 ) → A <strong>negative correlation</strong>, suggesting that individuals with more childhood adversity tend to have lower educational attainment.</li>
+<li><strong>STRESS and Meduc</strong>: ( r = -0.210 ) → A <strong>negative correlation</strong>, implying that lower maternal education is linked to higher stress.</li>
+</ul>
+<hr>
+</section>
+<section id="partial-correlation-1" class="level3">
+<h3 class="anchored" data-anchor-id="partial-correlation-1"><strong>Partial Correlation</strong></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>ACEs</th>
+<th>STRESS</th>
+<th>Meduc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ACEs</strong></td>
+<td>1.00</td>
+<td>0.306</td>
+<td>-0.182</td>
+</tr>
+<tr class="even">
+<td><strong>STRESS</strong></td>
+<td>0.306</td>
+<td>1.00</td>
+<td>-0.141</td>
+</tr>
+<tr class="odd">
+<td><strong>Meduc</strong></td>
+<td>-0.182</td>
+<td>-0.141</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ACEs and STRESS</strong> controlling (partialing out) Meduc: ( r = 0.306 ) → The correlation remains positive but slightly decreases compared to the zero-order correlation ( r = 0.341 ), indicating that while education partly explains the relationship, ACEs still have a significant effect on stress.</li>
+<li><strong>ACEs and Meduc</strong> controlling ACEs: ( r = -0.182 ) → The correlation between ACEs and education weakens slightly after controlling for stress.</li>
+<li><strong>STRESS and Meduc</strong> controlling for STRESS: ( r = -0.141 ) → The relationship between stress and education is weaker when controlling for ACEs.</li>
+</ul>
+</section>
+<section id="implication-of-partial-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="implication-of-partial-correlation"><strong>Implication of Partial Correlation</strong></h3>
+<p>By controlling for maternal education, we isolate the direct effect of <strong>ACEs on stress</strong>. The reduction in correlation values suggests that education contributes to stress, but ACEs continue to have a <strong>strong independent effect</strong>.</p>
+<hr>
+</section>
+<section id="semi-partial-correlation-controlling-for-meduc-only-in-stress" class="level3">
+<h3 class="anchored" data-anchor-id="semi-partial-correlation-controlling-for-meduc-only-in-stress"><strong>Semi-Partial Correlation (Controlling for Meduc Only in STRESS)</strong></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>ACEs</th>
+<th>STRESS</th>
+<th>Meduc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ACEs</strong></td>
+<td>1.00</td>
+<td>0.297</td>
+<td>-0.171</td>
+</tr>
+<tr class="even">
+<td><strong>STRESS</strong></td>
+<td>0.299</td>
+<td>1.00</td>
+<td>-0.132</td>
+</tr>
+<tr class="odd">
+<td><strong>Meduc</strong></td>
+<td>-0.178</td>
+<td>-0.136</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ACEs and STRESS</strong>: ( r = 0.297 ) → A slight decrease in the strength of the relationship compared to the partial correlation (( r = 0.306 )), meaning that education explains a small part of the ACEs-stress relationship. In other words, it’s the correlation between ACEs and the part of STRESS that is independent of Meduc.</li>
+<li><strong>ACEs and Meduc</strong>: ( r = -0.171 ) → The correlation weakens slightly after accounting for stress.</li>
+<li><strong>STRESS and Meduc</strong>: ( r = -0.132 ) → A marginal decrease in the strength of the relationship.</li>
+</ul>
+</section>
+<section id="implication-of-semi-partial-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="implication-of-semi-partial-correlation"><strong>Implication of Semi-Partial Correlation</strong></h3>
+<p>The semi-partial correlations examine how <strong>each independent variable uniquely contributes</strong> to the dependent variable while removing the effect of the control variable <strong>only from the dependent variable</strong>. Since the values remain similar to the partial correlations, this suggests that <strong>maternal education influences stress</strong>, but ACEs still have an independent impact.</p>
+<hr>
+</section>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways"><strong>Key Takeaways</strong></h2>
+<ol type="1">
+<li>ACEs are a strong predictor of stress during pregnancy, even after controlling for maternal education.</li>
+<li>Maternal education partially explains the relationship between ACEs and stress, but ACEs continue to have an independent effect.</li>
+<li>Higher maternal education is associated with lower stress, but its effect is weaker when ACEs are accounted for.</li>
+<li>The semi-partial correlation results confirm that maternal education plays a role, but ACEs have an independent impact on stress, highlighting the importance of addressing childhood adversity in maternal mental health interventions.</li>
+</ol>
+<p>These results suggest that <strong>public health interventions should target both early-life adversity (ACEs) and educational opportunities</strong> to reduce stress during pregnancy, which may have long-term effects on maternal and child health outcomes.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This analysis demonstrates how <strong>Maternal Education</strong>, <strong>Stress During Pregnancy</strong>, and <strong>ACEs</strong> interact within a structured correlation framework. Using <strong>partial and semi-partial correlations</strong>, we disentangle the direct and indirect effects of early-life adversity on maternal stress, providing insights for interventions aimed at reducing stress-related health disparities. If ACEs remains a significant predictor of stress after controlling for education, interventions targeting early life adversity may help alleviate psychosocial stress during pregnancy, improving both maternal and child health outcomes.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-barboza2020cognitive" class="csl-entry" role="listitem">
+Barboza-Salerno, G. E. (2020). Cognitive readiness to parent, stability and change in postpartum parenting stress and social-emotional problems in early childhood: A second order growth curve model. <em>Children and Youth Services Review</em>, <em>113</em>, 104958.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./infant_mortality.html" class="pagination-link" aria-label="Infant Mortality Example">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Infant Mortality Example</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cohensd.html" class="pagination-link" aria-label="Analysis of Area Deprivation Disparities Using Cohen's D">
+        <span class="nav-page-text"><span class="chapter-title">Analysis of Area Deprivation Disparities Using Cohen’s D</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
