@@ -1,6 +1,6 @@
 ---
 title: 'Escape Room: Historic Redlining Scores'
-subtitle: Discovering and Analyzing Key Datasets
+subtitle: Discovering and Analyzing Data from the Internet
 runtime: shiny_prerendered
 output: learnr::tutorial
 ---

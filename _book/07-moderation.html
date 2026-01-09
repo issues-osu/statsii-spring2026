@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mediation, Moderation, and Conditional Process Models (Part 2) – Statistics for Social Work</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./07a-moderation.html" rel="next">
+<link href="./06-mediation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e36a2370e89736b0049a41eecb653fc1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-logistic-regression.html"><strong>Advanced Regression Techniques</strong></a></li><li class="breadcrumb-item"><a href="./07-moderation.html"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 2)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Statistics for Social Work</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Statistics for Social Work</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Course Overview</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syllabus: Statistics for Social Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignments and Due Dates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to the Course</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Regression Mechanics</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-simple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to Simple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-multiple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Multiple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-effect-sizes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Effect Sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-assumptions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regression Assumptions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Advanced Regression Techniques</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-logistic-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Logistic Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-mediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 1)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-moderation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 2)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07a-moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 3)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Measurement &amp; Factor Analysis</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-efa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa_R.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EFA in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-lca.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LCA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Applications</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-final-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Final Project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/inclass.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">In Class Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/medmod/mediationR.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Simple Mediation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Logistic Regression Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/moderation/moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Moderation Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Case Studies &amp; Data Applications</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infant_mortality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Infant Mortality Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PRAMS_Correlation_Analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cohensd.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analysis of Area Deprivation Disparities Using Cohen’s D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./admissions_R_ex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Admissions Data Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nscaw.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">NSCAW I In-Class Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Additional Resources</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Required Course Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Assignments</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ass1writeup.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 1 Write-up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assign2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Assignment 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Final Stats II Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#week-11-march-24-2026" id="toc-week-11-march-24-2026" class="nav-link active" data-scroll-target="#week-11-march-24-2026">Week 11: March 24, 2026</a>
+  <ul class="collapse">
+  <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading">Reading</a></li>
+  <li><a href="#introduction-to-the-topic" id="toc-introduction-to-the-topic" class="nav-link" data-scroll-target="#introduction-to-the-topic">Introduction to the Topic</a></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts:</a></li>
+  <li><a href="#relevance" id="toc-relevance" class="nav-link" data-scroll-target="#relevance">Relevance:</a></li>
+  <li><a href="#why-this-is-important" id="toc-why-this-is-important" class="nav-link" data-scroll-target="#why-this-is-important">Why This Is Important:</a></li>
+  <li><a href="#how-this-ties-into-the-overall-course" id="toc-how-this-ties-into-the-overall-course" class="nav-link" data-scroll-target="#how-this-ties-into-the-overall-course">How This Ties Into the Overall Course:</a>
+  <ul class="collapse">
+  <li><a href="#in-class-files-and-data-sets" id="toc-in-class-files-and-data-sets" class="nav-link" data-scroll-target="#in-class-files-and-data-sets">In-Class Files and Data Sets</a></li>
+  </ul></li>
+  <li><a href="#lab-files" id="toc-lab-files" class="nav-link" data-scroll-target="#lab-files">Lab Files</a>
+  <ul class="collapse">
+  <li><a href="#lecture-notes-class-files" id="toc-lecture-notes-class-files" class="nav-link" data-scroll-target="#lecture-notes-class-files">Lecture Notes &amp; Class Files</a></li>
+  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-logistic-regression.html"><strong>Advanced Regression Techniques</strong></a></li><li class="breadcrumb-item"><a href="./07-moderation.html"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 2)</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 2)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="week-11-march-24-2026" class="level1">
+<h1>Week 11: March 24, 2026</h1>
+<section id="reading" class="level2">
+<h2 class="anchored" data-anchor-id="reading">Reading</h2>
+<ul>
+<li><p>Hayes, Andrew. (2018). <a href="https://github.com/bigdataforsocialjustice/SWK8408/blob/master/Mediation%2C%20Moderation%20and%20Conditional%20Process%20Models.pdf">Introduction to Mediation, Moderation, and Conditional Process Analysis</a> Chapters 7 - 10.</p></li>
+<li><p>I have used these methods on several occasions, check out <span class="citation" data-cites="barboza-salernoAssociationsEarlyChild2024a">Barboza-Salerno &amp; Meshelemiah (<a href="#ref-barboza-salernoAssociationsEarlyChild2024a" role="doc-biblioref">2024</a>)</span> and <span class="citation" data-cites="elise_barboza_child_2021">Elise Barboza &amp; Siller (<a href="#ref-elise_barboza_child_2021" role="doc-biblioref">2021</a>)</span>.</p>
+<ul>
+<li><p>Barboza-Salerno, G. E., &amp; Meshelemiah, J. C. (2024). Associations between early child adversity and lifetime suicide attempts among gender diverse individuals: A moderated mediation. Child Abuse &amp; Neglect, 149, 106705.</p></li>
+<li><p>Barboza, G., &amp; Siller, L. A. (2021). Child Maltreatment, School Bonds, and Adult Violence: A Serial Mediation Model. Journal of Interpersonal Violence, 36(11–12), NP5839–NP5873. https://doi.org/10.1177/0886260518805763</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="introduction-to-the-topic" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-the-topic">Introduction to the Topic</h2>
+<p>This week, we explore <strong>moderation analysis</strong>, a statistical approach used to understand how the relationship between two variables changes depending on a third variable, known as the moderator. Unlike simple regression, where we assess a direct relationship between an independent and dependent variable, moderation analysis allows us to examine whether this relationship varies in strength or direction based on different levels of another variable.</p>
+<p>Moderation is particularly useful in social sciences, public health, and policy research, where the effect of an intervention or exposure may differ depending on contextual factors such as age, gender, socioeconomic status, or environmental conditions. For example, in public health studies, we might investigate whether the relationship between neighborhood poverty and child maltreatment rates is moderated by community resources or green space availability.</p>
+<p>Throughout this week, we will discuss how to interpret interaction effects, visualize moderation using interaction plots, and apply these concepts using statistical software. By the end of the module, you will be able to identify when moderation is appropriate, test for moderation effects, and communicate findings effectively in research and policy contexts</p>
+</section>
+<section id="key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts:</h2>
+<ul>
+<li><strong>Definition</strong>: Moderation occurs when the strength or direction of the relationship between an independent variable <em>X</em> and a dependent variable <em>Y</em> depends on a third variable <em>W</em>, called the moderator.</li>
+<li><strong>Interaction/Effect moderation</strong>: The key indicator of moderation is a statistically significant interaction term, <em>X</em> * <em>W</em>, in a regression model, suggesting that the effect of <em>X</em> on <em>Y</em> varies depending on <em>W</em>.</li>
+<li><strong>Visualization</strong>: Simple slopes analysis and interaction plots help visualize and interpret moderation effects.</li>
+<li><strong>Probing Interactions</strong>: This is an extremely useful technique in which you can detect statistically significant regions of the interaction. Super exciting!</li>
+<li><strong>Distinguishing Moderation from Mediation</strong>:
+<ul>
+<li>Moderation affects the strength of the relationship between <em>X</em> and <em>Y</em>.</li>
+<li>Mediation explains the mechanism through which <em>X</em> affects <em>Y</em> via an intermediate variable.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="relevance" class="level2">
+<h2 class="anchored" data-anchor-id="relevance">Relevance:</h2>
+<ul>
+<li>Students will learn how to use PROCESS in R and SPSS to test effect moderation to examine when or for whom an effect occurs (e.g., does the effect of stress on mental health differ based on social support?)</li>
+<li>Students will begin to understand what conditional (i.e., moderation) indirect effects (i.e., mediation) are and how to use them to test innovative hypotheses in social work (i.e., moderated mediation).</li>
+</ul>
+<hr>
+</section>
+<section id="why-this-is-important" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-is-important">Why This Is Important:</h2>
+<ul>
+<li><a href="./06-mediation.html">Mediation analysis</a>, as we saw last week, allows researchers to move beyond simple relationships to uncover <em>how</em> and <em>why</em> effects occur.</li>
+<li>Understanding mediation is critical for testing theoretical models in fields like social work, psychology, sociology, and public health.</li>
+</ul>
+<hr>
+</section>
+<section id="how-this-ties-into-the-overall-course" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-ties-into-the-overall-course">How This Ties Into the Overall Course:</h2>
+<ul>
+<li>Builds upon previous topics, such as <a href="./03-multiple-regression.html">regression</a> and <a href="./04-effect-sizes.html">effect sizes</a>, by extending these tools to explore conditional effects.</li>
+<li>Prepares students for advanced concepts like moderated mediation and structural equation modeling (SEM), where interaction terms can be useful.</li>
+</ul>
+<p>By the end of this week, students will be able to conduct moderation analyses, interpret conditional effects, and evaluate the significance of effect moderation using SPSS and R.</p>
+<section id="in-class-files-and-data-sets" class="level3">
+<h3 class="anchored" data-anchor-id="in-class-files-and-data-sets">In-Class Files and Data Sets</h3>
+<p><strong>Data sets:</strong> We will use datasets from Hayes on <a href="slides/medmod2/estress.sav">workplace related stress: estress.sav</a> and <a href="slides/medmod2/pmi.sav">presumed media influence on the intention to purchase: pmi.sav</a>.</p>
+<p><strong>Mediation Extensions:</strong> First, are going to extend the simple mediation model we learned last time by incorporating multiple mediators. I have saved the SPSS output for several different examples:</p>
+<ul>
+<li><a href="slides/medmod2/Simple Mediation Example 1.spv">Example 1</a>: Dichotomous Predictor, Simple Mediation, <a href="slides/medmod2/pmi.sav">The PMI study</a></li>
+<li><a href="slides/medmod2/Simple Mediation Example 2.spv">Example 2</a>: Continuous Predictor, <a href="slides/medmod2/estress.sav">Economic Stress Among Small Business Owners</a></li>
+<li><a href="slides/medmod2/Simple Mediation Example 3 with covariates.spv">Example 3</a> Continuous Predictor with controls, Economic Stress Among Small Business Owners (same data set as above)</li>
+</ul>
+<p>Next, we extend the simple case using examples representing <a href="slides/medmod2/Parallel Mediation Example 4.spv">parallel</a>, <a href="slides/medmod2/Serial Mediation Example 5.spv">serial mediation</a> and <a href="slides/medmod2/Serial Mediation Example 6 with contrasts.spv">serial mediation with contrasts</a>.</p>
+<p><strong>Moderation:</strong> Finally, we end today with an example of how to implement moderation. We will use these files:</p>
+<ul>
+<li>Example 1: Dichotomous Moderation Effect, <a href="slides/medmod2/sexmin_pts_delinq.sav">Sexual Minority</a>. I saved the <a href="slides/medmod2/Simple Moderation Example 7.spv">SPSS output</a></li>
+<li><a href="slides/medmod2/pts vex mod mediation.sav">Example 2</a>: Continuous Moderation Effect, <a href="slides/medmod2/pts vex mod mediation.sav">NSCAW</a></li>
+</ul>
+</section>
+</section>
+<section id="lab-files" class="level2">
+<h2 class="anchored" data-anchor-id="lab-files">Lab Files</h2>
+<p><strong>Mediation:</strong> You are going to do this lab using the <a href="slides/medmod2/pts vex mod mediation.sav">NSCAW data</a> to examine whether (1) children investigated for abuse or neglect who have witnessed severe violence at Wave 1 (EV_W1) are more likely to engage in externalizing behavior at Wave 3 (bcext3); and (2) post-traumatic stress at Wave 1 (tra1) is the mechanism violence exposure is linked to externalizing behavior.</p>
+<p><strong>Moderation:</strong> I have created some Excel output so you can learn how to take the output and visualize the results. One file <a href="slides/medmod2/plotting effects moderation age pts and delinq.xlsx">plots the effect moderation</a> for age on the association between post-traumatic stress and delinquent behaviors using a subset of the NSCAW. Now, you can use <a href="slides/medmod2/plotting effects moderation.xlsx">this file</a> to practice making a similar chart using excel to answer the question: <em>What is the effect moderation of sexual minority status on the association between post-traumatic stress and delinquent behavior?</em></p>
+<section id="lecture-notes-class-files" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-notes-class-files">Lecture Notes &amp; Class Files</h3>
+<ul>
+<li>Download today’s slides <a href="slides/medmod2/mediation_moderation.pptx">here</a></li>
+<li>Check out my annotated Word document interpreting parallel mediation (with sample write-up) <a href="slides/medmod2/Annotated Output of Parallel Mediation Analysis.docx">here</a></li>
+</ul>
+</section>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>There are a number of mediation, moderation, and mediated moderation models that you can use to test various hypotheses. Once you have a basic familairity of the models they become intuitive. Model templates are located <a href="slides/medmod2/process_models.pdf">here</a>.</p>
+<hr>
+</section>
+<section id="additional-notes" class="level2">
+<h2 class="anchored" data-anchor-id="additional-notes">Additional Notes</h2>
+<p>Stay calm and remove interactions with toxic people.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-barboza-salernoAssociationsEarlyChild2024a" class="csl-entry" role="listitem">
+Barboza-Salerno, G. E., &amp; Meshelemiah, J. C. (2024). Associations between early child adversity and lifetime suicide attempts among gender diverse individuals: A moderated mediation. <em>Child Abuse &amp; Neglect</em>, <em>149</em>, 106705.
+</div>
+<div id="ref-elise_barboza_child_2021" class="csl-entry" role="listitem">
+Elise Barboza, G., &amp; Siller, L. A. (2021). Child <span>Maltreatment</span>, <span>School Bonds</span>, and <span>Adult Violence</span>: <span>A Serial Mediation Model</span>. <em>Journal of Interpersonal Violence</em>, <em>36</em>(11-12), NP5839–NP5873. <a href="https://doi.org/10.1177/0886260518805763">https://doi.org/10.1177/0886260518805763</a><div class="csl-block">Physically abused youth are vulnerable to experiencing difficulties across multiple domains of school functioning. Most of the literature examining the relationship between child physical abuse (CPA) and adult violence has focused narrowly on academic outcomes rather than taking a broader view that explores the processes undergirding school engagement and connections. The present study adopted Connell’s model of school engagement, connectedness and outcomes within a social bond framework to examine (a) the link between CPA and school social bonds, (b) the link between CPA and adult violence persistence, and (c) the mediational (parallel, serial) effects of school bonds (engagement, connection, and achievement) on violence perpetration in adulthood. Consistent with previous research, results indicated that children who experience physical abuse have poorer academic performance, which, in turn, is related to future violent trajectories. We further found that the relationship between CPA and violence persistence is mediated by a process of bonding to school that begins with being actively engaged in school activities and ends with higher levels of academic achievement. In particular, some of the <span>“school achievement”</span> effect found in previous research operates through behavioral and emotional manifestations and may be partly explained through physically abused children’s lessened ability to be engaged with and connected to school activities. We conclude with a discussion of the policy implications stemming from our findings.</div>
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-mediation.html" class="pagination-link" aria-label="Mediation, Moderation, and Conditional Process Models (Part 1)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 1)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./07a-moderation.html" class="pagination-link" aria-label="Mediation, Moderation, and Conditional Process Models (Part 3)">
+        <span class="nav-page-text"><span class="chapter-title">Mediation, Moderation, and Conditional Process Models (Part 3)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
