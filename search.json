@@ -1754,8 +1754,8 @@
     "section": "",
     "text": "Instructions\nLength: 2–3 double-spaced pages (not including tables, figures, or references)\nRequired Outputs: Two tables and one figure, the following analysis detailed below\nDue Date: Monday, April 28, 2025\nSubmission: Email to barboza-salerno.1@osu.edu\nSoftware: R, SPSS, JASP, or a combination.\nExample:\nSoftware Used: R (lavaan, mclust, psych), SPSS (PROCESS macro v4.2), JASP\nFor your final 2–3 page paper, you will conduct a statistical analysis using one of the datasets we’ve worked with in class (e.g., the Pregnancy Risk Assessment Monitoring System (PRAMS), Census/American Community Survey, the Well-Being of LGB Populations, etc.) OR you may use your own dataset with prior approval. This project gives you the opportunity to demonstrate mastery of one or more multivariate statistical techniques. You must select one of the following:\nYou must include two well-formatted tables and one figure illustrating your findings.",
     "crumbs": [
-      "**Assignments**",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "Assignments",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1765,8 +1765,8 @@
     "section": "",
     "text": "Multiple linear regression\nLogistic regression\nModeration\nMediation\nConditional process modeling\nFactor analysis\nLatent class analysis (LCA)",
     "crumbs": [
-      "**Assignments**",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "Assignments",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1776,8 +1776,8 @@
     "section": "1. Dataset and Variables (1 paragraph)",
     "text": "1. Dataset and Variables (1 paragraph)\nDescribe the dataset and provide context—what is it, where did it come from, what does it measure, what years were the data collected? Be specific about your sample size, time frame, unit of analysis, and any relevant information. Then clearly define all variables used in your analysis, including your outcome, predictors, moderators, mediators, latent constructs, or class indicators. If you collapsed, transformed, or recoded any variables, explain why. Specify the research question, and the hypotheses you are testing.",
     "crumbs": [
-      "**Assignments**",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "Assignments",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1787,8 +1787,8 @@
     "section": "2. Statistical Model and Justification (2–3 paragraphs)",
     "text": "2. Statistical Model and Justification (2–3 paragraphs)\nSpecify which statistical technique you used and why it fits your research question and data. If you selected a model based on the nature of your outcome (e.g., binary, continuous, or latent), explain this. Provide a conceptual diagram of your model. Also address the assumptions of your model, how you evaluated them, and any diagnostic checks performed.",
     "crumbs": [
-      "**Assignments**",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "Assignments",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1798,8 +1798,8 @@
     "section": "3. Results (2–4 paragraphs)",
     "text": "3. Results (2–4 paragraphs)\nPresent your model results in a narrative that clearly communicates the key findings. Include:\n\nTable 1: Descriptive statistics (e.g., means, SDs, frequencies)\nTable 2: Model summary (e.g., regression table, factor loadings, odds ratios, or class-specific probabilities)\nFigure 1: A plot showing model results (e.g., interaction graph, path diagram, factor analysis diagram, etc.)",
     "crumbs": [
-      "**Assignments**",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "Assignments",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1809,8 +1809,8 @@
     "section": "4. Interpretation and Assumptions (1 paragraph)",
     "text": "4. Interpretation and Assumptions (1 paragraph)\nExplain what your results mean in theoretical or applied terms. Reflect on effect sizes, statistical significance, and implications. Discuss how assumptions were met or violated, and whether transformations or adjustments were necessary.",
     "crumbs": [
-      "**Assignments**",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "Assignments",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1820,129 +1820,129 @@
     "section": "Model-Specific Guidelines",
     "text": "Model-Specific Guidelines\n\nMultiple Linear Regression\nUse when your outcome is continuous. Justify your inclusion of predictors and check assumptions including linearity, homoscedasticity, and multicollinearity. Report R², adjusted R², and residual diagnostics.\n\n\nLogistic Regression\nUse when the outcome is binary. Report odds ratios, confidence intervals, and predicted probabilities. Describe how you assessed model fit (i.e., sensitivity, specificity).\n\n\nModeration\nUse when you suspect the effect of a predictor on the outcome varies by another variable. Report interaction terms and simple effects (non-interaction terms). Use plots to illustrate interaction effects like we created using Excel, or in R.\n\n\nMediation\nUse to test indirect effects. Clearly define paths. Use bootstrapped CIs for indirect effects and report estimates.\n\n\nConditional Process Modeling\nUse when a mediator and moderator interact. Identify moderated paths, report conditional indirect effects, and include a conceptual diagram.\n\n\nFactor Analysis\nUse when identifying latent dimensions. Report KMO, eigenvalues, scree plot, factor loadings, variance explained, rotation method, and reliability.\n\n\nLatent Class Analysis (LCA)\nUse to uncover latent subgroups. Report number of classes tested, AIC, BIC, entropy, conditional probabilities, and class prevalence.",
     "crumbs": [
-      "**Assignments**",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "Assignments",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html",
     "href": "Monitoring-the-future-example.html",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "",
     "text": "Overview\nThis analysis examines the relationship between high school football participation and concussion history using data from the Monitoring the Future (MTF) 2023 survey, a nationally representative study of adolescent behaviors and attitudes. Specifically, we investigate whether students who played competitive football in the past 12 months had higher rates of concussion diagnosis compared to their non-football-playing peers.",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#neighborhood-school-safety",
     "href": "Monitoring-the-future-example.html#neighborhood-school-safety",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Neighborhood & School Safety",
     "text": "Neighborhood & School Safety\nV8477 - Drug activity in neighborhood\n“During the past 12 months, how often have you seen people selling illegal drugs in your neighborhood?”\n\n1 = Never\n2 = A few times a year\n3 = Once or twice a month\n4 = At least once a week\n5 = Almost every day\n\nV7535 - Feeling unsafe traveling to/from school\n“How often do you feel unsafe going to or from school?”\n\n1 = Never\n2 = Rarely\n3 = Some days\n4 = Most days\n5 = Every day\n\nV7536 - School absence due to safety concerns\n“During the last 4 weeks, how many days did you not go to school because you felt unsafe at school or on your way to or from school?”\n\n1 = 0 days\n2 = 1 day\n3 = 2 or 3 days\n4 = 4 or more days",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#behavioral-indicators",
     "href": "Monitoring-the-future-example.html#behavioral-indicators",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Behavioral Indicators",
     "text": "Behavioral Indicators\nV8517 - Group fight participation\n“During the last 12 months, how often have you taken part in a group fight where your friends were against another group?”\n\n1 = Not at all\n2 = Once\n3 = Twice\n4 = 3 or 4 times\n5 = 5 or more times\n\nV8516 - Serious fights at school/work\n“During the last 12 months, how often have you gotten into a serious fight in school or at work?”\n\n1 = Not at all\n2 = Once\n3 = Twice\n4 = 3 or 4 times\n5 = 5 or more times",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#key-variables-of-interest",
     "href": "Monitoring-the-future-example.html#key-variables-of-interest",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Key Variables of Interest",
     "text": "Key Variables of Interest\nV7389 - Football participation\n“In which competitive sports (if any) did you participate during the last 12 months?”\n\n0 = Not marked (did not play football)\n1 = Marked (played football)\n\nV7639 - Concussion history (recoded)\nOriginal variable recoded into binary format:\n\n0 = Never had a concussion\n1 = Ever had a concussion (once or multiple times)",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#academic-demographic-variables",
     "href": "Monitoring-the-future-example.html#academic-demographic-variables",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Academic & Demographic Variables",
     "text": "Academic & Demographic Variables\nV7221 - Average grades this school year\n\n9 = A (93–100)\n8 = A– (90–92)\n7 = B+ (87–89)\n6 = B (83–86)\n5 = B– (80–82)\n4 = C+ (77–79)\n3 = C (73–76)\n2 = C– (70–72)\n1 = D (69 or below)\n\nV1252 - Age classification\n\n1 = Younger than 16\n2 = 16 years of age or older\n\nV7202 - Sex\n\n1 = Male\n2 = Female\n3 = Other\n4 = Prefer not to answer\n\nV1070 - Race/ethnicity (recoded)\n\n1 = Black or African American\n2 = White (Caucasian)\n3 = Hispanic\nOther/multiple responses coded as missing\n\nV7215 - Father’s education level\nV7216 - Mother’s education level\n\n1 = Grade school or less\n2 = Some high school\n3 = Completed high school\n4 = Some college\n5 = Completed college\n6 = Graduate or professional school\n7 = Don’t know / Does not apply",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#creating-the-concussion-variable",
     "href": "Monitoring-the-future-example.html#creating-the-concussion-variable",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Creating the Concussion Variable",
     "text": "Creating the Concussion Variable\nThe original concussion variable (V7639) was recoded into a binary indicator:\n\n\nCode\n# Recode concussion as binary: 0 = No, 1 = Ever had a concussion\ndf$Concussion_Ever &lt;- ifelse(\n  df$V7639 == 1, 0,           # Code 1 = Never → 0\n  ifelse(df$V7639 %in% c(2,3), 1, NA)  # Codes 2,3 = Ever → 1\n)\n\n# Verify recoding\ntable(df$Concussion_Ever, useNA = \"ifany\")\n\n\n\n    0     1  &lt;NA&gt; \n 4471  1112 11768",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#variable-distributions",
     "href": "Monitoring-the-future-example.html#variable-distributions",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Variable Distributions",
     "text": "Variable Distributions\n\n\nFrequency tables for all variables\n# Generate frequency tables for all variables\nfor (v in names(df)) {\n  cat(\"\\n-----------------------------------------\\n\")\n  cat(\"Variable:\", v, \"\\n\")\n  print(table(df[[v]], useNA = \"ifany\"))\n}",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#key-variables-football-and-concussion",
     "href": "Monitoring-the-future-example.html#key-variables-football-and-concussion",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Key Variables: Football and Concussion",
     "text": "Key Variables: Football and Concussion\n\n\nCode\n# Football participation\ncat(\"Football Participation (V7389):\\n\")\n\n\nFootball Participation (V7389):\n\n\nCode\ntable(df$V7389, useNA = \"ifany\")\n\n\n\n    0     1  &lt;NA&gt; \n 4559   961 11831 \n\n\nCode\n# Concussion history\ncat(\"\\n\\nConcussion History (Recoded):\\n\")\n\n\n\n\nConcussion History (Recoded):\n\n\nCode\ntable(df$Concussion_Ever, useNA = \"ifany\")\n\n\n\n    0     1  &lt;NA&gt; \n 4471  1112 11768",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#cross-tabulation",
     "href": "Monitoring-the-future-example.html#cross-tabulation",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Cross-Tabulation",
     "text": "Cross-Tabulation\n\n\nCode\n# Create cross-tabulation\ntab &lt;- table(df$V7389, df$Concussion_Ever)\n\n# Display raw counts\ncat(\"Cross-tabulation (Raw Counts):\\n\")\n\n\nCross-tabulation (Raw Counts):\n\n\nCode\ncat(\"Rows: Football Participation | Columns: Concussion Ever\\n\\n\")\n\n\nRows: Football Participation | Columns: Concussion Ever\n\n\nCode\ntab\n\n\n   \n       0    1\n  0 3733  818\n  1  673  285\n\n\nCode\n# Display percentages by row (% within each football participation group)\ncat(\"\\n\\nRow Percentages (% within football participation status):\\n\")\n\n\n\n\nRow Percentages (% within football participation status):\n\n\nCode\nround(prop.table(tab, margin = 1) * 100, 2)\n\n\n   \n        0     1\n  0 82.03 17.97\n  1 70.25 29.75\n\n\n\n\n\n\n\n\nImportantKey Findings from Cross-Tabulation\n\n\n\nAmong students who did NOT play football:\n818 out of 4,551 (18.0%) reported ever having a concussion\nAmong students who DID play football:\n285 out of 958 (29.7%) reported ever having a concussion\nFootball participants had a 11.7 percentage point higher rate of concussion history.",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#statistical-test-chi-square-analysis",
     "href": "Monitoring-the-future-example.html#statistical-test-chi-square-analysis",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Statistical Test: Chi-Square Analysis",
     "text": "Statistical Test: Chi-Square Analysis\n\n\nCode\n# Perform chi-square test of independence\nchi_result &lt;- chisq.test(tab)\nchi_result\n\n\n\n    Pearson's Chi-squared test with Yates' continuity correction\n\ndata:  tab\nX-squared = 67.796, df = 1, p-value &lt; 2.2e-16\n\n\n\n\n\n\n\n\nNoteStatistical Significance\n\n\n\nThe chi-square test yielded a highly significant result (p &lt; 0.001), indicating that football participation and concussion history are not independent—there is a statistically significant association between playing football and having experienced a concussion.",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
     "objectID": "Monitoring-the-future-example.html#odds-ratio-calculation",
     "href": "Monitoring-the-future-example.html#odds-ratio-calculation",
-    "title": "Monitoring the Future",
+    "title": "Lab 1: Monitoring the Future",
     "section": "Odds Ratio Calculation",
     "text": "Odds Ratio Calculation\n\n\nCode\n# Calculate odds ratio manually\nodds_football &lt;- tab[2,2] / tab[2,1]      # 285/673\nodds_no_football &lt;- tab[1,2] / tab[1,1]   # 818/3733\n\nodds_ratio &lt;- odds_football / odds_no_football\n\ncat(\"Odds of concussion among football players:\", round(odds_football, 3), \"\\n\")\n\n\nOdds of concussion among football players: 0.423 \n\n\nCode\ncat(\"Odds of concussion among non-football players:\", round(odds_no_football, 3), \"\\n\")\n\n\nOdds of concussion among non-football players: 0.219 \n\n\nCode\ncat(\"\\nOdds Ratio:\", round(odds_ratio, 2), \"\\n\")\n\n\n\nOdds Ratio: 1.93 \n\n\n\n\n\n\n\n\nWarningInterpretation of Odds Ratio\n\n\n\nThe odds ratio of 1.93 indicates that students who reported playing football had approximately 1.9 times the odds of having been diagnosed with a concussion compared to students who did not play football.\nIn simpler terms: The odds of concussion were nearly twice as high among football participants.",
     "crumbs": [
-      "**Case Studies & Data Applications**",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Monitoring the Future</span>"
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Lab 1: Monitoring the Future</span>"
     ]
   },
   {
@@ -1952,8 +1952,8 @@
     "section": "",
     "text": "Research Question\nDo students who feel unsafe going to/from school have higher rates of school absence due to safety concerns? Research has consistently documented that students’ perceptions of safety during their commute to and from school are influenced by exposure to violence and crime in their neighborhoods. Studies have found that children often feel unsafe during morning travel to school, with nearly a quarter of students experiencing a reduction in perceived safety immediately upon leaving their homes (Wiebe et al., 2013). Both children and parents report concerns about routes through high-crime neighborhoods, which can impact students’ willingness to travel to school (Meyer & Astor, 2002). Middle school students’ safety perceptions are shaped by environmental factors such as the presence of adults, traveling in groups, proximity to schools, and daylight conditions (Sweeney & Von Hagen, 2015). Recent spatial analyses have revealed the extent of gun violence exposure along walkable routes to schools, with some schools having shootings within a 5-minute walking distance and students potentially encountering multiple incidents during their commute (G. Barboza-Salerno et al., 2024; G. E. Barboza-Salerno & Meshelemiah, 2023). These findings underscore the importance of understanding how feelings of unsafety translate into actual behavioral responses such as school avoidance.",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -1961,10 +1961,10 @@
     "href": "MTF-solution.html#recode-v7535-feeling-unsafe",
     "title": "School Safety and Attendance Analysis - SOLUTION",
     "section": "Recode V7535 (Feeling Unsafe)",
-    "text": "Recode V7535 (Feeling Unsafe)\n\n\nCode\n# Original variable V7535: 1=Never, 2=Rarely, 3=Some days, 4=Most days, 5=Every day\n# Goal: Create binary variable where 0=Never, 1=Ever feel unsafe\n\ndf$Feel_Unsafe &lt;- ifelse(\n  df$V7535 == 1,                      # Condition: if V7535 equals 1\n  0,                                   # Then: assign 0 (Never feel unsafe)\n  ifelse(df$V7535 %in% c(2,3,4,5),    # Else if: V7535 is 2, 3, 4, or 5\n         1,                            # Then: assign 1 (Ever feel unsafe)\n         NA)                           # Else: assign NA (missing)\n)\n\n# Verify the recoding\ncat(\"Original V7535 Distribution:\\n\")\n\n\nOriginal V7535 Distribution:\n\n\nCode\ntable(df$V7535, useNA = \"ifany\")\n\n\n\n    1     2     3     4     5  &lt;NA&gt; \n 3301  1591   504   113    89 11753 \n\n\nCode\ncat(\"\\n\\nRecoded Feel_Unsafe Distribution:\\n\")\n\n\n\n\nRecoded Feel_Unsafe Distribution:\n\n\nCode\ntable(df$Feel_Unsafe, useNA = \"ifany\")\n\n\n\n    0     1  &lt;NA&gt; \n 3301  2297 11753",
+    "text": "Recode V7535 (Feeling Unsafe)\n\n# Original variable V7535: 1=Never, 2=Rarely, 3=Some days, 4=Most days, 5=Every day\n# Goal: Create binary variable where 0=Never, 1=Ever feel unsafe\n\ndf$Feel_Unsafe &lt;- ifelse(\n  df$V7535 == 1,                      # Condition: if V7535 equals 1\n  0,                                   # Then: assign 0 (Never feel unsafe)\n  ifelse(df$V7535 %in% c(2,3,4,5),    # Else if: V7535 is 2, 3, 4, or 5\n         1,                            # Then: assign 1 (Ever feel unsafe)\n         NA)                           # Else: assign NA (missing)\n)\n\n# Verify the recoding\ncat(\"Original V7535 Distribution:\\n\")\n\nOriginal V7535 Distribution:\n\ntable(df$V7535, useNA = \"ifany\")\n\n\n    1     2     3     4     5  &lt;NA&gt; \n 3301  1591   504   113    89 11753 \n\ncat(\"\\n\\nRecoded Feel_Unsafe Distribution:\\n\")\n\n\n\nRecoded Feel_Unsafe Distribution:\n\ntable(df$Feel_Unsafe, useNA = \"ifany\")\n\n\n    0     1  &lt;NA&gt; \n 3301  2297 11753",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -1972,10 +1972,10 @@
     "href": "MTF-solution.html#recode-v7536-school-absence-due-to-safety",
     "title": "School Safety and Attendance Analysis - SOLUTION",
     "section": "Recode V7536 (School Absence Due to Safety)",
-    "text": "Recode V7536 (School Absence Due to Safety)\n\n\nCode\n# Original variable V7536: 1=0 days, 2=1 day, 3=2-3 days, 4=4+ days\n# Goal: Create binary variable where 0=No days missed, 1=Any days missed\n\ndf$Absent_Safety &lt;- ifelse(\n  df$V7536 == 1,                      # Condition: if V7536 equals 1 (0 days)\n  0,                                   # Then: assign 0 (No days missed)\n  ifelse(df$V7536 %in% c(2,3,4),      # Else if: V7536 is 2, 3, or 4\n         1,                            # Then: assign 1 (Any days missed)\n         NA)                           # Else: assign NA (missing)\n)\n\n# Verify the recoding\ncat(\"Original V7536 Distribution:\\n\")\n\n\nOriginal V7536 Distribution:\n\n\nCode\ntable(df$V7536, useNA = \"ifany\")\n\n\n\n    1     2     3     4  &lt;NA&gt; \n 4975   281   214   129 11752 \n\n\nCode\ncat(\"\\n\\nRecoded Absent_Safety Distribution:\\n\")\n\n\n\n\nRecoded Absent_Safety Distribution:\n\n\nCode\ntable(df$Absent_Safety, useNA = \"ifany\")\n\n\n\n    0     1  &lt;NA&gt; \n 4975   624 11752 \n\n\n\n\n\n\n\n\nTipRecoding Check\n\n\n\nBoth variables have been successfully converted to binary format: - Feel_Unsafe: 0 = Never, 1 = Ever feel unsafe - Absent_Safety: 0 = No days missed, 1 = Any days missed",
+    "text": "Recode V7536 (School Absence Due to Safety)\n\n# Original variable V7536: 1=0 days, 2=1 day, 3=2-3 days, 4=4+ days\n# Goal: Create binary variable where 0=No days missed, 1=Any days missed\n\ndf$Absent_Safety &lt;- ifelse(\n  df$V7536 == 1,                      # Condition: if V7536 equals 1 (0 days)\n  0,                                   # Then: assign 0 (No days missed)\n  ifelse(df$V7536 %in% c(2,3,4),      # Else if: V7536 is 2, 3, or 4\n         1,                            # Then: assign 1 (Any days missed)\n         NA)                           # Else: assign NA (missing)\n)\n\n# Verify the recoding\ncat(\"Original V7536 Distribution:\\n\")\n\nOriginal V7536 Distribution:\n\ntable(df$V7536, useNA = \"ifany\")\n\n\n    1     2     3     4  &lt;NA&gt; \n 4975   281   214   129 11752 \n\ncat(\"\\n\\nRecoded Absent_Safety Distribution:\\n\")\n\n\n\nRecoded Absent_Safety Distribution:\n\ntable(df$Absent_Safety, useNA = \"ifany\")\n\n\n    0     1  &lt;NA&gt; \n 4975   624 11752 \n\n\n\n\n\n\n\n\nTipRecoding Check\n\n\n\nBoth variables have been successfully converted to binary format: - Feel_Unsafe: 0 = Never, 1 = Ever feel unsafe - Absent_Safety: 0 = No days missed, 1 = Any days missed",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -1983,10 +1983,10 @@
     "href": "MTF-solution.html#calculate-row-percentages",
     "title": "School Safety and Attendance Analysis - SOLUTION",
     "section": "Calculate Row Percentages",
-    "text": "Calculate Row Percentages\n\n\nCode\n# Calculate percentages within each \"feeling unsafe\" category\nprop_tab &lt;- prop.table(tab, margin = 1) * 100\n\ncat(\"Row Percentages:\\n\")\n\n\nRow Percentages:\n\n\nCode\ncat(\"(% of students who missed school within each 'feeling unsafe' group)\\n\\n\")\n\n\n(% of students who missed school within each 'feeling unsafe' group)\n\n\nCode\nprint(round(prop_tab, 2))\n\n\n           Absent Due to Safety\nFeel Unsafe No Days (0) Any Days (1)\n  Never (0)       93.39         6.61\n  Ever (1)        82.50        17.50\n\n\n\n\n\n\n\n\nImportantKey Finding from Cross-Tabulation\n\n\n\nAmong students who NEVER feel unsafe:\n218 out of 3297 students (6.6%) missed school due to safety concerns.\nAmong students who EVER feel unsafe:\n401 out of 2292 students (17.5%) missed school due to safety concerns.\nDifference: Students who feel unsafe had a 10.9 percentage point higher rate of school absence.",
+    "text": "Calculate Row Percentages\n\n# Calculate percentages within each \"feeling unsafe\" category\nprop_tab &lt;- prop.table(tab, margin = 1) * 100\n\ncat(\"Row Percentages:\\n\")\n\nRow Percentages:\n\ncat(\"(% of students who missed school within each 'feeling unsafe' group)\\n\\n\")\n\n(% of students who missed school within each 'feeling unsafe' group)\n\nprint(round(prop_tab, 2))\n\n           Absent Due to Safety\nFeel Unsafe No Days (0) Any Days (1)\n  Never (0)       93.39         6.61\n  Ever (1)        82.50        17.50\n\n\n\n\n\n\n\n\nImportantKey Finding from Cross-Tabulation\n\n\n\nAmong students who NEVER feel unsafe:\n218 out of 3297 students (6.6%) missed school due to safety concerns.\nAmong students who EVER feel unsafe:\n401 out of 2292 students (17.5%) missed school due to safety concerns.\nDifference: Students who feel unsafe had a 10.9 percentage point higher rate of school absence.",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -1994,10 +1994,10 @@
     "href": "MTF-solution.html#extract-values-from-22-table",
     "title": "School Safety and Attendance Analysis - SOLUTION",
     "section": "Extract Values from 2×2 Table",
-    "text": "Extract Values from 2×2 Table\n\n\nCode\n# Table structure:\n#                Absent=0  Absent=1\n# Feel_Unsafe=0     a         b\n# Feel_Unsafe=1     c         d\n\na &lt;- tab[1,1]  # Never feel unsafe, no absence\nb &lt;- tab[1,2]  # Never feel unsafe, any absence\nc &lt;- tab[2,1]  # Ever feel unsafe, no absence\nd &lt;- tab[2,2]  # Ever feel unsafe, any absence\n\ncat(\"2×2 Table Cell Values:\\n\")\n\n\n2×2 Table Cell Values:\n\n\nCode\ncat(\"a (Never unsafe, No absence):\", a, \"\\n\")\n\n\na (Never unsafe, No absence): 3079 \n\n\nCode\ncat(\"b (Never unsafe, Any absence):\", b, \"\\n\")\n\n\nb (Never unsafe, Any absence): 218 \n\n\nCode\ncat(\"c (Ever unsafe, No absence):\", c, \"\\n\")\n\n\nc (Ever unsafe, No absence): 1891 \n\n\nCode\ncat(\"d (Ever unsafe, Any absence):\", d, \"\\n\")\n\n\nd (Ever unsafe, Any absence): 401",
+    "text": "Extract Values from 2×2 Table\n\n# Table structure:\n#                Absent=0  Absent=1\n# Feel_Unsafe=0     a         b\n# Feel_Unsafe=1     c         d\n\na &lt;- tab[1,1]  # Never feel unsafe, no absence\nb &lt;- tab[1,2]  # Never feel unsafe, any absence\nc &lt;- tab[2,1]  # Ever feel unsafe, no absence\nd &lt;- tab[2,2]  # Ever feel unsafe, any absence\n\ncat(\"2×2 Table Cell Values:\\n\")\n\n2×2 Table Cell Values:\n\ncat(\"a (Never unsafe, No absence):\", a, \"\\n\")\n\na (Never unsafe, No absence): 3079 \n\ncat(\"b (Never unsafe, Any absence):\", b, \"\\n\")\n\nb (Never unsafe, Any absence): 218 \n\ncat(\"c (Ever unsafe, No absence):\", c, \"\\n\")\n\nc (Ever unsafe, No absence): 1891 \n\ncat(\"d (Ever unsafe, Any absence):\", d, \"\\n\")\n\nd (Ever unsafe, Any absence): 401",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -2005,10 +2005,10 @@
     "href": "MTF-solution.html#calculate-odds-for-each-group",
     "title": "School Safety and Attendance Analysis - SOLUTION",
     "section": "Calculate Odds for Each Group",
-    "text": "Calculate Odds for Each Group\n\n\nCode\n# Odds of absence for students who feel unsafe\nodds_feel_unsafe &lt;- d / c\n\n# Odds of absence for students who never feel unsafe\nodds_never_unsafe &lt;- b / a\n\ncat(\"Odds of school absence among students who FEEL UNSAFE:\\n\")\n\n\nOdds of school absence among students who FEEL UNSAFE:\n\n\nCode\ncat(\"  \", round(odds_feel_unsafe, 4), \"\\n\")\n\n\n   0.2121 \n\n\nCode\ncat(\"  Interpretation: For every\", round(c), \"students who feel unsafe and don't miss school,\\n\")\n\n\n  Interpretation: For every 1891 students who feel unsafe and don't miss school,\n\n\nCode\ncat(\"  \", d, \"students feel unsafe and DO miss school\\n\")\n\n\n   401 students feel unsafe and DO miss school\n\n\nCode\ncat(\"\\n\\nOdds of school absence among students who NEVER feel unsafe:\\n\")\n\n\n\n\nOdds of school absence among students who NEVER feel unsafe:\n\n\nCode\ncat(\"  \", round(odds_never_unsafe, 4), \"\\n\")\n\n\n   0.0708 \n\n\nCode\ncat(\"  Interpretation: For every\", round(a), \"students who never feel unsafe and don't miss school,\\n\")\n\n\n  Interpretation: For every 3079 students who never feel unsafe and don't miss school,\n\n\nCode\ncat(\"  \", b, \"students never feel unsafe but still miss school\\n\")\n\n\n   218 students never feel unsafe but still miss school",
+    "text": "Calculate Odds for Each Group\n\n# Odds of absence for students who feel unsafe\nodds_feel_unsafe &lt;- d / c\n\n# Odds of absence for students who never feel unsafe\nodds_never_unsafe &lt;- b / a\n\ncat(\"Odds of school absence among students who FEEL UNSAFE:\\n\")\n\nOdds of school absence among students who FEEL UNSAFE:\n\ncat(\"  \", round(odds_feel_unsafe, 4), \"\\n\")\n\n   0.2121 \n\ncat(\"  Interpretation: For every\", round(c), \"students who feel unsafe and don't miss school,\\n\")\n\n  Interpretation: For every 1891 students who feel unsafe and don't miss school,\n\ncat(\"  \", d, \"students feel unsafe and DO miss school\\n\")\n\n   401 students feel unsafe and DO miss school\n\ncat(\"\\n\\nOdds of school absence among students who NEVER feel unsafe:\\n\")\n\n\n\nOdds of school absence among students who NEVER feel unsafe:\n\ncat(\"  \", round(odds_never_unsafe, 4), \"\\n\")\n\n   0.0708 \n\ncat(\"  Interpretation: For every\", round(a), \"students who never feel unsafe and don't miss school,\\n\")\n\n  Interpretation: For every 3079 students who never feel unsafe and don't miss school,\n\ncat(\"  \", b, \"students never feel unsafe but still miss school\\n\")\n\n   218 students never feel unsafe but still miss school",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -2016,10 +2016,10 @@
     "href": "MTF-solution.html#calculate-the-odds-ratio",
     "title": "School Safety and Attendance Analysis - SOLUTION",
     "section": "Calculate the Odds Ratio",
-    "text": "Calculate the Odds Ratio\n\n\nCode\n# Calculate odds ratio\nodds_ratio &lt;- odds_feel_unsafe / odds_never_unsafe\n\ncat(\"Odds Ratio:\\n\")\n\n\nOdds Ratio:\n\n\nCode\ncat(\"  OR = (d/c) / (b/a)\\n\")\n\n\n  OR = (d/c) / (b/a)\n\n\nCode\ncat(\"  OR = (\", d, \"/\", c, \") / (\", b, \"/\", a, \")\\n\")\n\n\n  OR = ( 401 / 1891 ) / ( 218 / 3079 )\n\n\nCode\ncat(\"  OR = \", round(odds_feel_unsafe, 4), \" / \", round(odds_never_unsafe, 4), \"\\n\")\n\n\n  OR =  0.2121  /  0.0708 \n\n\nCode\ncat(\"  OR = \", round(odds_ratio, 2), \"\\n\")\n\n\n  OR =  3",
+    "text": "Calculate the Odds Ratio\n\n# Calculate odds ratio\nodds_ratio &lt;- odds_feel_unsafe / odds_never_unsafe\n\ncat(\"Odds Ratio:\\n\")\n\nOdds Ratio:\n\ncat(\"  OR = (d/c) / (b/a)\\n\")\n\n  OR = (d/c) / (b/a)\n\ncat(\"  OR = (\", d, \"/\", c, \") / (\", b, \"/\", a, \")\\n\")\n\n  OR = ( 401 / 1891 ) / ( 218 / 3079 )\n\ncat(\"  OR = \", round(odds_feel_unsafe, 4), \" / \", round(odds_never_unsafe, 4), \"\\n\")\n\n  OR =  0.2121  /  0.0708 \n\ncat(\"  OR = \", round(odds_ratio, 2), \"\\n\")\n\n  OR =  3",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -2027,10 +2027,10 @@
     "href": "MTF-solution.html#calculate-95-confidence-interval",
     "title": "School Safety and Attendance Analysis - SOLUTION",
     "section": "Calculate 95% Confidence Interval",
-    "text": "Calculate 95% Confidence Interval\n\n\nCode\n# Calculate 95% confidence interval for the odds ratio\nlog_or &lt;- log(odds_ratio)\nse_log_or &lt;- sqrt(1/a + 1/b + 1/c + 1/d)\nci_lower &lt;- exp(log_or - 1.96 * se_log_or)\nci_upper &lt;- exp(log_or + 1.96 * se_log_or)\n\ncat(\"95% Confidence Interval for Odds Ratio:\\n\")\n\n\n95% Confidence Interval for Odds Ratio:\n\n\nCode\ncat(\"  [\", round(ci_lower, 2), \", \", round(ci_upper, 2), \"]\\n\")\n\n\n  [ 2.52 ,  3.57 ]\n\n\n\n\n\n\n\n\nWarningInterpretation of the Odds Ratio\n\n\n\nOdds Ratio: 3 (95% CI: [2.52, 3.57])\nStudents who reported feeling unsafe going to or from school had approximately 3 times the odds of missing school due to safety concerns compared to students who never felt unsafe.\nIn plain language: Students who feel unsafe during their school commute are about 3 times more likely to actually miss school days because of safety concerns.\nThis is a very strong association—much stronger than the football-concussion relationship (OR ≈ 1.9) we examined earlier.",
+    "text": "Calculate 95% Confidence Interval\n\n# Calculate 95% confidence interval for the odds ratio\nlog_or &lt;- log(odds_ratio)\nse_log_or &lt;- sqrt(1/a + 1/b + 1/c + 1/d)\nci_lower &lt;- exp(log_or - 1.96 * se_log_or)\nci_upper &lt;- exp(log_or + 1.96 * se_log_or)\n\ncat(\"95% Confidence Interval for Odds Ratio:\\n\")\n\n95% Confidence Interval for Odds Ratio:\n\ncat(\"  [\", round(ci_lower, 2), \", \", round(ci_upper, 2), \"]\\n\")\n\n  [ 2.52 ,  3.57 ]\n\n\n\n\n\n\n\n\nWarningInterpretation of the Odds Ratio\n\n\n\nOdds Ratio: 3 (95% CI: [2.52, 3.57])\nStudents who reported feeling unsafe going to or from school had approximately 3 times the odds of missing school due to safety concerns compared to students who never felt unsafe.\nIn plain language: Students who feel unsafe during their school commute are about 3 times more likely to actually miss school days because of safety concerns.\nThis is a very strong association—much stronger than the football-concussion relationship (OR ≈ 1.9) we examined earlier.",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -2040,8 +2040,8 @@
     "section": "Summary of Findings",
     "text": "Summary of Findings\nThis analysis examined whether students’ feelings of safety while traveling to and from school are associated with actual school absence due to safety concerns. The results reveal a powerful relationship:\n\nStrength and Direction of Association\n\nStudents who report feeling unsafe going to/from school have significantly higher rates of school absence\nThe association is positive and strong: feeling unsafe is associated with increased likelihood of missing school\nThe odds ratio of 3 indicates approximately 3-fold higher odds of absence among students who feel unsafe\n\n\n\nStatistical Significance\n\nChi-square test: χ² = 161.51, p &lt; 0.001\nThe relationship is highly statistically significant\nThe 95% confidence interval for the odds ratio [2.52, 3.57] does not include 1.0, confirming the association is not due to chance\nWe can be confident this relationship exists in the broader population, not just in this sample\n\n\n\nPractical Implications\nFor Schools and Educators:\n\nStudents’ reports of feeling unsafe should be taken seriously—they predict actual behavioral consequences\nFeelings of unsafety are not just subjective concerns; they translate into measurable school avoidance\nAddressing route safety could be an effective intervention for reducing chronic absenteeism\n\nFor Policy:\n\nSchool safety means more than crash risk or mass violence.\nSafe passage programs may help improve attendance rates (but see (G. Barboza-Salerno et al., 2024; G. E. Barboza-Salerno & Meshelemiah, 2023))\nConsider implementing safe corridors with adult supervision\nSchool transportation options may benefit students who feel unsafe walking/using public transit\nSchool violence interventions (e.g., IEPs for students exposed to community violence or community-school partnerships to address neighborhood safety) could impact educational outcomes\n\nFor Research:\n\nThis strong association warrants further investigation into causal mechanisms\nLongitudinal studies could determine whether improving safety perceptions leads to better attendance\nIdentifying specific threats (violence, bullying, traffic) could help target interventions\n\n\n\nLimitations to Consider\nWhile this analysis reveals a strong association, it’s important to note:\n\nCross-sectional design: We cannot determine causality—does feeling unsafe cause absence, or do prior threatening experiences cause both?\nSelf-report data: Both variables rely on student perceptions and recall\nTemporal ordering: The measures use different time frames (general feelings vs. past 4 weeks)\nUnmeasured confounders: Other factors (neighborhood violence, family factors, anxiety) may explain part of the relationship\n\nDespite these limitations, the magnitude and significance of this association suggest that students’ safety perceptions are an important factor in school attendance that deserves attention from educators and policymakers.\n\nAnalysis completed: 2026-01-17\n\n\n\n\nBarboza-Salerno, G. E., & Meshelemiah, J. C. A. (2023). Gun Violence on Walkable Routes to and from School: Recommendations for Policy and Practice. Journal of Urban Health, 100(6), 1102–1117. https://doi.org/10.1007/s11524-023-00802-2Gun-related violence exposure is a significant public health problem for urban youth. Few studies have implemented methods to estimate the spatial influence of activity spaces on gun violence exposure constrained by the physical configuration of walkable street networks. The present research uses computational network and local indicators of spatial autocorrelation methods to explore gun violence exposure along the walkable streets near schools in Compton, California. Findings demonstrated strong evidence that gun violence is clustered at all distances along the pedestrian network and in proximity to Compton Unified School District (K-12) schools, reaching a maximum between 1.2 and 1.8 mi; thereafter the “attractiveness” of schools to gun violence was inhibiting. Almost all schools had at least one shooting within a 5-min walk (i.e., about 400 m); 37.8% of schools had an average shooting distance of less than 400 m; about 250 incidents occurred within 5 min of schools; and about 30 schools had a shooting within a 5-min walking distance. Determining the spatial extent of violence exposure in proximity to key activity spaces for youth, such as schools, has substantial implications for the health and wellbeing of youth living in violence-prone areas. The public health and legal implications of this study are discussed in context.\n\n\nBarboza-Salerno, G., Duhaney, S., & Yang, H. (2024). Spatial accessibility to gun violence exposure on walkable routes to and from school. SSM - Population Health, 28, 101730. https://doi.org/10.1016/j.ssmph.2024.101730This study investigates the spatial accessibility of gun violence exposure along walkable routes to and from schools in Englewood, Chicago. Focusing on both direct and indirect forms of gun violence, the study uses acoustic detection technology to quantify the cumulative burden of gun violence exposure potentially encountered by students during their commute to and from school. We examined the spatial distribution of shooting incidents in proximity to schools using network-constrained kernel density estimation, secondary spatial analysis, and rapid realistic routing. G-function analysis revealed that shooting incidents cluster along streets, including safe passage routes, near schools. An average of 1.30 and 18.06 gunshots were reachable within 5- and 15-min commute times in the morning and afternoon, respectively Our findings underscore the urgent need to reframe the narrative around “school gun violence” to consider exposures that occur in proximity to school boundaries to more effectively reduce violence exposure for youth who walk to school in violence-prone neighborhoods.\n\n\nMeyer, H. A., & Astor, R. A. (2002). Child and Parent Perspectives on Routes to and from School in High Crime Neighborhoods. Journal of School Violence, 1(4), 101–128. https://doi.org/10.1300/J202v01n04_07\n\n\nSweeney, S. M., & Von Hagen, L. A. (2015). Middle School Students’ Perceptions of Safety: A Mixed-Methods Study. Journal of School Health, 85(10), 688–696. https://doi.org/10.1111/josh.12298BACKGROUND Active travel to school has been on the decline, despite its beneficial influence on children’s current and future well-being. Adults’ safety perceptions have been shown to influence children’s active travel. Children’s perceptions, particularly of safety, may be an important link not only to their present health and travel behaviors, but also their future health and behaviors. This study examined middle school students’ perceptions of the built environment and safety. METHODS Overall, 776 students from 3 schools in Hudson County, New Jersey participated in a visual survey and structured, interactive classroom discussions. Emergent themes from the discussions were tested using multivariate statistical models. RESULTS Findings suggest that older students, boys, and students who self-identified as black, rated built environment scenes as safer. Students also perceived being near adults, traveling in a group, and using crosswalks as significantly safer and want additional recognition of these to further improve safety. Students perceived that being near a school, in daylight, and aesthetics as factors contributing to safety. CONCLUSIONS Schools and municipalities may increase programs for students to travel in groups, prioritize maintenance in school zones, and increase the number of crossing guards, particularly outside the immediate school proximity to further improve safety.\n\n\nWiebe, D. J., Guo, W., Allison, P. D., Anderson, E., Richmond, T. S., & Branas, C. C. (2013). Fears of Violence During Morning Travel to School. Journal of Adolescent Health, 53(1), 54–61. https://doi.org/10.1016/j.jadohealth.2013.01.023Purpose Children’s safety as they travel to school is a concern nationwide. We investigated how safe children felt from the risk of being assaulted during morning travel to school. Methods Children between 10 and 18 years old were recruited in Philadelphia and interviewed with the aid of geographic information system (GIS) mapping software about a recent trip to school, situational characteristics, and how safe they felt as they travelled based on a 10-point item (1 = very unsafe, 10 = very safe). Ordinal regression was used to estimate the probability of perceiving different levels of safety based on transportation mode, companion type, and neighborhood characteristics. Results Among 65 randomly selected subjects, routes to school ranged from 7 to 177 minutes (median = 36) and .1–15.1 street miles (median = 1.9), and included between 1–5 transportation modes (median = 2). Among students interviewed, 58.5% felt less than very safe (i.e., \\(&lt;\\)10) at some point while traveling to school and one-third (32.5%) of the total person time was spent feeling less than very safe. Nearly a quarter of students, or 24.6%, felt a reduction in safety immediately upon exiting their home. The probability of reporting a safety of \\(&gt;\\)8, for example, was .99 while in a car and .94 while on foot but was .86 and .87 when on a public bus or trolley. Probability was .98 while with an adult but was .72 while with another child and .71 when alone. Also, perceived safety was lower in areas of high crime and high density of off-premise alcohol outlets. Conclusions Efforts that target situational risk factors are warranted to help children feel safe over their entire travel routes to school.",
     "crumbs": [
-      "**Solutions**",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
+      "Solutions",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>School Safety and Attendance Analysis - SOLUTION</span>"
     ]
   },
   {
@@ -2284,6 +2284,402 @@
     "crumbs": [
       "Additional Resources",
       "<span class='chapter-number'>33</span>  <span class='chapter-title'>R Style Suggestions</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html",
+    "href": "assessment_ans.html",
+    "title": "Statistics II Initial Assessment",
+    "section": "",
+    "text": "Question 1: Introduction to Data\nQuestion: The table below describes an intervention to reduce PTSD among violence-exposed youth.\nAnswer:",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-1-introduction-to-data",
+    "href": "assessment_ans.html#question-1-introduction-to-data",
+    "title": "Statistics II Initial Assessment",
+    "section": "",
+    "text": "0-365 days PTSD\n0-365 days No PTSD\n\n\n\n\nTreatment\n45\n179\n\n\nControl\n28\n199\n\n\n\n\nAmong all youth in a treatment group, what proportion had PTSD by the end of the first year?\nWhat proportion of youth had PTSD in the control group by the end of the first year?\n\n\n\n1a. Treatment: \\(\\frac{45}{224} = 0.201\\) or \\(20.1\\%\\)\n1b. Control: \\(\\frac{28}{227} = 0.123\\) or \\(12.3\\%\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-2-independence",
+    "href": "assessment_ans.html#question-2-independence",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 2: Independence",
+    "text": "Question 2: Independence\nQuestion: True or False: A pair of variables are either related or not (independent). Two variables can’t be both associated and independent.\nAnswer: True\nTwo variables cannot be both associated and independent. Independence means that knowing the value of one variable provides no information about the other variable. If variables are associated (related), they are by definition not independent.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-3a-b-interquartile-range",
+    "href": "assessment_ans.html#question-3a-b-interquartile-range",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 3a-b: Interquartile Range",
+    "text": "Question 3a-b: Interquartile Range\nQuestion:\n\nAssume that \\(Q_1\\) describes the 25th percentile. Define \\(Q_1\\) in words.\nAssume \\(Q_3\\) is the 75th percentile. \\(Q_3 = 300\\); \\(Q_1 = 100\\). Calculate the IQR.\n\nAnswer:\n3a. \\(Q_1\\) is the value below which \\(25\\%\\) of the data falls. It represents the first quartile, meaning one-quarter of observations are smaller than this value.\n3b. \\(\\text{IQR} = Q_3 - Q_1 = 300 - 100 = 200\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-3c-iqr-vs-standard-deviation",
+    "href": "assessment_ans.html#question-3c-iqr-vs-standard-deviation",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 3c: IQR vs Standard Deviation",
+    "text": "Question 3c: IQR vs Standard Deviation\nQuestion: Describe why extreme observations affect the standard deviation more than the interquartile range (IQR).\nAnswer:\nThe IQR uses only the middle \\(50\\%\\) of data, ignoring the top and bottom \\(25\\%\\). Standard deviation uses squared deviations from the mean, so extreme values (which have large deviations) are squared and heavily weighted. The IQR is resistant to outliers; SD is not.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-4-contingency-tables",
+    "href": "assessment_ans.html#question-4-contingency-tables",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 4: Contingency Tables",
+    "text": "Question 4: Contingency Tables\nQuestion: Use the table below to answer the following questions:\n\n\n\n\nNone\nSmall\nBig\nTotal\n\n\n\n\nYes\n.406\n.458\n.136\n1\n\n\nNo\n.113\n.748\n.139\n1\n\n\n\n\nWhat does the .458 represent in the table?\nWhat does the .139 at the intersection of No and Big represent?\n\nAnswer:\n4a. The .458 represents \\(P(\\text{Small}|\\text{Yes}) = 45.8\\%\\) - the conditional probability of “Small” given “Yes”\n4b. The .139 represents \\(P(\\text{Big}|\\text{No}) = 13.9\\%\\) - the conditional probability of “Big” given “No”",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-5-probability-distributions",
+    "href": "assessment_ans.html#question-5-probability-distributions",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 5: Probability Distributions",
+    "text": "Question 5: Probability Distributions\nQuestion: The table below suggests three salary distributions for social workers in Columbus. Only one is correct. Which one must it be? What is wrong with the other two?\n\n\n\nIncome ($1000s)\n0-25\n25-50\n50-100\n100+\n\n\n\n\nA\n.18\n.39\n.33\n.16\n\n\nB\n.38\n-.27\n.52\n.37\n\n\nC\n.28\n.27\n.29\n.16\n\n\n\nAnswer:\nCorrect: A (probabilities sum to \\(1.06 \\approx 1.00\\))\nB is wrong: Contains negative probability \\((-.27)\\), which is impossible\nC is wrong: Sums to exactly \\(1.00\\) but appears less plausible than A given context",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-6a-b-independent-random-variables",
+    "href": "assessment_ans.html#question-6a-b-independent-random-variables",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 6a-b: Independent Random Variables",
+    "text": "Question 6a-b: Independent Random Variables\nQuestion: About 9% of people exposed to a natural disaster develop PTSD. Suppose 2 people are selected at random. Assume independence.\n\nWhat is the probability they both developed symptoms?\nWhat is the probability that neither did?\n\nAnswer:\n6a. \\(P(\\text{both}) = 0.09 \\times 0.09 = 0.0081\\) or \\(0.81\\%\\)\n6b. \\(P(\\text{neither}) = 0.91 \\times 0.91 = 0.8281\\) or \\(82.81\\%\\)\nNote: this is also \\((1-0.09) \\times (1-0.09) = 0.8281\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-6c-independence-explained",
+    "href": "assessment_ans.html#question-6c-independence-explained",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 6c: Independence Explained",
+    "text": "Question 6c: Independence Explained\nQuestion: Explain what ‘independence’ means and why your calculation depends on this assumption.\nAnswer:\nIndependence means one person developing PTSD doesn’t affect the probability of another person developing PTSD. The events are unrelated.\nWe can multiply individual probabilities only under independence: \\(P(A \\cap B) = P(A) \\times P(B)\\).\nWithout independence, we’d need conditional probabilities: \\(P(A \\cap B) = P(A) \\times P(B|A)\\).",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-7-five-independent-people",
+    "href": "assessment_ans.html#question-7-five-independent-people",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 7: Five Independent People",
+    "text": "Question 7: Five Independent People\nQuestion: Use the data from above. Now, suppose 5 people are selected at random.\n\nWhat is the probability they all develop PTSD symptoms?\nWhat is the probability none did?\n\nAnswer:\n7a. \\(P(\\text{all 5}) = (0.09)^5 = 0.0000059 \\approx 0.00059\\%\\)\n7b. \\(P(\\text{none}) = (0.91)^5 = 0.6240\\) or \\(62.40\\%\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-8-covid-19-conditional-probability",
+    "href": "assessment_ans.html#question-8-covid-19-conditional-probability",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 8: COVID-19 Conditional Probability",
+    "text": "Question 8: COVID-19 Conditional Probability\nQuestion: Find the probability a randomly selected person who was not given the COVID-19 vaccine died from COVID using the following table:\n\n\n\n\nVaccinated Yes\nVaccinated No\n\n\n\n\nLived\n.0382\n.8252\n\n\nDied\n.0010\n.1356\n\n\n\nAnswer:\n\\[P(\\text{Died}|\\text{Not Vaccinated}) = \\frac{P(\\text{Not Vax} \\cap \\text{Died})}{P(\\text{Not Vax})}\\]\n\\[= \\frac{0.1356}{0.8252 + 0.1356} = \\frac{0.1356}{0.9608} = 0.1411 \\text{ or } 14.11\\%\\]",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-9a-tree-diagram",
+    "href": "assessment_ans.html#question-9a-tree-diagram",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 9a: Tree Diagram",
+    "text": "Question 9a: Tree Diagram\nQuestion: Create a tree diagram for the COVID-19 vaccination data.\nAnswer:\nStart \n├─ Vaccinated (0.0392)\n│  ├─ Lived (0.0382)\n│  └─ Died (0.0010)\n│\n└─ Not Vaccinated (0.9608)\n   ├─ Lived (0.8252)\n   └─ Died (0.1356)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-9b-c-tree-diagram-probabilities",
+    "href": "assessment_ans.html#question-9b-c-tree-diagram-probabilities",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 9b-c: Tree Diagram Probabilities",
+    "text": "Question 9b-c: Tree Diagram Probabilities\nQuestion: Use the tree diagram to calculate:\n\nThe probability that a random person was vaccinated and lived\nThe probability that the person died (regardless of vaccination status)\n\nAnswer:\n9b. \\(P(\\text{Vaccinated} \\cap \\text{Lived}) = 0.0382\\)\n9c. \\(P(\\text{Died}) = P(\\text{Vax} \\cap \\text{Died}) + P(\\text{Not Vax} \\cap \\text{Died})\\)\n\\[= 0.0010 + 0.1356 = 0.1366 \\text{ or } 13.66\\%\\]",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-10-mean-variance-sd",
+    "href": "assessment_ans.html#question-10-mean-variance-sd",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 10: Mean, Variance, SD",
+    "text": "Question 10: Mean, Variance, SD\nQuestion: Compute the variable’s mean, variance, and standard deviation.\n\n\n\n\\(x_i\\)\n\\(P(X = x_i)\\)\n\\(x_i \\cdot P(X = x_i)\\)\n\n\n\n\n0\n0.20\n0.00\n\n\n137\n0.55\n75.35\n\n\n170\n0.25\n42.50\n\n\n\nAnswer:\nMean: \\(\\mu = \\sum[x_i \\cdot P(x_i)] = 0.00 + 75.35 + 42.50 = 117.85\\)\nVariance: \\(\\sigma^2 = \\sum[(x_i - \\mu)^2 \\cdot P(x_i)]\\)\n\n\\((0 - 117.85)^2 \\times 0.20 = 2{,}777.70\\)\n\\((137 - 117.85)^2 \\times 0.55 = 201.70\\)\n\\((170 - 117.85)^2 \\times 0.25 = 679.56\\)\n\\(\\sigma^2 = 3{,}659\\)\n\nStandard Deviation: \\(\\sigma = \\sqrt{3{,}659} = 60\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-11-z-scores",
+    "href": "assessment_ans.html#question-11-z-scores",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 11: Z-scores",
+    "text": "Question 11: Z-scores\nQuestion: Let \\(X\\) represent a random variable from \\(N(\\mu = 3, \\sigma = 2)\\). Suppose we observe that \\(x = 5.19\\).\n\nFind the Z-score of \\(x\\)\nUse the Z-score to determine how many standard deviations above or below the mean, \\(x\\), falls.\n\nAnswer:\n11a. \\(Z = \\frac{x - \\mu}{\\sigma} = \\frac{5.19 - 3}{2} = 1.095\\)\n11b. The observation \\(x = 5.19\\) falls 1.095 standard deviations above the mean.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-12a-c-licensing-exam-z-scores",
+    "href": "assessment_ans.html#question-12a-c-licensing-exam-z-scores",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 12a-c: Licensing Exam Z-scores",
+    "text": "Question 12a-c: Licensing Exam Z-scores\nQuestion: The social work licensing exam follows a nearly normal distribution with mean 92.6 and standard deviation 3.6.\n\nCompute the Z-score for an exam score of 95.4\nCompute the Z-score for an exam of 85.8\nWhich of the two observations is more unusual?\n\nAnswer:\n12a. \\(Z = \\frac{95.4 - 92.6}{3.6} = 0.778\\)\n12b. \\(Z = \\frac{85.8 - 92.6}{3.6} = -1.889\\)\n12c. The score of 85.8 is more unusual \\((|Z| = 1.889 \\text{ vs. } 0.778)\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-12d-e-percentiles",
+    "href": "assessment_ans.html#question-12d-e-percentiles",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 12d-e: Percentiles",
+    "text": "Question 12d-e: Percentiles\nQuestion:\n\nBoth students come to you to calculate and interpret their percentile on the exam.\nWhat proportion of test takers scored higher than these two?\n\nAnswer:\n12d. Percentiles:\n\nScore 95.4 \\((Z = 0.778)\\): approximately 78th percentile\nScore 85.8 \\((Z = -1.889)\\): approximately 3rd percentile\n\n12e. Proportion scoring higher:\n\nHigher than 95.4: approximately \\(22\\%\\)\nHigher than 85.8: approximately \\(97\\%\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-13a-b-sat-scores",
+    "href": "assessment_ans.html#question-13a-b-sat-scores",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 13a-b: SAT Scores",
+    "text": "Question 13a-b: SAT Scores\nQuestion: The SAT test is approximately normally distributed with \\(\\mu = 1500\\), \\(\\sigma = 300\\).\n\nWhat is the probability of scoring at least 1630 on the SAT?\nOne year something unusual happened and more than 75% of test takers scored above 1600. How does that affect the calculation?\n\nAnswer:\n13a. \\(Z = \\frac{1630 - 1500}{300} = 0.433\\)\n\\(P(X \\geq 1630) \\approx 0.3325\\) or \\(33.25\\%\\)\n13b. This violates normality assumptions. If \\(75\\%\\) scored above 1600, the distribution is no longer \\(N(1500, 300)\\). We cannot use normal distribution calculations; we’d need the actual distribution.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-13c-social-justice",
+    "href": "assessment_ans.html#question-13c-social-justice",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 13c: Social Justice",
+    "text": "Question 13c: Social Justice\nQuestion: From a social justice standpoint, describe the problem with interpreting aptitude using a statistical analysis.\nAnswer:\nAptitude tests may reflect socioeconomic advantages (test prep access, quality education, tutoring, educational resources) rather than innate ability. They can perpetuate inequality by disadvantaging students from under-resourced backgrounds, marginalized communities, and those who lack access to test preparation resources. Statistical analysis treats scores as objective measures but ignores systemic inequities.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-14-binomial-distribution",
+    "href": "assessment_ans.html#question-14-binomial-distribution",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 14: Binomial Distribution",
+    "text": "Question 14: Binomial Distribution\nQuestion: On 70% of days, a therapist’s office admits at least one new client. On 30% of the days, no clients are admitted. What is the probability that the therapist will admit a new client on exactly three days this week?\nAnswer:\nUsing binomial theorem: \\(P(X = 3) = \\binom{7}{3} \\times (0.70)^3 \\times (0.30)^4\\)\n\n\\(\\binom{7}{3} = 35\\)\n\\((0.70)^3 = 0.343\\)\n\\((0.30)^4 = 0.0081\\)\n\\(P(X = 3) = 35 \\times 0.343 \\times 0.0081 = 0.0972\\) or \\(9.72\\%\\)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-15a-hypothesis-testing-framework",
+    "href": "assessment_ans.html#question-15a-hypothesis-testing-framework",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 15a: Hypothesis Testing Framework",
+    "text": "Question 15a: Hypothesis Testing Framework\nQuestion: A US court is weighing two possible claims about a defendant: she is not guilty or guilty. How can a hypothesis testing framework be used to evaluate these claims?\nAnswer:\n\n\\(H_0\\) (null hypothesis): Defendant is not guilty\n\\(H_1\\) (alternative hypothesis): Defendant is guilty\nBurden of proof is on prosecution to reject \\(H_0\\)\nRequires evidence “beyond reasonable doubt” (like \\(\\alpha\\) level)\nType I error: Convicting an innocent person\nType II error: Acquitting a guilty person",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-15b-innocent-vs-not-guilty",
+    "href": "assessment_ans.html#question-15b-innocent-vs-not-guilty",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 15b: Innocent vs Not Guilty",
+    "text": "Question 15b: Innocent vs Not Guilty\nQuestion: What is the problem with falsely using the term ‘innocent’ rather than ‘not guilty’ in this framework?\nAnswer:\n“Not guilty” means insufficient evidence to prove guilt beyond reasonable doubt. “Innocent” implies proof of non-involvement.\nCourts don’t prove innocence; they determine if guilt is proven. This mirrors statistics: we reject or fail to reject \\(H_0\\), but never “accept” or “prove” \\(H_0\\). Failing to reject \\(H_0 \\neq\\) proving \\(H_0\\) is true.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-16a-confidence-interval",
+    "href": "assessment_ans.html#question-16a-confidence-interval",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 16a: Confidence Interval",
+    "text": "Question 16a: Confidence Interval\nQuestion: In a sample of 100 students from the 2022 NCHS, the average number of days per year a child was reported ill was 2.78, with a standard deviation of 2.56 days. Compute a 95% confidence interval. Assume conditions for normality are met.\nAnswer:\n\\[SE = \\frac{s}{\\sqrt{n}} = \\frac{2.56}{\\sqrt{100}} = 0.256\\]\n\\[95\\% \\text{ CI} = \\bar{x} \\pm (1.96 \\times SE) = 2.78 \\pm (1.96 \\times 0.256)\\]\n\\[= 2.78 \\pm 0.502\\]\n95% CI: (2.28, 3.28) days",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-16b-ci-interpretation",
+    "href": "assessment_ans.html#question-16b-ci-interpretation",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 16b: CI Interpretation",
+    "text": "Question 16b: CI Interpretation\nQuestion: Interpret the confidence interval.\nAnswer:\nWe are 95% confident that the true average number of days per year all children in the NCHS population are reported ill falls between 2.28 and 3.28 days.\nThis means if we repeated this sampling process many times, approximately 95% of the resulting confidence intervals would contain the true population mean.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-17-hypothesis-setup",
+    "href": "assessment_ans.html#question-17-hypothesis-setup",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 17: Hypothesis Setup",
+    "text": "Question 17: Hypothesis Setup\nQuestion: UCLA estimates the cost of in-state tuition is $23,000/year. I estimate it at $33,000/year. What are the null and alternative hypotheses to test whether this claim is accurate?\nAnswer:\n\\(H_0: \\mu = \\$23{,}000\\) (UCLA’s estimate is correct)\n\\(H_1: \\mu \\neq \\$23{,}000\\) (UCLA’s estimate is not correct)\nThis is a two-tailed test since we’re testing whether the claim is accurate (could be higher or lower), not specifically testing a directional hypothesis.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-18-p-value-vs-significance-level",
+    "href": "assessment_ans.html#question-18-p-value-vs-significance-level",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 18: P-value vs Significance Level",
+    "text": "Question 18: P-value vs Significance Level\nQuestion: What is the substantive difference between a p-value and the significance level of a test?\nAnswer:\nP-value: The probability of observing data as extreme as (or more extreme than) what we observed, assuming \\(H_0\\) is true. Calculated from the data after the study.\nSignificance level \\((\\alpha)\\): The threshold we set before conducting the test to determine whether to reject \\(H_0\\). Chosen by the researcher (commonly 0.05).\nKey difference: \\(\\alpha\\) is predetermined; p-value is calculated. We reject \\(H_0\\) if p-value \\(&lt; \\alpha\\).",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-19-p-value-frequency",
+    "href": "assessment_ans.html#question-19-p-value-frequency",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 19: P-value Frequency",
+    "text": "Question 19: P-value Frequency\nQuestion: If the null hypothesis is true, how often should the p-value be less than .10?\nAnswer:\n10% of the time\nIf the null hypothesis is true, the p-value follows a uniform distribution between 0 and 1. Therefore, \\(P(\\text{p-value} &lt; 0.10) = 0.10\\).\nThis is exactly the definition of the significance level—it represents the probability of a Type I error (rejecting a true null hypothesis).",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-20-practical-vs-statistical-significance",
+    "href": "assessment_ans.html#question-20-practical-vs-statistical-significance",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 20: Practical vs Statistical Significance",
+    "text": "Question 20: Practical vs Statistical Significance\nQuestion: Describe the difference between practical and statistical significance. Provide an example.\nAnswer:\nStatistical significance: Result is unlikely due to chance alone (p-value \\(&lt; \\alpha\\)). Depends on sample size.\nPractical significance: Result is meaningful in real-world terms. Depends on effect size.\nExample: With \\(n=1{,}000{,}000\\), a reading intervention increases test scores by 0.5 points \\((p &lt; 0.001)\\). Statistically significant but practically meaningless—0.5 points won’t change educational outcomes. A 10-point increase might be practically significant even if \\(p = 0.06\\).",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-21-dependent-sample-t-test",
+    "href": "assessment_ans.html#question-21-dependent-sample-t-test",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 21: Dependent Sample t-test",
+    "text": "Question 21: Dependent Sample t-test\nQuestion: Set up and implement a hypothesis test to determine whether, on average, there is a difference in outcomes for the treatment and control group using a dependent sample t-test. Summary statistics: \\(N=73\\); mean difference \\(= 12.76\\), SD of difference \\(= 14.26\\).\nAnswer:\nHypotheses: \\(H_0: \\mu_{\\text{diff}} = 0\\) vs. \\(H_1: \\mu_{\\text{diff}} \\neq 0\\)\n\\[SE = \\frac{14.26}{\\sqrt{73}} = 1.669\\]\n\\[t = \\frac{12.76}{1.669} = 7.65, \\quad df = 72\\]\nConclusion: With \\(t = 7.65\\), \\(p &lt; 0.001\\). We reject \\(H_0\\). Strong evidence of a significant difference between treatment and control groups.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-22a-b-independent-samples-t-test",
+    "href": "assessment_ans.html#question-22a-b-independent-samples-t-test",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 22a-b: Independent Samples t-test",
+    "text": "Question 22a-b: Independent Samples t-test\nQuestion: The summary statistics below show newborn weights for mothers who smoked and did not smoke during pregnancy.\n\n\n\n\nSmoked\nDid not smoke\n\n\n\n\nMean\n6.78\n7.18\n\n\nSt. Dev.\n1.43\n1.6\n\n\nN\n50\n100\n\n\n\n\nWhat is the estimate of the population difference?\nCompute the standard error of the estimate from (a)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-22-answer",
+    "href": "assessment_ans.html#question-22-answer",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 22: Answer",
+    "text": "Question 22: Answer\n22a. Estimate of population difference:\n\\[\\bar{x}_1 - \\bar{x}_2 = 6.78 - 7.18 = -0.40 \\text{ pounds}\\]\nBabies born to mothers who smoked weighed on average 0.40 pounds less.\n22b. Standard error:\n\\[SE = \\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}\\]\n\\[SE = \\sqrt{\\frac{1.43^2}{50} + \\frac{1.6^2}{100}}\\]\n\\[SE = \\sqrt{0.0409 + 0.0256} = \\sqrt{0.0665} = 0.258 \\text{ pounds}\\]",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-23a-anova-hypotheses",
+    "href": "assessment_ans.html#question-23a-anova-hypotheses",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 23a: ANOVA Hypotheses",
+    "text": "Question 23a: ANOVA Hypotheses\nQuestion: College departments offer many lectures of the same course. CSW offers three lectures of an intro stats course to PhD students (A, B, and C). Describe the appropriate hypotheses to determine whether there are any differences between the classes.\nAnswer:\n\\(H_0: \\mu_A = \\mu_B = \\mu_C\\)\n(No difference in mean exam scores across the three classes)\n\\(H_1:\\) At least one class mean differs from the others\n(At least one \\(\\mu_i \\neq \\mu_j\\) for some \\(i \\neq j\\))",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#question-23b-anova-results",
+    "href": "assessment_ans.html#question-23b-anova-results",
+    "title": "Statistics II Initial Assessment",
+    "section": "Question 23b: ANOVA Results",
+    "text": "Question 23b: ANOVA Results\nQuestion: An ANOVA was conducted, and the summary results are below. Is the difference significant at the .05 level? Why or why not?\n\n\n\nSource\nDf\nSum Sq\nMean Sq\nF-Value\np-value\n\n\n\n\nClass\n2\n1290.11\n645.06\n3.48\n.033\n\n\nResiduals\n161\n29810.13\n185.16\n\n\n\n\n\nAnswer:\nYes, the difference is significant at \\(\\alpha = 0.05\\).\nThe p-value \\(= 0.033 &lt; 0.05\\), so we reject the null hypothesis. There is statistically significant evidence that at least one class has a different mean exam score than the others.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#part-ii-applied-analysis-overview",
+    "href": "assessment_ans.html#part-ii-applied-analysis-overview",
+    "title": "Statistics II Initial Assessment",
+    "section": "Part II: Applied Analysis Overview",
+    "text": "Part II: Applied Analysis Overview\nRequirements:\nThe applied section requires:\n\nWhat is the prevalence of concussion or brain injury in children? (Use appropriate test statistic)\nAre there racial differences in concussion or brain injury? (Use the race variable)\nAre children with concussion/brain injury more likely to bully others? (Compare “not a bully” to categories 2-7)\nProvide a compelling visualization OR interpretation with 1-2 sentences on implications",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#part-ii-analysis-approach",
+    "href": "assessment_ans.html#part-ii-analysis-approach",
+    "title": "Statistics II Initial Assessment",
+    "section": "Part II: Analysis Approach",
+    "text": "Part II: Analysis Approach\nData Source: 2023 National Child Health Survey (NSCH)\nStatistical Methods:\n\nPrevalence (Q a): Calculate proportion with 95% CI; one-sample proportion test\nRacial differences (Q b): Chi-square test of independence\nBullying relationship (Q c): Chi-square test or two-proportion z-test\n\nVisualization Options:\n\nBar charts showing prevalence by race\nMosaic plots for categorical relationships\nForest plots for effect sizes across groups\n\nNote: Requires external data download and statistical software (SAS/STATA/R)",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "assessment_ans.html#summary",
+    "href": "assessment_ans.html#summary",
+    "title": "Statistics II Initial Assessment",
+    "section": "Summary",
+    "text": "Summary\nKey Concepts Covered:\n\nDescriptive statistics and probability theory\nIndependence and conditional probability\nZ-scores and normal distributions\nHypothesis testing frameworks (legal analogy)\nConfidence intervals and interpretation\nt-tests (dependent and independent samples)\nANOVA for comparing multiple groups\nStatistical vs. practical significance\nApplied data analysis with real-world implications\n\nRemember: Statistics is about choosing the right method for the research question and interpreting findings for policy and social justice implications.",
+    "crumbs": [
+      "Solutions",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
     ]
   }
 ]

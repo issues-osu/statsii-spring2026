@@ -1,0 +1,415 @@
+---
+title: "Lab 1: Monitoring the Future"
+subtitle: "Exploring the Association Between Football Participation and Concussion History"
+author: "Your Name"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
+    theme: cosmo
+    embed-resources: true
+execute:
+  warning: false
+  message: false
+---
+
+# Overview
+
+This analysis examines the relationship between high school football participation and concussion history using data from the **Monitoring the Future (MTF) 2023** survey, a nationally representative study of adolescent behaviors and attitudes. Specifically, we investigate whether students who played competitive football in the past 12 months had higher rates of concussion diagnosis compared to their non-football-playing peers.
+
+::: {.callout-note}
+## Data Source
+**Dataset**: [Monitoring the Future 2024 (ICPSR 39445)](https://www.icpsr.umich.edu/web/NAHDAP/studies/39445/versions/V2/variables)  
+**Sample**: Grade 10 students  
+**Focus**: Relationship between football participation and concussion history
+**R script**: [Click here](monitoring-the-future-example.R) to download the R script for this lab
+:::
+
+# Variable Definitions
+
+The analysis uses 13 variables from the MTF survey, covering neighborhood safety, school climate, behavioral indicators, sports participation, and demographic characteristics.
+
+## Neighborhood & School Safety
+
+**V8477** - Drug activity in neighborhood  
+*"During the past 12 months, how often have you seen people selling illegal drugs in your neighborhood?"*
+
+- 1 = Never
+- 2 = A few times a year
+- 3 = Once or twice a month
+- 4 = At least once a week
+- 5 = Almost every day
+
+**V7535** - Feeling unsafe traveling to/from school  
+*"How often do you feel unsafe going to or from school?"*
+
+- 1 = Never
+- 2 = Rarely
+- 3 = Some days
+- 4 = Most days
+- 5 = Every day
+
+**V7536** - School absence due to safety concerns  
+*"During the last 4 weeks, how many days did you not go to school because you felt unsafe at school or on your way to or from school?"*
+
+- 1 = 0 days
+- 2 = 1 day
+- 3 = 2 or 3 days
+- 4 = 4 or more days
+
+## Behavioral Indicators
+
+**V8517** - Group fight participation  
+*"During the last 12 months, how often have you taken part in a group fight where your friends were against another group?"*
+
+- 1 = Not at all
+- 2 = Once
+- 3 = Twice
+- 4 = 3 or 4 times
+- 5 = 5 or more times
+
+**V8516** - Serious fights at school/work  
+*"During the last 12 months, how often have you gotten into a serious fight in school or at work?"*
+
+- 1 = Not at all
+- 2 = Once
+- 3 = Twice
+- 4 = 3 or 4 times
+- 5 = 5 or more times
+
+## Key Variables of Interest
+
+**V7389** - Football participation  
+*"In which competitive sports (if any) did you participate during the last 12 months?"*
+
+- 0 = Not marked (did not play football)
+- 1 = Marked (played football)
+
+**V7639** - Concussion history (recoded)  
+Original variable recoded into binary format:
+
+- 0 = Never had a concussion
+- 1 = Ever had a concussion (once or multiple times)
+
+## Academic & Demographic Variables
+
+**V7221** - Average grades this school year
+
+- 9 = A (93–100)
+- 8 = A– (90–92)
+- 7 = B+ (87–89)
+- 6 = B (83–86)
+- 5 = B– (80–82)
+- 4 = C+ (77–79)
+- 3 = C (73–76)
+- 2 = C– (70–72)
+- 1 = D (69 or below)
+
+**V1252** - Age classification
+
+- 1 = Younger than 16
+- 2 = 16 years of age or older
+
+**V7202** - Sex
+
+- 1 = Male
+- 2 = Female
+- 3 = Other
+- 4 = Prefer not to answer
+
+**V1070** - Race/ethnicity (recoded)
+
+- 1 = Black or African American
+- 2 = White (Caucasian)
+- 3 = Hispanic
+- Other/multiple responses coded as missing
+
+**V7215** - Father's education level  
+**V7216** - Mother's education level
+
+- 1 = Grade school or less
+- 2 = Some high school
+- 3 = Completed high school
+- 4 = Some college
+- 5 = Completed college
+- 6 = Graduate or professional school
+- 7 = Don't know / Does not apply
+
+# Data Preparation
+
+```{r}
+#| label: setup
+#| code-summary: "Load packages and data"
+
+# Load Required Packages
+library(haven)
+library(dplyr)
+
+# Define variables of interest
+vars <- c(
+  "V8477", "V7535", "V7536", "V8517", "V8516", 
+  "V7389", "V7221", "V1252", "V7202", "V1070", 
+  "V7215", "V7216", "V7639"
+)
+
+# Load the Monitoring the Future dataset
+df <- read_sav("C:/Users/barboza-salerno.1/Downloads/ED injury/ICPSR_39445-V2/ICPSR_39445/DS0001/39445-0001-Data.sav")
+
+# Select only the variables of interest
+df <- df %>% 
+  dplyr::select(all_of(vars))
+
+# Recode missing values (-8 and -9) to NA
+df <- df %>% 
+  mutate(across(everything(), ~ na_if(.x, -8))) %>% 
+  mutate(across(everything(), ~ na_if(.x, -9)))
+```
+
+::: {.callout-tip}
+## Data Cleaning
+Missing value codes (-8 and -9) were recoded to `NA` to ensure proper handling in statistical analyses.
+:::
+
+```{r}
+#| label: data-check
+#| code-summary: "Verify data structure"
+
+# Quick check of data dimensions and summary statistics
+dim(df)
+summary(df)
+```
+
+## Creating the Concussion Variable
+
+The original concussion variable (V7639) was recoded into a binary indicator:
+
+```{r}
+#| label: recode-concussion
+
+# Recode concussion as binary: 0 = No, 1 = Ever had a concussion
+df$Concussion_Ever <- ifelse(
+  df$V7639 == 1, 0,           # Code 1 = Never → 0
+  ifelse(df$V7639 %in% c(2,3), 1, NA)  # Codes 2,3 = Ever → 1
+)
+
+# Verify recoding
+table(df$Concussion_Ever, useNA = "ifany")
+```
+
+# Exploratory Analysis
+
+## Variable Distributions
+
+```{r}
+#| label: freq-tables
+#| code-summary: "Frequency tables for all variables"
+#| output: false
+
+# Generate frequency tables for all variables
+for (v in names(df)) {
+  cat("\n-----------------------------------------\n")
+  cat("Variable:", v, "\n")
+  print(table(df[[v]], useNA = "ifany"))
+}
+```
+
+## Key Variables: Football and Concussion
+
+```{r}
+#| label: key-vars
+
+# Football participation
+cat("Football Participation (V7389):\n")
+table(df$V7389, useNA = "ifany")
+
+# Concussion history
+cat("\n\nConcussion History (Recoded):\n")
+table(df$Concussion_Ever, useNA = "ifany")
+```
+
+# Primary Analysis: Football Participation and Concussion Risk
+
+## Cross-Tabulation
+
+```{r}
+#| label: crosstab
+
+# Create cross-tabulation
+tab <- table(df$V7389, df$Concussion_Ever)
+
+# Display raw counts
+cat("Cross-tabulation (Raw Counts):\n")
+cat("Rows: Football Participation | Columns: Concussion Ever\n\n")
+tab
+
+# Display percentages by row (% within each football participation group)
+cat("\n\nRow Percentages (% within football participation status):\n")
+round(prop.table(tab, margin = 1) * 100, 2)
+```
+
+::: {.callout-important}
+## Key Findings from Cross-Tabulation
+
+**Among students who did NOT play football:**  
+818 out of 4,551 (18.0%) reported ever having a concussion
+
+**Among students who DID play football:**  
+285 out of 958 (29.7%) reported ever having a concussion
+
+Football participants had a **11.7 percentage point higher** rate of concussion history.
+:::
+
+## Statistical Test: Chi-Square Analysis
+
+```{r}
+#| label: chi-square
+
+# Perform chi-square test of independence
+chi_result <- chisq.test(tab)
+chi_result
+```
+
+::: {.callout-note}
+## Statistical Significance
+The chi-square test yielded a highly significant result (p < 0.001), indicating that football participation and concussion history are **not independent**—there is a statistically significant association between playing football and having experienced a concussion.
+:::
+
+## Odds Ratio Calculation
+
+```{r}
+#| label: odds-ratio
+
+# Calculate odds ratio manually
+odds_football <- tab[2,2] / tab[2,1]      # 285/673
+odds_no_football <- tab[1,2] / tab[1,1]   # 818/3733
+
+odds_ratio <- odds_football / odds_no_football
+
+cat("Odds of concussion among football players:", round(odds_football, 3), "\n")
+cat("Odds of concussion among non-football players:", round(odds_no_football, 3), "\n")
+cat("\nOdds Ratio:", round(odds_ratio, 2), "\n")
+```
+
+::: {.callout-warning}
+## Interpretation of Odds Ratio
+
+The odds ratio of **`r round(odds_ratio, 2)`** indicates that students who reported playing football had approximately **1.9 times the odds** of having been diagnosed with a concussion compared to students who did not play football.
+
+In simpler terms: **The odds of concussion were nearly twice as high among football participants.**
+:::
+
+# Summary of Results
+
+This analysis of the Monitoring the Future 2023 dataset reveals a meaningful association between high school football participation and concussion history:
+
+1. **Prevalence**: 29.7% of football players reported concussion history versus 18.0% of non-players
+2. **Statistical significance**: Chi-square test confirmed a significant association (p < 0.001)
+3. **Effect size**: Football players had 1.9 times higher odds of concussion history
+
+These findings align with existing research on contact sports and head injury risk, suggesting that football participation in adolescence is associated with elevated concussion rates.
+
+# Discussion Questions
+
+::: {.callout-tip icon=false}
+## Question 1: Implications
+
+**What are the potential implications of these findings for school administrators, parents, and student-athletes?**
+
+Consider:
+
+- Should schools modify football programs or safety protocols based on these concussion rates?
+- How might this information influence parental decisions about youth sports participation?
+- What role should medical screening and concussion education play in school athletic programs?
+- Are there policy changes that could help balance the benefits of football participation (teamwork, physical fitness, scholarship opportunities) with injury risk management?
+:::
+
+::: {.callout-tip icon=false}
+## Question 2: Limitations
+
+**What are the key limitations of this analysis, and how might they affect our interpretation of the results?**
+
+Consider:
+
+- **Causality**: Does this cross-sectional design allow us to establish that football *causes* concussions, or only that they're associated?
+- **Self-report bias**: How reliable are student self-reports of concussion diagnosis? Might football players be more aware of concussions or more likely to seek medical attention?
+- **Confounding variables**: What other factors might explain this association (e.g., risk-taking behavior, participation in multiple contact sports, gender composition of football players)?
+- **Temporal ordering**: Did the concussions occur during football, or from other activities?
+- **Severity and recency**: Does this measure distinguish between recent versus historical concussions, or between single versus multiple concussions?
+- **Underreporting**: Might some concussions go undiagnosed, particularly in students without access to medical care?
+:::
+
+# Student Exercise: Analyze School Safety and Attendance
+
+::: {.callout-important icon=false}
+## Your Task
+
+Now it's your turn! Using the analytical approach demonstrated in the football-concussion example, examine the following research question:
+
+**Research Question:** *Do students who feel unsafe going to/from school have higher rates of school absence due to safety concerns?*
+
+**Variables to Use:**
+
+- **V7535** - How often do you feel unsafe going to or from school?
+  - 1 = Never, 2 = Rarely, 3 = Some days, 4 = Most days, 5 = Every day
+  
+- **V7536** - During the last 4 weeks, how many days did you not go to school because you felt unsafe?
+  - 1 = 0 days, 2 = 1 day, 3 = 2 or 3 days, 4 = 4 or more days
+
+**Instructions:**
+
+1. **Recode both variables into binary format:**
+   - Create `Feel_Unsafe`: 0 = Never feel unsafe, 1 = Ever feel unsafe (any response other than "Never")
+   - Create `Absent_Safety`: 0 = No days missed, 1 = Any days missed due to safety
+
+2. **Generate a cross-tabulation** showing:
+   - Raw counts
+   - Row percentages (percentage within each "feeling unsafe" category)
+
+3. **Perform a chi-square test** to determine if the association is statistically significant
+
+4. **Calculate the odds ratio** and interpret it clearly:
+   - Show the odds of absence for students who feel unsafe
+   - Show the odds of absence for students who never feel unsafe
+   - Calculate the ratio and explain what it means in plain language
+
+5. **Write a brief interpretation** that includes:
+   - The strength and direction of the association
+   - Statistical significance
+   - Practical implications of your findings
+
+**Hints:**
+
+- Use the `ifelse()` function to recode variables (follow the concussion recoding example)
+- Here's how to recode V7535 (Feeling Unsafe) step-by-step:
+
+```r
+# Original variable V7535: 1=Never, 2=Rarely, 3=Some days, 4=Most days, 5=Every day
+# Goal: Create binary variable where 0=Never, 1=Ever feel unsafe
+
+df$Feel_Unsafe <- ifelse(
+  df$V7535 == 1,                      # Condition: if V7535 equals 1
+  0,                                   # Then: assign 0 (Never feel unsafe)
+  ifelse(df$V7535 %in% c(2,3,4,5),    # Else if: V7535 is 2, 3, 4, or 5
+         1,                            # Then: assign 1 (Ever feel unsafe)
+         NA)                           # Else: assign NA (missing)
+)
+```
+- Now try the same approach for V7536 (School Absence):
+  - Original: 1=0 days, 2=1 day, 3=2-3 days, 4=4+ days
+  - Create `Absent_Safety`: 0=No days missed (V7536==1), 1=Any days missed (V7536 in 2,3,4)
+
+- Remember the 2×2 table structure for odds ratios:
+  ```
+                 Absent=0  Absent=1
+  Feel_Unsafe=0     a         b
+  Feel_Unsafe=1     c         d
+  
+  Odds Ratio = (d/c) / (b/a)
+  ```
+- Make sure to handle missing values appropriately
+
+Good luck with your analysis! Compare your results with your classmates to see if you obtained the same findings. Then, you can [click here](MTF-solution.qmd) to look at my solution.
+
+**Document created**: `r Sys.Date()`
