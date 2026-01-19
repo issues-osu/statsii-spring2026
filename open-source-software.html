@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to the Course – Statistics for Social Work</title>
+<title>Open Source Software – Statistics for Social Work</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-simple-regression.html" rel="next">
-<link href="./Assignments.html" rel="prev">
+<link href="./ass1writeup.html" rel="next">
+<link href="./r-style.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html"><strong>Course Overview</strong></a></li><li class="breadcrumb-item"><a href="./01-introduction.html"><span class="chapter-title">Introduction to the Course</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reading.html">Additional Resources</a></li><li class="breadcrumb-item"><a href="./open-source-software.html"><span class="chapter-title">Open Source Software</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Course Overview</strong></span></a>
+ <span class="menu-text">Course Overview</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introduction to the Course</span></a>
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to the Course</span></a>
   </div>
 </li>
       </ul>
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Regression Mechanics</strong></span></a>
+ <span class="menu-text">Regression Mechanics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Advanced Regression Techniques</strong></span></a>
+ <span class="menu-text">Advanced Regression Techniques</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -204,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Measurement &amp; Factor Analysis</strong></span></a>
+ <span class="menu-text">Measurement &amp; Factor Analysis</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -230,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Applications</strong></span></a>
+ <span class="menu-text">Applications</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -271,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Case Studies &amp; Data Applications</strong></span></a>
+ <span class="menu-text">Case Studies &amp; Data Applications</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -312,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Additional Resources</strong></span></a>
+ <span class="menu-text">Additional Resources</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -325,7 +325,37 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./dataweb.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources for learning and applying R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./learning-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Learning R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-style.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">R Style Suggestions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataweb.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./open-source-software.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Open Source Software</span></a>
   </div>
 </li>
       </ul>
@@ -333,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Assignments</strong></span></a>
+ <span class="menu-text">Assignments</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -359,7 +389,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Solutions</strong></span></a>
+ <span class="menu-text">Solutions</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -382,16 +412,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#course-goals-and-objectives" id="toc-course-goals-and-objectives" class="nav-link active" data-scroll-target="#course-goals-and-objectives">Course Goals and Objectives</a></li>
+  <li><a href="#statistical-software-packages" id="toc-statistical-software-packages" class="nav-link active" data-scroll-target="#statistical-software-packages">Statistical Software Packages</a></li>
+  <li><a href="#open-source-software" id="toc-open-source-software" class="nav-link" data-scroll-target="#open-source-software">Open Source Software</a>
+  <ul class="collapse">
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#jamovi" id="toc-jamovi" class="nav-link" data-scroll-target="#jamovi"><strong>jamovi</strong></a></li>
+  <li><a href="#jasp---a-fresh-way-to-do-statistics" id="toc-jasp---a-fresh-way-to-do-statistics" class="nav-link" data-scroll-target="#jasp---a-fresh-way-to-do-statistics"><strong>JASP - A Fresh Way to Do Statistics</strong></a></li>
+  <li><a href="#qgis" id="toc-qgis" class="nav-link" data-scroll-target="#qgis"><strong>QGIS</strong></a></li>
+  <li><a href="#pspp" id="toc-pspp" class="nav-link" data-scroll-target="#pspp">PSPP</a></li>
+  </ul></li>
+  <li><a href="#proprietary-software" id="toc-proprietary-software" class="nav-link" data-scroll-target="#proprietary-software">Proprietary Software</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html"><strong>Course Overview</strong></a></li><li class="breadcrumb-item"><a href="./01-introduction.html"><span class="chapter-title">Introduction to the Course</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reading.html">Additional Resources</a></li><li class="breadcrumb-item"><a href="./open-source-software.html"><span class="chapter-title">Open Source Software</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Introduction to the Course</span></h1>
+<h1 class="title"><span class="chapter-title">Open Source Software</span></h1>
 </div>
 
 
@@ -408,12 +447,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="course-goals-and-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="course-goals-and-objectives">Course Goals and Objectives</h2>
-<p>The course, Statistics II focuses on an equitable approach to data analysis. It aims to equip students with advanced statistical techniques while fostering critical thinking about how to apply those models to social work applications. I have tried to find a good balance of instruction, innovation, and hands-on learning. I want you to be excited about statistics and data; hence, I have tried to stucture the course in a way that encourages you to explore regression, measurement, and latent variable models in the context of social justice. By emphasizing storytelling and data interpretation, students will develop the skills needed to reclaim and communicate narratives of oppression, focusing on equity and systemic challenges. The course also focuses on practical applications, such as building models and interpreting statistical findings to support policy changes and advocate for marginalized communities.</p>
-<p>One of the course’s primary objectives is to prepare students to use statistics as a tool for actionable change. Weekly sessions integrate technical skills, such as using R for data analysis and visualization, with real-world social work challenges. Activities like the “Data Makeover Challenge” and “Latent Storytelling” push students to think creatively about data, while assignments emphasize ethical implications and advocacy. My idea about writing an oped comes from the workshop I did in the summer of 2024, where I learned how to write one effectively. You can read it <a href="https://msmagazine.com/2024/10/15/abortion-bans-domestic-violence-women-die/">here</a>.</p>
-<p>I have also tried very hard to make the course integrative. That is the reason for this website. There are (and will be) links between modules, readings, and assignments so that everything is connected as it should be. This is obviously a lot of work, so I appreciate your patience, and consideration.</p>
-<p>Hopefully, by the end of the semester, students will have gained not only proficiency in statistical methods but also the confidence to apply them meaningfully to address pressing social issues.</p>
+<section id="statistical-software-packages" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-software-packages">Statistical Software Packages</h2>
+<p>There are a wide variety of different open source and proprietary software tools that are simple to learn and make data management and analysis easier, more effective and fun. Here is my list of the most important tools to be familiar with. The items in bold are the software that we will use during the course of the week.</p>
+<p>The software is listed by availability (i.e., open source, license, package add-on)</p>
+</section>
+<section id="open-source-software" class="level2">
+<h2 class="anchored" data-anchor-id="open-source-software">Open Source Software</h2>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<p>IMHO the best statistical analysis tool ever created (yes, better than python for statistics)</p>
+<ul>
+<li>In this class we will use both R and RStudio (the GUI for R) which can be downloaded here: <a href="https://posit.co/download/rstudio-desktop/">RStudio Desktop - Posit</a></li>
+</ul>
+</section>
+<section id="jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="jamovi"><strong>jamovi</strong></h3>
+<p>The next best option, it is built on an R framework, nobody will know you are NOT using R :)</p>
+<p>jamovi is a new “3rd generation” statistical spreadsheet designed from the ground up to be easy to use. jamovi is a compelling alternative to costly statistical products such as SPSS and SAS. It is also a simpler alternative to R that is built on top of the R statistical language.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li><p><strong>Analyses</strong>: jamovi provides a complete suite of analyses for (not just) the social sciences; t-tests, ANOVAs, correlation and regression, non-parametric tests, contingency tables, reliability and factor analysis. The <a href="https://www.jamovi.org/library/">jamovi library</a> contains many more libraries that will allow you to perform additional analyses from simple crosstabs to multilevel modeling and more.</p></li>
+<li><p><strong>Excel integration</strong>: jamovi is a fully functional spreadsheet, immediately familiar to anyone. Enter, copy/paste data, filter rows, compute new values, perform transforms across many columns at once – jamovi provides a streamlined spreadsheet experience, optimized for statistical data.</p></li>
+<li><p><strong>R syntax</strong>: Love R? Check out jamovi’s “syntax mode”, where the underlying R syntax for each analysis is made available. Just copy and paste this into R for a seamless transition. Alternatively, run R code directly inside jamovi with <a href="https://blog.jamovi.org/2018/07/30/rj.html">the Rj Editor</a>.</p></li>
+</ul>
+<p><strong>Two versions of jamovi:</strong></p>
+<ul>
+<li>jamovi Cloud</li>
+<li><strong><a href="https://www.jamovi.org/download.html">jamovi desktop</a></strong> – downloads and installs jamovi onto your desktop
+<ul>
+<li>It is available for Windows, Mac and Linux</li>
+</ul></li>
+</ul>
+</section>
+<section id="jasp---a-fresh-way-to-do-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="jasp---a-fresh-way-to-do-statistics"><strong>JASP - A Fresh Way to Do Statistics</strong></h3>
+<p>“Just Another Statistics Program” JASP offers another great alternative to SPSS. Visit <a href="https://jasp-stats.org/">jasp-stats.org</a></p>
+<ul>
+<li>In some ways JASP is better than jamovi, but it seems less stable and so it is my second best option</li>
+<li>There are some benefits to using JASP including flexibility in making plots and nice visualizations for the statistical analyses you are conducting</li>
+<li><a href="https://jasp-stats.org/download/">Click here</a> to download JASP</li>
+<li>JASP in particular provides a great way to both learn statistics and R at the same time</li>
+<li>Let’s take a look at the data library in JASP now</li>
+</ul>
+</section>
+<section id="qgis" class="level3">
+<h3 class="anchored" data-anchor-id="qgis"><strong>QGIS</strong></h3>
+<p>“Quantum Geographical Information Systems” allows you to do geospatial analysis like a (ArcGIS) pro – QGIS is great for creating, editing, visualizing, analyzing and publishing geospatial information</p>
+<ul>
+<li>The <a href="https://www.qgis.org/en/site/about/case_studies/index.html">Applications page</a> gives you a sense of all the cool things you can do with QGIS</li>
+<li>To download the software <a href="https://qgis.org/en/site/forusers/download.html">click here</a></li>
+</ul>
+</section>
+<section id="pspp" class="level3">
+<h3 class="anchored" data-anchor-id="pspp">PSPP</h3>
+<p><a href="https://www.gnu.org/software/pspp/">PSPP - GNU Project - Free Software Foundation</a> is an open source equivalent to SPSS and it is freely downloadable. It is not very robust and so I would not recommend it.</p>
+</section>
+</section>
+<section id="proprietary-software" class="level2">
+<h2 class="anchored" data-anchor-id="proprietary-software">Proprietary Software</h2>
+<p>OSU has obtained a license for the following software packages:</p>
+<ul>
+<li><strong>SPSS</strong>: It’s like a necessary evil - everyone must know how to use SPSS. There are some things that are actually easier in SPSS</li>
+<li><strong>SAS</strong>: ugh!</li>
+<li><strong>EXCEL</strong>: Can be great to clean your data, particularly if you use the built-in functions</li>
+<li><strong>ArcGIS Map, Pro</strong></li>
+<li><strong>jmp</strong>: This is a very cool data science program from the makers of SAS (the archaic and soon to be extinct software program)</li>
+</ul>
+<p>To download these software packages: <a href="https://osuitsm.service-now.com/selfservice/">Log In to the Office of Business and Finance</a></p>
 
 
 </section>
@@ -821,13 +922,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Assignments.html" class="pagination-link" aria-label="Assignments and Due Dates">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Assignments and Due Dates</span></span>
+      <a href="./r-style.html" class="pagination-link" aria-label="R Style Suggestions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">R Style Suggestions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-simple-regression.html" class="pagination-link" aria-label="Introduction to Simple Linear Regression">
-        <span class="nav-page-text"><span class="chapter-title">Introduction to Simple Linear Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ass1writeup.html" class="pagination-link" aria-label="Assignment 1 Write-up">
+        <span class="nav-page-text"><span class="chapter-title">Assignment 1 Write-up</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
