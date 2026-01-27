@@ -1,0 +1,5 @@
+[1,"==> quarto preview syllabus.qmd --to html --no-watch-inputs --no-browse\n\n"]
+[1,"pandoc \n  to: html\n  output-file: syllabus.html\n  standalone: true\n  toc: true\n  number-sections: false\n  title-prefix: Statistics for Social Work\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  number-offset:\n    - 2\n  variables: {}\n  \nmetadata\n  crossref:\n    chapters: true\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  title: '[Syllabus: Statistics for Social Work]{.chapter-title}'\n  description: Course syllabus for Spring 2026, covering statistical analysis.\n  theme: flatly\n  hide-description: true\n  \n"]
+[1,"Output created: _book\\syllabus.html\n\nPreparing to preview\n\r[1/1] UnderstandingSLR.qmd\n\nWatching files for changes\nBrowse at http://localhost:6629/syllabus.html\nListening on http://127.0.0.1:6629/\n"]
+[1,"GET: /syllabus.html\n"]
+[1,"GET: /UnderstandingSLR.html\n"]
