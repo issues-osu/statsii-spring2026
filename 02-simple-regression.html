@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -72,6 +92,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -249,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/inclass.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">In Class Assignment</span></a>
+  <a href="./slides/inclass.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Intro to SLR using R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -420,7 +469,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#week-3-january-27-2026" id="toc-week-3-january-27-2026" class="nav-link active" data-scroll-target="#week-3-january-27-2026">Week 3: January 27, 2026</a>
   <ul class="collapse">
-  <li><a href="#todays-reading" id="toc-todays-reading" class="nav-link" data-scroll-target="#todays-reading">Today’s Reading</a></li>
+  <li><a href="#todays-reading" id="toc-todays-reading" class="nav-link" data-scroll-target="#todays-reading">Today’s Reading</a>
+  <ul class="collapse">
+  <li><a href="#optional-reading" id="toc-optional-reading" class="nav-link" data-scroll-target="#optional-reading">Optional Reading</a></li>
+  <li><a href="#required-reading" id="toc-required-reading" class="nav-link" data-scroll-target="#required-reading">Required Reading</a></li>
+  <li><a href="#measures-and-instruments-clark-et-al.-2025" id="toc-measures-and-instruments-clark-et-al.-2025" class="nav-link" data-scroll-target="#measures-and-instruments-clark-et-al.-2025">Measures and Instruments: Clark et al.&nbsp;(2025)</a></li>
+  </ul></li>
   <li><a href="#simple-linear-regression-introduction-to-the-topic" id="toc-simple-linear-regression-introduction-to-the-topic" class="nav-link" data-scroll-target="#simple-linear-regression-introduction-to-the-topic">Simple Linear Regression – Introduction to the Topic</a>
   <ul class="collapse">
   <li><a href="#what-will-students-learn-this-week" id="toc-what-will-students-learn-this-week" class="nav-link" data-scroll-target="#what-will-students-learn-this-week">What will students learn this week?</a></li>
@@ -474,6 +528,133 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Diez et al., Chapter 8, pp.&nbsp;304-340. Intro to linear regression. Be sure to check out the embedded videos.</li>
 </ul>
+<section id="optional-reading" class="level3">
+<h3 class="anchored" data-anchor-id="optional-reading">Optional Reading</h3>
+<section id="redlining-reverse-redlining-and-its-modern-day-impact" class="level4">
+<h4 class="anchored" data-anchor-id="redlining-reverse-redlining-and-its-modern-day-impact">Redlining, Reverse Redlining and its Modern Day Impact</h4>
+<p>I have written or co-authored several papers demonstrating that historical redlining, a 1930s federal practice that assigned risk grades to neighborhoods based largely on racial composition, continues to serve as a critical analytical framework for understanding modern-day structural inequalities across multiple sectors. In the context of child welfare, research utilizes these historical maps to show that neighborhoods with poorer Home Owners’ Loan Corporation (HOLC) grades experience significantly higher rates of child protective services reports, illustrating how racist housing policies have created distressed environments where families lack the necessary resources for wellbeing (<span class="citation" data-cites="littletonHistoricalRedliningNeighborhood2024b">Littleton et al. (<a href="#ref-littletonHistoricalRedliningNeighborhood2024b" role="doc-biblioref">2024</a>)</span>).</p>
+<p>Furthermore, redlining trajectories—which combine historic maps with contemporary lending data—have been applied to medical research to demonstrate that structural racism modifies the efficacy of health interventions (<span class="citation" data-cites="wingTrajectoryLongitudinalLending2025">Wing et al. (<a href="#ref-wingTrajectoryLongitudinalLending2025" role="doc-biblioref">2025</a>)</span>). For instance, a skills-based intervention for stroke survivors was found to be least effective in areas categorized by declining investment, suggesting that neighborhood contexts shaped by persistent discrimination can impede individual health recovery efforts (<span class="citation" data-cites="wingTrajectoryLongitudinalLending2025">Wing et al. (<a href="#ref-wingTrajectoryLongitudinalLending2025" role="doc-biblioref">2025</a>)</span>).</p>
+<p>Finally, spatial analyses of redlining are used to link housing discrimination to public health crises such as gun violence; neighborhoods facing “sustained disinvestment” (both historical redlining and modern predatory lending) are at a significantly higher risk for firearm-related homicides, reinforcing Ruth Gillmore’s concept of “organized abandonment” where resources are systematically withdrawn from communities of color (<span class="citation" data-cites="barboza-salernoRedliningReinvestmentRacial2025c">Barboza-Salerno et al. (<a href="#ref-barboza-salernoRedliningReinvestmentRacial2025c" role="doc-biblioref">2025</a>)</span>).</p>
+<p>Collectively, previous research suggests that redlining is not merely a historical artifact but a foundational cause of present-day disparities, necessitating multisector policy reforms to address these long-term structural inequities</p>
+</section>
+</section>
+<section id="required-reading" class="level3">
+<h3 class="anchored" data-anchor-id="required-reading">Required Reading</h3>
+<section id="exploring-the-relationships-between-self-care-and-well-being-outcomes-among-child-welfare-professionals" class="level4">
+<h4 class="anchored" data-anchor-id="exploring-the-relationships-between-self-care-and-well-being-outcomes-among-child-welfare-professionals">Exploring the relationships between self-care and well-being outcomes among child welfare professionals</h4>
+<p>The study by Clark et al.&nbsp;(2025) analyzes baseline survey data to examine the relationship between self-care and well-being among child welfare professionals (<span class="citation" data-cites="clarkExploringRelationshipsSelfcare2025">Clark et al. (<a href="#ref-clarkExploringRelationshipsSelfcare2025" role="doc-biblioref">2025</a>)</span>). Conducted in a Midwestern state, the study was embedded within a larger five-year federally funded research collaborative involving one public agency and five private providers. The researchers utilized an online survey platform (REDCap) to collect data in November 2020 from a final analytical sample of 305 direct service and supervisor professionals, representing a 23.3% response rate from the 1,308 individuals originally invited via email.</p>
+<p>To operationalize workforce well-being, the methodology employed the Professional Quality of Life (ProQol) measure. This instrument consists of three 10-item subscales used as the study’s primary dependent variables: Secondary Traumatic Stress (STS) (α = 0.88), Burnout (α = 0.71), and Compassion Satisfaction (α = 0.89). Each item was rated on a five-point frequency scale, with researchers verifying that the data did not severely deviate from normality through skewness and kurtosis assessments.</p>
+<p>The independent variables focused on two dimensions of self-care: frequency and variety. The number of self-care activities was measured using an eight-item index developed in consultation with a professional steering committee, covering physical, psychological, social, and spiritual domains (e.g., exercise, sleep, spending time with family). The frequency of self-care was captured through a single item asking participants how often they intentionally practiced these behaviors, with responses ranging from “Never” to “At least daily”. Statistical analysis was conducted in three phases using Stata 17.0. First, univariate analyses established descriptive profiles of the sample. Second, simple linear regressions tested the direct associations between self-care and well-being. Finally, multivariate linear regressions were performed to control for various covariates, including years of experience, education level, geographic region, agency role, licensure status, race/ethnicity, and gender. To ensure the integrity of the results, the researchers implemented Little’s test, which confirmed that missing data (ranging from 0% to 12.13%) were Missing Completely at Random (MCAR). Consequently, they utilized the Full Information Maximum Likelihood (FIML) approach to reduce estimate and standard error biases. For the multivariate models, effect sizes were reported using Cohen’s <span class="math inline">\(f^2\)</span>, categorized as small (≥ 0.02), medium (≥ 0.15), or large (≥ 0.35). Participants who identified as “outliers” were assessed but ultimately retained because their removal did not substantially alter the study’s findings</p>
+</section>
+</section>
+<section id="measures-and-instruments-clark-et-al.-2025" class="level3">
+<h3 class="anchored" data-anchor-id="measures-and-instruments-clark-et-al.-2025">Measures and Instruments: Clark et al.&nbsp;(2025)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 39%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Category</th>
+<th>Measure Name</th>
+<th>Instrument/Source</th>
+<th>Scaling and Operationalization</th>
+<th>Reliability (α)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dependent</td>
+<td>Secondary Traumatic Stress (STS)</td>
+<td>ProQOL Subscale</td>
+<td>10 items; 5-point scale (1 = Never to 5 = Very Often). Scores: ≤22 Low, 23–41 Average, ≥42 High.</td>
+<td>0.88</td>
+</tr>
+<tr class="even">
+<td>Dependent</td>
+<td>Burnout</td>
+<td>ProQOL Subscale</td>
+<td>10 items; 5-point scale (1 = Never to 5 = Very Often). Scores: ≤22 Low, 23–41 Average, ≥42 High.</td>
+<td>0.71</td>
+</tr>
+<tr class="odd">
+<td>Dependent</td>
+<td>Compassion Satisfaction</td>
+<td>ProQOL Subscale</td>
+<td>10 items; 5-point scale (1 = Never to 5 = Very Often). Scores: ≤22 Low, 23–41 Average, ≥42 High.</td>
+<td>0.89</td>
+</tr>
+<tr class="even">
+<td>Independent</td>
+<td>Number of Self-Care Activities</td>
+<td>8-Item Index</td>
+<td>Sum of 8 activities (friends/family, hobby, time off, exercise, spiritual, sleep, healthy food, other). Range 0–8.</td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>Independent</td>
+<td>Frequency of Self-Care</td>
+<td>Single-item</td>
+<td>5-point scale: 1 (Never), 2 (1–2 days/week), 3 (3–4 days/week), 4 (5–6 days/week), 5 (Daily).</td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>Covariate</td>
+<td>Years of Experience</td>
+<td>Demographic Survey</td>
+<td>Categories: &lt;1 yr, 1–3 yrs (ref), 4–6 yrs, 7–9 yrs, 10+ yrs.</td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>Covariate</td>
+<td>Education Level</td>
+<td>Demographic Survey</td>
+<td>Categories: Less than 4-year degree, 4-year degree (ref), Master’s degree.</td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>Covariate</td>
+<td>Geographic Region</td>
+<td>Public Agency Data</td>
+<td>Six geographic regions defined by the state agency (Region 4 as ref).</td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>Covariate</td>
+<td>Agency Role</td>
+<td>Demographic Survey</td>
+<td>Binary: 0 = Direct Service Staff; 1 = Supervisor.</td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>Covariate</td>
+<td>Licensure Status</td>
+<td>Demographic Survey</td>
+<td>Binary: 0 = No professional license; 1 = Licensed (LMSW, LPC, etc.).</td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>Covariate</td>
+<td>Race/Ethnicity</td>
+<td>Demographic Survey</td>
+<td>Binary: 0 = White/European American (ref); 1 = People of Color (PoC).</td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>Covariate</td>
+<td>Gender</td>
+<td>Demographic Survey</td>
+<td>Binary: 0 = Female (ref); 1 = Male.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>You can download my references for this week <a href="SLR.bib">here</a> and add it to your zotero manager.</p>
+</section>
 </section>
 <section id="simple-linear-regression-introduction-to-the-topic" class="level2">
 <h2 class="anchored" data-anchor-id="simple-linear-regression-introduction-to-the-topic">Simple Linear Regression – Introduction to the Topic</h2>
@@ -499,7 +680,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="how-does-it-relate-to-previous-or-future-content">How does it relate to previous or future content?</h3>
 <ul>
 <li><strong>Ties to previous content</strong>: Builds upon last week’s review of descriptive statistics and introduces the concept of relationships between variables.</li>
-<li><strong>Prepares for future topics</strong>: Provides a foundation for upcoming topics like multiple regression (Week 5), where we will expand from one predictor to multiple predictors, and interaction effects (Week 9), where regression will be used to explore moderating relationships.</li>
+<li><strong>Prepares for future topics</strong>: Provides a foundation for upcoming topics like <a href="./03-multiple-regression.html">multiple regression</a>, where we will expand from one predictor to multiple predictors, and <a href="./07-moderation.html">interaction effects</a>, where regression will be used to explore moderating relationships.</li>
 </ul>
 <hr>
 <p>This session emphasizes the practical and theoretical importance of regression analysis, helping students connect statistical techniques to real-world social work applications.</p>
@@ -511,7 +692,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="lecture-notes">Lecture Notes</h3>
 <ul>
 <li><a href="slides/SLR_files/SLR-final.pptx">Today’s Lecture Notes</a></li>
-<li><a href="docs/SLR_files/Handout SSE.docx">Handout</a></li>
+<li><a href="docs/SLR_files/Handout SSE.docx">Handout</a> on minimizing the sum of squared errors</li>
 </ul>
 </section>
 <section id="r-lecture" class="level3">
@@ -525,18 +706,23 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="todays-reading-1">Today’s Reading</h2>
 <ul>
 <li><strong>Primary Reading</strong>: <a href="static/Exploring the relationships between self-care and well-being outcomes among child welfare professionals.pdf">Simple Linear Regression</a></li>
-<li><strong>Optional Reading</strong>: <a href="static/431525a.pdf">Extrapolatoin</a> - an example of what <strong>not</strong> to do despite the potential publication in a highly regarded journal</li>
+<li><strong>Optional Reading</strong>: <a href="static/431525a.pdf">Extrapolation</a> - an example of what <strong>not</strong> to do despite the potential publication in a highly regarded journal</li>
 </ul>
 </section>
 <section id="r-lab-files" class="level2">
 <h2 class="anchored" data-anchor-id="r-lab-files">R Lab Files</h2>
 <ul>
+<li><p>SLR in R: Example from the Behavioral Risk Factor Surveillance System (BRFSS)</p>
+<ul>
 <li><a href="slides/inclass.html">Lab Instructions</a></li>
 <li><a href="slides/brfss_aces_subset.sav">Lab Dataset</a></li>
 <li><a href="static/BRFSS ACEs.docx">Lab Worksheet</a></li>
+<li><a href="slides/brfss_aces_subset.sav">Lab Dataset</a></li>
 <li><a href="slides/SLR_files/brfss-script.R">R code for lab</a></li>
-<li><a href="slides/SLR_files/brfss_aces_subset.jasp">Jasp annotated output</a></li>
-<li><a href="escape_room_redlining.Rmd">The Escape Room Exercise</a></li>
+</ul></li>
+<li><p><a href="slides/SLR_files/brfss_aces_subset.jasp">JASP file: SLR Mechanics Explained</a></p></li>
+<li><p><a href="escape_room_redlining.Rmd">The Escape Room Exercise</a></p></li>
+<li><p><a href="UnderstandingSLR.qmd">Lab 2: Understanding SLR</a></p></li>
 </ul>
 </section>
 <section id="additional-notes" class="level2">
@@ -547,6 +733,20 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-barboza-salernoRedliningReinvestmentRacial2025c" class="csl-entry" role="listitem">
+Barboza-Salerno, G., Liebhard, B., Duhaney, S., &amp; Harrington, T. (2025). Redlining, reinvestment, and racial segregation: A bayesian spatial analysis of mortgage lending trajectories and firearm-related violence. <em>Injury Epidemiology</em>, <em>12</em>(1), 23. <a href="https://doi.org/10.1186/s40621-025-00579-9">https://doi.org/10.1186/s40621-025-00579-9</a><div class="csl-block">Abstract Background In the United States, firearm-related violence disproportionately impacts low-income, racially segregated communities more than affluent, predominantly White neighborhoods. This trend stems from historical disinvestment, discriminatory lending practices, and persistent structural inequalities. Housing policies have enforced racial segregation, limiting wealth accumulation in low-income communities. This study examines the relationship between historical and contemporary lending discrimination in mortgage originations and firearm-related violence in Chicago, Illinois. By analyzing investment and disinvestment patterns, we assess how housing discrimination continues to influence the risk of victimization in various social contexts. Methods Redlining scores were derived from the 1930s Homeowners’ Loan Corporation (HOLC) grades, while contemporary lending indicators were obtained from the 2019 Home Mortgage Disclosure Act (HMDA). We classified neighborhoods into four lending trajectories—sustained disinvestment, disinvestment, growing investment, and high investment—based on historical redlining and contemporary mortgage lending patterns. Sustained disinvestment reflects historical redlining and ongoing lending discrimination, while growing investment targets areas that were historically redlined but are now experiencing increased lending activity. Bayesian spatial models examined firearm-related homicide risk across lending trajectories, adjusting for area deprivation index (ADI) and racial segregation. Results In unadjusted models, sustained disinvestment (Relative Risk [RR] = 2.230, 95% CrI: [1.352, 3.681]) was associated with increased firearm-related homicide risk, while growing investment (RR = 0.782, 95% CrI: [0.452, 1.359]) and high investment (RR = 0.146, 95% CrI: [0.054, 0.397]) were associated with lower risk. After adjusting for ADI and racial segregation, the effect of sustained disinvestment attenuated (RR = 1.714, 95% CrI: [1.054, 2.791]), suggesting partial mediation. However, growing investment increased by 155% (RR = 1.987, 95% CrI: [1.144, 3.458]), indicating suppression, indicating that ADI and segregation initially masked its association with firearm homicide risk. Conclusion Findings highlight the need for policies that address the long-term effects of lending discrimination. Reverse redlining—where financial institutions target minority communities with high-cost loans—further exacerbates existing inequities. Additionally, neighborhood deprivation and segregation shape firearm-related violence risk, underscoring the broader consequences of systemic housing discrimination.</div>
+</div>
+<div id="ref-clarkExploringRelationshipsSelfcare2025" class="csl-entry" role="listitem">
+Clark, S. L., Miller, B., Akin, B. A., Byers, K., Wright, K., Carr, K., &amp; Hunt, M. K. (2025). Exploring the relationships between self-care and well-being outcomes among child welfare professionals. <em>Journal of Public Child Welfare</em>, <em>19</em>(1), 110–140. <a href="https://doi.org/10.1080/15548732.2024.2306151">https://doi.org/10.1080/15548732.2024.2306151</a>
+</div>
+<div id="ref-littletonHistoricalRedliningNeighborhood2024b" class="csl-entry" role="listitem">
+Littleton, T., Freisthler, B., Boyd, R., Smith, A. M., &amp; Barboza-Salerno, G. (2024). Historical redlining, neighborhood disadvantage, and reports of child maltreatment in a large urban county. <em>Child Abuse &amp; Neglect</em>, <em>156</em>, 107011. <a href="https://www.sciencedirect.com/science/article/pii/S0145213424004010?casa_token=sx5RxXcfMp0AAAAA:xss3lMyuj7-8ZkCmLhPlQ-0JNFM-bOWq6arsaD9MnJuG_-Vh_CcL5GCX1p_zSFPyqRJD7Oh7Dg">https://www.sciencedirect.com/science/article/pii/S0145213424004010?casa_token=sx5RxXcfMp0AAAAA:xss3lMyuj7-8ZkCmLhPlQ-0JNFM-bOWq6arsaD9MnJuG_-Vh_CcL5GCX1p_zSFPyqRJD7Oh7Dg</a>
+</div>
+<div id="ref-wingTrajectoryLongitudinalLending2025" class="csl-entry" role="listitem">
+Wing, J. J., Meier, H. C., Rajczyk, J. I., Barboza-Salerno, G. E., Powell, J. R., &amp; Boden-Albala, B. (2025). Trajectory of longitudinal lending discrimination modifies the efficacy of a skills-based intervention in stroke survivors. <em>Journal of Stroke and Cerebrovascular Diseases</em>, 108533. <a href="https://www.sciencedirect.com/science/article/pii/S105230572500309X">https://www.sciencedirect.com/science/article/pii/S105230572500309X</a>
+</div>
+</div>
 </section>
 </section>
 
