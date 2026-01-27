@@ -1,0 +1,713 @@
+---
+title: "Confounding+Association"
+subtitle: "Research Methods<br/>Class 3/4"
+author: "Gia Barboza-Salerno, MA, MS, JD, PhD"
+institute: "OSU, CPH"
+date: "2025/01/16 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: [middlebury-fonts, metropolis, metropolis-fonts,  "custom.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Proof in Research
+
+---
+
+# What Constitutes "Proof"?
+
+In research, to **“prove”** means reducing measurement error or random noise to minimize uncertainty in our statistical inferences. This helps ensure that our conclusions are more reliable and accurate.
+
+--
+
+Proof is not absolute certainty, but rather about reducing the factors that could distort or confuse the data (like measurement errors or random variations)
+
+--
+
+By minimizing these errors and uncertainties, we make sure that the conclusions we draw from the data are more trustworthy and reflect the true relationships or patterns we're trying to study
+
+--
+
+In other words, we are trying to increase validity and reliability
+---
+# What Constitutes "Proof"?
+In research, the concept of proof and the counterfactual are closely linked in understanding causality.
+
+The counterfactual asks: if A does not cause B, how likely would we have been to observe the results we did? This is known as the **counterfactual**, which helps in understanding causality.
+
+--
+
+A different way of stating this is: what *would* the outcome (B) have been if A had not occurred?
+
+- This would provide a comparison to help determine whether A actually caused B OR if the observed relationship was just due to random chance or other factors.
+
+--
+
+Therefore, "proving" causality is about showing that the observed effect (B) is not likely to have occurred without the cause (A), and this is done by comparing it to the counterfactual, which helps rule out random chance or other explanations.
+
+Example (easy): What would have happened to the patient's health if they hadn’t taken the drug?
+---
+# The Challenge of Observing the Counterfactual in Research
+
+Understanding the Counterfactual:
+
+- The counterfactual asks: "If X had not happened, what would have occurred instead?"
+
+- In most research, the counterfactual is unobservable, making it difficult to prove causality.
+
+**Example**: Race and Employment Outcomes (?)
+
+--
+
+Research shows that Black individuals are less likely to be hired compared to White individuals, controlling for qualifications. But, *what is the counterfactual?*
+
+--
+
+"If these Black individuals had been White, how likely would they have been hired?"
+(The counterfactual scenario is unobservable in real life.)
+
+--
+
+We cannot change a person’s race in reality, so the counterfactual remains hypothetical. Proof in this context is about showing that observed differences (e.g., hiring rates) cannot be attributed to random chance or other confounding factors.
+
+---
+# Note
+
+In my example on propensity score matching, I am basically addressing the question of "If the homicide victims were not young, Black, and male, how likely would they have been to die from firearm-related violence? And, would the environment have mattered?"
+---
+
+# Addressing the counterfactual problem
+
+- Researchers estimate the counterfactual using statistical methods like matched sampling or causal inference models.
+
+- Key Limitation: causality is inferred, not directly proven, due to the unobservable nature of the counterfactual.
+
+--
+
+What do we really know?
+---
+"Proving" something in research is like flipping the coin many times to reduce random uncertainties and make the outcome more reliable and meaningful.
+
+- The $H_0$: The coin is fair 
+  - Question: how does this equate to the standard null of *no difference*?
+  - If you flip the coin once, can you be sure its fair? No, the outcome could have been influenced by many factors
+  - The more you flip the coin, the more certain you are that the coin is fair, assuming that you do not reject the null hypothesis (i.e., that the coin is fair)
+
+---
+# Example: The Binomial Distribution
+
+- How can we assess whether a coin is fair?
+
+- If we flip a coin (n) times and get 7 heads, we want to calculate the probability of getting 7 or more heads with a fair coin. This can be done using the binomial distribution:
+
+--
+
+Binomial Distribution: The probability of getting exactly (k) heads in (n) flips of a fair coin is given by:
+$$
+P(X = k) = \binom{n}{k} \left(0.5\right)^k \left(0.5\right)^{n-k}
+$$
+
+--
+
+- *Note*: this question has SUBSTANTIAL AND SIGNIFICANT social justice and policy implications
+
+---
+# Connecting the dots: Probabilistic Assessments of Guilt and Innocence
+
+Randomness in jury selection (?)
+
+- Summoning the venire
+- The voir dire process
+- Striking potential jurors for cause
+- Using preemptory challenges
+- Impaneling the jury
+
+---
+# Connection between randomness, proof, and your Constitutional Rights
+
+6th Amendment rights
+- Right to a trial by jury of one’s peers
+- Right to counsel
+- Right to a speedy trial
+- Right to confrontation
+
+---
+
+# Your Rights?
+
+The sixth amendment guarantees the right to a trial by jury**
+- Multiple offenses cannot be aggregated to satisfy time requirement
+- States can afford more rights
+
+Issues
+- Juror qualifications
+- Juror selection
+- Requirements for a jury to convict
+
+---
+
+# Justice & Race: Native Americans underrepresented in South Dakota Jury Pools
+
+<figure>
+<img src="img/01/map.png" alt="jury" title="Proof"  width="70%" height="60%"
+     style="position:absolute; ">
+</figure> 
+
+---
+# Proof and Hypothesis Testing
+
+- Data for the US District Court for South Dakota shows that 7% of people in a recent jury pool were Native American
+- The Census shows that Native Americans constitute 11% of the population
+- A recent law review article has the Native American population comprising 24% of the population!
+- Why the disparity? Why is this a problem?
+- What is $H_0$?
+
+---
+# Curtis Flowers
+
+<figure>
+<img src="img/01/curtis_flowers.png" alt="Flowers" title="Proof"  width="70%" height="70%"
+     style="position:absolute; ">
+</figure> 
+
+---
+
+How many jurors would you expect if the null hypothesis that the jury is fair, is true?
+
+--
+
+Use the Binomial Distribution
+
+--
+
+Jury Composition: Suppose you have a jury selection process where the probability of selecting a white juror is (p). If you randomly select (n) jurors, you can use the binomial distribution to calculate the probability of getting a certain number of white jurors.
+
+---
+
+- Is the jury selection is fair, i.e., a random process (i.e., the null hypothesis) in this case? 
+
+- Another way to think about this is that if .25, or 25%, of the population is Black, how many Black jurors would you expect? 
+
+- You observed (k) Black Jurors (in this case, 0) out of 12.
+
+---
+
+Let $A$ = the number of jurors selected, then
+
+$$ P(A) = \binom{N}{k} \cdot p^kq^{N-k}$$
+
+<figure>
+ <center> <img src="img/01/binom_jury.png" alt="Flowers" title="Proof"  width="75%" height="75%"></center>
+</figure>   
+
+---
+# Assessing Fairness, and Bias in "Random Processes"
+
+This analogy helps illustrate how statistical methods can be used to assess fairness and detect potential biases in various contexts, including jury selection.
+---
+class: inverse, center, middle
+
+# Quantifying Risk and Uncertainty
+
+---
+
+# Review: Categorical Measures of Association
+Information on the effect of a potential risk factor or beneficial treatment can be presented in several different ways:
+- Relative Risk (RR)
+- Odds Ratio (OR)
+- Percent decrease or increase in Odds
+
+The way risk information is presented and interpreted can have a profound effect on decision-making processes with implications for policy and treatment outcomes
+
+---
+# Review: Categorical Measures of Association
+
+Risk ratios (RR) and odds ratios (OR) are measures of association
+
+Measures of association quantify the potential relationship between “exposure” and “outcome” among two groups.
+
+Recall there are two types of association (+) and (-)
+
+---
+# Risk Ratios
+$RR$ is the ratio of the prevalence of an outcome for the primary group of interest divided by the prevalence of an outcome in a comparison group, $RR = {P_p \over P_c}$
+
+A $RR$ = 1.0 the risk is the same for both groups, if $RR$ > 1.0 the risk is greater for group in numerator and if $RR$ < 1.0 it indicates decreased risk for group in numerator.
+---
+# Risk Ratios (Example)
+<figure>
+ <center> <img src="img/01/hiv_inmates.png" alt="hiv" title="hiv"  width="75%" height="75%"></center>
+</figure>  
+What is the risk ratio (RR) of developing tuberculosis among inmates in the east wing compared to the west wing?
+- Step 1: What percentage of East Wing inmates developed tuberculosis? This is also the ‘risk’: 
+
+--
+  - 28/157 = 17.8%
+
+---
+# Risk Ratios (Example)
+<figure>
+ <center> <img src="img/01/hiv_inmates.png" alt="hiv" title="hiv"  width="75%" height="75%"></center>
+</figure>  
+What is the risk ratio (RR) of developing tuberculosis among inmates in the east wing compared to the west wing?
+
+- Step 2: What percentage of West Wing inmates developed tuberculosis? This is also the ‘risk’: 
+
+--
+  - 4/137 = 2.9%
+  
+---
+# Risk Ratios (Example)
+<figure>
+ <center> <img src="img/01/hiv_inmates.png" alt="hiv" title="hiv"  width="75%" height="75%"></center>
+</figure>  
+What is the risk ratio (RR) of developing tuberculosis among inmates in the east wing compared to the west wing?
+
+- Step 3: Compute the $RR \rightarrow {17.8 \over 2.9} = 6.1$ 
+
+--
+- Step 4: (Harder): Interpret the $RR$
+
+---
+# Your Turn
+Below is a table describing the number of persons who developed COVID-19 by vaccination status.
+
+What is the relative risk of developing COVID-19 among individuals who have been vaccinated (compared to those who have not?
+
+<figure>
+ <center> <img src="img/01/covid_vaccinated.png" alt="hiv" title="hiv"  width="50%" height="50%"></center>
+</figure>  
+
+--
+
+What percent of vaccinated persons developed corona?
+
+What percent of unvaccinated persons developed corona?
+
+Compute and interpret the relative risk…
+
+--
+
+The risk of developing COVID-19 among those who are vaccinated by the Pfizer vaccine is .28 times that of those who are not.
+
+---
+# Review Odds & Odds Ratios
+Recall the odds of an event or outcome, $A$, is defined as
+
+$$Odds(A) = \large {p_A \over {1-p}_A}$$
+
+--
+
+For example, suppose we roll a single (fair) die, compute the odds of rolling a 3:
+
+Let $A$ be the event of rolling a "3", then:
+
+$$P(A) = {1 \over 6}$$
+
+$$1 - P(A) = {5 \over 6}$$
+
+$$Odds(A) =  {\large p_A \over {1-p}_A} = { {\large 1\over 6} \over {\large 5\over 6}} \rightarrow {1:5}$$
+
+--
+
+Interpret: The odds of rolling "3" are 1 in 5
+
+---
+# Odds Ratio (Step 1: Conditional Probability)
+<figure>
+ <center> <img src="img/01/odds_tuber.png" alt="hiv" title="hiv"  width="75%" height="75%"></center>
+</figure>  
+
+---
+# The Odds Ratio
+The Odds Ratio (OR) is ratio of the odds for the outcome for those with risk factor to the odds for the outcome for those without the risk factor
+
+<figure>
+ <center> <img src="img/01/odds_def.png" alt="hiv" title="hiv"  width="75%" height="75%"></center>
+</figure>  
+
+---
+# Example
+For the following data, compute the odds ratio of having a 1st preg. before (or at) age 25 (the outcome) among women who have cervical cancer (risk factor) and those who do not 
+
+BE CAREFUL -- Cancer can be a risk factor *OR* an outcome. Here it is a risk factor.
+
+<figure>
+ <center> <img src="img/01/age_cervical.png" alt="hiv" title="hiv"  width="50%" height="50%"></center>
+</figure>  
+
+
+---
+# Example
+
+Step 1: What is the Pr(Age $\le$ 25|cancer)?
+
+--
+$${42 \over 49} = .857$$
+
+Step 2: What is the Pr(Age $\le$ 25|not cancer)?
+
+--
+$${203  \over 317} = .640$$
+
+What are the odds(Age $\le$ 25|cancer)?
+Odds of having a 1st pregnancy before (or at) age 25 among women with cervical cancer:
+--
+
+$$5.99$$
+
+What are the odds(Age $\le$ 25|no cancer)? 
+Odds of having a 1st pregnancy before (or at) age 25 among women without cervical cancer:
+--
+
+$$1.78$$
+---
+
+What is the odds ratio for Age $\le$ 25 for women and other pregnant persons with cancer compared to Age $\le$ 25 for those without cancer?
+
+$${5.99 \over 1.78} = 3.37$$
+**Interpretation**: The odds ratio of approximately 3.37 indicates that women with cervical cancer are about 3.37 times more likely to have had their first pregnancy before (or at) age 25 compared to women without cervical cancer.
+---
+# Short cut formula
+
+You are probably used to seeing the shortcut formula
+
+The problem with shortcuts is that you do not understand how it was derived
+
+Make sure you can compute the odds 'by hand'
+
+The easy way is to use this formula
+
+$$OR = {a \times d \over b \times c}$$
+<figure>
+ <center> <img src="img/01/easyodds.png" alt="hiv" title="hiv "width="50%" height="50%"></center>
+</figure> 
+
+---
+# Making Odds Interpretable
+Compute the odds as a percent increase or decrease (this is often the better interpretation because people understand percentages better than they understand odds)
+
+The percent change in the odds is defined as $$|{(OR−1) \times 100}|$$
+*Example*: Odds ratio = 1.89 calculate the percent change in the odds
+$$|(1 – 1.89)| \times 100 = 89\%$$ 
+**Note:** the odds have *increased* why?
+
+*Example*: the odds of a first pregnancy among women aged 25 or younger is [(3.4 - 1) * 100 =] 240% higher among women who had cervical cancer compared to those who have not.
+
+---
+class: inverse, center, middle
+
+# Random v Systematic Error
+
+---
+# Bias & Measurement Error
+
+Two major types of errors
+- Non-differential or random
+- Differential or systematic
+
+--
+
+Random error: use of invalid outcome measure that equally misclassifies cases and controls***
+
+Systematic error: use of an invalid measure that misclassifies cases in one direction and controls in another
+---
+
+# Random Error v Bias
+Random error is caused by chance
+- Random error may or may not be able to be accounted for
+  - If the random error is due to the sample size, increase the sample
+- Random error affects the precision of your statistical estimates, i.e., makes them less precise
+
+--
+
+Bias is caused by systematic error 
+- Could be a flaw in how the data are collected
+- Can not be fixed
+- Bias leads to inaccurate results
+
+---
+
+# Types of Bias
+Systematic errors that may or may not be able to be addressed by your research design or analysis
+
+--
+
+Selection Bias 
+- Unrepresentative nature of samples or/and the method of participant selection distorts the exposure-outcome relationship from reality
+
+--
+
+Information (Misclassification) Bias
+- Collecting information differently between two groups leads to an error
+
+--
+
+Confounding 
+- Some other factors (variables) distort  the exposure-outcome relation
+- May lead to conclusion errors but if known can be addressed
+
+---
+class: inverse, center, middle
+
+# Association & Confounding
+
+---
+# Proof, Association & Confounding
+Once an association is found, you must ask whether it is real, OR:
+- Is the association due to chance?
+- Could the association be attributed to bias or measurement error?
+
+---
+
+# Association and Confounding
+
+It is possible for two variables to be associated without having "causation"
+
+There could be some other factor that is responsible for the apparent association
+
+The other factor is called a confounder
+
+Easy example: more babies are born in areas where storks are present
+
+---
+# Example
+
+Confounding is of particular concern in observational studies
+
+Grodstein et. al, 1996 conducted a study that found a lower rate of heart disease in postmenopausal persons taking hormone replacement therapy, an intuitive finding to many researchers
+
+The data seems to suggest that the risk of heart disease is much lower for those taking hormone replacement
+
+<figure>
+ <center> <img src="img/01/hormone_use.png" alt="hormone" title="hormone"  width="75%" height="75%"></center>
+</figure> 
+
+---
+# Confounding, Proof, and Bias
+Many doctors believed that the study proved that hormone replacement lowered risk of heart disease
+
+--
+
+Many others did not, and worried about the possibility of confounding...
+
+--
+
+Years after the original study was published, the NIH funded a large randomized clinical trial to examine the association
+ 
+- Women were asked to have their treatment decided by a coin flip: hormonal therapy or placebo
+- When treatments are randomized, any confounding factors are equally distributed across treatment groups, and hence are less likely to impact conclusions drawn (but [see](https://dazzling-beijinho-f58389.netlify.app/example/bias))
+
+[aside: start thinking about the ethics of such a study]
+
+---
+# Redeaux
+
+A study of over 68,000 women followed for about 6 years determined that women who received the hormone therapy were more likely to have heart disease compared to those receiving the placebo.
+
+This clearly contradicts the findings from the earlier, observational study
+
+What factors may explain the differences across studies?***
+
+---
+# Confounding
+Confounding occurs when the relationship between a given exposure and a specific disease/outcome is distorted (confused) by the influence of a third variable or group of variables (confounders)
+
+By controlling for confounding, we can obtain an unbiased estimate of the causal relationship between exposure and outcome
+
+--
+
+Two ways to deal with confounding
+
+- The study design phase (by randomization, restriction and matching) (later)
+
+--
+
+- During data analysis (by **stratification** and multivariate analysis (later))
+
+---
+# Stratification
+A statistical technique that allows to control for confounding by creating two or more categories (strata) in which the confounding variable either does not vary or does not vary very much
+
+Two types of adjustments for confounding by stratification
+- Pooling analysis by the Mantel-Haenszel formula; and 
+- Standardization
+
+---
+# Preliminary (Stratification)
+- The simplest way to control confounding during data analysis
+- Preliminary step towards applying the Mantel-Haenszel formula and standardization
+
+**Running example:** Research indicates that the frequency of Down syndrome increases with both maternal age and birth order.
+
+But, is birth order *causally* associated with Down syndrome independently of the *confounding effect* of the maternal age?
+
+The association between birth order and Down syndrome is largely influenced by maternal age, which acts as a confounding factor.  However, when controlling for maternal age, birth order itself does not show an independent effect on the prevalence of Down syndrome.
+
+---
+
+# Stratification for Confounding: The Mantel-Haenszel Formula
+
+Does the frequency of Down syndrome increase according to maternal age for each category of birth order? 
+<center>
+<figure>
+  <img src="img/01/birth_age_cases.png" alt="Research" title="Research Steps" width="50%" height="50%">
+</figure> 
+</center>
+
+Yes. But in each age category the birth order did not affect the frequency of Down syndrome. 
+
+Thus, the crude association between birth order and Down syndrome is the mere result of the confounding effect of maternal age.
+
+[@tripepi_stratification_2010]
+---
+
+# Confounding
+<center>
+<figure>
+  <img src="img/01/confounder.png" alt="Research" title="Research Steps" width="50%" height="50%">
+</figure> 
+</center>
+
+To be a confounding factor, two conditions must be met:
+
+- The confounding variable must be associated with the exposure (but not a consequence of the exposure)
+
+The confounding variable must be associated with outcome
+
+  - Independently of exposure
+
+The confounding variable cannot be an intermediary step in the causal pathway from the exposure of interest to the outcome of interest.
+
+---
+
+# Application to Birth Order 
+
+**Exposure**: Birth order (e.g., first-born, second-born, etc.)
+
+**Outcome**: Down syndrome
+
+**Confounding Variable**: Maternal age
+
+--
+
+**Condition 1:** Association with the Exposure
+Maternal Age and Birth Order: Maternal age is associated with birth order. As birth order increases, maternal age tends to increase because older mothers are more likely to have higher birth order children. This satisfies the first condition.
+
+**Condition 2:** Association with the Outcome
+Maternal Age and Down Syndrome: Maternal age is independently associated with the risk of Down syndrome. The risk of Down syndrome increases with maternal age, regardless of the birth order. This satisfies the second condition.
+
+---
+# Maternal Age is Confounder
+
+**Maternal Age is Not an Intermediary:** Maternal age is not an intermediary step in the causal pathway from birth order to Down syndrome. Instead, it is an independent factor that influences both birth order and the risk of Down syndrome.
+
+Maternal age meets both conditions to be considered a confounding factor in the relationship between birth order and Down syndrome. When maternal age is controlled for, the apparent association between birth order and Down syndrome diminishes, indicating that the true relationship is primarily driven by maternal age.
+---
+
+# Stratification for Confounding: The Mantel-Haenszel Formula
+
+1) Does the frequency of Down Syndrome (O = outcome) increase with birth order (E = exposure)?
+
+<center><figure>
+  <img src="img/01/order_cases.gif" alt="birth_order" title="birth_order" width="60%" height="60%">
+</figure> </center>
+
+From this figure, it appears that as birth order increases, so to does the number of down syndrome cases per 1,000 live births.
+
+--
+
+**Note carefully:** it is NEVER possible to assess statistical significance by eyeballing data. This is because both the number of cases in your analysis and the standard error are both factors in the statistical test.
+
+---
+# Stratification for Confounding: The Mantel-Haenszel Formula
+2) Is maternal age (C) associated with Down Syndrome (O)?
+<center><figure>
+  <img src="img/01/cases_age.png" alt="Research" title="Research Steps" width="60%" height="60%">
+</figure> </center>
+
+Again, it appears that older women and pregnant persons are at higher risk of having a child with down syndrome.
+
+These differences appear drastic
+---
+# Apply the rules to the running example
+
+<center>
+<figure>
+  <img src="img/01/confounder_running_ex.png" alt="Research" title="Research Steps" width="50%" height="50%">
+</figure> 
+</center>
+
+1. The confounding variable must be associated with the exposure (but not a consequence of the exposure)
+
+- In the running example, maternal age is associated with birth order
+
+2. The confounding variable must be associated with outcome independently of exposure
+
+  - In the running example, maternal age is associated with Down Syndrome cases per 1,000 live births
+  
+3. The confounding variable cannot be an intermediary step in the causal pathway from the exposure of interest to the outcome of interest.
+
+--
+
+Summary: maternal age is correlated with birth order and a risk factor even if birth order is low. So maternal age is confounder.
+
+**Note:** There was no chart of the relationship between birth order and maternal age, there need not be. It should be obvious that as maternal age increases do does birth order.
+
+---
+# Test Your Understanding
+
+Is birth order a confounder in the association between maternal age and Down Syndrome? *Why/Why not*?
+
+--
+<center>
+<figure>
+  <img src="img/01/confounder_running_ex_flipped.png" alt="Research" title="Research Steps" width="50%" height="50%">
+</figure> 
+</center>
+
+1. The confounding variable must be associated with the exposure (but not a consequence of the exposure)
+
+- In the running example, is birth order associated with maternal age?
+
+2. The confounding variable must be associated with outcome independently of exposure
+
+  - In the running example, is birth order associated with Down Syndrome cases per 1,000 live births *independent* of maternal age?
+  
+3. Is birth order an **intermediary step** in the causal pathway from the maternal age to Down Syndrome?
+---
+
+# Control of Confounding in the Analysis - Stratified
+[See example](https://dazzling-beijinho-f58389.netlify.app/example/propensity)
+
+[See example](https://dazzling-beijinho-f58389.netlify.app/example/confounding)
+
+[See example](https://dazzling-beijinho-f58389.netlify.app/example/infant_mortality)
+---
+
+# Summary
+Comparing the crude and stratum-specific measures of association is a very practical way to determine whether confounding is present and how bad it is
+
+You calculate an overall crude (unadjusted) relative risk (or odds ratio) and compare it to the stratum-specific relative risks (or odds ratios). 
+
+If the stratum-specific measures of association are similar to the crude measure of association, then there is no confounding by that factor, and you can just use the crude measure of association. 
+
+However, if the stratified estimates of association differ from the unadjusted estimate by 10% or more, then there is evidence of confounding.
+
+---
+# Note
+Stratified analysis works best when there are few strata (only 1 or 2 confounders have to be controlled)
+
+If the number of potential confounders is large, multivariate analysis are applied
+
+Can handle large number of confounders  (covariates) simultaneously 
+
+Based statistical regression models
+
+

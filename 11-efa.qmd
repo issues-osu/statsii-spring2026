@@ -1,0 +1,78 @@
+---
+title: "EFA"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+# Week 12: March 31, 2026   
+
+## Reading
+- Pituch et al. Chapter 9: [Exploratory Factor Analysis](Applied Multivariate Statistics for the Social Sciences_ Analyses with SAS and IBM's SPSS.pdf), from pp 339
+- Hahs-Vaughn. Chapter 9: [Applied Multivariate Statistical Concepts](Applied Multivariate Statistical Concepts.pdf), from pp 362
+- Yong and Pearce - 2013 - [A beginner’s guide to factor analysis](slides/factoranalysis/Yong and Pearce - 2013 - A beginner’s guide to factor analysis Focusing on exploratory factor analysis.pdf)
+
+## Introduction to the Topic
+
+This week, we focus on **Exploratory Factor Analysis (EFA)**, a statistical method used to uncover the underlying structure of a set of observed variables. EFA is a critical tool for identifying latent constructs in datasets.
+
+---
+
+## Key Concepts:
+- **Latent Variables**: Unobserved factors inferred from observed variables.
+- **Factor Loadings**: The relationship between observed variables and underlying factors.
+- **Eigenvalues and Scree Plots**: Tools for determining the number of factors to retain.
+- **Rotation Methods**: Techniques (e.g., Varimax, Promax) to simplify factor structure.
+
+---
+
+## Relevance:
+- Students will learn how to conduct EFA to explore latent structures in data.
+- Students will gain skills to evaluate factor solutions and interpret factor loadings.
+
+---
+
+## Why This Is Important:
+- EFA helps researchers identify patterns and groupings in data without predefined hypotheses.
+- It is widely used in psychology, education, and social sciences to develop and validate measurement tools.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon prior topics like correlations and covariance by introducing latent structures.
+- Prepares students for Confirmatory Factor Analysis (CFA), where hypothesized factor structures are tested.
+
+
+## Lab Files
+- **SAQ-8**: First, we illustrate factor analysis with a simple example from UCLA which you can read more about [here](https://stats.oarc.ucla.edu/spss/seminars/introduction-to-factor-analysis/a-practical-introduction-to-factor-analysis/). It uses the [SAQ-8](slides/factoranalysis/SAQ8.sav) to examine the latent structure of LOVING statistics. 
+
+- **PIAAC**: Then, we will use read data from the Program for the International Assessment of Adult Competencies (PIAAC) located [here](https://www.oecd.org/en/about/programmes/piaac/piaac-data.html). From the website, the PIAAC survey seeks to answer the following policy questions:
+
+  - How are skills distributed? A comparison of skill levels, skill requirements, investments in education and training across countries, investment mismatches across countries, as well as of investments and mismatches within countries, across demographic categories, regions, sectors of industry, levels and fields of schooling.
+
+- Why are skills important? The relation of skills to relevant labor market outcomes such as employment opportunities, earnings, job security, and skill utilization, as well as to other outcomes such as health, civic engagement, and social trust.
+
+- What factors are related to skill acquisition and decline? The relation between various learning activities – education, training, informal learning activities – and skill acquisition. The relation of experiences at work, in education and everyday life to skill
+decline among older individuals.
+
+We are using a subsetted spss file from the USA that you can download [here](slides/factoranalysis/sub_prgusap1_2017.sav) and I also created a JASP file of the same data that is fully annotated [here](slides/factoranalysis/CH10_PIAAC_FA.jasp). The final, reduced model output with the variables that did not load highly on the factors is [here](slides/factoranalysis/CH10_PIAAC_FA_FINAL.jasp) in case you are interested.   
+
+- **Generations: A Study of the Life and Health of LGB People in a Changing Society**: We will conduct a full FA using a dataset called [Generations:A Study of the Life and Health of LGB People in a Changing Society](slides/factoranalysis/life and health of lgbt people study.sav) We will use these data wo explore the factor structure of an ethnic identity scale and differences in the structure across race. The analysis is based on a paper by @johnson2022group that you can download [here](slides/factoranalysis/s12954-022-00635-3.pdf) called *The Group-Based Law Enforcement Mistrust Scale: Psychometric Properties of an Adapted Scale and Implications for Public Health and Harm Reduction Research*
+
+**THE IN-CLASS EXAMPLE** is located [here](slides/factoranalysis/RE_FA.docx) and then you can study how this same analysis can be performed using R [here](efa_R.qmd)
+
+### Lecture Notes
+
+-   Download today's slides [here](slides/factoranalysis/lecture.pptx) 
+
+## Resources
+
+ 
+------------------------------------------------------------------------
+## Additional Notes
+Stay calm and and let your life unfold one factor at a time.
+

@@ -1,0 +1,75 @@
+---
+title: "LCA"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 14: April 14, 2026 
+
+## Introduction to the Topic
+
+This week, we dive into **Latent Class Analysis (LCA)**, a method used to identify subgroups or classes within a population based on observed data. LCA is essential for uncovering hidden heterogeneity in data.
+
+---
+
+## Key Concepts:
+- **Latent Classes**: Unobserved subgroups identified through patterns in the data.
+- **Class Membership Probabilities**: The likelihood that an individual belongs to a specific class.
+- **Model Fit**: Using tools like BIC and AIC to determine the optimal number of classes.
+- **Interpreting Profiles**: Understanding differences between identified classes.
+
+---
+
+## Relevance:
+- Students will learn how to use LCA to identify meaningful subgroups in their data.
+- Students will explore applications of LCA in areas like health disparities, education, and consumer behavior.
+
+---
+
+## Why This Is Important:
+- LCA provides insights into population heterogeneity, allowing researchers to identify distinct subgroups with unique characteristics.
+- It is a powerful tool for tailoring interventions and understanding diverse outcomes.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon prior topics like EFA by extending latent variable modeling to categorical data.
+- Prepares students for advanced mixture modeling techniques and combining LCA with SEM.
+
+By the end of this week, students will be able to perform LCA, interpret latent class solutions, and use these insights to answer research questions about population heterogeneity.
+
+### Class files
+
+-   Download today's slides [here](slides/lca/lecture.pptx) 
+-   Download the data for today from the National Child Health Survey (NCHS) in [SPSS](slides/lca/NCHS.sav) and [CSV](slides/lca/NCHS.csv) to import into JASP.
+-   [Here](slides/lca/conditional_response_plot.xlsx) is my example excel file to create a chart of the conditional item probabilities
+
+------------------------------------------------------------------------
+## Additional Notes
+
+Stay Calm… This is the Last Latent Class.
+
+  We’ve reached model convergence.
+  The entropy is high.
+  The fit is good.
+  And yes… this is the final class.
+  
+  For some of you (and for me), the fun is over.
+  For others, the fun is just beginning.
+  If that’s true, we’ve officially detected a latent subgroup of students.
+  
+  Let’s hope the class proportions are:
+  
+  -  Class 1 – “Loved Every Minute”: 99.1%
+  -  Class 2 – “Thrilled It’s Over”: 0.9%
+  
+  Model fit? Impeccable.
+  Classification? Accurate.
+  Emotion? Mixed.
+  But this… this was a class worth identifying.
+  
+  
+  

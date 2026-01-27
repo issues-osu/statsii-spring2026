@@ -1,0 +1,73 @@
+---
+title: "Open Source Software"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+## Statistical Software Packages
+
+There are a wide variety of different open source and proprietary software tools that are simple to learn and make data management and analysis easier, more effective and fun. Here is my list of the most important tools to be familiar with. The items in bold are the software that we will use during the course of the week.
+
+The software is listed by availability (i.e., open source, license, package add-on)
+
+## Open Source Software
+
+### R
+IMHO the best statistical analysis tool ever created (yes, better than python for statistics)
+
+- In this class we will use both R and RStudio (the GUI for R) which can be downloaded here: [RStudio Desktop - Posit](https://posit.co/download/rstudio-desktop/)
+
+### **jamovi**
+The next best option, it is built on an R framework, nobody will know you are NOT using R :)
+
+jamovi is a new "3rd generation" statistical spreadsheet designed from the ground up to be easy to use. jamovi is a compelling alternative to costly statistical products such as SPSS and SAS. It is also a simpler alternative to R that is built on top of the R statistical language.
+
+**Features:**
+
+- **Analyses**: jamovi provides a complete suite of analyses for (not just) the social sciences; t-tests, ANOVAs, correlation and regression, non-parametric tests, contingency tables, reliability and factor analysis. The [jamovi library](https://www.jamovi.org/library/) contains many more libraries that will allow you to perform additional analyses from simple crosstabs to multilevel modeling and more.
+
+- **Excel integration**: jamovi is a fully functional spreadsheet, immediately familiar to anyone. Enter, copy/paste data, filter rows, compute new values, perform transforms across many columns at once – jamovi provides a streamlined spreadsheet experience, optimized for statistical data.
+
+- **R syntax**: Love R? Check out jamovi's "syntax mode", where the underlying R syntax for each analysis is made available. Just copy and paste this into R for a seamless transition. Alternatively, run R code directly inside jamovi with [the Rj Editor](https://blog.jamovi.org/2018/07/30/rj.html).
+
+**Two versions of jamovi:**
+
+- jamovi Cloud
+- **[jamovi desktop](https://www.jamovi.org/download.html)** – downloads and installs jamovi onto your desktop
+  - It is available for Windows, Mac and Linux
+
+### **JASP - A Fresh Way to Do Statistics**
+
+"Just Another Statistics Program" JASP offers another great alternative to SPSS. Visit [jasp-stats.org](https://jasp-stats.org/)
+
+- In some ways JASP is better than jamovi, but it seems less stable and so it is my second best option
+- There are some benefits to using JASP including flexibility in making plots and nice visualizations for the statistical analyses you are conducting
+- [Click here](https://jasp-stats.org/download/) to download JASP
+- JASP in particular provides a great way to both learn statistics and R at the same time
+- Let's take a look at the data library in JASP now
+
+### **QGIS**
+
+"Quantum Geographical Information Systems" allows you to do geospatial analysis like a (ArcGIS) pro – QGIS is great for creating, editing, visualizing, analyzing and publishing geospatial information
+
+- The [Applications page](https://www.qgis.org/en/site/about/case_studies/index.html) gives you a sense of all the cool things you can do with QGIS
+- To download the software [click here](https://qgis.org/en/site/forusers/download.html)
+
+### PSPP
+
+[PSPP - GNU Project - Free Software Foundation](https://www.gnu.org/software/pspp/) is an open source equivalent to SPSS and it is freely downloadable. It is not very robust and so I would not recommend it.
+
+## Proprietary Software
+
+OSU has obtained a license for the following software packages:
+
+- **SPSS**: It's like a necessary evil - everyone must know how to use SPSS. There are some things that are actually easier in SPSS
+- **SAS**: ugh!
+- **EXCEL**: Can be great to clean your data, particularly if you use the built-in functions
+- **ArcGIS Map, Pro**
+- **jmp**: This is a very cool data science program from the makers of SAS (the archaic and soon to be extinct software program)
+
+To download these software packages: [Log In to the Office of Business and Finance](https://osuitsm.service-now.com/selfservice/)

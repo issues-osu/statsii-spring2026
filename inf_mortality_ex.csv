@@ -1,0 +1,9 @@
+Location,white_infant_deaths,black_infant_deaths,white_births,black_births, paid_leave, incinequality
+California,353,193,115845,21287, "yes", "yes"
+Colorado,128,35,36334,2988, "yes", "no"
+Connecticut,43,39,19136,4357, "no", "yes"
+Indiana,342,117,56839,9991, "no", "no"
+Maryland,103,196,28193,20449, "yes", "no"
+Michigan,364,259,72108,18288, "yes", "no"
+Ohio,476,274,92761,20748, "no", "no"
+Pennsylvania,377,180,88168,16748, "no", "no"

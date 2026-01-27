@@ -1,0 +1,69 @@
+---
+title: "Mediation"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 11: March 17, 2025  
+
+## Introduction to the Topic
+
+This week, we explore **mediation analysis**, a statistical approach used to understand the mechanisms through which an independent variable influences a dependent variable via a third variable, known as the mediator. Mediation analysis is essential for uncovering causal pathways in research.
+
+---
+
+## Key Concepts:
+- **Direct Effects**: The relationship between the independent variable and the dependent variable, excluding the mediator.
+- **Indirect Effects**: The portion of the relationship explained through the mediator.
+- **Total Effects**: The combined impact of direct and indirect effects.
+- **Bootstrapping**: A resampling method for testing the significance of indirect effects.
+
+---
+
+## Relevance:
+- Students will learn how to identify and test mediating variables in a causal framework.
+- Students will explore how to decompose total effects into direct and indirect components to better understand relationships among variables.
+
+---
+
+## Why This Is Important:
+- Mediation analysis allows researchers to move beyond simple relationships to uncover *how* and *why* effects occur.
+- Understanding mediation is critical for testing theoretical models in fields like psychology, sociology, and public health.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon previous topics, such as regression and effect sizes, by extending these tools to explore causal pathways.
+- Prepares students for advanced concepts like moderated mediation and structural equation modeling (SEM), where mediation analysis is a core component.
+
+By the end of this week, students will be able to conduct mediation analyses, interpret direct and indirect effects, and evaluate the significance of mediators using bootstrapping methods.
+
+## Class Files
+
+## Class Files
+
+### Lecture Notes
+
+
+### R Code
+
+
+### Data Sets
+
+
+## Resources
+
+
+## Today's Reading
+
+ 
+## R Lab Files
+
+ 
+
+## Additional Notes
+ 
+------------------------------------------------------------------------

@@ -1,0 +1,166 @@
+---
+title: "Escape Room: Historic Redlining Scores"
+subtitle: "Discovering and Analyzing Key Datasets"
+runtime: shiny_prerendered
+output: learnr::tutorial
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(dplyr)
+library(ggplot2)
+library(foreign)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Welcome to the Escape Room!
+
+In this interactive escape room, you will navigate a series of rooms by solving data-related challenges. Your mission is to explore the **Historic Redlining Scores (HRS)** dataset and uncover insights about social inequities. Let's get started!
+
+---
+
+## Room 1: Finding Data on the Web
+
+To begin your journey, locate the **Historic Redlining Scores dataset**. Use the link below to access it:
+
+[Historic Redlining Scores Dataset (OpenICPSR)](https://www.openicpsr.org/openicpsr/project/141121/version/V2/view?path=/openicpsr/141121/fcr:versions/V2/HRS2010B.sav&type=file).
+
+### Challenge:
+
+```{r room1_question1}
+question("What is the purpose of this dataset?",
+    answer("To understand the impact of redlining policies.", correct = TRUE),
+  answer("To calculate income data.", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+---
+
+## Room 2: Downloading the Dataset
+
+### Instructions:
+Download the dataset and save it as `HRS2010B.sav` in the `data` folder of your project.
+
+### Challenge:
+
+```{r room2_question1}
+question("What is the size of the downloaded file in MB?",
+  answer("Approximately 10 MB.", correct = TRUE),
+  answer("Approximately 50 MB.", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+```{r room2_question2}
+question("How many columns are in the dataset?",
+  answer("5", correct = TRUE),
+  answer("10", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+---
+
+## Room 3: Understanding Census Tract Geography
+
+Census tracts are small, consistent geographic units designed to analyze demographic and social data. They are crucial for understanding how redlining practices impacted neighborhoods.
+
+### Challenge:
+
+```{r room3_code}
+# Filter data for Chicago census tracts
+chicago_metro <- hrs_data %>% filter(METRO_NAME == "Chicago-Naperville-Elgin, IL-IN-WI")
+
+# Count the number of tracts
+num_tracts <- nrow(chicago_metro)
+```
+
+```{r room3_question1}
+question("How many data points are available for Chicago's metropolitan area?",
+  answer("1014", correct = TRUE),
+  answer("500", correct = FALSE),
+  answer("1500", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+---
+
+## Room 4: What Is Historic Redlining?
+
+Historic redlining refers to discriminatory practices from the 1930s that denied loans or services to neighborhoods based on racial or ethnic composition. This dataset quantifies the lingering effects of these policies.
+
+### Challenge:
+
+```{r room4_question1}
+question("What is the name of the column for the 2020 Historic Redlining Scores?",
+ 
+  answer("HRS_2020", correct = TRUE),
+  answer("Redlining_Index", correct = FALSE),
+  allow_retry = TRUE
+)
+
+question("Why is it important to study this data in a modern context?",
+ 
+  text_input("Enter your response here:")
+)
+```
+
+---
+
+## Room 5: Calculating Average Redlining Scores
+
+Now that you’ve identified the column for HRS, calculate the average score for:
+1. Chicago.
+2. Your city of interest (if available in the dataset).
+
+### Challenge:
+
+```{r room5_code}
+average_hrs <- hrs_data %>%
+  filter(CBSA %in% c(31100, 16980)) %>%
+  group_by(CBSA) %>%
+  summarize(Average_HRS = mean(HRS_2020, na.rm = TRUE))
+```
+
+```{r room5_question1}
+question("What are the average HRS values for Chicago and your city?",
+ 
+  text_input("Enter the values here:")
+)
+```
+
+---
+
+## Room 6: Visualizing the Data
+
+Visualizations can reveal patterns in data that might not be obvious in raw numbers. Create a bar plot to compare the average HRS values between the two cities.
+
+### Challenge:
+
+```{r room6_code}
+ggplot(average_hrs, aes(x = factor(CBSA), y = Average_HRS, fill = factor(CBSA))) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Historic Redlining Scores by City",
+       x = "City",
+       y = "Average HRS")
+```
+
+```{r room6_question1}
+question("What does the bar plot reveal about differences in Historic Redlining Scores between the two cities?",
+  
+  text_input("Enter your response here:")
+)
+```
+
+---
+
+# Congratulations!
+
+You’ve successfully navigated the escape room! Here’s what you accomplished:
+- Located and downloaded a public dataset.
+- Explored census tract geography and its relevance.
+- Analyzed and visualized Historic Redlining Scores.
+
+Keep this workflow in mind for future data-driven projects in social justice.

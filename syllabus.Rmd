@@ -1,0 +1,259 @@
+---
+title: "Syllabus: Statistics for Social Justice"
+description: "Course syllabus for Spring 2025, covering equity-focused statistical analysis."
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: flatly
+---
+
+# Syllabus: Statistics for Social Justice
+
+## Course Information
+
+**Course Title**: Statistics II: Equity-Focused Data Analysis\
+**Instructor**: Dr. Gia Elise Barboza-Salerno\
+**Institution**: College of Social Work, The Ohio State University\
+**Term**: Spring 2025
+
+------------------------------------------------------------------------
+
+## Course Description
+
+This course empowers students to use advanced statistical tools to address social inequities. By combining data analysis with critical thinking, students will learn to analyze inequities focusing on topics such as child welfare, education, health, housing, and criminal justice, while fostering equitable research practices.
+
+Stats II for Social Workers focuses on two topics that are central to social science research: multiple regression and the development of measures or scales. Introductory to intermediate regression topics will be covered, such as mediation, moderation, dummy variables in regression, and hierarchical regression. Scale development procedures from generating items to conducting exploratory factor analysis will be covered. The course will emphasize the application of skills and knowledge for conducting analyses in SPSS and Stata, as well as interpreting and reporting results. However, it is important to have a wide variety of tools at your disposal for the problem at hand. Therefore, I will introduce several open-source tools that will facilitate some of the analyses we will conduct. Practical issues, such as managing missing data and violations of assumptions will be covered. The course will prepare students to conduct power analyses and to generate and interpret confidence intervals. Content in the course will refer back to content in the theory and research methods courses in the CSW PhD curriculum.
+
+------------------------------------------------------------------------
+
+## Specific Course Goals
+
+At the conclusion of the course, students will have skills and knowledge to independently conduct regression analyses to answer research questions and test hypotheses. They will also understand the centrality of measurement in quantitative research and will be familiar with the process of scale development. The course will begin with a review of important ideas from Stats I for Social Workers: the strengths and limitations of quantitative analyses, the role of theory in testing hypotheses, ethical issues in quantitative research, the nature of inferential statistics, and the concept of variance. Specifically, by the end of the course students will:
+
+1.  Understand the purposes and mechanics of linear and multiple regression;
+2.  Understand how regression analysis relates to correlations/covariances, t Tests, and ANOVAs;
+3.  Have skills to independently conduct linear, multiple, and hierarchical regression analyses (i.e., linear regression & logistic regression) in SPSS and Stata;
+4.  Have skills to conduct mediation tests in regression using SPSS and Stata, and interpret their results statistically and in relation to hypotheses;
+5.  Have skills to conduct moderation tests in regression using SPSS and Stata, and interpret their results statistically and in relation to hypotheses;
+6.  Have skills to appropriately code dummy variables, use them in regression analyses, and interpret their coefficients;
+7.  Be able to compute and interpret confidence intervals and effect sizes in regression analyses;
+8.  Be familiar with a sequence of qualitative and quantitative procedures in scale development, including literature review, item generation, cognitive testing, pilot-testing, and exploratory factor analysis;
+9.  Understand the concept of measurement validation as an ongoing, multifaceted process with the end goal of evaluating the appropriateness and ethics of interpreting scores in practice;
+10. Understand the concept and be able to compute multiple types of scale reliability;
+11. Understand when and how to use multiple imputation to address missing values in a dataset;
+12. Have skills to interpret and conduct power analyses for multiple regression.
+
+------------------------------------------------------------------------
+
+## Innovative Course Features
+
+-   **Team-Based Learning**: Collaborate on hands-on projects.
+-   **Flipped Classroom**: Interactive problem-solving during class time.
+-   **Social Justice Policy Applications**: Assignments focused on addressing real-world inequities.
+-   **Interactive R Labs**: Weekly coding exercises tied to social justice topics.
+
+------------------------------------------------------------------------
+
+## Weekly Schedule & Activities
+
+### Week 1: January 6, 2025
+
+**No Class**
+
+------------------------------------------------------------------------
+
+### Week 2: January 13, 2025
+
+**Activity**:\
+Complete a pre-course assessment to evaluate your understanding of statistics and R.
+
+-   [Access the Assessment](stats_I_assessment.pdf)\
+-   [Access the Answers](stats-i-initial-assessment.html)
+
+------------------------------------------------------------------------
+
+### Week 3: January 20, 2025
+
+**No Class - MLK Day**
+
+------------------------------------------------------------------------
+
+### Week 4: January 27, 2025  
+**Introduction to Regression**  
+- **Topics**:  
+  Course structure, flipped classroom, and ethics in quantitative research.  
+  Role of statistics in social work.  
+- **Innovative Approach**:  
+  Interactive Data Escape Room: Solve puzzles using basic regression knowledge and R skills to "escape" a critical social work scenario.  
+- **R Lab**:  
+  Learn `dplyr` and `ggplot2` to clean and visualize messy datasets.  
+- **Social Justice Policy Application**:  
+  Write a reflection on how data analysis can address a specific social work issue in your community.
+
+**Simple Regression: Foundations and Application**  
+- **Topics**:  
+  Slope, intercept, residuals, and regression output.  
+- **Innovative Approach**:  
+  Real-World Regression Challenge: Analyze a dataset from a local social work organization and present your findings in a "mock conference."  
+- **R Lab**:  
+  Fit simple regression models using `lm()` and create dynamic visuals with `ggplot2`.  
+- **Social Justice Policy Application**:  
+  Submit a conference-style abstract summarizing your analysis and findings.
+
+**Data Wrangling & Visualization: Turning Data Into Stories**  
+- **Topics**:  
+  Data integrity and visualization for storytelling.  
+- **Innovative Approach**:  
+  Data Makeover Challenge: Reimagine poorly visualized datasets using effective storytelling principles.  
+- **R Lab**:  
+  Create publication-ready visuals using `ggplot2` themes and `patchwork`.  
+- **Social Justice Policy Application**:  
+  Submit before/after visualizations with a 150-word explanation of improvements.
+
+---
+
+### Week 5: February 3, 2025  
+**Multiple Regression: Hypothesis Testing and Decomposition of Effects**  
+- **Topics**:  
+  F-tests, p-values, R², and decomposition of effects.  
+- **Innovative Approach**:  
+  Hypothesis Auction: Students "bid" on testable hypotheses and justify their choices.  
+- **R Lab**:  
+  Fit and interpret multiple regression models with `lm()` and conduct diagnostic checks.  
+- **Social Justice Policy Application**:  
+  Submit a short video explaining the results of your multiple regression analysis to a non-technical audience.
+
+---
+
+### Week 6: February 10, 2025  
+**Effect Sizes & Confidence Intervals: Moving Beyond P-Values**  
+- **Topics**:  
+  Practical significance, confidence intervals, effect sizes.  
+- **Innovative Approach**:  
+  Data Debate: Teams debate the practical significance of statistical findings in a social work context.  
+- **R Lab**:  
+  Calculate and interpret effect sizes with the `effectsize` package and create visual confidence intervals with `ggdist`.  
+- **Social Justice Policy Application**:  
+  Write an op-ed arguing for or against the practical significance of debated findings.
+
+---
+
+### Week 7: February 17, 2025  
+**Assumptions and Violations of Assumptions**  
+- **Topics**:  
+  Diagnosing and addressing regression assumption violations.  
+- **Innovative Approach**:  
+  Assumption Diagnosis Clinic: Diagnose and "treat" assumption violations in datasets.  
+- **R Lab**:  
+  Conduct diagnostic checks with the `car` and `performance` packages.  
+- **Social Justice Policy Application**:  
+  Create a "prescription card" summarizing diagnostics and fixes for your dataset.
+
+---
+
+### Week 8: February 24, 2025  
+**Mediation & Suppressor Variables**  
+- **Topics**:  
+  Mediation analysis and identifying suppressor effects.  
+- **Innovative Approach**:  
+  Data Detective Roleplay: Investigate intervention mechanisms using mediation analysis.  
+- **R Lab**:  
+  Perform mediation analysis with the `mediation` package and visualize indirect effects.  
+- **Social Justice Policy Application**:  
+  Submit a "case file" documenting your mediation analysis, including visualizations and key takeaways.
+
+---
+
+### Week 9: March 3, 2025  
+**Moderation (Interactions) in Regression**  
+- **Topics**:  
+  Interactions, visualization, and interpretation.  
+- **Innovative Approach**:  
+  Build-a-Story Workshop: Create narratives around moderation analysis results.  
+- **R Lab**:  
+  Use interactions to plot and interpret effects.  
+- **Social Justice Policy Application**:  
+  Submit a 1-page illustrated story using moderation findings.
+
+---
+
+### Week 10: March 10, 2025  
+**Logistic Regression: Predicting Dichotomous Outcomes**  
+- **Topics**:  
+  Odds ratios, ROC curves, interpreting results.  
+- **Innovative Approach**:  
+  Predictive Policy Game: Predict outcomes and propose social work interventions.  
+- **R Lab**:  
+  Fit logistic regression models with `glm()` and create ROC curves with `pROC`.  
+- **Social Justice Policy Application**:  
+  Submit a policy recommendation informed by logistic regression findings.
+
+---
+
+### Week 11: March 17, 2025  
+**Measurement & Scale Development**  
+- **Topics**:  
+  Reliability, validity, and scale construction.  
+- **Innovative Approach**:  
+  Scale Hackathon: Design and test scales for social work constructs.  
+- **R Lab**:  
+  Calculate reliability with `psych` and conduct EFA with `factoextra`.  
+- **Social Justice Policy Application**:  
+  Submit your scale, reliability statistics, and EFA results.
+
+---
+
+### Week 12: March 24, 2025  
+**Exploratory Factor Analysis (EFA)**  
+- **Topics**:  
+  Factor extraction and visualization.  
+- **Innovative Approach**:  
+  Factor Scavenger Hunt: Interpret factor loadings to uncover insights.  
+- **R Lab**:  
+  Conduct EFA with `psych` and visualize results with `corrplot`.  
+- **Social Justice Policy Application**:  
+  Submit an infographic summarizing EFA findings.
+
+---
+
+### Week 13: March 31, 2025  
+**Confirmatory Factor Analysis (CFA)**  
+- **Topics**:  
+  Model fit and parameter estimates.  
+- **Innovative Approach**:  
+  Model Critique Workshop: Propose refinements to a provided CFA model.  
+- **R Lab**:  
+  Conduct CFA with `lavaan` and visualize results with `semPlot`.  
+- **Social Justice Policy Application**:  
+  Submit a report evaluating the CFA model and suggesting refinements.
+
+---
+
+### Week 14: April 7, 2025  
+**Latent Class Analysis (LCA)**  
+- **Topics**:  
+  Identifying latent subgroups.  
+- **Innovative Approach**:  
+  Latent Storytelling: Use LCA findings to create fictional personas representing latent groups.  
+- **R Lab**:  
+  Perform LCA with `poLCA` and visualize latent profiles.  
+- **Social Justice Policy Application**:  
+  Submit a "persona deck" illustrating latent group characteristics.
+
+---
+
+### Week 15: April 14, 2025  
+**Student Presentations**
+
+---
+
+### Final Exam: April 21, 2025  
+**Create, Validate, and Apply Scales**  
+- **Task**:  
+  Develop two scales using EFA and reliability tests. Use the scales in a regression analysis and submit a professional report including R code, interpretations, and visualizations.
+  
+## Contact Information
+
+**Office Hours**: Mondays 2–4 PM, or by appointment.\
+**Email**: [barboza-salerno\@osu.edu](mailto:barboza-salerno@osu.edu)

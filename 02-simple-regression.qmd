@@ -1,0 +1,79 @@
+---
+title: "Introduction to Simple Linear Regression"
+author: "Dr. Gia Elise Barboza-Salerno"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 3: January 27, 2026
+
+## Today's Reading
+
+- Diez et al., Chapter 8, pp. 304-340. Intro to linear regression. Be sure to check out the embedded videos.
+
+## Simple Linear Regression – Introduction to the Topic
+
+This week, we will delve into **Simple Linear Regression**, a foundational tool in statistical analysis that allows us to model relationships between two variables. Students will learn how to interpret the slope, intercept, and residuals, and use regression output to draw meaningful conclusions about data. Through this process, students will develop a deeper understanding of how regression can be used to predict outcomes and test hypotheses in social work research.
+
+In this unit we will learn to quantify the relationship between two numerical variables, as well as modeling numerical response variables using a numerical or categorical explanatory variable.
+
+---
+
+### What will students learn this week?
+
+- The fundamental components of a simple linear regression model (slope, intercept, and residuals).
+- How to interpret regression output, including unstandardized and standardized coefficients.
+- The practical steps to fit a simple linear regression model in R using `lm()`.
+- How to visualize regression results and residuals using `ggplot2`.
+
+---
+
+### Why is this topic important?
+
+Simple Linear Regression serves as the building block for more advanced statistical methods, such as multiple regression, moderation, and mediation analysis. It allows social work researchers to identify relationships between variables, predict outcomes, and inform data-driven decision-making. Mastering this concept is essential for understanding more complex techniques later in the course.
+
+---
+
+### How does it relate to previous or future content?
+
+- **Ties to previous content**: Builds upon last week's review of descriptive statistics and introduces the concept of relationships between variables.
+- **Prepares for future topics**: Provides a foundation for upcoming topics like multiple regression (Week 5), where we will expand from one predictor to multiple predictors, and interaction effects (Week 9), where regression will be used to explore moderating relationships.
+
+---
+
+This session emphasizes the practical and theoretical importance of regression analysis, helping students connect statistical techniques to real-world social work applications.
+
+
+## Class Files
+
+### Lecture Notes
+
+-   [Today's Lecture Notes](slides/SLR_files/SLR-final.pptx)
+-   [Handout](docs/SLR_files/Handout SSE.docx)
+
+### R Lecture
+
+-   [Introduction to R](slides/R labs/lab_1-sp2025.pptx)
+
+## Today's Reading
+
+-   **Primary Reading**: [Simple Linear Regression](static/Exploring the relationships between self-care and well-being outcomes among child welfare professionals.pdf)
+-   **Optional Reading**: [Extrapolatoin](static/431525a.pdf) - an example of what **not** to do despite the potential publication in a highly regarded journal
+
+## R Lab Files
+
+-   [Lab Instructions](slides/inclass.html)
+-   [Lab Dataset](slides/brfss_aces_subset.sav)
+-   [Lab Worksheet](static/BRFSS ACEs.docx)
+-   [R code for lab](slides/SLR_files/brfss-script.R)
+-   [Jasp annotated output](slides/SLR_files/brfss_aces_subset.jasp)
+-   [The Escape Room Exercise](escape_room_redlining.Rmd)
+
+## Additional Notes
+
+- Remain calm
+
+------------------------------------------------------------------------

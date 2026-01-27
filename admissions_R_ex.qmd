@@ -1,0 +1,140 @@
+---
+title: "Admissions Data Analysis"
+author: "Barboza-Salerno"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Introduction
+
+This code analyzes **admissions data**, focusing on **predicting SAT Math scores** using SAT Verbal scores and high school class size. The analysis employs **linear regression models**, including [simple linear regression](02-simple-regression.qmd), [multiple linear regression](03-multiple-regression.qmd), correlation assessments, and visualizations to explore the relationships between these variables.
+
+Here is the [admissions data](data/admissions.sav) and you can download the script to run in R [here](admissions_R_ex.R)
+
+# Load Necessary Libraries
+```{r}
+library(foreign)    # For reading .sav files
+library(ggplot2)    # For visualization
+library(dplyr)      # For data manipulation
+library(gtsummary)  # For creating regression tables
+library(officer)    # For exporting to Word
+library(flextable)  # For table formatting
+```
+
+# Load and Inspect Data
+```{r}
+admissions <- read.spss("data/admissions.sav", to.data.frame = TRUE)
+head(admissions) # Display first few rows
+```
+
+# Data Preprocessing
+```{r}
+admissions_clean <- admissions %>% 
+  dplyr::select(SAT_math, SAT_verbal, HS_class_size) %>% 
+  na.omit()
+```
+
+# Simple Linear Regression: SAT Math ~ SAT Verbal
+```{r}
+simple_model <- lm(SAT_math ~ SAT_verbal, data = admissions_clean)
+summary(simple_model) # Regression summary
+```
+
+### Interpretation:
+- **SAT Verbal has a positive effect on SAT Math scores** (Estimate = 0.45572, p < 0.001).
+- **Model explains ~20.2% of variance in SAT Math scores** (Adjusted R² = 0.2011), meaning SAT Verbal alone is a moderate predictor.
+- **Residuals appear reasonably distributed**, suggesting no major violations of normality assumptions.
+
+# Compute Fitted Values and Residuals
+```{r}
+admissions_clean$fitted_simple <- fitted(simple_model)
+admissions_clean$residuals_simple <- residuals(simple_model)
+```
+
+# Compute Standardized Values
+```{r}
+admissions_clean$std_fitted_simple <- scale(admissions_clean$fitted_simple)
+admissions_clean$std_residuals_simple <- scale(admissions_clean$residuals_simple)
+```
+
+# Visualization: Residuals vs. Fitted
+```{r}
+ggplot(admissions_clean, aes(x = std_fitted_simple, y = std_residuals_simple)) +
+  geom_point(color = "blue") +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(title = "Standardized Residuals vs. Standardized Fitted Values (Simple Model)",
+       x = "Standardized Fitted Values", y = "Standardized Residuals")
+```
+
+### Interpretation:
+- **Residuals are fairly symmetrically distributed** around zero, suggesting the linear model is appropriate.
+- **No major patterns** in residuals indicate homoscedasticity.
+
+# Histogram of Residuals
+```{r}
+ggplot(admissions_clean, aes(x = residuals_simple)) +
+  geom_histogram(bins = 30, fill = "lightblue", color = "black") +
+  labs(title = "Histogram of Residuals (Simple Model)", x = "Residuals", y = "Frequency")
+```
+
+### Interpretation:
+- **Residuals follow a normal-like distribution**, supporting the assumption of normality.
+
+# Correlation Analysis
+```{r}
+cor(admissions_clean[, c("SAT_math", "SAT_verbal", "fitted_simple", "residuals_simple")], use = "complete.obs")
+```
+
+### Interpretation:
+- **Strong positive correlation** between SAT Math and SAT Verbal (r ≈ 0.45).
+- **Fitted values highly correlate with SAT Verbal**, confirming its predictive power.
+
+# Multiple Linear Regression: SAT Math ~ SAT Verbal + HS Class Size
+```{r}
+multiple_model <- lm(SAT_math ~ SAT_verbal + HS_class_size, data = admissions_clean)
+summary(multiple_model)
+```
+
+### Interpretation:
+- **HS Class Size has a small but significant positive effect** (Estimate = 0.06030, p < 0.001).
+- **Explained variance increases to 22.4%**, showing a slight improvement over the simple model.
+
+# Visualization of SAT Verbal Effect
+```{r}
+ggplot(admissions_clean, aes(x = SAT_verbal, y = SAT_math)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Effect of SAT Verbal on SAT Math", x = "SAT Verbal", y = "SAT Math")
+```
+
+# Generate Regression Summary Table
+```{r}
+mlr_table <- multiple_model %>% 
+  tbl_regression(label = list(SAT_verbal = "SAT Verbal Score", HS_class_size = "High School Class Size")) %>%
+  modify_caption("Table 1: Multiple Linear Regression Results") %>%
+  add_n()
+```
+
+# Save Table to Word
+```{r}
+mlr_flextable <- as_flex_table(mlr_table)
+doc <- read_docx()
+doc <- body_add_flextable(doc, value = mlr_flextable)
+print(doc, target = "MLR_Results.docx")
+```
+
+# Conclusion
+
+### Key Findings:
+1. **SAT Verbal scores significantly predict SAT Math scores**, explaining ~20% of the variance.
+2. **Adding HS Class Size improves the model slightly**, raising the explained variance to 22.4%.
+3. **Both models suggest a linear relationship**, with residuals showing normality and no major violations.
+
+### Implications:
+- Schools aiming to improve SAT Math scores may focus on strengthening verbal skills.
+- Class size appears to play a small but relevant role in performance.
+- Further research could explore additional predictors (e.g., socioeconomic factors, study habits).

@@ -1,0 +1,78 @@
+---
+title: "Multiple Linear Regression"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 4: February 3, 2026
+
+## Reading
+
+-   Diez et al. Chapter 9: Multiple Regression, up through pp 371; sec. 9.5
+
+## Week 4: Multiple Linear Regression – Introduction to the Topic
+
+This week, we will explore **Multiple Linear Regression**, a powerful extension of simple regression that allows us to analyze relationships between a dependent variable and multiple predictors. Students will learn how to specify, fit, and interpret multiple regression models, including how to assess their statistical significance and practical relevance. This week’s focus is on building and refining regression models that capture the complexity of real-world social work research.
+
+------------------------------------------------------------------------
+
+### What will students learn this week?
+
+-   The core components of multiple regression models, including F-tests, p-values, R², and adjusted R².\
+-   How to specify hypotheses in a multiple regression context.\
+-   How to fit and interpret multiple regression models in R using `lm()`.\
+-   Techniques to evaluate assumptions and diagnose issues in multiple regression models.
+
+------------------------------------------------------------------------
+
+### Why is this topic important?
+
+Multiple Linear Regression is one of the most widely used tools in statistical analysis. It enables social work researchers to: - Explore complex relationships between multiple predictors and outcomes. - Control for confounding variables and better isolate the effect of specific predictors. - Answer nuanced research questions that cannot be addressed with simple regression.
+
+By mastering multiple regression, students gain the ability to analyze more realistic and multifaceted data, making their findings more robust and applicable to real-world settings.
+
+------------------------------------------------------------------------
+
+### How does it relate to previous or future content?
+
+-   **Ties to previous content**: Builds on the foundation of [Simple Linear Regression](02-simple-regression.qmd) by introducing multiple predictors and exploring how they contribute to variance in outcomes.\
+-   **Prepares for future topics**: Sets the stage for advanced methods like [Effect Sizes and Confidence Intervals](04-effect-sizes.qmd), [Mediation Analysis](06-mediation.qmd), and [Hierarchical Regression](10-hierarchical-regression.qmd), where multiple predictors and their relationships play an even greater role.
+
+------------------------------------------------------------------------
+
+This week’s topic bridges the gap between basic \## Class Files
+
+### Lecture Notes
+
+-   [Introduction to MLR](slides/MLR/lecture.pptx)
+
+### R Code
+
+-   [Correlation and Regression](slides/MLR/correlate.R)
+
+### Data Sets
+
+-   [Pregnancy Risk Assessment Monitoring System Data file](data/KSPRAMS_SUB_COR.csv): Use this file to run [correlate.R](slides/MLR/correlate.R)
+-   [Annotated JASP file](slides/MLR/KSPRAMS_SUB_COR.jasp) for PRAMS data
+-   [Annotated JASP file](slides/MLR/LSD.jasp) (in lecture notes)
+-   [GRE-GPA Example Data](data/gregpa.sav) (in lecture notes)
+-   [Admissions Data](data/admissions.sav) (in lecture notes)
+
+## Resources
+
+I have put together a [detailed explanation](PRAMS_Correlation_Analysis.qmd) that explains correlation, partial correlation, semipartial correlation using the PRAMS dataset
+
+Also check out the video on semi-partial correlations. This is a key idea behind regression
+{{< video https://www.youtube.com/watch?v=zDJu5XmqHTo >}}
+
+## Today's Reading
+
+A few years ago I wrote a [paper](static/latentclasses.pdf) examining classes of adversity and comparing the ACEs sum score across classes. Since the analyses we use today examine ACEs using the sum score, I thought it would be a good idea to have you reflect more about the methodology, and in particular how the choice of methodology can not only be not useful, it can be damaging. I will leave you to ask me about this so we can further talk about it from a social justice perspective.
+
+## Additional Notes
+
+- Keep calm and be significant.
+

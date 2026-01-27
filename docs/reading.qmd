@@ -1,0 +1,55 @@
+---
+title: "Required Course Materials"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Required Texts
+
+### [*OpenIntro Statistics*](https://www.openintro.org/book/os/)
+
+Supplemental functions and data for OpenIntro resources, which includes open-source textbooks and resources for introductory statistics at [openintro.org](https://www.openintro.org/). The package contains datasets used in our open-source textbooks along with custom plotting functions for reproducing book figures. The package also contains the datasets used in OpenIntro labs. Note that many functions and examples include color transparency; some plotting elements may not show up properly (or at all) when run in some versions of Windows operating system.
+
+### Installation of datasets
+
+The datasets used in the book (and the class) are available [here](https://www.openintro.org/data/).
+
+You can install the data from released version of `openintro` available from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("openintro")
+```
+
+You can install the development version of openintro from GitHub with:
+
+``` r
+# install.packages("devtools")
+library(devtools)
+install_github("OpenIntroStat/openintro")
+```
+
+This package was produced as part of the OpenIntro project. For the accompanying textbook, visit [openintro.org](https://openintro.org). A PDF of the textbook is free and paperbacks can be purchased online (royalty-free).
+
+### Books
+- Hayes, A. (2018). [Introduction to mediation, moderation, and conditional process analysis](https://github.com/bigdataforsocialjustice/SWK8408/blob/master/Mediation%2C%20Moderation%20and%20Conditional%20Process%20Models.pdf), (2nd Ed.). New York, NY: Guilford Press
+
+- Pituch & Stevens (2016). [Applied Multivariate Statistics for the Social Sciences](https://github.com/bigdataforsocialjustice/SWK8408/blob/master/Applied%20Multivariate%20Statistics%20for%20the%20Social%20Sciences_%20Analyses%20with%20SAS%20and%20IBM's%20SPSS.pdf)
+
+- Hahs-Vaughn [Applied Multivariate Statistical Concepts](https://github.com/bigdataforsocialjustice/SWK8408/blob/master/Applied%20Multivariate%20Statistics%20for%20the%20Social%20Sciences_%20Analyses%20with%20SAS%20and%20IBM's%20SPSS.pdf). 
+
+## Required Software
+
+### Open Source Software
+
+- JASP (Just Another Statistics Program)
+  - We will use JASP to perform some analyses that SPSS does not. JASP is free, open source software available for both Mac, Linux and Windows platforms. To download this software please visit https://jasp-stats.org/download
+
+#### Process for SPSS
+- An SPSS macro that runs dozens of mediation, moderation and conditional process models written by Andrew Hayes. Download the macro here https://www.processmacro.org/download.html and follow the installation instructions.
+
+### Proprietary
+
+- SPSS

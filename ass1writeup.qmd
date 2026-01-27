@@ -1,0 +1,73 @@
+---
+title: "Assignment 1 Write-up"
+description: "Psychosocial Risk Factors and Maternal Smoking: An Analysis of Kentucky PRAMS Data"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: flatly
+---
+::: {.callout-tip title="Calculating IQR and SD"}
+** You will need to know the `IQR` and `SD` for the results section
+```{r, eval = FALSE}
+summary(df_dummies$ACEs_Scale)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   0.000   0.000   1.043   2.000   6.000 
+sd(df_dummies$ACEs_Scale)
+[1] 1.414918
+
+```
+:::
+
+### **Dataset: Pregnancy Risk Assessment Monitoring System (PRAMS)**
+
+The data for this study were drawn from the Kentucky Pregnancy Risk Assessment Monitoring System (PRAMS), a state-based surveillance system that collects data on maternal behaviors and experiences before, during, and shortly after pregnancy. The dataset used in this study, *KSPRAMS_SUB_WEIGHT_ANALYSIS.csv*, included key variables such as maternal smoking during the first trimester (*CIG_1TRI*), history of abuse (*Any_Abuse*), Adverse Childhood Experiences (*ACEs_Scale*), perinatal depression (*BPG_DEPRS8*), and race/ethnicity (*Race_Ethnicity*). To ensure data integrity, cases with missing values were omitted, resulting in a final analytical sample of 5,172 participants.
+
+### **Objectives**
+
+The primary objective of this study was to investigate the association between maternal smoking during the first trimester and key psychosocial risk factors, including a history of abuse, adverse childhood experiences (*ACEs*), and perinatal depression. Additionally, the study examined racial/ethnic differences in smoking behavior and the potential moderating role of race/ethnicity on the identified associations.
+
+### **Statistical Analysis**
+
+Descriptive statistics were generated to summarize the characteristics of the sample. Linear regression models were constructed to estimate the association between smoking during the first trimester (dependent variable) and key independent variables, adjusting for potential confounders. Race/ethnicity was included as a categorical predictor (Hispanic, Non-Hispanic Black, Non-Hispanic White, and Other). The variance inflation factor (*VIF*) was computed to assess multicollinearity.
+
+Model 0 examined the bivariate association between *Any_Abuse* and *CIG_1TRI*. Model 1 added *ACEs_Scale*, and Model 2 incorporated *BPG_DEPRS8*. Finally, Model 3 included race/ethnicity to test for potential racial/ethnic disparities in smoking behavior. Model performance was assessed using *R²*, adjusted *R²*, and *F*-statistics.
+
+To verify regression assumptions, diagnostic plots were generated, including residual plots for linearity and homogeneity of variance, an influential observations plot, a *VIF* assessment, and a normality of residuals plot. Tests for heteroscedasticity and normality violations were performed, and estimated marginal means were used for post-hoc comparisons.
+
+### **Results**
+
+A correlation matrix was generated to examine the relationships between key study variables: maternal smoking during the first trimester (CIG_1TRI), a history of abuse (Any_Abuse), adverse childhood experiences (ACEs_Scale), and perinatal depression (BPG_DEPRS8).
+
+Results indicate positive associations among all variables, suggesting that higher levels of psychosocial risk factors correspond to increased smoking during pregnancy. Specifically, CIG_1TRI was moderately and positively correlated with ACEs_Scale (r = 0.22), Any_Abuse (r = 0.19), and BPG_DEPRS8 (r = 0.20). Additionally, ACEs_Scale was correlated with both BPG_DEPRS8 (r = 0.24) and Any_Abuse (r = 0.15), indicating shared risk factors.
+
+The regression model showed that a history of abuse was associated with a 2.29-unit increase in smoking during the first trimester (*B* = 2.29, *p* < 0.001). In Model 1, both *Any_Abuse* (*B* = 1.85, *p* < 0.001) and *ACEs_Scale* (*B* = 0.44, *p* < 0.001) remained significant predictors, with higher ACE scores corresponding to increased smoking likelihood. A one standard deviation increase in *ACEs_Scale* (1.41 points) was associated with a 0.62-unit increase in smoking, while an interquartile range (*IQR*) increase (2 points) was associated with a 0.89-unit increase.
+
+Model 2 demonstrated that perinatal depression (*BPG_DEPRS8*) was a significant predictor of smoking (*B* = 1.04, *p* < 0.001). Mothers with perinatal depression smoked an average of 1.04 more cigarettes per day compared to those without depression. Similarly, mothers with a history of abuse smoked an average of 1.85 more cigarettes per day compared to those without a history of abuse.
+
+In Model 3, race/ethnicity was included to assess disparities in smoking behavior. Compared to Non-Hispanic Whites, Hispanic mothers exhibited significantly lower smoking rates (*B* = -0.93, *p* < 0.001), while Non-Hispanic Black and Other racial groups did not significantly differ from Non-Hispanic Whites. Post-hoc comparisons of estimated marginal means confirmed that Hispanic mothers had the lowest estimated smoking rates (*M* = 1.23, 95% CI [0.91, 1.54]), whereas Non-Hispanic Whites had the highest (*M* = 2.16, 95% CI [1.96, 2.36]).
+
+Diagnostics revealed a violation of the normality assumption (*p* < 0.001), and heteroscedasticity was detected (*p* < 0.001), suggesting non-constant error variance. However, no multicollinearity issues were present, as all *VIF* values were below 5. Outlier analysis showed no extreme influential observations affecting model estimates.
+
+### **Conclusion**
+
+This study highlights the significant role of psychosocial risk factors in predicting maternal smoking behavior during pregnancy. A history of abuse, adverse childhood experiences, and perinatal depression were robust predictors of smoking, emphasizing the need for targeted interventions. Racial/ethnic disparities were observed, with Hispanic mothers exhibiting lower smoking rates compared to Non-Hispanic Whites. These findings underscore the importance of integrating mental health and trauma-informed care into prenatal smoking cessation programs.
+
+## Bonus
+
+### APHA Abstract
+
+The APHA abstracts are due at the end of March. If the assumptions of this model were not violated we could submit an abstract based on these results. Here is my sample abstract (~250 words) based on the above write-up, and formatted for the conference.
+
+#### Background
+Maternal smoking during pregnancy remains a significant public health concern, with implications for both maternal and child health. Psychosocial risk factors such as adverse childhood experiences (ACEs), a history of abuse, and perinatal depression may contribute to smoking behaviors. This study investigates the association between these factors and smoking during the first trimester of pregnancy while also examining racial/ethnic disparities.
+
+#### Methods
+Data were drawn from the Kentucky Pregnancy Risk Assessment Monitoring System (PRAMS). The final analytical sample consisted of 5,172 participants. Linear regression models were used to examine the association between smoking during the first trimester and key psychosocial risk factors. Race/ethnicity was included to assess disparities. Diagnostic tests were performed to evaluate model assumptions, including multicollinearity, normality, and heteroscedasticity.
+
+#### Results
+A history of abuse was associated with a 2.29-unit increase in smoking (p < 0.001). Each additional ACE was linked to a 0.44-unit increase (p < 0.001), with a one standard deviation increase (1.41 points) predicting a 0.62-unit increase and an interquartile range increase (2 points) predicting a 0.89-unit increase. Perinatal depression was associated with a 1.04-unit increase in smoking (p < 0.001). Mothers with a history of abuse smoked 1.85 more cigarettes per day than those without abuse. Hispanic mothers exhibited significantly lower smoking rates compared to Non-Hispanic Whites (p < 0.001).
+
+#### Conclusion
+Psychosocial factors play a crucial role in maternal smoking behaviors. Targeted interventions incorporating mental health and trauma-informed care are essential in reducing prenatal smoking rates, particularly among at-risk populations.
+

@@ -1,0 +1,18 @@
+---
+title: "Introduction to the Course"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+## Course Goals and Objectives
+
+The course, Statistics II focuses on an equitable approach to data analysis. It aims to equip students with advanced statistical techniques while fostering critical thinking about how to apply those models to social work applications. I have tried to find a good balance of instruction, innovation, and hands-on learning. I want you to be excited about statistics and data; hence, I have tried to stucture the course in a way that encourages you to explore regression, measurement, and latent variable models in the context of social justice. By emphasizing storytelling and data interpretation, students will develop the skills needed to reclaim and communicate narratives of oppression, focusing on equity and systemic challenges. The course also focuses on practical applications, such as building models and interpreting statistical findings to support policy changes and advocate for marginalized communities.
+
+One of the course’s primary objectives is to prepare students to use statistics as a tool for actionable change. Weekly sessions integrate technical skills, such as using R for data analysis and visualization, with real-world social work challenges. Activities like the "Data Makeover Challenge" and "Latent Storytelling" push students to think creatively about data, while assignments emphasize ethical implications and advocacy. My idea about writing an oped comes from the workshop I did in the summer of 2024, where I learned how to write one effectively. You can read it [here](https://msmagazine.com/2024/10/15/abortion-bans-domestic-violence-women-die/). 
+
+I have also tried very hard to make the course integrative. That is the reason for this website. There are (and will be) links between modules, readings, and assignments so that everything is connected as it should be. This is obviously a lot of work, so I appreciate your patience, and consideration. 
+
+Hopefully, by the end of the semester, students will have gained not only proficiency in statistical methods but also the confidence to apply them meaningfully to address pressing social issues.

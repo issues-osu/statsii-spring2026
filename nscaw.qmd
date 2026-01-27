@@ -1,0 +1,167 @@
+---
+title: "NSCAW I In-Class Exercise"
+author: "Barboza-Salerno"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# **Introduction**
+
+This exercise explores **child aggression and trauma** using the **NSCAW I dataset**. Because this is designed for you to do, I supressed all of the output. The chunks of code give you a hints regarding the code that will answer each question. Create an R script and answer each question below. Cut and paste the chunk of code into your script, and fill it in so that it runs.
+
+### **About the Data**
+The **National Survey of Child and Adolescent Well-Being (NSCAW I)** is a **longitudinal study** that examines children involved in the child welfare system. It collects **child well-being indicators, caregiver characteristics, and service utilization data**. The dataset includes information on **trauma exposure, behavioral outcomes, and demographics**.
+
+For this assignment, we focus on three key variables:
+
+| Variable  | Type      | Description  |
+|-----------|----------|----------------------|
+| `tra1`    | Numeric  | Trauma: PTS T Score - This variable represents the **Post-Traumatic Stress (PTS) T-score** for the child. It measures trauma-related symptoms based on standardized assessments, with higher values indicating **greater levels of trauma exposure or distress**. Typically, scores above a certain threshold (e.g., 65-70) suggest clinically significant trauma symptoms.
+| `bcagg1`  | Numeric  | Aggressive Behavior Standardized Score - This variable is a **standardized measure of aggressive behavior** in children, derived from behavioral assessments. Higher values suggest **greater levels of externalizing behaviors such as verbal or physical aggression**. Scores in the clinically significant range (e.g., above 65) may indicate the need for behavioral intervention.
+| `ageY`    | Numeric  | Child age in years |
+
+---
+
+# **Instructions**
+
+## **Step 1: Load the Data**
+Make sure all of these libraries are installed or you will not be able to run the code. Also, make sure that your data set is in a **subdirectory** called `data` in the same directory as the one in which your `R script` is saved.
+
+```{r, eval=FALSE}
+# Load necessary libraries
+library(foreign)    # For reading SPSS files
+library(dplyr)      # For data manipulation
+library(ggplot2)    # For visualization
+library(gtsummary)  # For creating regression tables
+library(officer)    # For exporting tables to Word
+library(flextable)  # For table formatting
+
+# Load NSCAW I dataset
+nscaw <- read.spss("data/nscaw.sav", to.data.frame = TRUE)
+
+# Inspect the first few rows
+head(nscaw)
+```
+**Question:** What type of variables are included in the dataset?
+
+To get a sense of the variables in the dataset [click here](https://www.ndacan.acf.hhs.gov/presentations/Overview_of_NSCAW_I_and_II.pdf).
+
+---
+
+## **Step 2: Select Variables & Handle Missing Data**
+```{r, eval=FALSE}
+# Select relevant variables
+nscaw_clean <- nscaw %>% 
+  dplyr::select(FILL THE VARIABLES IN HERE) 
+
+# Remove missing values
+nscaw_clean <- na.omit(nscaw_clean)
+
+# View summary statistics
+summary(nscaw_clean)
+```
+**Hint:** Look at the summary statistics—do any variables have extreme values?
+
+---
+
+## **Step 3: Compute Correlations**
+```{r, eval=FALSE}
+# Compute correlation matrix
+cor(nscaw_clean, use = "complete.obs")
+```
+**Question:** Which variables are most strongly correlated? Does the direction make sense?
+
+---
+
+Run the regression of child aggression on trauma score and age
+
+## **Step 4: Run a Multiple Regression Model**
+```{r, eval=FALSE}
+# Run regression: Predict aggression using trauma score and age
+reg_model <- lm(WRITE THE CODE TO RUN THE REGRESSION)
+
+# Display model summary
+summary(reg_model)
+```
+**Hint:** Examine the coefficients and p-values. Is trauma a significant predictor of aggression?
+
+---
+
+## **Step 5: Compute Fitted Values & Residuals**
+```{r, eval=FALSE}
+# Compute fitted values and residuals
+nscaw_clean$fitted <- fitted(PROVIDE THE CODE HERE)
+nscaw_clean$residuals <- residuals(reg_model)
+
+# Compute standardized residuals
+nscaw_clean$std_residuals <- PROVIDE THE CODE HERE(nscaw_clean$residuals)
+```
+**Question:** Why do we standardize residuals? What does this help us understand?
+
+---
+
+## **Step 6: Visualize Residuals**
+```{r, eval=FALSE}
+# Plot histogram of residuals
+ggplot(nscaw_clean, aes(x = residuals)) +
+  PROVIDE THE CODE HERE(bins = 30, fill = "lightblue", color = "black") +
+  labs(title = "Histogram of Residuals", x = "Residuals", y = "Frequency")
+```
+**Hint:** Look for skewness—are residuals normally distributed?
+
+---
+
+```{r, eval=FALSE}
+# Plot standardized residuals vs. predicted values
+ggplot(nscaw_clean, aes(x = fitted, y = std_residuals)) +
+  geom_point(PROVIDE THE CODE HERE) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(PROVIDE THE CODE HERE)
+```
+**Hint:** If you see patterns in the residuals, what assumption may be violated?
+
+---
+
+## **Step 7: Create & Export Regression Table**
+```{r, eval=FALSE}
+# Generate regression summary table
+reg_table <- reg_model %>% 
+  tbl_regression(
+    label = list(tra1 = "PTS Score", bcagg1 = "Aggressive Behavior", ageY = "Age")
+  ) %>% 
+  modify_caption("Table 1: Regression Results for Aggression")
+
+# Convert to flextable and export to Word
+reg_flextable <- as_flex_table(reg_table)
+doc <- read_docx()
+doc <- body_add_flextable(doc, value = reg_flextable)
+print(doc, target = "Regression_Results.docx")
+```
+**Hint:** Where does the p-value appear in the regression table? How does it inform significance?
+
+---
+
+## **Deliverables**
+
+Discuss the following:
+
+1. **Correlation matrix** output
+2. **Regression model summary**
+3. **Histogram of residuals**
+4. **Residuals vs. fitted plot**
+5. **Regression results table (Word document)**
+
+---
+
+## **Discussion Questions**
+1. Based on your results, does **trauma significantly predict aggression**?
+2. How does **child age influence the relationship between trauma and aggression**?
+3. Are the **residuals normally distributed**? If not, what would you do differently?
+4. If the **p-value for trauma is significant**, what does that imply in real-world terms?
+5. How could you **improve this model**?
+
+**Final Thought:** This exercise helps you develop a deeper understanding of how trauma influences child behavior. Future analyses could incorporate more variables (e.g., social support, environment) for better predictions.

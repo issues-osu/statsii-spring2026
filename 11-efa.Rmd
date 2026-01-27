@@ -1,0 +1,8 @@
+# Chapter 11: Exploratory Factor Analysis
+
+
+This chapter introduces the purpose of the course and reviews core regression concepts for social justice applications.
+
+## Overview
+- Role of statistics in addressing inequities
+- Ethics and cultural sensitivity in data analysis

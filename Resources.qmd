@@ -1,0 +1,16 @@
+---
+title: "Resources for learning and applying R"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+- [Learning R](learning-r.qmd)
+- [R Style Suggestions](r-style.qmd)
+- [Data](dataweb.qmd)
+- [Open Source Software](open-source-software.qmd)
+

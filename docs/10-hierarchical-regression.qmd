@@ -1,0 +1,76 @@
+---
+title: "Hierarchical Regression and Dummy Variables"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 8: February 24, 2025
+
+## Introduction to the Topic
+
+This week, we delve into **hierarchical models** (also known as multilevel models), a statistical approach for analyzing data with nested structures. Hierarchical models are crucial for understanding relationships within complex, multi-level datasets.
+
+---
+
+## Key Concepts:
+- **Fixed Effects**: Capture the average relationship between predictors and the outcome across all groups.
+- **Random Effects**: Account for variability at different levels of the hierarchy (e.g., individuals within groups).
+- **Nested Data**: Recognize and model data structures where observations are grouped (e.g., students within schools).
+- **Intraclass Correlation Coefficient (ICC)**: Measures the proportion of variance explained by group-level differences.
+
+---
+
+## Relevance:
+- Students will learn how to specify and interpret hierarchical models to account for nested data structures.
+- Students will explore when and why to use hierarchical models instead of standard regression approaches.
+
+---
+
+## Why This Is Important:
+- Hierarchical models allow for more accurate inferences by accounting for within-group and between-group variability.
+- They are widely used in fields like education, healthcare, and organizational research, where nested data structures are common.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon previous topics like linear regression by introducing random effects and multi-level structures.
+- Prepares students for advanced topics like generalized hierarchical models and cross-classified data structures.
+
+By the end of this week, students will be able to fit hierarchical models, interpret fixed and random effects, and assess variance components in nested datasets.
+
+---
+
+# Dummy Coding: Week Overview
+
+This week, we explore **dummy coding**, a method for incorporating categorical variables into regression models. Dummy coding is essential for analyzing relationships involving categorical predictors.
+
+---
+
+## Key Concepts:
+- **Dummy Variables**: Binary variables (0/1) representing categories of a predictor.
+- **Reference Category**: The baseline group against which other categories are compared.
+- **Interpreting Coefficients**: Understand regression coefficients as differences between category means and the reference group.
+- **Interaction Terms**: Model interactions between categorical and continuous predictors.
+
+---
+
+## Relevance:
+- Students will learn how to create dummy variables and include them in regression models.
+- Students will explore the implications of choosing different reference categories.
+
+---
+
+## Why This Is Important:
+- Dummy coding is critical for analyzing categorical predictors in regression, enabling researchers to test hypotheses about group differences.
+- It is a foundational tool for working with diverse datasets in fields like psychology, sociology, and public health.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon prior topics like regression and moderation by introducing categorical predictors.
+- Prepares students for advanced techniques like interaction effects and ANOVA with categorical variables.
+
+By the end of this week, students will be able to perform dummy coding, incorporate categorical variables into regression models, and interpret results accurately.

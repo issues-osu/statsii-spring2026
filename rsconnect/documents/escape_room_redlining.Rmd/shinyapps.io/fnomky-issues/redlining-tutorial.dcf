@@ -1,0 +1,10 @@
+name: redlining-tutorial
+title:
+username: fnomky-issues
+account: fnomky-issues
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16502119
+bundleId:
+url: https://fnomky-issues.shinyapps.io/redlining-tutorial/
+version: 1

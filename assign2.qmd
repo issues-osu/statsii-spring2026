@@ -1,0 +1,25 @@
+---
+title: "Assignment 2"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+# Instructions
+
+[Assignment 2](slides/assignment 2.docx) uses several datasets. Please read the instructions carefully. There are five questions. The first question asks you to perform a multiple linear regression analysis. The second question asks you to conduct a logistic regression. The third question is a latent class analysis. The fourth question is a factor analysis. And finally, a mediation, moderation, and mediated moderation (the last of which is optional).
+
+# Data
+
+- Question 1: [social2.sav](data/data for assignment/social2.sav)
+- Question 2: [depress.sav](data/data for assignment/depress.sav)
+- Question 3: [lca.csv](data/data for assignment/lca1.csv)
+- Question 4: [wiscsem.sav](data/data for assignment/WISCSEM.sav)
+- Question 5: [employee.sav ](data/data for assignment/employee.sav)
+
+# Video
+After our review session, I will post the video here.

@@ -1,0 +1,18 @@
+---
+title: "Statistics for Social Work"
+subtitle: "A Practical Guide to Statistical Analysis"
+author: "Dr. Gia Elise Barboza-Salerno"
+date: "January 3, 2026"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+---
+
+# Welcome to *SW 8409: Statistics II*
+
+This book integrates statistical concepts with real-world applications, focusing on equitable data analysis and actionable insights. It is designed for social work researchers, activists, and students seeking to harness the power of data for transformative change.
+
+::: callout-note
+I created this list of some really cool [datasets](dataweb.html) for you to review.
+:::
+
+The book is built for my [Stats II course](syllabus.html) in the College of Social Work at The Ohio State University.

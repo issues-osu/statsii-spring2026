@@ -1,0 +1,77 @@
+---
+title: "Logistic Regression"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 7: February 24, 2026
+
+## Reading
+
+-   Diez et al. Chapter 9: Logistic Regression, from pp 371; sec. 9.5
+-   See resources
+
+## Introduction to the Topic
+
+This week, we focus on **logistic regression**, a statistical method used to model binary outcomes and predict probabilities. Logistic regression is a cornerstone technique in statistical modeling, particularly for research questions involving categorical dependent variables.
+
+------------------------------------------------------------------------
+
+## Key Concepts:
+
+-   **Logistic Regression Models**: Analyze the relationship between independent variables and a binary dependent variable (e.g., success vs. failure).
+-   **Odds Ratios**: Interpret the effect of predictors on the likelihood of the outcome.
+-   **Model Fit and Diagnostics**: Evaluate the accuracy and robustness of logistic regression models.
+
+------------------------------------------------------------------------
+
+## Relevance:
+
+-   Students will learn how to build logistic regression models and interpret their results, including coefficients, odds ratios, and predicted probabilities.
+-   Students will explore model evaluation techniques, such as goodness-of-fit measures and ROC curves.
+
+------------------------------------------------------------------------
+
+## Why This Is Important:
+
+-   Logistic regression is widely used in various fields, including social sciences, medicine, and marketing, to answer questions about classification and prediction.
+-   Understanding logistic regression provides the foundation for advanced modeling techniques like multinomial and ordinal regression.
+
+------------------------------------------------------------------------
+
+## How This Ties Into the Overall Course:
+
+-   Builds upon previous weeks' focus on linear regression and effect sizes, extending these concepts to binary outcomes.
+-   Prepares students for upcoming topics like machine learning classification models and survival analysis, where logistic regression plays a foundational role.
+
+By the end of this week, students will be able to confidently apply logistic regression to real-world problems, interpret model outputs, and evaluate model performance for binary classification tasks.
+
+## Class Files
+
+### Lecture Notes
+
+-   [Today's Lecture Notes](slides/logistic/logistic_regression.pptx) and a review of [risk and odds calculations](risk_odds.html) using contingency tables
+
+### R Code
+
+-   [Script 1: Logistic Regression](logistic.qmd) Application of Logistic Regression using R
+
+### Data Sets
+
+-   [GPA-College Enrollment Example](slides/logistic/gpa-college-enroll.sav): In class example showing the mechanics of logistic regression?
+-   Predicting Probabilities with Logistic Regression [Here](slides/logistic/gpa_college_enrollment_example.xlsx) is an excel file illustrating the math behind predicting probabilities
+-   [An annotated](slides/logistic/heart.jasp) jasp file of logistic regression output including how to do the log-likelihood test
+
+### Resources
+
+-   There are a million ways to [recode variables](https://shanghai.hosting.nyu.edu/data/r/data-transformation.html#recode()_to_replace_values) in R
+-   Now that you are familiar with using R, check out this amazing book called [R for Data Science](https://r4ds.had.co.nz/) which is written by the Hadley who co-authored the tidyverse suite.
+
+------------------------------------------------------------------------
+
+## Additional Notes
+
+-   Keep calm and don't be a dummy.

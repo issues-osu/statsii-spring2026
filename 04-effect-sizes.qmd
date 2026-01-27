@@ -1,0 +1,70 @@
+---
+title: "Effect Sizes"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+# Week 5: February 10, 2026
+
+## Introduction to the Topic
+
+This week, we delve into the critical concepts of **effect sizes** and **confidence intervals**, two foundational elements in interpreting statistical results. These tools play a central role in assessing the strength of relationships and the precision of estimates, bridging the gap between raw statistical outputs and meaningful real-world insights.
+
+---
+
+## Key Concepts:
+- **Effect Sizes**: Quantify the magnitude of a relationship or difference, providing context beyond mere statistical significance.
+- **Confidence Intervals (CIs)**: Represent the range within which a population parameter is likely to fall, offering a measure of result precision.
+
+---
+
+## Relevance:
+- Students will learn how to interpret and calculate effect sizes, understanding their role in evaluating practical significance.
+- Students will explore confidence intervals as tools for assessing the reliability and variability of parameter estimates.
+
+---
+
+## Why This Is Important:
+- Effect sizes complement p-values by answering *how much* rather than just *if* there is an effect.
+- Confidence intervals provide critical information about the certainty of results, promoting better decision-making and interpretation.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon last week's exploration of hypothesis testing and statistical significance.
+- Prepares students for future modules on meta-analysis and advanced modeling techniques, where effect sizes and confidence intervals are integral.
+
+By the end of this week, students will have the skills to interpret effect sizes and confidence intervals confidently, ensuring they can evaluate research findings critically and apply these concepts to their own analyses.
+
+### Lecture Notes
+
+-   [Effect Sizes, Confidence Intervals, Assumptions](slides/Effect_Sizes/Effect Size, Confidence Intervals, and Diagnostic.pptx)
+
+### R Code
+
+-   [Simple and Multiple Linear Regression](slides/Effect_Sizes/admissions_R_ex.R)
+-   [Calculating Cohen's D](slides/Effect_Sizes/cohensD.R): The full explanation of the code is [here](cohensd.qmd). This file calculates Cohen's D effect size with the added bones of also demonstrating how to download the Area Deprivation Index (ADI) which is frequently used in Social Work and Public Health. Even bettern there is a county-level map of the ADI! See @barboza2023neighborhood.
+
+### Data Sets
+
+-   [Admissions Data](data/admissions.sav) (in lecture notes)
+-   [GRE and graduate student GPA Data](data/gregpa.sav) (in lecture notes)
+
+## Resources
+
+I have put together a [detailed explanation](admissions_R_ex.qmd) about simple and multiple linear regression in R.
+
+
+## Today's Reading
+
+Today's in class assignment is going to ask you to run a multiple linear regression using the National Survey of Child and Adolescent Well-Being (NSCAW I) survey. I used this data in a couple of manuscripts ["Trajectories of post-traumatic stress and externalizing psychopathology among maltreated foster care youth: A parallel process latent growth curve model"](static/pts_ext.pdf) @barboza2017trajectories and ["Longitudinal growth of post-traumatic stress and depressive symptoms following a child maltreatment allegation: An examination of violence exposure, family risk and placement type"](static/pts_ext.pdf) See @barboza2017longitudinal.
+
+## Additional Notes
+
+- Keep calm and DO NOT be normal.
+

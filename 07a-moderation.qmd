@@ -1,0 +1,59 @@
+---
+title: "Mediation, Moderation, and Conditional Process Models (Part 3)"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+# Week 10: March 23, 2026
+
+## Reading
+
+-   Hayes, Andrew. (2018). [Introduction to Mediation, Moderation, and Conditional Process Analysis](https://github.com/bigdataforsocialjustice/SWK8408/blob/master/Mediation%2C%20Moderation%20and%20Conditional%20Process%20Models.pdf) Chapters 7 - 10.
+
+-   I have used these methods on several occasions, check out @barboza2023early.
+
+    -   Barboza-Salerno, G. E., & Remillard, A. (2023). Early child adversity and delinquent behavior in foster care youth: do future expectations and sexual identity moderate the mediating role of posttraumatic stress?. Journal of Child & Adolescent Trauma, 16(4), 945-957.
+
+## Introduction to the Topic
+
+This week we continue to learn about advanced mediation models and effect moderation. To review, please see last [week's page](07-moderation.qmd)
+
+### In-Class Files and Data Sets
+
+**Data sets:** 
+
+-- Our first example uses the [presumed media influence study: pmi.sav](slides/medmod2/pmi.sav) to estimate a serial mediation of article importance and PMI jointly.
+-- Next, we are going to use [PRAMS data](slides/moderation/fullprams.sav) to examine potential pathways by which intimate partner violence prior to pregnancy impacts poor birth outcomes, i.e., low birth weight in infants. **Please note** that this is not only a public health issue, low birth weight disproportionately effects persons on the basis of race, and so it qualifies as a civil rights issue.
+
+**Moderation:** Finally, we will learn about moderation effects, which we did not get to last week. We will use these files:
+
+-   Example 1: Dichotomous Moderation Effect, [Sexual Minority](slides/medmod2/sexmin_pts_delinq.sav). I saved the [SPSS output](slides/medmod2/Simple%20Moderation%20Example%207.spv)
+-   [Example 2](slides/medmod2/pts%20vex%20mod%20mediation.sav): Continuous Moderation Effect, [NSCAW](slides/medmod2/pts%20vex%20mod%20mediation.sav)
+
+## Lab Files
+
+**Mediation:** You are going to do this lab using the [NSCAW data](slides/medmod2/pts%20vex%20mod%20mediation.sav) to examine whether (1) children investigated for abuse or neglect who have witnessed severe violence at Wave 1 (EV_W1) are more likely to engage in externalizing behavior at Wave 3 (bcext3); and (2) post-traumatic stress at Wave 1 (tra1) is the mechanism violence exposure is linked to externalizing behavior.
+
+**Moderation:** I have created some Excel output so you can learn how to take the output and visualize the results. One file [plots the effect moderation](slides/medmod2/plotting%20effects%20moderation%20age%20pts%20and%20delinq.xlsx) for age on the association between post-traumatic stress and delinquent behaviors using a subset of the NSCAW. Now, you can use [this file](slides/medmod2/plotting%20effects%20moderation.xlsx) to practice making a similar chart using excel to answer the question: *What is the effect moderation of sexual minority status on the association between post-traumatic stress and delinquent behavior?*
+
+**Moderation in R:** I have written the code to show you how to implement [moderation in R](slides/moderation/moderation.qmd).
+
+### Lecture Notes & Class Files
+
+-   Download today's slides [here](slides/moderation/Mediation and Moderation (Part 3).pptx)
+-   I want us to [assess our knowledge](data/inclass-mediation.docx) of mediation today
+
+## Resources
+
+There are a number of mediation, moderation, and mediated moderation models that you can use to test various hypotheses. Once you have a basic familairity of the models they become intuitive. Model templates are located [here](slides/medmod2/process_models.pdf).
+
+------------------------------------------------------------------------
+
+## Additional Notes
+
+Stay calm and BE BRAVE.

@@ -1,0 +1,83 @@
+project:
+  type: book
+  resources:
+    - resource
+
+format:
+  html:
+    number-sections: false
+
+book:
+  title: "Statistics for Social Work"
+  author: "Dr. Gia Elise Barboza-Salerno"
+
+  chapters:
+    - index.qmd
+
+    - part: "Course Overview"
+      chapters:
+        - syllabus.qmd
+        - Assignments.qmd
+        - 01-introduction.qmd
+
+    - part: "Regression Mechanics"
+      chapters:
+        - 02-simple-regression.qmd
+        - 03-multiple-regression.qmd
+        - 04-effect-sizes.qmd
+        - 05-assumptions.qmd
+
+    - part: "Advanced Regression Techniques"
+      chapters:
+        - 07-logistic-regression.qmd
+        - 06-mediation.qmd
+        - 07-moderation.qmd
+        - 07a-moderation.qmd
+
+    - part: "Measurement & Factor Analysis"
+      chapters:
+        - 11-efa.qmd
+        - efa_R.qmd
+        - 13-lca.qmd
+
+    - part: "Applications"
+      chapters:
+        - 14-final-project.qmd
+        - assignment.qmd
+        - slides/inclass.qmd
+        - slides/medmod/mediationR.qmd
+        - logistic.qmd
+        - slides/moderation/moderation.qmd
+
+    - part: "Case Studies & Data Applications"
+      chapters:
+        - Monitoring-the-future-example.qmd
+        - infant_mortality.qmd
+        - PRAMS_Correlation_Analysis.qmd
+        - cohensd.qmd
+        - admissions_R_ex.qmd
+        - nscaw.qmd
+        
+
+    - part: "Additional Resources"
+      chapters:
+        - reading.qmd
+        - dataweb.qmd
+        - references.qmd
+        - resources.qmd
+        - learning-r.qmd
+        - r-style.qmd
+        - dataweb.qmd
+        - open-source-software.qmd
+
+
+    - part: "Assignments"
+      chapters:
+        - ass1writeup.qmd
+        - assign2.qmd
+        - final.qmd
+
+    - part: "Solutions"
+      chapters:
+        - MTF-solution.qmd
+        - assessment_ans.qmd

@@ -1,0 +1,57 @@
+---
+title: "Measurement and Scale Creation"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 12: March 24, 2025  
+
+## Introduction to the Topic
+
+Provide a brief overview of the week's topic. Include key concepts, relevance, and how it ties into the overall course. For example: - What will students learn this week? - Why is this topic important? - How does it relate to previous or future content?
+
+Example: This week, we will explore the fundamentals of regression analysis, focusing on its applications in predicting outcomes and modeling relationships between variables. This builds upon last week's introduction to descriptive statistics and prepares us for next week's work on multivariate techniques.
+
+## Class Files
+
+### Lecture Notes
+
+-   [Today's Lecture Notes](path/to/lecture1_notes.qmd)
+
+### R Code
+
+-   [Script 1: Analysis Code](path/to/analysis_script.R)
+-   [Script 2: Visualization Code](path/to/visualization_script.R)
+
+### Data Sets
+
+-   [Dataset 1: Descriptive Statistics](path/to/dataset1.csv)
+-   [Dataset 2: Regression Analysis](path/to/dataset2.csv)
+
+## Resources
+
+-   [Recommended Video: Topic Overview](https://link-to-video)
+-   [Supplementary Article](https://link-to-article)
+-   [Additional Book Chapter (PDF)](path/to/book_chapter.pdf)
+
+## Today's Reading
+
+-   **Primary Reading**: [Article Title](path/to/article.pdf)
+-   **Optional Reading**: [Supplementary Material](path/to/optional_material.pdf)
+
+## R Lab Files
+
+-   [Lab Instructions](path/to/lab_instructions.qmd)
+-   [Lab Dataset](path/to/lab_dataset.csv)
+-   [Lab Solution Code](path/to/lab_solution.R)
+
+## Additional Notes
+
+-   **Assignment Due**: [Assignment 1](path/to/assignment1.pdf) (Submit by \[Date\])
+-   **Quiz**: [Link to Quiz](path/to/quiz)
+-   **Office Hours**: \[Time and Location\]
+
+------------------------------------------------------------------------

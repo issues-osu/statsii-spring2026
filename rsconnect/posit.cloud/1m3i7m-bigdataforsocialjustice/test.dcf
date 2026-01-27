@@ -1,0 +1,13 @@
+name: test
+title: test
+username: 1m3i7m-bigdataforsocialjustice
+account: 1m3i7m-bigdataforsocialjustice
+server: posit.cloud
+hostUrl: https://api.posit.cloud/v1
+appId: 9615181
+bundleId:
+url: https://posit.cloud/content/9615181
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|_bookdown.yml111|_quarto.yml|01-introduction.qmd|01-introduction.Rmd|02-simple-regression.qmd|02-simple-regression.Rmd|03-multiple-regression.qmd|03-multiple-regression.Rmd|04-effect-sizes.qmd|04-effect-sizes.Rmd|05-assumptions.qmd|05-assumptions.Rmd|06-mediation.qmd|06-mediation.Rmd|07-moderation.qmd|07-moderation.Rmd|08-logistic-regression.qmd|08-logistic-regression.Rmd|09-measurement-scale.qmd|09-measurement-scale.Rmd|10-hierarchical-regression.qmd|10-hierarchical-regression.Rmd|11-efa.qmd|11-efa.Rmd|12-cfa.qmd|12-cfa.Rmd|13-lca.qmd|13-lca.Rmd|14-final-project.qmd|14-final-project.Rmd|404.html|apa-with-abstract.csl|assessment_answers.html|assessment_answers.qmd|data/HRS2020_CLEAN.sav|data/HRS2020B.csv|data/HRS2020B.sav|escape_room.html|escape_room_files/figure-html/room6_code-1.png|escape_room_redlining.html|escape_room_redlining.qmd|escape_room_redlining.Rmd|escape_room_redlining_files/figure-html/room6_code-1.png|index.qmd|index.Rmd|LICENSE|references.bib|references.qmd|Resources.qmd|static/Exploring the relationships between self-care and well-being outcomes among child welfare professionals.pdf|static/HRS and child maltreatment.pdf|statistics_for_social_justice.rds|stats_I_assessment.pdf|styles.css|syllabus.qmd|syllabus.Rmd|test.html|_book|_bookdown_files|assessment_answers_files|references_files

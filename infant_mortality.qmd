@@ -1,0 +1,174 @@
+---
+title: "Infant Mortality Example"
+author: "Barboza-Salerno"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: flatly
+---
+
+Risk ratios are tricky because they are invariant, but odds ratios are not. By using risk ratios, the data can show BOTH gross disparities of infant mortality by race and also show no racial disparities at the same time. The reason comes down to the invariance property.
+
+# Odds and Risk ratios
+Odds ratios and risk ratios are both measures used in statistics to compare the likelihood of an event occurring between two groups. However, they have different properties when it comes to interpretation.
+
+### Odds Ratios
+*Odds ratios are invariant to interpretation:* This means that the odds ratio remains consistent regardless of how you frame the event. For example, if you switch the event and the non-event, the odds ratio for the event happening is the same as the odds ratio for the event not happening. This property makes odds ratios particularly useful in case-control studies where the outcome is rare.
+
+### Risk Ratios
+*Risk ratios are NOT invariant to interpretation:* The risk ratio, also known as the relative risk, compares the probability of an event occurring in the exposed group to the probability of it occurring in the non-exposed group. Unlike odds ratios, risk ratios change if you switch the event and the non-event. Therefore, while risk ratios more intuitive, they can result in problematic interpretaions. 
+
+# Data
+#### The data comes from KFF and can be accessed [here](https://www.kff.org/other/state-indicator/births-by-raceethnicity/?currentTimeframe=0&selectedDistributions=white--black&selectedRows=%7B%22states%22:%7B%22california%22:%7B%7D,%22colorado%22:%7B%7D,%22connecticut%22:%7B%7D,%22indiana%22:%7B%7D,%22maryland%22:%7B%7D,%22massachusetts%22:%7B%7D,%22michigan%22:%7B%7D,%22ohio%22:%7B%7D,%22pennsylvania%22:%7B%7D%7D%7D&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D#notes) 
+
+```{r}
+
+knitr::opts_chunk$set(warning = FALSE)
+
+library(ggplot2)
+df <- read.csv("inf_mortality_ex.csv")
+```
+
+## Mortality Rates per 1,000 births
+
+The interpretation is: in California, there are about 3.04 infant deaths per 1,000. What is going on with Indiana?
+
+```{r}
+(df$inf_mort_white_1000 <- (
+  df$white_infant_deaths/df$white_births)*1000
+ )
+
+```
+
+```{r}
+knitr::kable(
+  df[, c(1,8)],  
+  col.names = c(
+    'State', 
+    'White Infant Mortality per 1,000'
+    ), 
+  align = "lc"
+  )
+```
+
+The infant mortality rate for Black infants is substantially higher. In Michigan, there are 14.2 Black infants who die for every 1,000 births.
+
+## Mortality Ratios
+
+```{r}
+(df$inf_mort_black_1000 <- (
+  df$black_infant_deaths/df$black_births)*1000
+ )
+
+```
+
+```{r}
+knitr::kable(
+  df[, c(1,9)],  
+  col.names = c(
+    'State', 
+    'Black Infant Mortality per 1,000'
+    ), 
+  align = "lc"
+  )
+```
+
+Below, I calculate the relative risk ratio for Black infants compared to Whites. You can see very large disparities. For example, in California the relative risk of death for Black infants is almost three times higher than for White infants (2.975)
+```{r}
+(df$RR_mort_black_white <- 
+   df$inf_mort_black_1000/df$inf_mort_white_1000)
+```
+
+## Survivorship Ratios
+
+Let's calculate the survivorship ratio
+
+```{r}
+df$inf_surv_white <- 
+  df$white_births - df$white_infant_deaths
+df$inf_surv_black  <- 
+   df$black_births - df$black_infant_deaths
+
+df$inf_surv_white_1000 <- 
+    (df$white_births/df$inf_surv_white)*1000
+df$inf_surv_black_1000 <- 
+    (df$black_births/df$inf_surv_black)*1000
+```
+
+```{r}
+(df$RR_surv_black_white <- 
+   df$inf_surv_black_1000/df$inf_surv_white_1000)
+```
+
+```{r}
+ggplot(
+  df, 
+  aes(x = as.factor(Location), 
+      y = RR_mort_black_white, 
+      group = 1)
+) +
+  geom_line() +
+  ylim(0, 4) +
+  labs(
+    title = "Relative Risk of Infant Mortality: Black - White",
+    x = "Location",
+    y = "Relative Risk"
+  ) +
+  theme_minimal()
+
+```
+
+```{r}
+ggplot(
+  df, 
+  aes(x = as.factor(Location), 
+      y = RR_surv_black_white, 
+      group = 1)
+) +
+  geom_line() +
+  ylim(0, 1.1) +
+  labs(
+    title = "Relative Risk of Infant Survival: Black - White",
+    x = "Location",
+    y = "Relative Risk"
+  ) +
+  theme_minimal()
+
+```
+::: {.callout-tip}
+## GGthemes
+
+We can make nicer charts with the add-on package called `ggthemes.` Let's install it and see if we can make prettier charts.
+`install.packages(ggthemes)` then `library(ggthemes)`
+:::
+
+### Plotting the differences
+Below, I am selecting the theme called `theme_stata` which makes the output look like a stata graph.
+```{r}
+library(ggthemes)
+ggplot(df, 
+  aes(x=as.factor(Location), 
+  y=RR_surv_black_white, group=1))  + 
+  geom_line(color = "midnightblue") + 
+  ylim(0, 1.1) + 
+  theme_stata() +
+  labs(title = "Black-White Survivorship", x = "Location", y = "Relative Risk")
+
+ggplot(df, 
+  aes(x=as.factor(Location), 
+  y=RR_mort_black_white, group=1))  + 
+  geom_line(color = "darkred") + 
+  ylim(1, 4) + 
+  theme_stata() +
+  labs(
+    title = "Black-White Mortality", 
+    x = "Location", 
+    y = "Relative Risk"
+    )
+```
+#### Your tasks
+It is very reasonable to examine these data further.
+
+- [ ] What research questions would you propose to examine infant mortality disparities across states?
+- [ ] Would the research question be the same if you were examining survivorship versus mortality?

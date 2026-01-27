@@ -1,0 +1,44 @@
+---
+title: "References"
+author: "Dr. Gia Elise Barboza-Salerno"
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+## Reading List
+
+### Linear Regression
+- This paper @razak2019child provides an example of [Simple Linear Regression](02-simple-regression.qmd).
+- This paper @littleton2024historical provides an example of using [Historic Redlining Scores](escape_room_redlining.Rmd) to understand higher rates of child welfare reporting.
+- Penn State has a nice [tutorial](https://online.stat.psu.edu/stat501/lesson/5) with examples on how to conduct linear regression in R
+
+### Logistic Regression
+- This paper uses the `glm` function to model the presence of fictional fantastic characters @corlattiRegressionModelsFantastic2021. Super cool.
+- While we do not cover it here, this paper explains how to use multilevel modeling with a categorical dependent variable: @merloBriefConceptualTutorial2006.
+- A recent co-authored manuscript used logistic regression, you can read it: @meshelemiah2024adverse
+
+### Mediation and Moderation
+
+- This paper @livingstonGentleIntroductionMediation2019 should be read together with @glickDischargeInstructionComprehension2019.
+- This paper is a tutorial on how to use the SPSS PROCESS macro by Hayes @clementStepbystepTutorialPerforming2022
+- I have used moderation and mediation in several papers, here is one example: @barboza2024associations
+
+### Factor Analysis
+- This paper has some cool visualizations: @StiglicCilarBudlerWatson and I downloaded it [here](static/ABeginnersGuidetoFactorAnalysis_FocusingonExploratoryFactorAnalysis.pdf)
+- I have used factor analytic techniques in many papers, here is one example: @elise2021child
+
+### Power Analysis
+This paper is good to follow if you need to calculate power for causal models @qinSampleSizePower2023
+
+### Dummy Variable Coding
+[This paper](static/johfre-freese-2021-reconsidering-the-reference-category.pdf) is a must read @johfre2021reconsidering
+
+### Social Justice Applications
+While not directly stating it, in this paper @barboza2020cognitive I found increases in post-partum parenting stress is linked to poor socio-emotional adjustment in children. My examination of the PRAMS data set suggests that psychosocial stressors during pregnancy, a vulnerable period for many, increases the risk of intimate partner violence.
+---
+

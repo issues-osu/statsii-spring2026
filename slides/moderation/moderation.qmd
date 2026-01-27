@@ -1,0 +1,133 @@
+---
+title: "Moderation Analysis"
+author: "Barboza-Salerno"
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Prelims
+
+install.packages(c("haven", "interactions", "ggplot2", "jtools"))
+
+```{r}
+# Load libraries
+library(haven)         # For reading SPSS files
+library(ggplot2)       # For plotting
+library(jtools)        # For interaction and J-N plot
+library(interactions)  # For Johnson-Neyman analysis
+
+# Load the data
+data <- read_sav("../../slides/medmod2/sexmin_pts_delinq.sav")
+```
+
+```{r}
+# Check variable types
+str(data)
+```
+
+## Data types
+
+Sexual minority is binary coded as 0/1. This does not make for a nice plot, but the JN method does not accept factor variables. So, for plotting, you can convert sexmin to factor and use labels (i.e., "Sexual Minority" "Not a Sexual Minority"), otherwise skip it. **Try it yourself to see what happens.**
+
+```{r}
+
+data$sexmin1 <- as.factor(data$sexmin)
+data$sexmin1 <- ifelse(data$sexmin1 == 1, "Sexual Minority", "Not a Sexual Minority")
+```
+
+## The Linear Regression Model
+
+```{r}
+# Fit moderation model
+mod <- lm(delinq ~ ptss * sexmin, data = data)
+
+# Summary of model
+summary(mod)
+```
+
+```{r, echo = FALSE}
+regression_table <- data.frame(
+  Predictor = c("Intercept", 
+                "PTSS", 
+                "Sexual Minority (vs. non-minority)", 
+                "PTSS × Sexual Minority"),
+  Estimate = c(2.13733, -0.04496, -0.72060, 0.25795),
+  `Std. Error` = c(0.61912, 0.06167, 1.39755, 0.12457),
+  `t-value` = c(3.452, -0.729, -0.516, 2.071),
+  `p-value` = c(0.000767, 0.467336, 0.607066, 0.040517),
+  Significance = c("***", "", "", "*")
+)
+
+# Display the table
+knitr::kable(regression_table, digits = 3, caption = "Table 1. Regression Coefficients")
+
+```
+
+This should look familiar. The model predicts delinquent behavior using PTSS, sexual minority status, and their interaction as predictors.
+
+**REVIEW**:
+
+-   Intercept (2.14): This is the expected value of the outcome when PTSS = 0 and the individual is not a sexual minority.
+-   PTSS (-0.045): Among non-sexual minority individuals, PTSS is not significantly associated with the outcome (p = 0.467).
+-   Sexual Minority main effect (-0.721): Among individuals with PTSS = 0, being a sexual minority is not significantly associated with the outcome (p = 0.607).
+-   PTSS × Sexual Minority interaction (0.258): This term is statistically significant (p = 0.041), indicating that the association between PTSS and the outcome differs by sexual minority status. Specifically, PTSS has a stronger positive effect on the outcome for sexual minority individuals.
+
+#### Reminder: All model assumptions (?) must be met, unfortunately.
+
+```{r}
+
+# Visualize interaction effect
+interact_plot(mod,
+              pred = ptss,
+              modx = sexmin,
+              plot.points = F,
+              interval = TRUE,
+              int.width = 0.95,
+              main.title = "Moderation of PTSS and Sexual Minority Status on Delinquency",
+              legend.main = "Identity",
+              x.label = "PTSS",
+              y.label = "Delinquency")
+
+```
+
+## Interpretation
+
+This plot shows how post-traumatic stress symptoms (PTSS) predict delinquency, and how this relationship differs by sexual minority status.
+
+Solid Line (sexmin = 1) → Sexual minority individuals
+
+-   The slope is positive, indicating that as PTSS increases, delinquency increases for sexual minority youth.
+-   This relationship is statistically significant. Note that you can assess significance from the plot because the confidence band (shaded area) does not cross zero
+
+Dashed Line (sexmin = 0) → Non-sexual minority individuals
+
+-   The slope is slightly negative, mostly flat, suggesting that PTSS is not associated with delinquency in this group.
+
+**Interaction effect:** The effect of PTSS on delinquency depends on sexual minority status. More PTSS = More delinquency for sexual minority youth, more PTSS has no effect for youth who do not identify as a sexual minority.
+
+```{r}
+
+# Johnson-Neyman technique
+johnson_neyman(mod, pred = sexmin, modx = ptss)
+
+
+```
+
+## Interpretation of the Johnson-Neyman Plot (J-N)
+
+This J-N plot shows how the effect of sexual minority status on delinquency changes depending on the level of PTSS.
+
+Key Interpretation: - The red shade shows where the effect of sexual minority status on delinquency is **not** statistically significant (p \> .05). - The blue shade shows where the effect \*is\*\* statistically significant (p \< .05). - The dashed vertical line marks the (J-N — the \*threshold of PTSS\*\* where the effect of sexmin becomes significant. - The black horizontal bar along the x-axis shows the \*observed range of PTSS in the data\*\*.
+
+### Regions of significance
+
+For individuals with PTSS scores below \~8, the difference in delinquency between sexual minority and non-minority youth is not statistically significant. However, when PTSS exceeds \~8, sexual minority youth show significantly higher delinquency compared to their peers.
+
+### Link to policy and practice
+
+I have several published articles using this type of methodology. In one article @barboza2023early we examined the impact of future orientation in buffering the effect of early child adversity on delinquent behavior. Read it, you should be able to write the paper now.

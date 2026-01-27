@@ -1,0 +1,101 @@
+---
+title: "Mediation, Moderation, and Conditional Process Models (Part 2)"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+# Week 11: March 24, 2026
+
+## Reading
+
+-   Hayes, Andrew. (2018). [Introduction to Mediation, Moderation, and Conditional Process Analysis](https://github.com/bigdataforsocialjustice/SWK8408/blob/master/Mediation%2C%20Moderation%20and%20Conditional%20Process%20Models.pdf) Chapters 7 - 10.
+
+-   I have used these methods on several occasions, check out @barboza-salernoAssociationsEarlyChild2024a and @elise_barboza_child_2021.
+
+    -   Barboza-Salerno, G. E., & Meshelemiah, J. C. (2024). Associations between early child adversity and lifetime suicide attempts among gender diverse individuals: A moderated mediation. Child Abuse & Neglect, 149, 106705.
+
+    -   Barboza, G., & Siller, L. A. (2021). Child Maltreatment, School Bonds, and Adult Violence: A Serial Mediation Model. Journal of Interpersonal Violence, 36(11–12), NP5839–NP5873. https://doi.org/10.1177/0886260518805763
+
+## Introduction to the Topic
+
+This week, we explore **moderation analysis**, a statistical approach used to understand how the relationship between two variables changes depending on a third variable, known as the moderator. Unlike simple regression, where we assess a direct relationship between an independent and dependent variable, moderation analysis allows us to examine whether this relationship varies in strength or direction based on different levels of another variable.
+
+Moderation is particularly useful in social sciences, public health, and policy research, where the effect of an intervention or exposure may differ depending on contextual factors such as age, gender, socioeconomic status, or environmental conditions. For example, in public health studies, we might investigate whether the relationship between neighborhood poverty and child maltreatment rates is moderated by community resources or green space availability.
+
+Throughout this week, we will discuss how to interpret interaction effects, visualize moderation using interaction plots, and apply these concepts using statistical software. By the end of the module, you will be able to identify when moderation is appropriate, test for moderation effects, and communicate findings effectively in research and policy contexts
+
+## Key Concepts:
+
+-   **Definition**: Moderation occurs when the strength or direction of the relationship between an independent variable *X* and a dependent variable *Y* depends on a third variable *W*, called the moderator.
+-   **Interaction/Effect moderation**: The key indicator of moderation is a statistically significant interaction term, *X* \* *W*, in a regression model, suggesting that the effect of *X* on *Y* varies depending on *W*.
+-   **Visualization**: Simple slopes analysis and interaction plots help visualize and interpret moderation effects.
+-   **Probing Interactions**: This is an extremely useful technique in which you can detect statistically significant regions of the interaction. Super exciting!
+-   **Distinguishing Moderation from Mediation**:
+    -   Moderation affects the strength of the relationship between *X* and *Y*.
+    -   Mediation explains the mechanism through which *X* affects *Y* via an intermediate variable.
+
+------------------------------------------------------------------------
+
+## Relevance:
+
+-   Students will learn how to use PROCESS in R and SPSS to test effect moderation to examine when or for whom an effect occurs (e.g., does the effect of stress on mental health differ based on social support?)
+-   Students will begin to understand what conditional (i.e., moderation) indirect effects (i.e., mediation) are and how to use them to test innovative hypotheses in social work (i.e., moderated mediation).
+
+------------------------------------------------------------------------
+
+## Why This Is Important:
+
+-   [Mediation analysis](06-mediation.qmd), as we saw last week, allows researchers to move beyond simple relationships to uncover *how* and *why* effects occur.
+-   Understanding mediation is critical for testing theoretical models in fields like social work, psychology, sociology, and public health.
+
+------------------------------------------------------------------------
+
+## How This Ties Into the Overall Course:
+
+-   Builds upon previous topics, such as [regression](03-multiple-regression.qmd) and [effect sizes](04-effect-sizes.qmd), by extending these tools to explore conditional effects.
+-   Prepares students for advanced concepts like moderated mediation and structural equation modeling (SEM), where interaction terms can be useful.
+
+By the end of this week, students will be able to conduct moderation analyses, interpret conditional effects, and evaluate the significance of effect moderation using SPSS and R.
+
+### In-Class Files and Data Sets
+
+**Data sets:** We will use datasets from Hayes on [workplace related stress: estress.sav](slides/medmod2/estress.sav) and [presumed media influence on the intention to purchase: pmi.sav](slides/medmod2/pmi.sav).
+
+**Mediation Extensions:** First, are going to extend the simple mediation model we learned last time by incorporating multiple mediators. I have saved the SPSS output for several different examples:
+
+-   [Example 1](slides/medmod2/Simple%20Mediation%20Example%201.spv): Dichotomous Predictor, Simple Mediation, [The PMI study](slides/medmod2/pmi.sav)
+-   [Example 2](slides/medmod2/Simple%20Mediation%20Example%202.spv): Continuous Predictor, [Economic Stress Among Small Business Owners](slides/medmod2/estress.sav)
+-   [Example 3](slides/medmod2/Simple%20Mediation%20Example%203%20with%20covariates.spv) Continuous Predictor with controls, Economic Stress Among Small Business Owners (same data set as above)
+
+Next, we extend the simple case using examples representing [parallel](slides/medmod2/Parallel%20Mediation%20Example%204.spv), [serial mediation](slides/medmod2/Serial%20Mediation%20Example%205.spv) and [serial mediation with contrasts](slides/medmod2/Serial%20Mediation%20Example%206%20with%20contrasts.spv).
+
+**Moderation:** Finally, we end today with an example of how to implement moderation. We will use these files:
+
+-   Example 1: Dichotomous Moderation Effect, [Sexual Minority](slides/medmod2/sexmin_pts_delinq.sav). I saved the [SPSS output](slides/medmod2/Simple%20Moderation%20Example%207.spv)
+-   [Example 2](slides/medmod2/pts%20vex%20mod%20mediation.sav): Continuous Moderation Effect, [NSCAW](slides/medmod2/pts%20vex%20mod%20mediation.sav)
+
+## Lab Files
+
+**Mediation:** You are going to do this lab using the [NSCAW data](slides/medmod2/pts%20vex%20mod%20mediation.sav) to examine whether (1) children investigated for abuse or neglect who have witnessed severe violence at Wave 1 (EV_W1) are more likely to engage in externalizing behavior at Wave 3 (bcext3); and (2) post-traumatic stress at Wave 1 (tra1) is the mechanism violence exposure is linked to externalizing behavior.
+
+**Moderation:** I have created some Excel output so you can learn how to take the output and visualize the results. One file [plots the effect moderation](slides/medmod2/plotting%20effects%20moderation%20age%20pts%20and%20delinq.xlsx) for age on the association between post-traumatic stress and delinquent behaviors using a subset of the NSCAW. Now, you can use [this file](slides/medmod2/plotting%20effects%20moderation.xlsx) to practice making a similar chart using excel to answer the question: *What is the effect moderation of sexual minority status on the association between post-traumatic stress and delinquent behavior?*
+
+### Lecture Notes & Class Files
+
+-   Download today's slides [here](slides/medmod2/mediation_moderation.pptx)
+-   Check out my annotated Word document interpreting parallel mediation (with sample write-up) [here](slides/medmod2/Annotated%20Output%20of%20Parallel%20Mediation%20Analysis.docx)
+
+## Resources
+
+There are a number of mediation, moderation, and mediated moderation models that you can use to test various hypotheses. Once you have a basic familairity of the models they become intuitive. Model templates are located [here](slides/medmod2/process_models.pdf).
+
+------------------------------------------------------------------------
+
+## Additional Notes
+
+Stay calm and remove interactions with toxic people.

@@ -1,0 +1,12 @@
+---
+title: "Final Project"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 15: April 21, 2026
+
+## Final Project Presentations

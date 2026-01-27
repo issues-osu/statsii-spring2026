@@ -1,0 +1,353 @@
+---
+title: "Understanding Simple Linear Regression"
+subtitle: "An in-class prediction exercise"
+author: "Barboza-Salerno"
+format:
+  html:
+    toc: false
+    number-sections: false
+    theme: sandstone
+---
+
+## What We Are Doing Today
+
+Today we are going to **build a prediction equation together** using real housing data that you collected **in class**.
+
+We are **not** calculating regression coefficients yet.  
+We are learning **what a regression equation is trying to say**.
+
+By the end of this exercise, you should understand:
+
+- What a predicted value ($\hat{y}$) represents  
+- How an equation encodes a prediction rule  
+- Why predictions can be wrong even when they seem reasonable  
+
+---
+
+## Step 1: Collecting Housing Data (In Class)
+
+Each student is assigned **one U.S. state** from a group of states that share the same first letter.
+
+Each student will:
+
+1. Go to a [Zillow](https://www.zillow.com/?utm_medium=cpc&utm_source=google&utm_content=1471764169|65545421228|kwd-570802407|603457706088|&semQue=null&utm_campaign=zxw_br_natip_usa_x_nat_x_e_g_1&gad_source=1&gad_campaignid=1471764169&gclid=Cj0KCQiA-NHLBhDSARIsAIhe9X3kFyS7iWTrPNH7wUhF3HEktu4YdxgRVPrhYKjyY0swcHiRMmVarHgaAsT7EALw_wcB)
+2. Choose **10 homes** from their assigned state (filter = Homes)
+3. Record **only** the following into the shared Excel [spreadsheet](https://buckeyemailosu-my.sharepoint.com/:x:/g/personal/barboza-salerno_1_osu_edu/IQAABJu3h5r6QZiGL1V4QJKdAZ4Qea5QdZ7mZqqztgQh53A?e=wIj5yS):
+   - Square footage (sq ft)
+   - Sale or listing price (USD)
+   - State abbreviation
+
+Do **not** record:
+
+- Number of bedrooms
+- Neighborhood
+- Year built
+- Any other features
+
+---
+
+## Step 2: Entering Data into the Shared Spreadsheet
+
+Each student enters their 10 homes into the **shared class spreadsheet** using the provided template.
+
+Each row represents **one home**.
+
+| State | Square Footage (sq ft) | Price ($) |
+|-------|------------------------|-----------|
+| XX    | XXXX                   | XXXXX     |
+
+
+---
+
+## Step 3: What Are We Predicting?
+
+Our goal for today is to predict:
+
+> **House price**
+
+Using **only**:
+
+> **Square footage**
+
+We are pretending to be a **national housing price prediction system**.
+
+It is obvious that larger homes tend to cost more. Our goal is not to state that fact, but to be precise about it.
+
+Specifically, we want to do two things:
+
+1. **Quantify the change in cost** ($y$) associated with each increase in square footage ($x$).  
+   In other words, as a home gets larger, how much more expensive do we expect it to be?
+
+2. **Use that relationship to make predictions.** Given a specific square footage, we want the model to produce a predicted home price, particularlyn for homes we have not directly observed.
+
+This is what a simple linear regression model is designed to do.
+
+Important constraint:
+
+> We are allowed to use **only square footage**.  
+> We are *not* allowed to use state, neighborhood, or any other information.
+
+---
+
+## Step 4: Thinking in Terms of Change (Not Ratios)
+
+We are **not** asking:
+
+- “What is the price per square foot?”
+
+Instead, we are asking:
+
+> **“As square footage increases, how much does price tend to increase?”**
+
+This is a question about **change**, not division.
+
+---
+
+## Step 5: The Class Prediction Rule (Verbal)
+
+As a class, we agree on **one rule** that applies to **all homes**:
+
+> **For every additional 100 square feet of house size, the predicted price increases by approximately \$XXXX.**
+
+The value \$XXXX is chosen **by the class** based on the pooled data.
+
+Why do we talk about **100 square feet** instead of **1 square foot**?
+
+In theory, we could describe the change in price for every single additional square foot.  
+In practice, that change would be very small and hard to interpret.
+
+Housing prices typically change by **thousands of dollars**, not by a few dollars at a time.  
+If we used 1 square foot as the unit, the number would be tiny and not very meaningful on its own.
+
+Using 100 square feet:
+
+- Matches the scale at which people think about home size (rooms, additions, renovations)
+- Produces numbers that are easier to read, compare, and discuss
+- Makes it clearer how changes in size translate into noticeable changes in price
+
+This choice does **not** change the relationship between size and price.  
+It only changes how we **describe** that relationship in words.
+
+::: callout-note
+## Why we do *not* use 1 square foot (and why this matters for storytelling)
+
+By default, a regression model calculates change for a **1-unit increase** in the predictor.  
+In this case, that means the model naturally estimates the change in price for **1 additional square foot**.
+
+There is nothing mathematically wrong with that.
+
+However, **1 square foot is not a meaningful unit for telling a housing story**.
+
+For example, suppose the model estimates that price increases by:
+
+> **$2.50 for every additional square foot**
+
+That is a correct statement—but it sounds trivial.
+
+Now tell the *same story* using a more meaningful unit:
+
+- $2.50 per **1 sq ft**
+- $250 per **100 sq ft**
+- $2,500 per **1,000 sq ft**
+
+All three describe the **same relationship**.  
+None of them change the model.
+
+What changes is **how clearly the story communicates real-world impact**.
+
+This is why we choose to talk about **100 square feet**:
+
+- It reflects how people actually think about housing size
+- It turns a tiny coefficient into a meaningful narrative
+- It makes the effect of size on price easier to interpret and discuss
+
+Choosing the unit is not changing the model—it is choosing **how to tell the story of the model**.
+:::
+
+
+---
+
+## Step 5.5: Converting the Default 1-Unit Change into a 100-Unit Change
+
+Regression models are built around a simple idea: **a coefficient describes the change in predicted $y$ for a 1-unit increase in $x$.**  
+
+By default, a regression model estimates the change in price for a **1-unit increase** in square footage.
+
+That means the model first produces a number that represents:
+
+> **How much the predicted price changes for one additional square foot.**
+
+We label that number using a symbol, called the coefficient for square footage, written as $b_1$.
+
+For example, if the model estimates:
+
+$$
+b_1 = 2.50
+$$
+
+then the story is:
+
+> **For every additional 1 square foot, the predicted price increases by \$2.50.**
+
+But we usually want a more meaningful story unit—like **100 square feet**.
+
+### Converting from 1 sq ft to 100 sq ft
+
+A 100 sq ft increase is just 100 one-sq-ft increases. So:
+
+$$
+\text{Change for 100 sq ft} = 100 \times (\text{change for 1 sq ft})
+$$
+
+That means:
+
+$$
+\text{Dollars per 100 sq ft} = 100 \times b_1
+$$
+
+### Example (so you can see the difference in the story)
+
+Suppose a model gives:
+
+$$
+b_1 = 2.50
+$$
+
+This means:
+
+- **Per 1 sq ft**: predicted price increases by **$2.50**
+- **Per 100 sq ft**: predicted price increases by:
+
+$$
+100 \times 2.50 = 250
+$$
+
+So the same relationship can be told as:
+
+- “For every additional **1 sq ft**, price increases by **$2.50**.”  
+- “For every additional **100 sq ft**, price increases by **$250**.”
+
+These statements are mathematically identical, but the second one is usually a clearer real-world story.
+
+### How we are using this in class today
+
+Today, the class will choose **$XXXX per 100 sq ft** directly because it is a meaningful unit for housing.  
+
+If we wanted to express the same rule as a “default” 1 sq ft change, we would divide by 100:
+
+$$
+\text{Dollars per 1 sq ft} = \frac{\text{XXXX}}{100}
+$$
+
+So:
+
+- $XXXX$ per **100 sq ft** is the same as $\frac{XXXX}{100}$ per **1 sq ft**.
+
+We are not changing the model—we are choosing a unit that helps us interpret and communicate the relationship clearly.
+
+---
+
+## Step 6: Writing the Prediction Equation
+
+Now we translate the verbal rule into an equation.
+
+This equation does **not** describe what actually happened.  
+It describes how our **model makes predictions**.
+
+The prediction equation has the form:
+
+$$
+\hat{y} = b_0 + b_1(\text{square footage})
+$$
+
+Where:
+
+- $\hat{y}$ = predicted house price  
+- $b_1$ = how much price changes as square footage increases  
+- $b_0$ = a baseline price  
+
+Using the class-chosen value, the equation becomes:
+
+$$
+\hat{y} = b_0 + (\text{XXXX per 100 sq ft}) \times \text{square footage}
+$$
+
+This is **our equation**.
+
+---
+
+## Step 7: Predicting a House We Do *Not* Observe
+
+Now we use the equation to predict the price of a house that does **not** appear in the dataset.
+
+### Prediction Question
+
+**If a house is exactly 1,725 square feet, what price does our equation predict?**
+
+Using the class equation:
+
+$$
+\hat{y}_{1725} = b_0 + (\text{XXXX per 100 sq ft}) \times 1725
+$$
+
+This predicted value is written as $\hat{y}$.
+
+> $\hat{y}$ is the model’s **guess** for a house size we have never observed.
+
+---
+
+## Step 8: Comparing Predictions to Reality
+
+For selected homes in the dataset, we:
+
+1. Plug their square footage into the equation  
+2. Compute a predicted price ($\hat{y}$)  
+3. Compare it to the actual price ($y$)  
+
+Prediction error is defined as:
+
+$$
+\text{Error} = y - \hat{y}
+$$
+
+Interpretation:
+
+- Positive error → the model **under-valued** the home  
+- Negative error → the model **over-valued** the home  
+
+---
+
+## Step 9: Diagnosing the Model
+
+As a class, we ask:
+
+- Are errors small or large?
+- Are they random?
+- Do errors appear to cluster by state?
+
+We do **not** fix the model yet.
+
+---
+
+## Reflection
+
+What is your response to the following questions:
+
+1. What does square footage predict well about housing prices?
+2. What important information does this equation ignore?
+3. Why might one prediction equation work better in some states than others?
+
+---
+
+## What You Should Take Away from Today
+
+By the end of today, you should understand that:
+
+- A regression equation is a **prediction rule**
+- $\hat{y}$ is a **model-based guess**
+- Coefficients describe **change**, not ratios
+- Error reveals missing structure, not failure
+
+Next week, we will ask:
+
+> **What information should be added to improve this equation?**

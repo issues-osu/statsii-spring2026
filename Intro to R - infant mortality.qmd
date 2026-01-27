@@ -1,0 +1,85 @@
+---
+title: "Infant Mortality"
+author: "Barboza-Salerno"
+format: html
+---
+
+# Formulate a research question
+
+#### Is there a difference in infant mortality across race/ethnicity in Cook County, Illinois?
+
+*Your task*: Write a script that incrementally 
+- selects the variables race, latino, gender, and age, death_date, and manner; 
+- filters for age \<= 1, 3) mutates by creating a race category for latino = true and latino = false, race=black, latino = false, race = white, all other race/latino categories;
+- groups by the new race category and summarizes manner of death across race/ethnicity.
+
+Refer to class lecture to understand each procedure.
+
+#### Load necessary libraries
+
+```{r}
+
+library(dplyr)
+library(RSocrata)
+```
+
+#### Sets options for scientific notation
+
+```{r}
+options(scipen=10000)
+```
+
+Load the dataset. Note: the data can be found here: <https://datacatalog.cookcountyil.gov/api/odata/v4/cjeq-bs86>
+
+```{r}
+
+infant_mortality <- read.socrata(
+  "https://datacatalog.cookcountyil.gov/api/odata/v4/cjeq-bs86"
+  )
+```
+
+### Step 1: Select variables
+
+```{r}
+infant_mortality <- infant_mortality %>% 
+  select(race, latino, gender, age, death_date, manner)
+```
+
+#### Step 2: Filter for age \<= 1
+
+```{r}
+
+infant_mortality <- infant_mortality %>% 
+  filter(age <= 1)
+```
+
+#### Step 3: Create a new race category based on Latino and Race
+
+```{r}
+infant_mortality <- infant_mortality %>% 
+  mutate(
+    race_category = case_when(
+      latino == "true" ~ "Latino", 
+      latino == "false" & race == "Black" ~ "Non-Hispanic Black", 
+      latino == "false" & race == "White" ~ "Non-Hispanic White", 
+      TRUE ~ "Other" 
+      )
+    )
+
+```
+
+#### Step 4: Group by the new race category and summarize manner of death
+
+```{r}
+summary_data <- infant_mortality %>% 
+  group_by(race_category) %>%
+  summarise(death_count = n(), .groups = 'drop')
+```
+#### Step 5: Calculate percentage of deaths by race/ethnicity
+
+```{r}
+summary_data %>%  dplyr::mutate(percentage = (death_count / sum(death_count)) * 100)
+```
+
+
+#### Challenge: Calculate the RR and Odds of death for NH Black compared to NH White

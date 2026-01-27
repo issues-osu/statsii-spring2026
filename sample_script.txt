@@ -1,0 +1,6 @@
+sex_at_birth <- c("male", "male", "female", "male", "female", "female")
+age <- c(10, 12, 3, 0, 1, 16)
+cbl_score <- c(50, 39, 48, 54, 70, 55)
+dep_score <- c(40, 29, 37, 44, 60, 45)
+total_score <- cbl_score + dep_score
+mydat <- data.frame(sex_at_birth, age, cbl_score, dep_score, total_score)

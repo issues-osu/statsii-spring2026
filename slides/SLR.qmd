@@ -1,0 +1,128 @@
+---
+title: "Simple Linear Regression: Understanding Relationships Between Variables"
+subtitle: "A foundation for statistical modeling"
+visual: "scatterplot with regression line"
+---
+
+# Slide 2: What is Simple Linear Regression (SLR)?
+- title: "What is Simple Linear Regression?"
+- content: |
+    **Definition:**  
+    Simple Linear Regression is a statistical method used to model and analyze the relationship between two variables: one dependent (response) variable and one independent (predictor) variable.  
+
+    **Key Idea:**  
+    SLR estimates a linear equation (Ž̂ = β0 + β1X) that predicts the dependent variable (Ž) based on the independent variable (X).
+- visual: "Diagram illustrating dependent and independent variables."
+---
+
+# Slide 3: What is SLR Useful For?
+- title: "What is SLR Useful For?"
+- content: |
+    **Applications:**  
+    - Predicting outcomes (e.g., predicting sales from advertising spend).  
+    - Understanding relationships (e.g., relationship between study hours and test scores).  
+    - Quantifying the impact of one variable on another.  
+
+    **Why It Matters:**  
+    SLR is foundational for more complex modeling techniques.
+- visual: "Scatterplots with strong, weak, and no relationships."
+---
+
+# Slide 4: Types of Data Needed
+- title: "Types of Data Needed"
+- content: |
+    **Requirements for Data:**  
+    - Dependent Variable (Ž): Continuous (e.g., height, income).  
+    - Independent Variable (X): Can be continuous or categorical (e.g., age, treatment group).
+
+    **Note:** Assumptions (e.g., normality, homoscedasticity) will be covered in another lecture.
+- visual: "Table of dependent and independent variable examples."
+---
+
+# Slide 5: Statistical and Conceptual Model
+- title: "Statistical and Conceptual Model"
+- content: |
+    **Statistical Model:**  
+    Ž = β0 + β1X + ε  
+    - β0 (Intercept): Predicted value of Ž when X = 0.  
+    - β1 (Slope): Change in Ž for a one-unit change in X.  
+    - ε (Error Term): Represents variability not explained by X.  
+
+    **Conceptual Model:**  
+    Focuses on understanding the direction and strength of the relationship.
+- visual: "Equation labeled on scatterplot."
+---
+
+# Slide 6: Interpreting the Coefficients
+- title: "Interpreting the Coefficients"
+- content: |
+    **Intercept (β0):** The expected value of Ž when X = 0.  
+
+    **Slope (β1):** For each one-unit increase in X, Ž changes by β1 units.
+- visual: "Annotated scatterplot highlighting slope and intercept."
+---
+
+# Slide 7: Examples
+- title: "Examples"
+- content: |
+    **Example 1:** Predicting test scores from study hours.  
+    - β0: Predicted score when study hours = 0.  
+    - β1: Increase in score per additional hour.  
+
+    **Example 2:** Estimating house prices from square footage.  
+    - β0: Predicted price when square footage = 0.  
+    - β1: Increase in price per square foot.
+- visual: "Side-by-side scatterplots for examples."
+---
+
+# Slide 8: Mean Centering
+- title: "Mean Centering"
+- content: |
+    **What is Mean Centering?** Subtracting the mean of X from each value to create a centered variable.  
+
+    **Why Do It?**  
+    - Changes the intercept to represent Ž at average X.  
+    - Does not change slope or model fit.  
+
+    **Comparison:**  
+    - Without Centering: Intercept at X = 0.  
+    - With Centering: Intercept at mean(X).
+- visual: "Two scatterplots with and without mean centering."
+---
+
+# Slide 9: How to Perform SLR in R
+- title: "How to Perform SLR in R"
+- content: |
+    **R Packages:**  
+    - `lm()` for modeling.  
+    - `ggplot2` for visualization.  
+    - `car` for diagnostics.  
+
+    **Example Code:**  
+    ```R
+    library(ggplot2)
+    data <- data.frame(X = 1:5, Y = c(2, 4, 6, 8, 10))
+    model <- lm(Y ~ X, data)
+    summary(model)
+    ggplot(data, aes(X, Y)) + geom_point() + geom_smooth(method = "lm")
+    ```
+- visual: "R output and ggplot."
+---
+
+# Slide 10: Conclusion
+- title: "Conclusion"
+- content: |
+    **Key Takeaways:**  
+    - SLR quantifies relationships.  
+    - Interpret intercept (β0) and slope (β1).  
+    - Mean centering changes intercept interpretation.  
+    - Use R tools for easy implementation.
+
+    **Call to Action:** Explore SLR with your datasets!
+- visual: "Inspirational quote with regression plot."
+---
+
+# Slide 11: Questions
+- title: "Questions?"
+- content: "What questions do you have about SLR?"
+- visual: "Question mark or thoughtful image."

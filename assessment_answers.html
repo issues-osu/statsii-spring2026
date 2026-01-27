@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Stats I Initial Assessment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="assessment_answers_files/libs/clipboard/clipboard.min.js"></script>
+<script src="assessment_answers_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="assessment_answers_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="assessment_answers_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="assessment_answers_files/libs/quarto-html/popper.min.js"></script>
+<script src="assessment_answers_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="assessment_answers_files/libs/quarto-html/anchor.min.js"></script>
+<link href="assessment_answers_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="assessment_answers_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="assessment_answers_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="assessment_answers_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="assessment_answers_files/libs/bootstrap/bootstrap-889347afa0e18f2ab2e857d77b27f773.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#stats-i-initial-assessment" id="toc-stats-i-initial-assessment" class="nav-link active" data-scroll-target="#stats-i-initial-assessment">Stats I Initial Assessment</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#part-i" id="toc-part-i" class="nav-link" data-scroll-target="#part-i">PART I</a>
+  <ul class="collapse">
+  <li><a href="#introduction-to-data" id="toc-introduction-to-data" class="nav-link" data-scroll-target="#introduction-to-data"><strong>1. Introduction to Data</strong></a></li>
+  <li><a href="#relationships-between-variables" id="toc-relationships-between-variables" class="nav-link" data-scroll-target="#relationships-between-variables"><strong>2. Relationships Between Variables</strong></a></li>
+  <li><a href="#interquartile-range-iqr" id="toc-interquartile-range-iqr" class="nav-link" data-scroll-target="#interquartile-range-iqr"><strong>3. Interquartile Range (IQR)</strong></a></li>
+  <li><a href="#contingency-table" id="toc-contingency-table" class="nav-link" data-scroll-target="#contingency-table"><strong>4. Contingency Table</strong></a></li>
+  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions"><strong>5. Probability Distributions</strong></a></li>
+  <li><a href="#independent-random-variables" id="toc-independent-random-variables" class="nav-link" data-scroll-target="#independent-random-variables"><strong>6. Independent Random Variables</strong></a></li>
+  <li><a href="#covid-19-table" id="toc-covid-19-table" class="nav-link" data-scroll-target="#covid-19-table"><strong>7. COVID-19 Table</strong></a></li>
+  <li><a href="#mean-variance-and-standard-deviation" id="toc-mean-variance-and-standard-deviation" class="nav-link" data-scroll-target="#mean-variance-and-standard-deviation"><strong>8. Mean, Variance, and Standard Deviation</strong></a></li>
+  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><strong>9. Normal Distribution</strong></a></li>
+  <li><a href="#social-work-licensing-exam" id="toc-social-work-licensing-exam" class="nav-link" data-scroll-target="#social-work-licensing-exam"><strong>10. Social Work Licensing Exam</strong></a></li>
+  <li><a href="#sat-scores" id="toc-sat-scores" class="nav-link" data-scroll-target="#sat-scores"><strong>11. SAT Scores</strong></a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Stats I Initial Assessment</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="stats-i-initial-assessment" class="level1">
+<h1>Stats I Initial Assessment</h1>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>This assessment evaluates baseline understanding before starting Statistics II. It is not graded and focuses on gauging problem-solving approaches. Please complete the tasks outlined below.</p>
+<hr>
+</section>
+<section id="part-i" class="level2">
+<h2 class="anchored" data-anchor-id="part-i">PART I</h2>
+<section id="introduction-to-data" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-data"><strong>1. Introduction to Data</strong></h3>
+<section id="question" class="level4">
+<h4 class="anchored" data-anchor-id="question">Question:</h4>
+<p>Using the table below, calculate:</p>
+<ol type="1">
+<li>The proportion of youth with PTSD in the treatment group by the end of the first year.</li>
+<li>The proportion of youth with PTSD in the control group by the end of the first year.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 19%">
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>PTSD (0-30 days)</th>
+<th>No PTSD (0-30 days)</th>
+<th>PTSD (0-365 days)</th>
+<th>No PTSD (0-365 days)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatment</td>
+<td>33</td>
+<td>191</td>
+<td>45</td>
+<td>179</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>13</td>
+<td>214</td>
+<td>28</td>
+<td>199</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="answer" class="level4">
+<h4 class="anchored" data-anchor-id="answer">Answer:</h4>
+<ol type="1">
+<li><p><strong>Proportion of PTSD in the treatment group</strong>:</p>
+<p><span class="math display">\[
+\text{Proportion} = \frac{\text{PTSD cases}}{\text{Total cases}} = \frac{33 + 45}{33 + 191 + 45 + 179} = \frac{78}{448} \approx 0.174 \,(17.4\%)
+\]</span></p></li>
+<li><p><strong>Proportion of PTSD in the control group</strong>:</p>
+<p><span class="math display">\[
+\text{Proportion} = \frac{\text{PTSD cases}}{\text{Total cases}} = \frac{13 + 28}{13 + 214 + 28 + 199} = \frac{41}{454} \approx 0.0903 \,(9.03\%)
+\]</span></p></li>
+</ol>
+</section>
+<section id="interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation">Interpretation:</h4>
+<p>The treatment group had a PTSD rate of 17.4%, while the control group had a lower PTSD rate of 9.03%. This suggests that factors associated with treatment may influence PTSD rates, which warrants further investigation.</p>
+<hr>
+</section>
+</section>
+<section id="relationships-between-variables" class="level3">
+<h3 class="anchored" data-anchor-id="relationships-between-variables"><strong>2. Relationships Between Variables</strong></h3>
+<section id="question-1" class="level4">
+<h4 class="anchored" data-anchor-id="question-1">Question:</h4>
+<p>True or False: Variables cannot be both associated and independent.</p>
+</section>
+<section id="answer-1" class="level4">
+<h4 class="anchored" data-anchor-id="answer-1">Answer:</h4>
+<p><strong>False.</strong> If two variables are associated, they are not independent. Association implies a relationship between variables, whereas independence means no influence of one variable on another.</p>
+<hr>
+</section>
+</section>
+<section id="interquartile-range-iqr" class="level3">
+<h3 class="anchored" data-anchor-id="interquartile-range-iqr"><strong>3. Interquartile Range (IQR)</strong></h3>
+<section id="question-2" class="level4">
+<h4 class="anchored" data-anchor-id="question-2">Question:</h4>
+<ol type="1">
+<li>Define Q1 (25th percentile) in words.</li>
+<li>If Q3 = 300 and Q1 = 100, calculate the IQR.</li>
+<li>Why do extreme observations affect standard deviation more than the IQR?</li>
+</ol>
+</section>
+<section id="answer-2" class="level4">
+<h4 class="anchored" data-anchor-id="answer-2">Answer:</h4>
+<ol type="1">
+<li><p><strong>Definition of Q1</strong>: Q1 is the value below which 25% of the data lies. It represents the first quartile of the dataset.</p></li>
+<li><p><strong>Calculate IQR</strong>:</p>
+<p><span class="math display">\[
+\text{IQR} = Q3 - Q1 = 300 - 100 = 200
+\]</span></p></li>
+<li><p><strong>Effect of extreme observations</strong>:</p>
+<p>Extreme values (outliers) have a larger impact on the standard deviation because it measures the average squared deviation of all data points from the mean. In contrast, the IQR focuses only on the middle 50% of the data, ignoring extremes.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="contingency-table" class="level3">
+<h3 class="anchored" data-anchor-id="contingency-table"><strong>4. Contingency Table</strong></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Response</th>
+<th>None</th>
+<th>Small</th>
+<th>Big</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Yes</strong></td>
+<td>0.406</td>
+<td>0.458</td>
+<td>0.136</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td><strong>No</strong></td>
+<td>0.113</td>
+<td>0.748</td>
+<td>0.139</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<section id="question-3" class="level4">
+<h4 class="anchored" data-anchor-id="question-3">Question:</h4>
+<ol type="1">
+<li>What does 0.458 represent?</li>
+<li>What does 0.139 (No, Big) represent?</li>
+</ol>
+</section>
+<section id="answer-3" class="level4">
+<h4 class="anchored" data-anchor-id="answer-3">Answer:</h4>
+<ol type="1">
+<li><p><strong>Interpretation of 0.458</strong>: 0.458 represents the proportion of participants who answered “Yes” and experienced a “Small” response.</p></li>
+<li><p><strong>Interpretation of 0.139</strong>: 0.139 represents the proportion of participants who answered “No” and experienced a “Big” response.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="probability-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="probability-distributions"><strong>5. Probability Distributions</strong></h3>
+<section id="question-4" class="level4">
+<h4 class="anchored" data-anchor-id="question-4">Question:</h4>
+<p>Which of the following salary distributions is valid? Identify errors in the others.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Income Range ($1000s)</th>
+<th>0-25</th>
+<th>25-50</th>
+<th>50-100</th>
+<th>100+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td>0.18</td>
+<td>0.39</td>
+<td>0.33</td>
+<td>0.16</td>
+</tr>
+<tr class="even">
+<td><strong>B</strong></td>
+<td>0.38</td>
+<td>-0.27</td>
+<td>0.52</td>
+<td>0.37</td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td>0.28</td>
+<td>0.27</td>
+<td>0.29</td>
+<td>0.16</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="answer-4" class="level4">
+<h4 class="anchored" data-anchor-id="answer-4">Answer:</h4>
+<ul>
+<li><strong>Correct Distribution: C</strong>
+<ul>
+<li>Total = <span class="math inline">\(0.28 + 0.27 + 0.29 + 0.16 = 1.00\)</span>, and all probabilities are valid (0 ≤ p ≤ 1).</li>
+</ul></li>
+<li><strong>Errors in Others</strong>:
+<ul>
+<li><strong>A</strong>: Total = <span class="math inline">\(0.18 + 0.39 + 0.33 + 0.16 = 1.06\)</span>, which exceeds 1.</li>
+<li><strong>B</strong>: Contains a negative probability (<span class="math inline">\(-0.27\)</span>), which is invalid.</li>
+</ul></li>
+</ul>
+</section>
+<section id="interpretation-1" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-1">Interpretation:</h4>
+<p>Distribution C is valid because it adheres to the fundamental rules of probabilities, where all probabilities are between 0 and 1, and their sum equals 1.</p>
+<hr>
+</section>
+</section>
+<section id="independent-random-variables" class="level3">
+<h3 class="anchored" data-anchor-id="independent-random-variables"><strong>6. Independent Random Variables</strong></h3>
+<section id="question-5" class="level4">
+<h4 class="anchored" data-anchor-id="question-5">Question:</h4>
+<ol type="1">
+<li>What is the probability that both people develop PTSD?</li>
+<li>What is the probability that neither does?</li>
+<li>What does independence mean, and why does this assumption matter?</li>
+</ol>
+</section>
+<section id="answer-5" class="level4">
+<h4 class="anchored" data-anchor-id="answer-5">Answer:</h4>
+<ol type="1">
+<li><p><strong>Probability both develop PTSD</strong>: <span class="math display">\[
+P(\text{PTSD}) = 0.09
+\]</span> <span class="math display">\[
+P(\text{Both}) = 0.09 \times 0.09 = 0.0081 \,(0.81\%)
+\]</span></p></li>
+<li><p><strong>Probability neither develops PTSD</strong>: <span class="math display">\[
+P(\text{No PTSD}) = 1 - 0.09 = 0.91
+\]</span> <span class="math display">\[
+P(\text{Neither}) = 0.91 \times 0.91 = 0.8281 \,(82.81\%)
+\]</span></p></li>
+<li><p><strong>Independence Definition</strong>:</p>
+<p>Independence means the outcome of one event does not influence the outcome of another. This assumption is critical because the joint probability calculations (e.g., <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span>) rely on it.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="covid-19-table" class="level3">
+<h3 class="anchored" data-anchor-id="covid-19-table"><strong>7. COVID-19 Table</strong></h3>
+<section id="question-6" class="level4">
+<h4 class="anchored" data-anchor-id="question-6">Question:</h4>
+<p>Using the following table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vaccinated</th>
+<th>Yes</th>
+<th>No</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lived</td>
+<td>0.0382</td>
+<td>0.8252</td>
+</tr>
+<tr class="even">
+<td>Died</td>
+<td>0.0010</td>
+<td>0.1356</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li>Calculate the probability a randomly selected person who was not vaccinated died from COVID.</li>
+<li>Use a tree diagram to calculate:
+<ul>
+<li>The probability a random person was vaccinated and lived.</li>
+<li>The probability a random person died (regardless of vaccination status).</li>
+</ul></li>
+</ol>
+</section>
+<section id="answer-6" class="level4">
+<h4 class="anchored" data-anchor-id="answer-6">Answer:</h4>
+<ol type="1">
+<li><p><strong>Probability a not-vaccinated person died</strong>: <span class="math display">\[
+P(\text{Died | Not Vaccinated}) = 0.1356
+\]</span></p></li>
+<li><p><strong>Tree Diagram Calculations</strong>:</p>
+<ul>
+<li><p><strong>Probability a person was vaccinated and lived</strong>: <span class="math display">\[
+P(\text{Vaccinated and Lived}) = P(\text{Vaccinated}) \cdot P(\text{Lived | Vaccinated}) = 0.0382
+\]</span></p></li>
+<li><p><strong>Probability a person died (regardless of vaccination status)</strong>: <span class="math display">\[
+P(\text{Died}) = P(\text{Vaccinated}) \cdot P(\text{Died | Vaccinated}) + P(\text{Not Vaccinated}) \cdot P(\text{Died | Not Vaccinated}) = 0.1366 \,(13.66\%)
+\]</span></p></li>
+</ul></li>
+</ol>
+</section>
+<section id="interpretation-2" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-2">Interpretation:</h4>
+<p>The overall risk of death (13.66%) is dominated by unvaccinated individuals, highlighting the critical importance of vaccination in preventing COVID-19 deaths.</p>
+<hr>
+</section>
+</section>
+<section id="mean-variance-and-standard-deviation" class="level3">
+<h3 class="anchored" data-anchor-id="mean-variance-and-standard-deviation"><strong>8. Mean, Variance, and Standard Deviation</strong></h3>
+<section id="question-7" class="level4">
+<h4 class="anchored" data-anchor-id="question-7">Question:</h4>
+<p>Compute the mean, variance, and standard deviation for the following probability distribution:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\(P(X = x_i)\)</span></th>
+<th><span class="math inline">\(x_i \times P(X = x_i)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>137</td>
+<td>0.55</td>
+<td>75.35</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>170</td>
+<td>0.25</td>
+<td>42.5</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="answer-7" class="level4">
+<h4 class="anchored" data-anchor-id="answer-7">Answer:</h4>
+<ol type="1">
+<li><p><strong>Mean</strong>:<br>
+<span class="math display">\[
+\mu = \sum x_i \cdot P(X = x_i) = 0 + 75.35 + 42.5 = 117.85
+\]</span></p></li>
+<li><p><strong>Variance</strong>:<br>
+First, calculate squared deviations:<br>
+<span class="math display">\[
+\sigma^2 = \sum P(X = x_i) \cdot (x_i - \mu)^2
+\]</span> For each <span class="math inline">\(x_i\)</span>:</p>
+<ul>
+<li><span class="math inline">\((0 - 117.85)^2 = 13895.62\)</span></li>
+<li><span class="math inline">\((137 - 117.85)^2 = 364.52\)</span></li>
+<li><span class="math inline">\((170 - 117.85)^2 = 2635.92\)</span></li>
+</ul>
+<p>Weighted sum: <span class="math display">\[
+\sigma^2 = 0.2 \cdot 13895.62 + 0.55 \cdot 364.52 + 0.25 \cdot 2635.92 \approx 4004.5
+\]</span></p></li>
+<li><p><strong>Standard Deviation</strong>:<br>
+<span class="math display">\[
+\sigma = \sqrt{\sigma^2} = \sqrt{4004.5} \approx 63.31
+\]</span></p></li>
+</ol>
+</section>
+<section id="interpretation-3" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-3">Interpretation:</h4>
+<p>The data shows a mean value of 117.85 with a standard deviation of 63.31, indicating moderate variability around the mean.</p>
+<hr>
+</section>
+</section>
+<section id="normal-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="normal-distribution"><strong>9. Normal Distribution</strong></h3>
+<section id="question-8" class="level4">
+<h4 class="anchored" data-anchor-id="question-8">Question:</h4>
+<p>Let <span class="math inline">\(X \sim N(\mu = 3, \sigma = 2)\)</span>, and observe <span class="math inline">\(x = 5.19\)</span>.<br>
+1. Compute the Z-score of <span class="math inline">\(x\)</span>.<br>
+2. Determine how many standard deviations <span class="math inline">\(x\)</span> is from the mean.</p>
+</section>
+<section id="answer-8" class="level4">
+<h4 class="anchored" data-anchor-id="answer-8">Answer:</h4>
+<ol type="1">
+<li><p><strong>Z-score</strong>:<br>
+<span class="math display">\[
+Z = \frac{x - \mu}{\sigma} = \frac{5.19 - 3}{2} = \frac{2.19}{2} = 1.095
+\]</span></p></li>
+<li><p><strong>Standard deviations from the mean</strong>:<br>
+The Z-score <span class="math inline">\(Z = 1.095\)</span> indicates <span class="math inline">\(x = 5.19\)</span> is <strong>1.095 standard deviations above the mean</strong>.</p></li>
+</ol>
+</section>
+<section id="interpretation-4" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-4">Interpretation:</h4>
+<p>A Z-score of 1.095 means the observed value is moderately above the average in the normal distribution.</p>
+<hr>
+</section>
+</section>
+<section id="social-work-licensing-exam" class="level3">
+<h3 class="anchored" data-anchor-id="social-work-licensing-exam"><strong>10. Social Work Licensing Exam</strong></h3>
+<section id="question-9" class="level4">
+<h4 class="anchored" data-anchor-id="question-9">Question:</h4>
+<p>The licensing exam follows <span class="math inline">\(N(\mu = 92.6, \sigma = 3.6)\)</span>.<br>
+1. Compute the Z-score for a score of 95.4.<br>
+2. Compute the Z-score for a score of 85.8.<br>
+3. Which score is more unusual?<br>
+4. Calculate and interpret percentiles for these scores.</p>
+</section>
+<section id="answer-9" class="level4">
+<h4 class="anchored" data-anchor-id="answer-9">Answer:</h4>
+<ol type="1">
+<li><p><strong>Z-score for 95.4</strong>:<br>
+<span class="math display">\[
+Z = \frac{95.4 - 92.6}{3.6} = \frac{2.8}{3.6} = 0.778
+\]</span></p></li>
+<li><p><strong>Z-score for 85.8</strong>:<br>
+<span class="math display">\[
+Z = \frac{85.8 - 92.6}{3.6} = \frac{-6.8}{3.6} = -1.889
+\]</span></p></li>
+<li><p><strong>More unusual score</strong>:<br>
+<span class="math inline">\(Z = -1.889\)</span> for 85.8 is farther from the mean than <span class="math inline">\(Z = 0.778\)</span>, making it more unusual.</p></li>
+<li><p><strong>Percentiles</strong>:<br>
+Using the Z-table:</p>
+<ul>
+<li>For <span class="math inline">\(Z = 0.778\)</span>, percentile ≈ <strong>78.1%</strong>.<br>
+</li>
+<li>For <span class="math inline">\(Z = -1.889\)</span>, percentile ≈ <strong>3.0%</strong>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="interpretation-5" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-5">Interpretation:</h4>
+<p>A score of 95.4 is above average, placing the student in the 78th percentile. In contrast, a score of 85.8 is far below the mean, placing the student in the 3rd percentile. This highlights significant performance differences.</p>
+<hr>
+</section>
+</section>
+<section id="sat-scores" class="level3">
+<h3 class="anchored" data-anchor-id="sat-scores"><strong>11. SAT Scores</strong></h3>
+<section id="question-10" class="level4">
+<h4 class="anchored" data-anchor-id="question-10">Question:</h4>
+<p>The SAT follows <span class="math inline">\(N(\mu = 1500, \sigma = 300)\)</span>.<br>
+1. What is the probability of scoring at least 1630?<br>
+2. How does it affect the calculation if 75% of test-takers scored above 1600?<br>
+3. Discuss the social justice implications of interpreting aptitude statistically.</p>
+</section>
+<section id="answer-10" class="level4">
+<h4 class="anchored" data-anchor-id="answer-10">Answer:</h4>
+<ol type="1">
+<li><p><strong>Probability of</strong> <span class="math inline">\(X \geq 1630\)</span>:<br>
+Compute Z-score:<br>
+<span class="math display">\[
+Z = \frac{1630 - 1500}{300} = \frac{130}{300} = 0.433
+\]</span> Using the Z-table, <span class="math inline">\(P(Z \geq 0.433) = 1 - 0.6664 = 0.3336 \, (33.36\%)\)</span>.</p></li>
+<li><p><strong>If 75% scored above 1600</strong>:<br>
+This would indicate a shift in the distribution, suggesting the mean or variance has changed. A new analysis is required.</p></li>
+<li><p><strong>Social justice implications</strong>:<br>
+Interpreting aptitude purely statistically can reinforce systemic inequities (e.g., access to resources, cultural biases). Statistical aptitude measures must consider broader socio-economic contexts.</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

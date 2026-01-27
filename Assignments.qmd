@@ -1,0 +1,28 @@
+---
+title: "Assignments and Due Dates"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+# Schedule of Exercises and Due Dates
+
+| Week | Topic | Exercises and Deliverables | Due Date |
+|------|-------|---------------------------|----------|
+| Week 1 | Pre-Course Assessment | Complete pre-course assessment. | January 13, 2026 |
+| Week 2 | Introduction to the Course | Begin thinking about how to use data to reclaim your story. | January 20, 2026 |
+| Week 3 | Simple Regression | Interactive Escape Room Exercise. Data Makeover Challenge: Reimagine data using storytelling. | January 27, 2026 |
+| Week 4 | Multiple Regression | Hypothesis Auction: Justify chosen testable hypotheses. Explain regression results to argue for policy change. Assignment 1 Distributed. | February 3, 2026 |
+| Week 5 | Effect Sizes & Confidence Intervals | Debate Exercise: Practical and legal significance of findings. Write an op-ed on significance. | February 10, 2026 |
+| Week 6 | Assumptions and Violations of Assumptions | Assumption Diagnosis Clinic: Diagnose and "treat" assumption violations. Create a "prescription card" summarizing fixes. | February 17, 2026 |
+| Week 7 | Hierarchical Regression & Dummy Variables | Regression Battle: Build the best hierarchical model. Write a brief on ethical implications of dummy variable coding. | February 24, 2026 |
+| Week 8 | Logistic Regression | Predictive Policy Game: Use predictions for interventions. Create a policy recommendation. Submit Assignment 1. | March 3, 2026 |
+| Week 9 | Mediation & Suppressor Variables | Data Detective Roleplay: Investigate intervention mechanisms. Examine a "case file" for mediation analysis. Assignment 2 Distributed. | March 10, 2026 |
+| Week 10 | Spring Break | N/A | N/A |
+| Week 11 | Moderation in Regression | Build-a-Story Workshop: Narratives around moderation analysis. Create a 1-page illustrated story on moderation findings. | March 24, 2026 |
+| Week 12 | Exploratory Factor Analysis (EFA) | Factor Scavenger Hunt: Interpret factor loadings. Create an infographic summarizing EFA findings. | March 31, 2026 |
+| Week 13 | Confirmatory Factor Analysis (CFA) | Model Critique Workshop: Propose refinements to a CFA model. Submit a report evaluating and refining the CFA model. | April 7, 2026 |
+| Week 14 | Latent Class Analysis (LCA) | Latent Storytelling: Use LCA findings to understand group experiences. Create a "persona deck" illustrating latent group characteristics. Submit Assignment 2. | April 14, 2026 |
+| Week 15 | Student Presentations and Review | Present Final Project. Review the course content. | April 21, 2026 |
+| Final Exam | Create, Validate, and Apply Scales | Take Final Exam or Submit a Publishable Manuscript. | April 28, 2026 |

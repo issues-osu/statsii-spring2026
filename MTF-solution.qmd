@@ -1,0 +1,318 @@
+---
+title: "Lab 1 - SOLUTION"
+subtitle: "Do students who feel unsafe going to/from school have higher rates of school absence?"
+author: "Solution Key"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: safety.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+# Research Question
+
+**Do students who feel unsafe going to/from school have higher rates of school absence due to safety concerns?**
+Research has consistently documented that students' perceptions of safety during their commute to and from school are influenced by exposure to violence and crime in their neighborhoods. Studies have found that children often feel unsafe during morning travel to school, with nearly a quarter of students experiencing a reduction in perceived safety immediately upon leaving their homes [@wiebeFearsViolenceMorning2013a]. Both children and parents report concerns about routes through high-crime neighborhoods, which can impact students' willingness to travel to school [@meyerChildParentPerspectives2002a]. Middle school students' safety perceptions are shaped by environmental factors such as the presence of adults, traveling in groups, proximity to schools, and daylight conditions [@sweeneyMiddleSchoolStudents2015]. Recent spatial analyses have revealed the extent of gun violence exposure along walkable routes to schools, with some schools having shootings within a 5-minute walking distance and students potentially encountering multiple incidents during their commute [@barboza-salernoGunViolenceWalkable2023b; @barboza-salernoSpatialAccessibilityGun2024b]. These findings underscore the importance of understanding how feelings of unsafety translate into actual behavioral responses such as school avoidance.
+
+# Data Setup
+
+```{r}
+#| label: setup
+#| code-summary: "Load packages and data"
+
+# Load Required Packages
+library(haven)
+library(dplyr)
+
+# Define variables of interest
+vars <- c(
+  "V8477", "V7535", "V7536", "V8517", "V8516", 
+  "V7389", "V7221", "V1252", "V7202", "V1070", 
+  "V7215", "V7216", "V7639"
+)
+
+# Load the Monitoring the Future dataset
+df <- read_sav("C:/Users/barboza-salerno.1/Downloads/ED injury/ICPSR_39445-V2/ICPSR_39445/DS0001/39445-0001-Data.sav")
+
+# Select only the variables of interest
+df <- df %>% 
+  dplyr::select(all_of(vars))
+
+# Recode missing values (-8 and -9) to NA
+df <- df %>% 
+  mutate(across(everything(), ~ na_if(.x, -8))) %>% 
+  mutate(across(everything(), ~ na_if(.x, -9)))
+```
+
+# Step 1: Recode Variables into Binary Format
+
+## Recode V7535 (Feeling Unsafe)
+
+```{r}
+#| label: recode-feel-unsafe
+
+# Original variable V7535: 1=Never, 2=Rarely, 3=Some days, 4=Most days, 5=Every day
+# Goal: Create binary variable where 0=Never, 1=Ever feel unsafe
+
+df$Feel_Unsafe <- ifelse(
+  df$V7535 == 1,                      # Condition: if V7535 equals 1
+  0,                                   # Then: assign 0 (Never feel unsafe)
+  ifelse(df$V7535 %in% c(2,3,4,5),    # Else if: V7535 is 2, 3, 4, or 5
+         1,                            # Then: assign 1 (Ever feel unsafe)
+         NA)                           # Else: assign NA (missing)
+)
+
+# Verify the recoding
+cat("Original V7535 Distribution:\n")
+table(df$V7535, useNA = "ifany")
+
+cat("\n\nRecoded Feel_Unsafe Distribution:\n")
+table(df$Feel_Unsafe, useNA = "ifany")
+```
+
+## Recode V7536 (School Absence Due to Safety)
+
+```{r}
+#| label: recode-absent
+
+# Original variable V7536: 1=0 days, 2=1 day, 3=2-3 days, 4=4+ days
+# Goal: Create binary variable where 0=No days missed, 1=Any days missed
+
+df$Absent_Safety <- ifelse(
+  df$V7536 == 1,                      # Condition: if V7536 equals 1 (0 days)
+  0,                                   # Then: assign 0 (No days missed)
+  ifelse(df$V7536 %in% c(2,3,4),      # Else if: V7536 is 2, 3, or 4
+         1,                            # Then: assign 1 (Any days missed)
+         NA)                           # Else: assign NA (missing)
+)
+
+# Verify the recoding
+cat("Original V7536 Distribution:\n")
+table(df$V7536, useNA = "ifany")
+
+cat("\n\nRecoded Absent_Safety Distribution:\n")
+table(df$Absent_Safety, useNA = "ifany")
+```
+
+::: {.callout-tip}
+## Recoding Check
+Both variables have been successfully converted to binary format:
+- **Feel_Unsafe**: 0 = Never, 1 = Ever feel unsafe
+- **Absent_Safety**: 0 = No days missed, 1 = Any days missed
+:::
+
+# Step 2: Generate Cross-Tabulation
+
+```{r}
+#| label: crosstab
+
+# Create cross-tabulation
+tab <- table(df$Feel_Unsafe, df$Absent_Safety)
+
+# Display raw counts
+cat("Cross-Tabulation (Raw Counts):\n")
+cat("Rows: Feel Unsafe | Columns: School Absence\n\n")
+print(tab)
+
+# Add descriptive labels
+dimnames(tab) <- list(
+  "Feel Unsafe" = c("Never (0)", "Ever (1)"),
+  "Absent Due to Safety" = c("No Days (0)", "Any Days (1)")
+)
+
+cat("\n\nLabeled Cross-Tabulation:\n")
+print(tab)
+```
+
+## Calculate Row Percentages
+
+```{r}
+#| label: row-percentages
+
+# Calculate percentages within each "feeling unsafe" category
+prop_tab <- prop.table(tab, margin = 1) * 100
+
+cat("Row Percentages:\n")
+cat("(% of students who missed school within each 'feeling unsafe' group)\n\n")
+print(round(prop_tab, 2))
+```
+
+::: {.callout-important}
+## Key Finding from Cross-Tabulation
+
+**Among students who NEVER feel unsafe:**  
+`r tab[1,2]` out of `r sum(tab[1,])` students (`r round(prop_tab[1,2], 1)`%) missed school due to safety concerns.
+
+**Among students who EVER feel unsafe:**  
+`r tab[2,2]` out of `r sum(tab[2,])` students (`r round(prop_tab[2,2], 1)`%) missed school due to safety concerns.
+
+**Difference:** Students who feel unsafe had a **`r round(prop_tab[2,2] - prop_tab[1,2], 1)` percentage point higher** rate of school absence.
+:::
+
+# Step 3: Perform Chi-Square Test
+
+```{r}
+#| label: chi-square
+
+# Perform chi-square test of independence
+chi_result <- chisq.test(tab)
+
+# Display results
+print(chi_result)
+```
+
+::: {.callout-note}
+## Statistical Significance
+
+**Chi-square statistic (χ²):** `r round(chi_result$statistic, 2)`  
+**p-value:** `r format.pval(chi_result$p.value, eps = 0.001)`  
+**Degrees of freedom:** `r chi_result$parameter`
+
+**Interpretation:** The p-value is less than 0.001 (highly significant), which means we can reject the null hypothesis. There is a **statistically significant association** between feeling unsafe going to/from school and missing school due to safety concerns. This relationship is extremely unlikely to be due to chance.
+:::
+
+# Step 4: Calculate and Interpret the Odds Ratio
+
+## Extract Values from 2×2 Table
+
+```{r}
+#| label: extract-values
+
+# Table structure:
+#                Absent=0  Absent=1
+# Feel_Unsafe=0     a         b
+# Feel_Unsafe=1     c         d
+
+a <- tab[1,1]  # Never feel unsafe, no absence
+b <- tab[1,2]  # Never feel unsafe, any absence
+c <- tab[2,1]  # Ever feel unsafe, no absence
+d <- tab[2,2]  # Ever feel unsafe, any absence
+
+cat("2×2 Table Cell Values:\n")
+cat("a (Never unsafe, No absence):", a, "\n")
+cat("b (Never unsafe, Any absence):", b, "\n")
+cat("c (Ever unsafe, No absence):", c, "\n")
+cat("d (Ever unsafe, Any absence):", d, "\n")
+```
+
+## Calculate Odds for Each Group
+
+```{r}
+#| label: calculate-odds
+
+# Odds of absence for students who feel unsafe
+odds_feel_unsafe <- d / c
+
+# Odds of absence for students who never feel unsafe
+odds_never_unsafe <- b / a
+
+cat("Odds of school absence among students who FEEL UNSAFE:\n")
+cat("  ", round(odds_feel_unsafe, 4), "\n")
+cat("  Interpretation: For every", round(c), "students who feel unsafe and don't miss school,\n")
+cat("  ", d, "students feel unsafe and DO miss school\n")
+
+cat("\n\nOdds of school absence among students who NEVER feel unsafe:\n")
+cat("  ", round(odds_never_unsafe, 4), "\n")
+cat("  Interpretation: For every", round(a), "students who never feel unsafe and don't miss school,\n")
+cat("  ", b, "students never feel unsafe but still miss school\n")
+```
+
+## Calculate the Odds Ratio
+
+```{r}
+#| label: odds-ratio
+
+# Calculate odds ratio
+odds_ratio <- odds_feel_unsafe / odds_never_unsafe
+
+cat("Odds Ratio:\n")
+cat("  OR = (d/c) / (b/a)\n")
+cat("  OR = (", d, "/", c, ") / (", b, "/", a, ")\n")
+cat("  OR = ", round(odds_feel_unsafe, 4), " / ", round(odds_never_unsafe, 4), "\n")
+cat("  OR = ", round(odds_ratio, 2), "\n")
+```
+
+## Calculate 95% Confidence Interval
+
+```{r}
+#| label: confidence-interval
+
+# Calculate 95% confidence interval for the odds ratio
+log_or <- log(odds_ratio)
+se_log_or <- sqrt(1/a + 1/b + 1/c + 1/d)
+ci_lower <- exp(log_or - 1.96 * se_log_or)
+ci_upper <- exp(log_or + 1.96 * se_log_or)
+
+cat("95% Confidence Interval for Odds Ratio:\n")
+cat("  [", round(ci_lower, 2), ", ", round(ci_upper, 2), "]\n")
+```
+
+::: {.callout-warning}
+## Interpretation of the Odds Ratio
+
+**Odds Ratio: `r round(odds_ratio, 2)`** (95% CI: [`r round(ci_lower, 2)`, `r round(ci_upper, 2)`])
+
+Students who reported feeling unsafe going to or from school had approximately **`r round(odds_ratio, 1)` times the odds** of missing school due to safety concerns compared to students who never felt unsafe.
+
+**In plain language:** Students who feel unsafe during their school commute are about **`r round(odds_ratio, 0)` times more likely** to actually miss school days because of safety concerns.
+
+This is a **very strong association**—much stronger than the football-concussion relationship (OR ≈ 1.9) we examined earlier.
+:::
+
+# Step 5: Write a Brief Interpretation
+
+## Summary of Findings
+
+This analysis examined whether students' feelings of safety while traveling to and from school are associated with actual school absence due to safety concerns. The results reveal a powerful relationship:
+
+### Strength and Direction of Association
+
+- Students who report feeling unsafe going to/from school have significantly higher rates of school absence
+- The association is positive and strong: feeling unsafe is associated with increased likelihood of missing school
+- The odds ratio of `r round(odds_ratio, 2)` indicates approximately `r round(odds_ratio, 0)`-fold higher odds of absence among students who feel unsafe
+
+### Statistical Significance
+
+- Chi-square test: χ² = `r round(chi_result$statistic, 2)`, p < 0.001
+- The relationship is highly statistically significant
+- The 95% confidence interval for the odds ratio [`r round(ci_lower, 2)`, `r round(ci_upper, 2)`] does not include 1.0, confirming the association is not due to chance
+- We can be confident this relationship exists in the broader population, not just in this sample
+
+### Practical Implications
+
+**For Schools and Educators:**
+
+- Students' reports of feeling unsafe should be taken seriously—they predict actual behavioral consequences
+- Feelings of unsafety are not just subjective concerns; they translate into measurable school avoidance
+- Addressing route safety could be an effective intervention for reducing chronic absenteeism
+
+**For Policy:**
+
+- School safety means more than crash risk or mass violence.
+- Safe passage programs may help improve attendance rates (but see [@barboza-salernoGunViolenceWalkable2023b; @barboza-salernoSpatialAccessibilityGun2024b])
+- Consider implementing safe corridors with adult supervision
+- School transportation options may benefit students who feel unsafe walking/using public transit
+- School violence interventions (e.g., IEPs for students exposed to community violence or community-school partnerships to address neighborhood safety) could impact educational outcomes
+
+**For Research:**
+
+- This strong association warrants further investigation into causal mechanisms
+- Longitudinal studies could determine whether improving safety perceptions leads to better attendance
+- Identifying specific threats (violence, bullying, traffic) could help target interventions
+
+### Limitations to Consider
+
+While this analysis reveals a strong association, it's important to note:
+
+- **Cross-sectional design**: We cannot determine causality—does feeling unsafe cause absence, or do prior threatening experiences cause both?
+- **Self-report data**: Both variables rely on student perceptions and recall
+- **Temporal ordering**: The measures use different time frames (general feelings vs. past 4 weeks)
+- **Unmeasured confounders**: Other factors (neighborhood violence, family factors, anxiety) may explain part of the relationship
+
+Despite these limitations, the magnitude and significance of this association suggest that students' safety perceptions are an important factor in school attendance that deserves attention from educators and policymakers.
+
+---
+
+**Analysis completed:** `r Sys.Date()`

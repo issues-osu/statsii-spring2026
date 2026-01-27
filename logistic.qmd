@@ -1,0 +1,289 @@
+---
+title: "Logistic Regression Example"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# The Dataset
+The data is a `mixed variable` dataset containing 14 variables of 297 patients for their heart disease diagnosis. The data comes in an R package called [`kmed`](https://search.r-project.org/CRAN/refmans/kmed/html/heart.html) which you can read about on your own. Patients were diagnosed with heart disease in four classes. We will used this dataset to illustrate how multiple risk factors are related to a heart disease diagnosis, such as age (years), sex (FALSE = female; TRUE = male), chest pain (1 = typical angina, 2 = atypical angina, 3 = non-anginal pain, and 4 = asymptomatic) and thalach (max heart rate achieved).
+
+```{r, warning=FALSE, message=FALSE}
+library(kmed)
+dat <- heart
+```
+
+```{r, warning=FALSE, message=FALSE}
+# select variables
+library(dplyr)
+dat <- dat %>%
+  dplyr::select(
+    age,
+    sex,
+    cp,
+    thalach,
+    class
+  )
+# print dataset's structure
+str(dat)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# rename variables
+dat <- dat %>%
+  dplyr::rename(
+    chest_pain = cp,
+    max_heartrate = thalach,
+    heart_disease = class
+  )
+```
+
+```{r, warning=FALSE, message=FALSE}
+# recode sex
+dat$sex <- factor(dat$sex,
+  levels = c(FALSE, TRUE),
+  labels = c("female", "male")
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# recode chest_pain
+dat$chest_pain <- factor(dat$chest_pain,
+  levels = 1:4,
+  labels = c("typical angina", "atypical angina", "non-anginal pain", "asymptomatic")
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# recode heart_disease into 2 classes
+dat$heart_disease <- ifelse(dat$heart_disease == 0,
+  0,
+  1
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# set labels for heart_disease
+dat$heart_disease <- factor(dat$heart_disease,
+  levels = c(0, 1),
+  labels = c("no disease", "disease")
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+levels(dat$heart_disease)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# save model
+m1 <- glm(heart_disease ~ age,
+  data = dat,
+  family = "binomial"
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+summary(m1)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# OR for age
+exp(coef(m1)["age"])
+```
+
+```{r, warning=FALSE, message=FALSE}
+# prob(heart disease) for age = 0
+exp(coef(m1)[1]) / (1 + exp(coef(m1)[1]))
+```
+
+```{r, warning=FALSE, message=FALSE}
+# 95% CI for the OR for age
+exp(confint(m1,
+  parm = "age"
+))
+```
+```{r, warning=FALSE, message=FALSE}
+# predict probability to develop heart disease
+pred <- predict(m1,
+  newdata = data.frame(age = c(30)),
+  type = "response"
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+pred
+```
+
+```{r, warning=FALSE, message=FALSE}
+# predict probability to develop heart disease
+pred <- predict(m1,
+  newdata = data.frame(age = c(30)),
+  type = "response",
+  se = TRUE
+)
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+pred$fit
+```
+```{r}
+# 95% confidence interval for the prediction
+lower <- pred$fit - (qnorm(0.975) * pred$se.fit)
+upper <- pred$fit + (qnorm(0.975) * pred$se.fit)
+c(lower, upper)
+```
+```{r}
+# 95% confidence interval for the prediction
+lower <- pred$fit - (1.96 * pred$se.fit)
+upper <- pred$fit + (1.96 * pred$se.fit)
+c(lower, upper)
+```
+```{r}
+library(sjPlot)
+library(ggplot2)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# plot
+plot_model(m1,
+  type = "pred",
+  terms = "age"
+) +
+  labs(y = "Prob(heart disease)") + theme_bw()
+```
+
+```{r, warning=FALSE, message=FALSE}
+# levels for sex
+levels(dat$sex)
+```
+
+```{r}
+# save model
+m2 <- glm(heart_disease ~ sex,
+  data = dat,
+  family = "binomial"
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+summary(m2)
+```
+
+```{r, warning=FALSE, message=FALSE}
+exp(coef(m2)["sexmale"])
+```
+
+```{r, warning=FALSE, message=FALSE}
+# prob(disease) for sex = female
+exp(coef(m2)[1]) / (1 + exp(coef(m2)[1]))
+```
+
+```{r, warning=FALSE, message=FALSE}
+chisq.test(table(dat$heart_disease, dat$sex))
+```
+```{r}
+# predict probability to develop heart disease
+pred <- predict(m2,
+  newdata = data.frame(sex = c("male")),
+  type = "response"
+)
+pred
+```
+```{r, warning=FALSE, message=FALSE}
+# plot
+plot_model(m2,
+  type = "pred",
+  terms = "sex"
+) +
+  labs(y = "Prob(heart disease)")
+```
+
+```{r, warning=FALSE, message=FALSE}
+# create data frame of new patient
+new_patient <- data.frame(
+  age = 32,
+  sex = "female"
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+m3 <- glm(heart_disease ~ sex + age,
+  data = dat,
+  family = "binomial"
+)
+# predict probability to develop heart disease
+pred <- predict(m3,
+  newdata = new_patient,
+  type = "response"
+)
+# print prediction
+pred
+```
+```{r}
+# 1. age, sex and chest pain on prob of disease
+plot_model(m3,
+  type = "pred",
+  terms = c("age",  "sex"),
+  ci.lvl = NA # remove confidence bands
+) +
+  labs(y = "Prob(heart disease)")
+```
+
+```{r}
+tab_model(m3, m2,
+  show.ci = FALSE, # remove CI
+  show.aic = TRUE, # display AIC
+  p.style = "numeric_stars" # display p-values and stars
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+library(pROC)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# save roc object
+res <- roc(heart_disease ~ fitted(m3),
+  data = dat
+)
+# plot ROC curve
+ggroc(res, legacy.axes = TRUE)
+```
+
+```{r, warning=FALSE, message=FALSE}
+res$auc
+```
+
+```{r}
+# plot ROC curve with AUC in title
+ggroc(res, legacy.axes = TRUE) +
+  labs(title = paste0("AUC = ", round(res$auc, 2)))
+```
+```{r, warning=FALSE, message=FALSE}
+library(gtsummary)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# print table of results
+tbl_regression(m3, exponentiate = TRUE)
+```
+```{r, warning=FALSE, message=FALSE}
+library(finalfit)
+# set variables
+dependent <- "heart_disease"
+independent <- c("age", "sex")
+independent_final <- c("age", "sex", "chest_pain")
+
+dat %>% or_plot(dependent, independent,
+  table_text_size = 3.5 # reduce text size
+)
+```
+
+

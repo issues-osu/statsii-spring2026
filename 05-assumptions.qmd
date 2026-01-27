@@ -1,0 +1,92 @@
+---
+title: "Regression Assumptions"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 6: February 17, 2026
+
+## Introduction to the Topic
+
+Today we are finishing up last week's discussion of effect sizes and  **regression assumptions**. Then we will turn to an even more exciting topic: dummy variables.  Regression assumptions are foundational principles that must be met for linear regression models to provide valid and reliable results. Understanding and testing these assumptions is essential for sound statistical inference. 
+
+---
+
+## Key Concepts:
+- **Linearity**: The relationship between predictors and the outcome variable should be linear.
+- **Independence**: Observations should be independent of each other.
+- **Homoscedasticity**: The variance of errors should be consistent across levels of predictors.
+- **Normality of Residuals**: Residuals (errors) should follow a normal distribution.
+- **Multicollinearity**: Predictors should not be highly correlated with each other.
+
+---
+
+## Relevance:
+- Students will learn how to evaluate each regression assumption using diagnostic tests and visualizations.
+- Students will gain skills to address violations of assumptions, such as transforming variables or using robust regression methods.
+
+---
+
+## Why This Is Important:
+- Violations of regression assumptions can lead to biased estimates, incorrect conclusions, and reduced model reliability.
+- By understanding these assumptions, students can ensure the validity of their regression analyses and effectively communicate findings.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon prior topics like linear regression by adding a deeper layer of model evaluation and diagnostics.
+- Prepares students for advanced topics like generalized linear models and robust regression techniques, which relax some assumptions.
+
+By the end of this week, students will be able to test and address regression assumptions, ensuring their models meet the necessary criteria for accurate and reliable results.
+
+## Dummy Variables
+
+In regression analysis, many predictors are categorical rather than numerical. However, standard regression models require numerical inputs. Dummy variables are a way to include categorical variables in a regression model by converting them into numerical representations.
+
+### What are Dummy Variables?
+A dummy variable is a binary variable (0 or 1) that represents different categories of a categorical predictor. It allows regression models to account for group differences. We will learn how to recode variables in SPSS, and R, and include them in our models. This requires understanding how to select the reference category. [Read this article](static/johfre-freese-2021-reconsidering-the-reference-category.pdf) for a social justice application of selecting reference variables in regression models. I used this idea to code `trans man` as the reference category in [this paper](static/acestrans.pdf)       .
+
+#### Why Use Dummy Variables?
+- They quantify categorical differences in a regression model.
+
+- They allow us to compare groups while controlling for other factors.
+
+- They help capture interaction effects when combined with numerical predictors.
+
+#### Extending Dummy Variables:
+- For variables with more than two categories, we create multiple dummy variables (e.g., for "Region: North, South, West," we need two dummy variables to represent three categories).
+
+- Reference category: One category is omitted to prevent multicollinearity, and all other categories are compared against it.
+
+## Class Files
+
+### Lecture Notes
+
+-   [Today's Lecture Notes](slides/dummy/dummy_vars.pptx)
+
+### R Code
+
+-   [Script 1: CLT](slides/dummy/asap.R) Application of Central Limit Theorem to A$AP Rocky's case: Should he get a new trial?
+-   [Script 2: CLT](slides/dummy/clt_fun.R) More CLT Fun
+-   [Directed Acyclic Graph - DAGS](slides/dummy/dag_ex.R) And even more fun, check out how you can create diagrams, including DAGS, in R.
+
+### Data Sets
+
+-   [National Survey of Child and Adolescent Well-Being](./data/nscaw.sav): We are going to examine the following research question using a subset of the dataset: Do children who are removed from the home have higher levels of post-traumatic stress controlling for demographic and exposure variables?
+-   Influence, Outliers, and Leverage [Part I](./data/influence1.sav), [Part II](./data/influence2.sav), [Part III](./data/influence3.sav), [Part IV](./data/influence4.sav)
+
+## R Lab Files
+
+-   [Lab Instructions](nscaw.qmd) We are going to run some simple and multiple regressions using R with the NSCAW data.
+- [Here](slides/dummy/LSD.jasp) is a partially annotated data file to get us started.
+-   [Lab Dataset](data/nscaw.sav)
+-   [Another practice assignment](slides/inclass.qmd) that we never got it. Check it out and see if you can answer the questions.
+
+------------------------------------------------------------------------
+
+## Additional Notes
+
+- Keep calm and be influential.

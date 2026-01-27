@@ -1,0 +1,94 @@
+---
+title: "Final Stats II Assignment"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+**Length:** 2–3 double-spaced pages (not including tables, figures, or references)  
+**Required Outputs:** Two tables and one figure, the following analysis detailed below  
+**Due Date:** Monday, April 28, 2025  
+**Submission:** Email to barboza-salerno.1@osu.edu  
+**Software:** R, SPSS, JASP, or a combination.  
+**Example:**  
+Software Used: R (lavaan, mclust, psych), SPSS (PROCESS macro v4.2), JASP
+
+---
+
+## Instructions
+
+For your final 2–3 page paper, you will conduct a statistical analysis using one of the datasets we’ve worked with in class (e.g., the Pregnancy Risk Assessment Monitoring System (PRAMS), Census/American Community Survey, the Well-Being of LGB Populations, etc.) **OR** you may use your own dataset with prior approval. This project gives you the opportunity to demonstrate mastery of one or more multivariate statistical techniques. You must select one of the following:
+
+- Multiple linear regression
+- Logistic regression
+- Moderation
+- Mediation
+- Conditional process modeling
+- Factor analysis
+- Latent class analysis (LCA)
+
+You must include two well-formatted tables and one figure illustrating your findings.
+
+---
+
+## 1. Dataset and Variables (1 paragraph)
+
+Describe the dataset and provide context—what is it, where did it come from, what does it measure, what years were the data collected? Be specific about your sample size, time frame, unit of analysis, and any relevant information. Then clearly define all variables used in your analysis, including your outcome, predictors, moderators, mediators, latent constructs, or class indicators. If you collapsed, transformed, or recoded any variables, explain why. Specify the research question, and the hypotheses you are testing.
+
+---
+
+## 2. Statistical Model and Justification (2–3 paragraphs)
+
+Specify which statistical technique you used and why it fits your research question and data. If you selected a model based on the nature of your outcome (e.g., binary, continuous, or latent), explain this. Provide a conceptual diagram of your model. Also address the assumptions of your model, how you evaluated them, and any diagnostic checks performed.
+
+---
+
+## 3. Results (2–4 paragraphs)
+
+Present your model results in a narrative that clearly communicates the key findings. Include:
+
+- **Table 1:** Descriptive statistics (e.g., means, SDs, frequencies)
+- **Table 2:** Model summary (e.g., regression table, factor loadings, odds ratios, or class-specific probabilities)
+- **Figure 1:** A plot showing model results (e.g., interaction graph, path diagram, factor analysis diagram, etc.)
+
+---
+
+## 4. Interpretation and Assumptions (1 paragraph)
+
+Explain what your results mean in theoretical or applied terms. Reflect on effect sizes, statistical significance, and implications. Discuss how assumptions were met or violated, and whether transformations or adjustments were necessary.
+
+---
+
+## Model-Specific Guidelines
+
+### Multiple Linear Regression
+
+Use when your outcome is continuous. Justify your inclusion of predictors and check assumptions including linearity, homoscedasticity, and multicollinearity. Report R², adjusted R², and residual diagnostics.
+
+### Logistic Regression
+
+Use when the outcome is binary. Report odds ratios, confidence intervals, and predicted probabilities. Describe how you assessed model fit (i.e., sensitivity, specificity).
+
+### Moderation
+
+Use when you suspect the effect of a predictor on the outcome varies by another variable. Report interaction terms and simple effects (non-interaction terms). Use plots to illustrate interaction effects like we created using Excel, or in R.
+
+### Mediation
+
+Use to test indirect effects. Clearly define paths. Use bootstrapped CIs for indirect effects and report estimates.
+
+### Conditional Process Modeling
+
+Use when a mediator and moderator interact. Identify moderated paths, report conditional indirect effects, and include a conceptual diagram.
+
+### Factor Analysis
+
+Use when identifying latent dimensions. Report KMO, eigenvalues, scree plot, factor loadings, variance explained, rotation method, and reliability.
+
+### Latent Class Analysis (LCA)
+
+Use to uncover latent subgroups. Report number of classes tested, AIC, BIC, entropy, conditional probabilities, and class prevalence.

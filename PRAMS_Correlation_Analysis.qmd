@@ -1,0 +1,272 @@
+---
+title: "Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data"
+author: "Barboza-Salerno"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+bibliography: references.bib
+csl: apa-with-abstract.csl # Optional, specify a citation style
+---
+
+## Dataset Description
+
+The **Pregnancy Risk Assessment Monitoring System (PRAMS) Phase 8** dataset collects data on maternal behaviors and experiences before, during, and after pregnancy. The sample is drawn from birth certificate records across multiple jurisdictions, covering 81% of U.S. live births. I would provide the link to the data but of course it is now gone due to the censorship happening with our government currently, which has substantial implications for the reproductive health of women and other persons regardless of their pregnancy status.
+
+This analysis uses the data from Kansas. These data were used because I wanted to focus on associations between ACEs, maternal education, parenting stress, and intimate partner violence. Each state administers its own modules, and for some reason Kansas asked these. If you would like to read a summary of the findings from these data, check out [this website](kdhe.ks.gov/ArchiveCenter/ViewFile/Item/2841).
+
+## Introduction
+
+Understanding how early-life adversity, maternal education, and stress during pregnancy interact is crucial for maternal and child health research. This analysis examines the relationships between **Adverse Childhood Experiences (ACEs)**, **Stress During Pregnancy (STRESS)**, and **Maternal education (Meduc)** using **partial and semi-partial correlation** techniques. The goal is to determine whether maternal education during pregnancy influences stress levels beyond what can be explained by prior adverse experiences (ACEs).
+
+## Research Question
+
+-   Does **Maternal Education** predict **Stress During Pregnancy** after controlling for **Adverse Childhood Experiences (ACEs)?**
+-  Does **dverse Childhood Experiences (ACEs)** predict **Stress During Pregnancy** after controlling for **Maternal Education?**
+-   How does the relationship between **ACEs and Stress** change when we control for education in both variables (Partial Correlation) vs. when we remove the effect of education only from Stress (Semi-Partial Correlation)?
+
+### Data and Variables
+
+[Click here](data/KSPRAMS_SUB_COR.csv) for the dataset used in the analysis.
+
+[Click here](slides/MLR/correlate.R) for the R script for which this example is based.
+
+The table below provides an overview of the key variables used in this analysis:
+
+```{r, echo=FALSE}
+library(knitr)
+# Create a dataframe for variables
+variables <- data.frame(
+  Variable_Name = c("NEED_TRAN", "NEED_FOOD", "NEED_SHOUS",  "NEED_CHOUS", "NEED_CROWD", 
+                    "NEED_UTIL", "NEED_PHON", "NEED_OTH", "HDP_SAF", "HDP_ANGR", "HDP_CTRL", 
+                    "HDP_SEX", "STRS_FM3", "STRS_DV3", "STRS_MOV", "STRSHOME", "STRS_JOB", 
+                    "STRS_WRK", "STRS_PAY", "STRS_AWY", "STRS_ARG", "STRS_PG", "STRS_BIL", 
+                    "STRS_DRG", "STRS_DH3", "CDHD_DVRC", "CDHD_HOUS", "CDHD_FOOD", "CDHD_JAIL", 
+                    "CDHD_SUBS", "CDHD_FSTR", "CIG_1TRI", "MAT_ED"),
+
+  Label = c("Access to Basic Needs - Affordable Transportation", "Basic Needs - Food Insecurity", 
+            "Basic Needs - Safe Housing", "Basic Needs - Consistent Housing", "Basic Needs - Crowded Housing", 
+            "Basic Needs - Utilities", "Basic Needs - Phone Access", "Basic Needs - Other Unmet Needs", 
+            "Partner Threatened Safety", "Partner Anger/Threats", "Partner Control of Activities", 
+            "Partner Forced Sexual Activity", "Close Family Member Hospitalized", "Divorce or Separation", 
+            "Moved to a New Address", "Homelessness", "Partner Lost Job", 
+            "Lost Job Despite Wanting to Work", "Cut in Work Hours or Pay", "Separated from Partner Due to Deployment/Travel", 
+            "Frequent Arguments with Partner", "Partner Did Not Want Pregnancy", "Problems Paying Rent/Mortgage", 
+            "Close Person Had a Drug or Alcohol Problem", "Close Person Died", "Parent or Guardian Divorced/Separated", 
+            "Moved Due to Rent/Mortgage Issues", "Went Hungry Due to Food Insecurity", "Parent or Guardian Involved in Legal System", 
+            "Parent or Guardian Had Substance Use Issues", "Experience in Foster Care", "Cigarettes Smoked Daily - 1st Trimester", 
+            "Maternal Years of Education"),
+  
+  Recodes = c("Material Hardship", "Material Hardship", "Material Hardship", "Material Hardship", "Material Hardship", 
+              "Material Hardship", "Material Hardship", "Material Hardship", "Intimate Partner Violence", "Intimate Partner Violence", 
+              "Intimate Partner Violence", "Intimate Partner Violence", "Social Stressor", "Social Stressor", "Social Stressor", 
+              "Social Stressor", "Social Stressor", "Social Stressor", "Social Stressor", "Social Stressor", "Social Stressor", 
+              "Social Stressor", "Social Stressor", "Social Stressor", "Adverse Childhood Experiences", "Adverse Childhood Experiences", 
+              "Adverse Childhood Experiences", "Adverse Childhood Experiences", "Adverse Childhood Experiences", "Adverse Childhood Experiences", 
+              "Adverse Childhood Experiences",  "Cigarettes Smoked Daily - 1st Trimester", "Maternal Education" 
+            )
+
+
+
+)
+
+
+# Render the table using kable
+kable(variables, caption = "PRAMS Phase 8 Variable Descriptions", align = "l")
+```
+
+## Explanation of Correlation Types
+
+### Correlation
+
+**Definition:** Measures the direct (linear) relationship between two variables without controlling for other influences.
+
+-   **What does it ask?** "How strongly are two variables associated?" "When one variable increases, does the other also increase (positive correlation), decrease (negative correlation), or are the variables not linearly related?"
+
+-   **Why does this matter?**
+
+1.  *Identifies basic associations*: Helps determine whether two variables have a relationship worth further investigation.
+
+2.  *Guides hypothesis development*: Provides an initial understanding before applying more complex statistical techniques like partial correlation or regression.
+
+3.  *Does not imply causation*: A strong correlation does not mean one variable causes changes in the other; it simply indicates they move together.
+
+-   **Example Interpretation:** If ACEs and Stress During Pregnancy have a positive correlation, it suggests that individuals with higher adverse childhood experiences tend to experience more stress during pregnancy. However, other factors (e.g., education, income) could be influencing this relationship.
+
+-   Positive values indicate a direct relationship (when one increases, the other also increases).
+
+-   Negative values indicate an inverse relationship (when one increases, the other decreases).
+
+-   Values closer to 0 suggest a weak or no linear association between the variables. *This DOES NOT mean* that no relationship exists.
+
+### Partial Correlation
+
+**Definition:** Measures the direct relationship between two variables while controlling for the effect of a third variable.
+
+-   **What does it ask?** "What is the association between **Maternal Education** and **Stress During Pregnancy**, after removing the effect of **ACEs** from both?"\
+
+-   **Why does this matter?** If the correlation remains significant, this suggests that education independently contributes to stress beyond what can be explained by early-life adversity.
+
+### Semi-Partial (Part) Correlation
+
+**Definition:** Measures the relationship between two variables while controlling for a third variable’s effect on just one of them.
+
+-   **What does it ask?** "What is the association between **Maternal Education** and **Stress During Pregnancy**, after removing the effect of **ACEs** only from **Stress During Pregnancy**?"
+
+-   **Why does this matter?** If the relationship weakens, it suggests that ACEs account for some of the variance in how education affects stress. Another way to think about this is that ACEs partly explain how education effects stress. And, yet another 'connect-the-dots' moment is that tf the relationship weakens, then ACEs [mediate](09-mediation.qmd) some of the observed effects of education on stress
+
+## Data Import and Preprocessing
+
+```{r setup, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ppcor) # For partial and semi-partial correlation
+
+# Load dataset
+df <- read.csv("data/KSPRAMS_SUB_COR.csv")
+
+# Select relevant columns
+data_subset <- df %>% 
+  dplyr::select(ACEs, STRESS, Meduc) %>% 
+  na.omit()
+
+# Check summary statistics
+summary(data_subset)
+```
+
+::: {.callout-warning}
+Please pay particular attention to the handling of missing data in R. There are many ways to handle missing data with significant implications for your analysis. For some good guides to handling missing data in R see [How does R handle missing data](https://stats.oarc.ucla.edu/r/faq/how-does-r-handle-missing-values/) from UCLA and [Missing data tutorial in R](https://libguides.princeton.edu/R-Missingdata) from Princeton University.
+:::
+```{r}
+# Compute Pearson correlation matrix
+cor_matrix <- cor(data_subset, method = "pearson")
+
+# Print correlation matrix
+print(cor_matrix)
+```
+
+### **Computed Correlation Matrix**
+
+The table below presents Pearson correlation coefficients between ACEs (Adverse Childhood Experiences), STRESS (Stress During Pregnancy), and Meduc (Maternal Education Level). Each correlation value ranges from -1 to 1.
+
+Below is the **Pearson correlation matrix** for the selected variables:
+
+| Variable   | ACEs   | STRESS | Meduc  |
+|------------|--------|--------|--------|
+| **ACEs**   | 1.00   | 0.341  | -0.239 |
+| **STRESS** | 0.341  | 1.00   | -0.210 |
+| **Meduc**  | -0.239 | -0.210 | 1.00   |
+
+**Interpretation of Results:**
+
+1.  **ACEs and STRESS** ( r = 0.341 ):
+
+-   There is a **moderate positive correlation** between adverse childhood experiences and stress during pregnancy.
+-   This suggests that individuals who report more childhood adversity tend to experience higher stress levels during pregnancy.
+
+2.  **ACEs and Meduc** ( r = -0.239 ):
+
+-   There is a **moderate negative correlation** between ACEs and maternal education.
+-   This indicates that individuals with higher levels of childhood adversity tend to have **lower levels of educational attainment**.
+
+3.  **STRESS and Meduc** ( r = -0.210 ):
+
+-   A **moderate negative correlation** exists between stress and maternal education.
+-   This suggests that individuals with lower educational attainment tend to experience **higher stress levels** during pregnancy.
+
+------------------------------------------------------------------------
+
+#### Summary & Implications
+
+Women with more Adverse Childhood Experiences (ACEs) tend to experience higher levels of stress during pregnancy and have lower education levels. Higher maternal education is linked to lower stress, potentially due to greater access to resources, stability, or support systems. This is important. When interpreting results, it is very important to go back to the original operationalization of the variables so we are on the same page. How is stress defined here? And, what may be some limitations both methodologicall and conceptually? Whereas we know this analysis is not causal, we can begin linking the results to some important policy implications See @barboza2020cognitive [here](static/1-s2.0-S0190740919311533-main.pdf) .
+
+## Compute Partial and Semi-Partial Correlations
+
+```{r}
+# Compute Partial Correlation (controlling for ACEs)
+partial_corr <- pcor(data_subset)
+print("Partial Correlation Matrix:")
+print(partial_corr$estimate)
+
+# Compute Semi-Partial Correlation (controlling for ACEs only in STRESS)
+semi_partial_corr <- spcor(data_subset)
+print("Semi-Partial Correlation Matrix:")
+print(semi_partial_corr$estimate)
+```
+
+------------------------------------------------------------------------
+
+## Correlation Analysis
+
+We computed three types of correlation matrices:
+
+1.  **Zero-Order (Regular) Correlation**: The direct correlation between variables.
+2.  **Partial Correlation**: The correlation between two variables while controlling for a third variable (Meduc).
+3.  **Semi-Partial Correlation**: The correlation between two variables while controlling for a third variable’s influence on just one of them.
+
+## **Results and Interpretation**
+
+### **Regular (Zero-Order) Correlation** from above
+
+| Variable   | ACEs   | STRESS | Meduc  |
+|------------|--------|--------|--------|
+| **ACEs**   | 1.00   | 0.341  | -0.239 |
+| **STRESS** | 0.341  | 1.00   | -0.210 |
+| **Meduc**  | -0.239 | -0.210 | 1.00   |
+
+-   **ACEs and STRESS**: ( r = 0.341 ) → A **moderate positive correlation**, indicating that individuals with higher ACEs tend to experience higher stress levels during pregnancy.
+-   **ACEs and Meduc**: ( r = -0.239 ) → A **negative correlation**, suggesting that individuals with more childhood adversity tend to have lower educational attainment.
+-   **STRESS and Meduc**: ( r = -0.210 ) → A **negative correlation**, implying that lower maternal education is linked to higher stress.
+
+------------------------------------------------------------------------
+
+### **Partial Correlation**
+
+| Variable   | ACEs   | STRESS | Meduc  |
+|------------|--------|--------|--------|
+| **ACEs**   | 1.00   | 0.306  | -0.182 |
+| **STRESS** | 0.306  | 1.00   | -0.141 |
+| **Meduc**  | -0.182 | -0.141 | 1.00   |
+
+-   **ACEs and STRESS** controlling (partialing out) Meduc: ( r = 0.306 ) → The correlation remains positive but slightly decreases compared to the zero-order correlation ( r = 0.341 ), indicating that while education partly explains the relationship, ACEs still have a significant effect on stress.
+-   **ACEs and Meduc** controlling ACEs: ( r = -0.182 ) → The correlation between ACEs and education weakens slightly after controlling for stress.
+-   **STRESS and Meduc** controlling for STRESS: ( r = -0.141 ) → The relationship between stress and education is weaker when controlling for ACEs.
+
+### **Implication of Partial Correlation**
+
+By controlling for maternal education, we isolate the direct effect of **ACEs on stress**. The reduction in correlation values suggests that education contributes to stress, but ACEs continue to have a **strong independent effect**.
+
+------------------------------------------------------------------------
+
+### **Semi-Partial Correlation (Controlling for Meduc Only in STRESS)**
+
+| Variable   | ACEs   | STRESS | Meduc  |
+|------------|--------|--------|--------|
+| **ACEs**   | 1.00   | 0.297  | -0.171 |
+| **STRESS** | 0.299  | 1.00   | -0.132 |
+| **Meduc**  | -0.178 | -0.136 | 1.00   |
+
+-   **ACEs and STRESS**: ( r = 0.297 ) → A slight decrease in the strength of the relationship compared to the partial correlation (( r = 0.306 )), meaning that education explains a small part of the ACEs-stress relationship. In other words, it's the correlation between ACEs and the part of STRESS that is independent of Meduc.
+-   **ACEs and Meduc**: ( r = -0.171 ) → The correlation weakens slightly after accounting for stress.
+-   **STRESS and Meduc**: ( r = -0.132 ) → A marginal decrease in the strength of the relationship.
+
+### **Implication of Semi-Partial Correlation**
+
+The semi-partial correlations examine how **each independent variable uniquely contributes** to the dependent variable while removing the effect of the control variable **only from the dependent variable**. Since the values remain similar to the partial correlations, this suggests that **maternal education influences stress**, but ACEs still have an independent impact.
+
+------------------------------------------------------------------------
+
+## **Key Takeaways**
+
+1.  ACEs are a strong predictor of stress during pregnancy, even after controlling for maternal education.
+2.  Maternal education partially explains the relationship between ACEs and stress, but ACEs continue to have an independent effect.
+3.  Higher maternal education is associated with lower stress, but its effect is weaker when ACEs are accounted for.
+4.  The semi-partial correlation results confirm that maternal education plays a role, but ACEs have an independent impact on stress, highlighting the importance of addressing childhood adversity in maternal mental health interventions.
+
+These results suggest that **public health interventions should target both early-life adversity (ACEs) and educational opportunities** to reduce stress during pregnancy, which may have long-term effects on maternal and child health outcomes.
+
+
+## Conclusion
+
+This analysis demonstrates how **Maternal Education**, **Stress During Pregnancy**, and **ACEs** interact within a structured correlation framework. Using **partial and semi-partial correlations**, we disentangle the direct and indirect effects of early-life adversity on maternal stress, providing insights for interventions aimed at reducing stress-related health disparities. If ACEs remains a significant predictor of stress after controlling for education, interventions targeting early life adversity may help alleviate psychosocial stress during pregnancy, improving both maternal and child health outcomes.

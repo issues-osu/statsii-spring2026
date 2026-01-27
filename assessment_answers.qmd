@@ -1,0 +1,338 @@
+---
+title: "Stats I Initial Assessment"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Stats I Initial Assessment
+
+## Instructions
+
+This assessment evaluates baseline understanding before starting Statistics II. It is not graded and focuses on gauging problem-solving approaches. Please complete the tasks outlined below.
+
+---
+
+## PART I
+
+### **1. Introduction to Data**
+
+#### Question:
+
+Using the table below, calculate:
+
+1. The proportion of youth with PTSD in the treatment group by the end of the first year.
+2. The proportion of youth with PTSD in the control group by the end of the first year.
+
+| Group      | PTSD (0-30 days) | No PTSD (0-30 days) | PTSD (0-365 days) | No PTSD (0-365 days) |
+|------------|------------------|---------------------|-------------------|----------------------|
+| Treatment  | 33               | 191                 | 45                | 179                  |
+| Control    | 13               | 214                 | 28                | 199                  |
+
+#### Answer:
+
+1. **Proportion of PTSD in the treatment group**:
+
+   $$
+   \text{Proportion} = \frac{\text{PTSD cases}}{\text{Total cases}} = \frac{33 + 45}{33 + 191 + 45 + 179} = \frac{78}{448} \approx 0.174 \,(17.4\%)
+   $$
+
+2. **Proportion of PTSD in the control group**:
+
+   $$
+   \text{Proportion} = \frac{\text{PTSD cases}}{\text{Total cases}} = \frac{13 + 28}{13 + 214 + 28 + 199} = \frac{41}{454} \approx 0.0903 \,(9.03\%)
+   $$
+
+#### Interpretation:
+
+The treatment group had a PTSD rate of 17.4%, while the control group had a lower PTSD rate of 9.03%. This suggests that factors associated with treatment may influence PTSD rates, which warrants further investigation.
+
+---
+
+### **2. Relationships Between Variables**
+
+#### Question:
+
+True or False: Variables cannot be both associated and independent.
+
+#### Answer:
+
+**False.**
+If two variables are associated, they are not independent. Association implies a relationship between variables, whereas independence means no influence of one variable on another.
+
+---
+
+### **3. Interquartile Range (IQR)**
+
+#### Question:
+
+1. Define Q1 (25th percentile) in words.
+2. If Q3 = 300 and Q1 = 100, calculate the IQR.
+3. Why do extreme observations affect standard deviation more than the IQR?
+
+#### Answer:
+
+1. **Definition of Q1**: Q1 is the value below which 25% of the data lies. It represents the first quartile of the dataset.
+
+2. **Calculate IQR**:
+
+   $$
+   \text{IQR} = Q3 - Q1 = 300 - 100 = 200
+   $$
+
+3. **Effect of extreme observations**:
+
+   Extreme values (outliers) have a larger impact on the standard deviation because it measures the average squared deviation of all data points from the mean. In contrast, the IQR focuses only on the middle 50% of the data, ignoring extremes.
+
+---
+
+### **4. Contingency Table**
+
+| Response  | None  | Small | Big   | Total |
+|-----------|-------|-------|-------|-------|
+| **Yes**   | 0.406 | 0.458 | 0.136 | 1.0   |
+| **No**    | 0.113 | 0.748 | 0.139 | 1.0   |
+
+#### Question:
+
+1. What does 0.458 represent?
+2. What does 0.139 (No, Big) represent?
+
+#### Answer:
+
+1. **Interpretation of 0.458**:
+   0.458 represents the proportion of participants who answered "Yes" and experienced a "Small" response.
+
+2. **Interpretation of 0.139**:
+   0.139 represents the proportion of participants who answered "No" and experienced a "Big" response.
+
+---
+
+### **5. Probability Distributions**
+
+#### Question:
+
+Which of the following salary distributions is valid? Identify errors in the others.
+
+| Income Range (\$1000s) | 0-25 | 25-50 | 50-100 | 100+ |
+|-------------------------|------|-------|--------|------|
+| **A**                  | 0.18 | 0.39  | 0.33   | 0.16 |
+| **B**                  | 0.38 | -0.27 | 0.52   | 0.37 |
+| **C**                  | 0.28 | 0.27  | 0.29   | 0.16 |
+
+#### Answer:
+
+- **Correct Distribution: C**
+  - Total = $0.28 + 0.27 + 0.29 + 0.16 = 1.00$, and all probabilities are valid (0 ≤ p ≤ 1).
+- **Errors in Others**:
+  - **A**: Total = $0.18 + 0.39 + 0.33 + 0.16 = 1.06$, which exceeds 1.
+  - **B**: Contains a negative probability ($-0.27$), which is invalid.
+
+#### Interpretation:
+
+Distribution C is valid because it adheres to the fundamental rules of probabilities, where all probabilities are between 0 and 1, and their sum equals 1.
+
+---
+
+### **6. Independent Random Variables**
+
+#### Question:
+
+1. What is the probability that both people develop PTSD?
+2. What is the probability that neither does?
+3. What does independence mean, and why does this assumption matter?
+
+#### Answer:
+
+1. **Probability both develop PTSD**:
+   $$
+   P(\text{PTSD}) = 0.09
+   $$
+   $$
+   P(\text{Both}) = 0.09 \times 0.09 = 0.0081 \,(0.81\%)
+   $$
+
+2. **Probability neither develops PTSD**:
+   $$
+   P(\text{No PTSD}) = 1 - 0.09 = 0.91
+   $$
+   $$
+   P(\text{Neither}) = 0.91 \times 0.91 = 0.8281 \,(82.81\%)
+   $$
+
+3. **Independence Definition**:
+
+   Independence means the outcome of one event does not influence the outcome of another. This assumption is critical because the joint probability calculations (e.g., $P(A \cap B) = P(A) \times P(B)$) rely on it.
+
+---
+
+### **7. COVID-19 Table**
+
+#### Question:
+
+Using the following table:
+
+| Vaccinated | Yes    | No     |
+|------------|--------|--------|
+| Lived      | 0.0382 | 0.8252 |
+| Died       | 0.0010 | 0.1356 |
+
+1. Calculate the probability a randomly selected person who was not vaccinated died from COVID.
+2. Use a tree diagram to calculate:
+   - The probability a random person was vaccinated and lived.
+   - The probability a random person died (regardless of vaccination status).
+
+#### Answer:
+
+1. **Probability a not-vaccinated person died**:
+   $$
+   P(\text{Died | Not Vaccinated}) = 0.1356
+   $$
+
+2. **Tree Diagram Calculations**:
+
+   - **Probability a person was vaccinated and lived**:
+     $$
+     P(\text{Vaccinated and Lived}) = P(\text{Vaccinated}) \cdot P(\text{Lived | Vaccinated}) = 0.0382
+     $$
+
+   - **Probability a person died (regardless of vaccination status)**:
+     $$
+     P(\text{Died}) = P(\text{Vaccinated}) \cdot P(\text{Died | Vaccinated}) + P(\text{Not Vaccinated}) \cdot P(\text{Died | Not Vaccinated}) = 0.1366 \,(13.66\%)
+     $$
+
+#### Interpretation:
+
+The overall risk of death (13.66%) is dominated by unvaccinated individuals, highlighting the critical importance of vaccination in preventing COVID-19 deaths.
+
+---
+
+### **8. Mean, Variance, and Standard Deviation**
+
+#### Question:
+
+Compute the mean, variance, and standard deviation for the following probability distribution:
+
+| $i$ | $x_i$ | $P(X = x_i)$ | $x_i \times P(X = x_i)$ |
+|-----|-------|--------------|-------------------------|
+| 1   | 0     | 0.2          | 0                       |
+| 2   | 137   | 0.55         | 75.35                   |
+| 3   | 170   | 0.25         | 42.5                    |
+
+#### Answer:
+
+1.  **Mean**:\
+    $$
+    \mu = \sum x_i \cdot P(X = x_i) = 0 + 75.35 + 42.5 = 117.85
+    $$
+
+2.  **Variance**:\
+    First, calculate squared deviations:\
+    $$
+    \sigma^2 = \sum P(X = x_i) \cdot (x_i - \mu)^2
+    $$ For each $x_i$:
+
+    -   $(0 - 117.85)^2 = 13895.62$
+    -   $(137 - 117.85)^2 = 364.52$
+    -   $(170 - 117.85)^2 = 2635.92$
+
+    Weighted sum: $$
+    \sigma^2 = 0.2 \cdot 13895.62 + 0.55 \cdot 364.52 + 0.25 \cdot 2635.92 \approx 4004.5
+    $$
+
+3.  **Standard Deviation**:\
+    $$
+    \sigma = \sqrt{\sigma^2} = \sqrt{4004.5} \approx 63.31
+    $$
+
+#### Interpretation:
+
+The data shows a mean value of 117.85 with a standard deviation of 63.31, indicating moderate variability around the mean.
+
+------------------------------------------------------------------------
+
+### **9. Normal Distribution**
+
+#### Question:
+
+Let $X \sim N(\mu = 3, \sigma = 2)$, and observe $x = 5.19$.\
+1. Compute the Z-score of $x$.\
+2. Determine how many standard deviations $x$ is from the mean.
+
+#### Answer:
+
+1.  **Z-score**:\
+    $$
+    Z = \frac{x - \mu}{\sigma} = \frac{5.19 - 3}{2} = \frac{2.19}{2} = 1.095
+    $$
+
+2.  **Standard deviations from the mean**:\
+    The Z-score $Z = 1.095$ indicates $x = 5.19$ is **1.095 standard deviations above the mean**.
+
+#### Interpretation:
+
+A Z-score of 1.095 means the observed value is moderately above the average in the normal distribution.
+
+------------------------------------------------------------------------
+
+### **10. Social Work Licensing Exam**
+
+#### Question:
+
+The licensing exam follows $N(\mu = 92.6, \sigma = 3.6)$.\
+1. Compute the Z-score for a score of 95.4.\
+2. Compute the Z-score for a score of 85.8.\
+3. Which score is more unusual?\
+4. Calculate and interpret percentiles for these scores.
+
+#### Answer:
+
+1.  **Z-score for 95.4**:\
+    $$
+    Z = \frac{95.4 - 92.6}{3.6} = \frac{2.8}{3.6} = 0.778
+    $$
+
+2.  **Z-score for 85.8**:\
+    $$
+    Z = \frac{85.8 - 92.6}{3.6} = \frac{-6.8}{3.6} = -1.889
+    $$
+
+3.  **More unusual score**:\
+    $Z = -1.889$ for 85.8 is farther from the mean than $Z = 0.778$, making it more unusual.
+
+4.  **Percentiles**:\
+    Using the Z-table:
+
+    -   For $Z = 0.778$, percentile ≈ **78.1%**.\
+    -   For $Z = -1.889$, percentile ≈ **3.0%**.
+
+#### Interpretation:
+
+A score of 95.4 is above average, placing the student in the 78th percentile. In contrast, a score of 85.8 is far below the mean, placing the student in the 3rd percentile. This highlights significant performance differences.
+
+------------------------------------------------------------------------
+
+### **11. SAT Scores**
+
+#### Question:
+
+The SAT follows $N(\mu = 1500, \sigma = 300)$.\
+1. What is the probability of scoring at least 1630?\
+2. How does it affect the calculation if 75% of test-takers scored above 1600?\
+3. Discuss the social justice implications of interpreting aptitude statistically.
+
+#### Answer:
+
+1.  **Probability of** $X \geq 1630$:\
+    Compute Z-score:\
+    $$
+    Z = \frac{1630 - 1500}{300} = \frac{130}{300} = 0.433
+    $$ Using the Z-table, $P(Z \geq 0.433) = 1 - 0.6664 = 0.3336 \, (33.36\%)$.
+
+2.  **If 75% scored above 1600**:\
+    This would indicate a shift in the distribution, suggesting the mean or variance has changed. A new analysis is required.
+
+3.  **Social justice implications**:\
+    Interpreting aptitude purely statistically can reinforce systemic inequities (e.g., access to resources, cultural biases). Statistical aptitude measures must consider broader socio-economic contexts.

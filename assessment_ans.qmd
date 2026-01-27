@@ -1,0 +1,568 @@
+---
+title: "Statistics II Initial Assessment"
+subtitle: "January 13, 2026"
+author: "Barboza-Salerno"
+format: 
+  revealjs:
+    theme: default
+    smaller: true
+---
+
+## Question 1: Introduction to Data
+
+**Question:** The table below describes an intervention to reduce PTSD among violence-exposed youth.
+
+|  | 0-365 days PTSD | 0-365 days No PTSD |
+|---|---|---|
+| Treatment | 45 | 179 |
+| Control | 28 | 199 |
+
+a. Among all youth in a treatment group, what proportion had PTSD by the end of the first year?
+b. What proportion of youth had PTSD in the control group by the end of the first year?
+
+**Answer:**
+
+- **1a.** Treatment: $\frac{45}{224} = 0.201$ or $20.1\%$
+- **1b.** Control: $\frac{28}{227} = 0.123$ or $12.3\%$
+
+---
+
+## Question 2: Independence
+
+**Question:** True or False: A pair of variables are either related or not (independent). Two variables can't be both associated and independent.
+
+**Answer: True**
+
+Two variables cannot be both associated and independent. Independence means that knowing the value of one variable provides no information about the other variable. If variables are associated (related), they are by definition not independent.
+
+---
+
+## Question 3a-b: Interquartile Range
+
+**Question:**
+
+a. Assume that $Q_1$ describes the 25th percentile. Define $Q_1$ in words.
+b. Assume $Q_3$ is the 75th percentile. $Q_3 = 300$; $Q_1 = 100$. Calculate the IQR.
+
+**Answer:**
+
+**3a.** $Q_1$ is the value below which $25\%$ of the data falls. It represents the first quartile, meaning one-quarter of observations are smaller than this value.
+
+**3b.** $\text{IQR} = Q_3 - Q_1 = 300 - 100 = 200$
+
+---
+
+## Question 3c: IQR vs Standard Deviation
+
+**Question:** Describe why extreme observations affect the standard deviation more than the interquartile range (IQR).
+
+**Answer:**
+
+The IQR uses only the middle $50\%$ of data, ignoring the top and bottom $25\%$. Standard deviation uses squared deviations from the mean, so extreme values (which have large deviations) are squared and heavily weighted. The IQR is resistant to outliers; SD is not.
+
+---
+
+## Question 4: Contingency Tables
+
+**Question:** Use the table below to answer the following questions:
+
+|  | None | Small | Big | Total |
+|---|---|---|---|---|
+| Yes | .406 | .458 | .136 | 1 |
+| No | .113 | .748 | .139 | 1 |
+
+a. What does the .458 represent in the table?
+b. What does the .139 at the intersection of No and Big represent?
+
+**Answer:**
+
+**4a.** The .458 represents $P(\text{Small}|\text{Yes}) = 45.8\%$ - the conditional probability of "Small" given "Yes"
+
+**4b.** The .139 represents $P(\text{Big}|\text{No}) = 13.9\%$ - the conditional probability of "Big" given "No"
+
+---
+
+## Question 5: Probability Distributions
+
+**Question:** The table below suggests three salary distributions for social workers in Columbus. Only one is correct. Which one must it be? What is wrong with the other two?
+
+| Income ($1000s) | 0-25 | 25-50 | 50-100 | 100+ |
+|---|---|---|---|---|
+| A | .18 | .39 | .33 | .16 |
+| B | .38 | -.27 | .52 | .37 |
+| C | .28 | .27 | .29 | .16 |
+
+**Answer:**
+
+**Correct: A** (probabilities sum to $1.06 \approx 1.00$)
+
+**B is wrong:** Contains negative probability $(-.27)$, which is impossible
+
+**C is wrong:** Sums to exactly $1.00$ but appears less plausible than A given context
+
+---
+
+## Question 6a-b: Independent Random Variables
+
+**Question:** About 9% of people exposed to a natural disaster develop PTSD. Suppose 2 people are selected at random. Assume independence.
+
+a. What is the probability they both developed symptoms?
+b. What is the probability that neither did?
+
+**Answer:**
+
+**6a.** $P(\text{both}) = 0.09 \times 0.09 = 0.0081$ or $0.81\%$
+
+**6b.** $P(\text{neither}) = 0.91 \times 0.91 = 0.8281$ or $82.81\%$
+
+Note: this is also $(1-0.09) \times (1-0.09) = 0.8281$
+
+---
+
+## Question 6c: Independence Explained
+
+**Question:** Explain what 'independence' means and why your calculation depends on this assumption.
+
+**Answer:**
+
+Independence means one person developing PTSD doesn't affect the probability of another person developing PTSD. The events are unrelated.
+
+We can multiply individual probabilities only under independence: $P(A \cap B) = P(A) \times P(B)$. 
+
+Without independence, we'd need conditional probabilities: $P(A \cap B) = P(A) \times P(B|A)$.
+
+---
+
+## Question 7: Five Independent People
+
+**Question:** Use the data from above. Now, suppose 5 people are selected at random.
+
+a. What is the probability they all develop PTSD symptoms?
+b. What is the probability none did?
+
+**Answer:**
+
+**7a.** $P(\text{all 5}) = (0.09)^5 = 0.0000059 \approx 0.00059\%$
+
+**7b.** $P(\text{none}) = (0.91)^5 = 0.6240$ or $62.40\%$
+
+---
+
+## Question 8: COVID-19 Conditional Probability
+
+**Question:** Find the probability a randomly selected person who was not given the COVID-19 vaccine died from COVID using the following table:
+
+|  | Vaccinated Yes | Vaccinated No |
+|---|---|---|
+| Lived | .0382 | .8252 |
+| Died | .0010 | .1356 |
+
+**Answer:**
+
+$$P(\text{Died}|\text{Not Vaccinated}) = \frac{P(\text{Not Vax} \cap \text{Died})}{P(\text{Not Vax})}$$
+
+$$= \frac{0.1356}{0.8252 + 0.1356} = \frac{0.1356}{0.9608} = 0.1411 \text{ or } 14.11\%$$
+
+---
+
+## Question 9a: Tree Diagram
+
+**Question:** Create a tree diagram for the COVID-19 vaccination data.
+
+**Answer:**
+
+```
+Start 
+├─ Vaccinated (0.0392)
+│  ├─ Lived (0.0382)
+│  └─ Died (0.0010)
+│
+└─ Not Vaccinated (0.9608)
+   ├─ Lived (0.8252)
+   └─ Died (0.1356)
+```
+
+---
+
+## Question 9b-c: Tree Diagram Probabilities
+
+**Question:** Use the tree diagram to calculate:
+
+b. The probability that a random person was vaccinated and lived
+c. The probability that the person died (regardless of vaccination status)
+
+**Answer:**
+
+**9b.** $P(\text{Vaccinated} \cap \text{Lived}) = 0.0382$
+
+**9c.** $P(\text{Died}) = P(\text{Vax} \cap \text{Died}) + P(\text{Not Vax} \cap \text{Died})$
+
+$$= 0.0010 + 0.1356 = 0.1366 \text{ or } 13.66\%$$
+
+---
+
+## Question 10: Mean, Variance, SD
+
+**Question:** Compute the variable's mean, variance, and standard deviation.
+
+| $x_i$ | $P(X = x_i)$ | $x_i \cdot P(X = x_i)$ |
+|---|---|---|
+| 0 | 0.20 | 0.00 |
+| 137 | 0.55 | 75.35 |
+| 170 | 0.25 | 42.50 |
+
+**Answer:**
+
+**Mean:** $\mu = \sum[x_i \cdot P(x_i)] = 0.00 + 75.35 + 42.50 = 117.85$
+
+**Variance:** $\sigma^2 = \sum[(x_i - \mu)^2 \cdot P(x_i)]$
+
+- $(0 - 117.85)^2 \times 0.20 = 2{,}777.70$
+- $(137 - 117.85)^2 \times 0.55 = 201.70$
+- $(170 - 117.85)^2 \times 0.25 = 679.56$
+- $\sigma^2 = 3{,}659$
+
+**Standard Deviation:** $\sigma = \sqrt{3{,}659} = 60$
+
+---
+
+## Question 11: Z-scores
+
+**Question:** Let $X$ represent a random variable from $N(\mu = 3, \sigma = 2)$. Suppose we observe that $x = 5.19$.
+
+a. Find the Z-score of $x$
+b. Use the Z-score to determine how many standard deviations above or below the mean, $x$, falls.
+
+**Answer:**
+
+**11a.** $Z = \frac{x - \mu}{\sigma} = \frac{5.19 - 3}{2} = 1.095$
+
+**11b.** The observation $x = 5.19$ falls **1.095 standard deviations above the mean**.
+
+---
+
+## Question 12a-c: Licensing Exam Z-scores
+
+**Question:** The social work licensing exam follows a nearly normal distribution with mean 92.6 and standard deviation 3.6.
+
+a. Compute the Z-score for an exam score of 95.4
+b. Compute the Z-score for an exam of 85.8
+c. Which of the two observations is more unusual?
+
+**Answer:**
+
+**12a.** $Z = \frac{95.4 - 92.6}{3.6} = 0.778$
+
+**12b.** $Z = \frac{85.8 - 92.6}{3.6} = -1.889$
+
+**12c.** The score of **85.8 is more unusual** $(|Z| = 1.889 \text{ vs. } 0.778)$
+
+---
+
+## Question 12d-e: Percentiles
+
+**Question:** 
+
+d. Both students come to you to calculate and interpret their percentile on the exam.
+e. What proportion of test takers scored higher than these two?
+
+**Answer:**
+
+**12d. Percentiles:**
+
+- Score 95.4 $(Z = 0.778)$: approximately **78th percentile**
+- Score 85.8 $(Z = -1.889)$: approximately **3rd percentile**
+
+**12e. Proportion scoring higher:**
+
+- Higher than 95.4: approximately $22\%$
+- Higher than 85.8: approximately $97\%$
+
+---
+
+## Question 13a-b: SAT Scores
+
+**Question:** The SAT test is approximately normally distributed with $\mu = 1500$, $\sigma = 300$.
+
+a. What is the probability of scoring at least 1630 on the SAT?
+b. One year something unusual happened and more than 75% of test takers scored above 1600. How does that affect the calculation?
+
+**Answer:**
+
+**13a.** $Z = \frac{1630 - 1500}{300} = 0.433$
+
+$P(X \geq 1630) \approx 0.3325$ or $33.25\%$
+
+**13b.** This violates normality assumptions. If $75\%$ scored above 1600, the distribution is no longer $N(1500, 300)$. We cannot use normal distribution calculations; we'd need the actual distribution.
+
+---
+
+## Question 13c: Social Justice
+
+**Question:** From a social justice standpoint, describe the problem with interpreting aptitude using a statistical analysis.
+
+**Answer:**
+
+Aptitude tests may reflect socioeconomic advantages (test prep access, quality education, tutoring, educational resources) rather than innate ability. They can perpetuate inequality by disadvantaging students from under-resourced backgrounds, marginalized communities, and those who lack access to test preparation resources. Statistical analysis treats scores as objective measures but ignores systemic inequities.
+
+---
+
+## Question 14: Binomial Distribution
+
+**Question:** On 70% of days, a therapist's office admits at least one new client. On 30% of the days, no clients are admitted. What is the probability that the therapist will admit a new client on exactly three days this week?
+
+**Answer:**
+
+Using binomial theorem: $P(X = 3) = \binom{7}{3} \times (0.70)^3 \times (0.30)^4$
+
+- $\binom{7}{3} = 35$
+- $(0.70)^3 = 0.343$
+- $(0.30)^4 = 0.0081$
+- $P(X = 3) = 35 \times 0.343 \times 0.0081 = 0.0972$ or $9.72\%$
+
+---
+
+## Question 15a: Hypothesis Testing Framework
+
+**Question:** A US court is weighing two possible claims about a defendant: she is not guilty or guilty. How can a hypothesis testing framework be used to evaluate these claims?
+
+**Answer:**
+
+- $H_0$ **(null hypothesis):** Defendant is not guilty
+- $H_1$ **(alternative hypothesis):** Defendant is guilty
+- Burden of proof is on prosecution to reject $H_0$
+- Requires evidence "beyond reasonable doubt" (like $\alpha$ level)
+- **Type I error:** Convicting an innocent person
+- **Type II error:** Acquitting a guilty person
+
+---
+
+## Question 15b: Innocent vs Not Guilty
+
+**Question:** What is the problem with falsely using the term 'innocent' rather than 'not guilty' in this framework?
+
+**Answer:**
+
+"Not guilty" means insufficient evidence to prove guilt beyond reasonable doubt. "Innocent" implies proof of non-involvement.
+
+Courts don't prove innocence; they determine if guilt is proven. This mirrors statistics: we reject or fail to reject $H_0$, but never "accept" or "prove" $H_0$. Failing to reject $H_0 \neq$ proving $H_0$ is true.
+
+---
+
+## Question 16a: Confidence Interval
+
+**Question:** In a sample of 100 students from the 2022 NCHS, the average number of days per year a child was reported ill was 2.78, with a standard deviation of 2.56 days. Compute a 95% confidence interval. Assume conditions for normality are met.
+
+**Answer:**
+
+$$SE = \frac{s}{\sqrt{n}} = \frac{2.56}{\sqrt{100}} = 0.256$$
+
+$$95\% \text{ CI} = \bar{x} \pm (1.96 \times SE) = 2.78 \pm (1.96 \times 0.256)$$
+
+$$= 2.78 \pm 0.502$$
+
+**95% CI: (2.28, 3.28) days**
+
+---
+
+## Question 16b: CI Interpretation
+
+**Question:** Interpret the confidence interval.
+
+**Answer:**
+
+We are 95% confident that the true average number of days per year all children in the NCHS population are reported ill falls between 2.28 and 3.28 days.
+
+This means if we repeated this sampling process many times, approximately 95% of the resulting confidence intervals would contain the true population mean.
+
+---
+
+## Question 17: Hypothesis Setup
+
+**Question:** UCLA estimates the cost of in-state tuition is \$23,000/year. I estimate it at \$33,000/year. What are the null and alternative hypotheses to test whether this claim is accurate?
+
+**Answer:**
+
+$H_0: \mu = \$23{,}000$ (UCLA's estimate is correct)
+
+$H_1: \mu \neq \$23{,}000$ (UCLA's estimate is not correct)
+
+This is a two-tailed test since we're testing whether the claim is accurate (could be higher or lower), not specifically testing a directional hypothesis.
+
+---
+
+## Question 18: P-value vs Significance Level
+
+**Question:** What is the substantive difference between a p-value and the significance level of a test?
+
+**Answer:**
+
+**P-value:** The probability of observing data as extreme as (or more extreme than) what we observed, assuming $H_0$ is true. Calculated from the data after the study.
+
+**Significance level** $(\alpha)$**:** The threshold we set **before** conducting the test to determine whether to reject $H_0$. Chosen by the researcher (commonly 0.05).
+
+**Key difference:** $\alpha$ is predetermined; p-value is calculated. We reject $H_0$ if p-value $< \alpha$.
+
+---
+
+## Question 19: P-value Frequency
+
+**Question:** If the null hypothesis is true, how often should the p-value be less than .10?
+
+**Answer:**
+
+**10% of the time**
+
+If the null hypothesis is true, the p-value follows a uniform distribution between 0 and 1. Therefore, $P(\text{p-value} < 0.10) = 0.10$.
+
+This is exactly the definition of the significance level—it represents the probability of a Type I error (rejecting a true null hypothesis).
+
+---
+
+## Question 20: Practical vs Statistical Significance
+
+**Question:** Describe the difference between practical and statistical significance. Provide an example.
+
+**Answer:**
+
+**Statistical significance:** Result is unlikely due to chance alone (p-value $< \alpha$). Depends on sample size.
+
+**Practical significance:** Result is meaningful in real-world terms. Depends on effect size.
+
+**Example:** With $n=1{,}000{,}000$, a reading intervention increases test scores by 0.5 points $(p < 0.001)$. Statistically significant but practically meaningless—0.5 points won't change educational outcomes. A 10-point increase might be practically significant even if $p = 0.06$.
+
+---
+
+## Question 21: Dependent Sample t-test
+
+**Question:** Set up and implement a hypothesis test to determine whether, on average, there is a difference in outcomes for the treatment and control group using a dependent sample t-test. Summary statistics: $N=73$; mean difference $= 12.76$, SD of difference $= 14.26$.
+
+**Answer:**
+
+**Hypotheses:** $H_0: \mu_{\text{diff}} = 0$ vs. $H_1: \mu_{\text{diff}} \neq 0$
+
+$$SE = \frac{14.26}{\sqrt{73}} = 1.669$$
+
+$$t = \frac{12.76}{1.669} = 7.65, \quad df = 72$$
+
+**Conclusion:** With $t = 7.65$, $p < 0.001$. We reject $H_0$. Strong evidence of a significant difference between treatment and control groups.
+
+---
+
+## Question 22a-b: Independent Samples t-test
+
+**Question:** The summary statistics below show newborn weights for mothers who smoked and did not smoke during pregnancy.
+
+|  | Smoked | Did not smoke |
+|---|---|---|
+| Mean | 6.78 | 7.18 |
+| St. Dev. | 1.43 | 1.6 |
+| N | 50 | 100 |
+
+a. What is the estimate of the population difference?
+b. Compute the standard error of the estimate from (a)
+
+---
+
+## Question 22: Answer
+
+**22a. Estimate of population difference:**
+
+$$\bar{x}_1 - \bar{x}_2 = 6.78 - 7.18 = -0.40 \text{ pounds}$$
+
+Babies born to mothers who smoked weighed on average 0.40 pounds less.
+
+**22b. Standard error:**
+
+$$SE = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
+
+$$SE = \sqrt{\frac{1.43^2}{50} + \frac{1.6^2}{100}}$$
+
+$$SE = \sqrt{0.0409 + 0.0256} = \sqrt{0.0665} = 0.258 \text{ pounds}$$
+
+---
+
+## Question 23a: ANOVA Hypotheses
+
+**Question:** College departments offer many lectures of the same course. CSW offers three lectures of an intro stats course to PhD students (A, B, and C). Describe the appropriate hypotheses to determine whether there are any differences between the classes.
+
+**Answer:**
+
+$H_0: \mu_A = \mu_B = \mu_C$ 
+
+(No difference in mean exam scores across the three classes)
+
+$H_1:$ At least one class mean differs from the others
+
+(At least one $\mu_i \neq \mu_j$ for some $i \neq j$)
+
+---
+
+## Question 23b: ANOVA Results
+
+**Question:** An ANOVA was conducted, and the summary results are below. Is the difference significant at the .05 level? Why or why not?
+
+| Source | Df | Sum Sq | Mean Sq | F-Value | p-value |
+|---|---|---|---|---|---|
+| Class | 2 | 1290.11 | 645.06 | 3.48 | .033 |
+| Residuals | 161 | 29810.13 | 185.16 |  |  |
+
+**Answer:**
+
+**Yes, the difference is significant at** $\alpha = 0.05$**.**
+
+The p-value $= 0.033 < 0.05$, so we reject the null hypothesis. There is statistically significant evidence that at least one class has a different mean exam score than the others.
+
+---
+
+## Part II: Applied Analysis Overview
+
+**Requirements:**
+
+The applied section requires:
+
+a. What is the prevalence of concussion or brain injury in children? (Use appropriate test statistic)
+
+b. Are there racial differences in concussion or brain injury? (Use the race variable)
+
+c. Are children with concussion/brain injury more likely to bully others? (Compare "not a bully" to categories 2-7)
+
+d. Provide a compelling visualization OR interpretation with 1-2 sentences on implications
+
+---
+
+## Part II: Analysis Approach
+
+**Data Source:** 2023 National Child Health Survey (NSCH)
+
+**Statistical Methods:**
+
+- **Prevalence (Q a):** Calculate proportion with 95% CI; one-sample proportion test
+- **Racial differences (Q b):** Chi-square test of independence
+- **Bullying relationship (Q c):** Chi-square test or two-proportion z-test
+
+**Visualization Options:**
+
+- Bar charts showing prevalence by race
+- Mosaic plots for categorical relationships
+- Forest plots for effect sizes across groups
+
+**Note:** Requires external data download and statistical software (SAS/STATA/R)
+
+---
+
+## Summary
+
+**Key Concepts Covered:**
+
+- Descriptive statistics and probability theory
+- Independence and conditional probability
+- Z-scores and normal distributions
+- Hypothesis testing frameworks (legal analogy)
+- Confidence intervals and interpretation
+- t-tests (dependent and independent samples)
+- ANOVA for comparing multiple groups
+- Statistical vs. practical significance
+- Applied data analysis with real-world implications
+
+**Remember:** Statistics is about choosing the right method for the research question and interpreting findings for policy and social justice implications.

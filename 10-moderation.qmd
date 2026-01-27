@@ -1,0 +1,72 @@
+---
+title: "Moderation"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+#  Week 11: March 24, 2026  
+
+
+## Today's Reading
+
+- Hayes Chapter 7,8
+
+## Introduction to the Topic
+
+This week, we focus on **moderation analysis**, a statistical approach used to examine whether the relationship between an independent variable and a dependent variable depends on the value of a third variable, known as the moderator. Moderation analysis is key for understanding conditional effects in research.
+
+---
+
+## Key Concepts:
+- **Interaction Effects**: How the relationship between two variables changes depending on the level of the moderator.
+- **Moderators**: Variables that influence the strength or direction of an effect.
+- **Centering**: Preparing variables to reduce multicollinearity in moderation models.
+- **Simple Slopes Analysis**: Breaking down interaction effects to interpret conditional relationships.
+
+---
+
+## Relevance:
+- Students will learn how to test for and interpret interaction effects in moderation models.
+- Students will explore tools like simple slopes analysis and visualization to communicate results effectively.
+
+---
+
+## Why This Is Important:
+- Moderation analysis provides insights into *when* and *for whom* certain effects occur, enabling more nuanced interpretations of data.
+- Understanding moderation is critical in areas like policy evaluation, intervention design, and theory testing.
+
+---
+
+## How This Ties Into the Overall Course:
+- Builds upon prior topics like regression and effect sizes by extending these methods to account for conditional effects.
+- Sets the stage for future topics like moderated mediation and multilevel modeling, where interaction effects are a core focus.
+
+By the end of this week, students will be able to identify and test moderation effects, interpret interaction terms, and visualize conditional relationships to better understand complex variable interactions.
+
+## Class Files
+
+### Lecture Notes
+
+
+### R Code
+
+
+### Data Sets
+
+
+## Resources
+
+
+## Today's Reading
+
+
+## R Lab Files
+
+
+## Additional Notes
+
+
+------------------------------------------------------------------------

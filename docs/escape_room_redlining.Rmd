@@ -1,0 +1,231 @@
+---
+title: 'Escape Room: Historic Redlining Scores'
+subtitle: Discovering and Analyzing Key Datasets
+runtime: shiny_prerendered
+output: learnr::tutorial
+---
+
+```{r setup, include=FALSE}
+# Load required libraries for the tutorial
+library(learnr)  # For creating interactive tutorials
+library(dplyr)   # For data manipulation and analysis
+library(ggplot2) # For creating visualizations
+library(foreign) # For reading SPSS (.sav) files
+knitr::opts_chunk$set(echo = FALSE)
+
+# Load the dataset
+hrs_data <- read.spss("HRS2020_CLEAN.sav", to.data.frame = TRUE)
+
+# Trim trailing spaces from the METRO_NAME column
+hrs_data$METRO_NAME <- trimws(hrs_data$METRO_NAME)  # Ensures consistent names for filtering
+#hrs_data$METRO_NAME <- iconv(hrs_data$METRO_NAME, from = "latin1", to = "UTF-8", sub = "")
+```
+
+## Room 0: Welcome to the Escape Room!
+
+In this interactive escape room, you will navigate a series of rooms by solving data-related challenges. Your mission is to explore the **Historic Redlining Scores (HRS)** dataset and uncover insights about social inequities in **metropolitan areas**. Let's get started!
+
+### Why is this important?
+
+Redlining refers to discriminatory policies implemented in the 1930s, where neighborhoods were graded based on racial and socioeconomic composition, influencing access to housing and credit. These practices have lasting impacts on child welfare, education, and public health, which this tutorial aims to explore using data.
+
+To accomplish this, you will use the following R packages:
+
+| Package | Description                                            |
+|---------|--------------------------------------------------------|
+| learnr  | To create interactive tutorials and quizzes.           |
+| dplyr   | To manipulate and analyze data frames efficiently.     |
+| ggplot2 | To create visualizations such as bar plots and graphs. |
+| foreign | To read SPSS (.sav) files into R.                      |
+
+------------------------------------------------------------------------
+
+## Room 1: Finding and Opening Data
+
+### What Is This Data?
+
+The **Historic Redlining Scores (HRS)** dataset quantifies the long-term impacts of discriminatory redlining practices on metropolitan areas, which are officially known as **Core-Based Statistical Areas (CBSAs)**. A CBSA is a geographic region defined by population centers and adjacent areas that have strong economic and social ties.
+
+To begin your journey, locate the **Historic Redlining Scores dataset**. Use the link below to access it:
+
+[Historic Redlining Scores Dataset (OpenICPSR)](https://www.openicpsr.org/openicpsr/project/141121/version/V2/view?path=/openicpsr/141121/fcr:versions/V2/HRS2010B.sav&type=file).
+
+### Challenge:
+
+```{r room1_question1}
+question("What is the purpose of this dataset?",
+  answer("To understand the impact of redlining policies on metropolitan areas.", correct = TRUE),
+  answer("To calculate income data.", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+------------------------------------------------------------------------
+
+## Room 2: Downloading the Dataset
+
+### Instructions:
+
+Download the dataset and save it as `HRS2010B.sav` in the `data` folder of your project.
+
+### Challenge:
+
+```{r room2_question1}
+question("What is the size of the downloaded file in MB?",
+  answer("Approximately 10 MB.", correct = TRUE),
+  answer("Approximately 50 MB.", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+### Challenge:
+
+```{r room1_question2}
+question("How many columns are in the dataset?",
+  answer("5", correct = TRUE),
+  answer("10", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+------------------------------------------------------------------------
+
+## Room 3: Opening the Dataset
+
+Once you have downloaded the dataset, you will need to open it in R. The dataset is in SPSS (.sav) format, which requires the `foreign` package to read.
+
+#### Instructions:
+
+1.  Ensure the dataset is saved as `HRS2020B.sav` in the `data` folder of your project.
+2.  Use the `read.spss()` function from the `foreign` package to load the dataset into R.
+
+#### Example Code (Hidden in Exercise):
+
+```{r open_dataset, echo=TRUE}
+hrs_data <- read.spss("HRS2020_CLEAN.sav", to.data.frame = TRUE)
+hrs_data$METRO_NAME <- trimws(hrs_data$METRO_NAME)  # Ensures consistent names
+```
+
+### Challenge:
+
+```{r room1_question3}
+question("Were you successful in opening the data in R?",
+  answer("Yes", correct = TRUE),
+  answer("No", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+------------------------------------------------------------------------
+
+## Room 4: Exploring Metropolitan Areas
+
+### Why Metropolitan Areas Matter
+
+Metropolitan areas, or CBSAs, provide a lens to analyze the spatial distribution of systemic inequities. By examining these areas, we can understand how redlining impacted not just individual neighborhoods but entire regions.
+
+### Challenge:
+
+```{r room3_code}
+# Filter data for Chicago's CBSA
+
+chicago_metro <- hrs_data %>% dplyr::filter(METRO_NAME == "Chicago")
+
+# Count the number of data points for Chicago
+num_metros <- nrow(chicago_metro)
+```
+
+```{r room3_question1}
+question("How many data points are available for Chicago's metropolitan area?",
+  answer("1014", correct = TRUE),
+  answer("500", correct = FALSE),
+  answer("1500", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+------------------------------------------------------------------------
+
+## Room 5: Understanding Historic Redlining
+
+### Redlining and Its Impacts
+
+Historic redlining refers to discriminatory practices from the 1930s that denied loans or services to neighborhoods based on racial or ethnic composition. These policies have resulted in long-term consequences, such as: - Reduced property values in redlined areas. - Poorer access to quality education and healthcare. - Increased rates of child welfare cases and social inequities.
+
+### Challenge:
+
+```{r room4_question1}
+question("What is the name of the column for the 2020 Historic Redlining Scores?",
+  answer("HRS2020", correct = TRUE),
+  answer("Redlining_Index", correct = FALSE),
+  allow_retry = TRUE
+)
+```
+
+------------------------------------------------------------------------
+
+## Room 6: Calculating Average Redlining Scores
+
+### Example Code:
+
+The following code demonstrates how to calculate average redlining scores for selected metropolitan areas.
+
+```{r room5_code, echo=TRUE}
+average_hrs <- hrs_data %>%
+  dplyr::filter(
+    METRO_NAME %in% c("Los Angeles", "Chicago")
+  ) %>%
+  dplyr::group_by(METRO_NAME) %>%
+  dplyr::summarize(Average_HRS = mean(HRS2020, na.rm = TRUE))
+
+# Show results for demonstration
+average_hrs
+```
+
+### Now it’s your turn:
+
+1.  Identify your metropolitan area from the dataset (check the `METRO_NAME` column).
+2.  Filter the dataset for your selected metropolitan area.
+3.  Calculate the mean Historic Redlining Score (HRS2020).
+
+```{r room5_question2, include=FALSE}
+#question_text("What is the average HRS value for your selected metropolitan area?",
+#  answer("Enter your response here.", correct = TRUE)
+#)
+```
+
+------------------------------------------------------------------------
+
+## Room 6: Visualizing the Data
+
+### Importance of Visualization
+
+Visualizing data helps reveal trends and disparities that might not be obvious from raw numbers. This is especially critical when communicating findings about systemic inequities to policymakers and stakeholders.
+
+### Example Code:
+
+```{r room6_code, echo = TRUE}
+ggplot(average_hrs, aes(x = METRO_NAME, y = Average_HRS, fill = METRO_NAME)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Historic Redlining Scores by Metropolitan Area",
+       x = "Metropolitan Area",
+       y = "Average HRS")
+```
+
+### Challenge:
+
+```{r room6_question1}
+#question_text("What does the bar plot reveal about differences in Historic Redlining Scores between the two metropolitan areas?",
+#  answer("Enter your response here:", correct = TRUE)
+#)
+```
+
+------------------------------------------------------------------------
+
+## Congratulations!
+
+You’ve successfully navigated the escape room! Here’s what you accomplished:
+
+-   Located and downloaded a public dataset.
+-   Explored metropolitan areas (CBSAs) and their relevance.
+-   Analyzed and visualized Historic Redlining Scores.
