@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Barboza-Salerno">
+<meta name="description" content="develop, read, critique, design, and conduct high-quality scientific research in public health">
+
+<title>Research Methods in Public Health - Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//files/icon-512.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="Research Methods in Public Health - Data">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://bigdataforsocialjustice/phhbhp7534.com/files/social-image-sp23.png">
+<meta property="og:site-name" content="Research Methods in Public Health">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:height" content="640">
+<meta property="og:image:width" content="1280">
+<meta name="twitter:title" content="Research Methods in Public Health - Data">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://bigdataforsocialjustice/phhbhp7534.com/files/social-image-sp23.png">
+<meta name="twitter:creator" content="@bigdataforsocialjustice">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="640">
+<meta name="twitter:image-width" content="1280">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Research Methods in Public Health</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../content/index.html" rel="" target="">
+ <span class="menu-text">Content</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../assignment/index.html" rel="" target="">
+ <span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../example/index.html" rel="" target="">
+ <span class="menu-text">Examples</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../resource/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../news/index.html" rel="" target="">
+ <span class="menu-text">News</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://phhbhp7534.slack.com" rel="" target=""><i class="bi bi-slack" role="img" aria-label="Slack">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://posit.cloud/content/yours?sort=name_asc" rel="" target=""><i class="bi bi-cloud-fill" role="img" aria-label="RStudio.cloud">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resource/index.html">Overview</a></li><li class="breadcrumb-item"><a href="../resource/data.html">Data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R style suggestions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/opensource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open Source Software</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Citations and bibliography</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elements of a Research Proposal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Study guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/exam1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Things you should know for Exam 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/final.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Phase I and II</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing R, RStudio, tidyverse, and tinytex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using R Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/unzipping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unzipping files</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-data" id="toc-what-is-data" class="nav-link active" data-scroll-target="#what-is-data">What is data?</a></li>
+  <li><a href="#show-me-the-data" id="toc-show-me-the-data" class="nav-link" data-scroll-target="#show-me-the-data">Show me the data!</a></li>
+  <li><a href="#your-tasks" id="toc-your-tasks" class="nav-link" data-scroll-target="#your-tasks">🎯 Your Tasks</a></li>
+  <li><a href="#open-data-repositories" id="toc-open-data-repositories" class="nav-link" data-scroll-target="#open-data-repositories">Open data repositories</a>
+  <ul class="collapse">
+  <li><a href="#free-publicly-available-data-for-download" id="toc-free-publicly-available-data-for-download" class="nav-link" data-scroll-target="#free-publicly-available-data-for-download">Free, Publicly Available Data for Download</a></li>
+  <li><a href="#examples-of-datasets-and-their-uses" id="toc-examples-of-datasets-and-their-uses" class="nav-link" data-scroll-target="#examples-of-datasets-and-their-uses">Examples of Datasets and their Uses</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Barboza-Salerno </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="what-is-data" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-data">What is data?</h3>
+<p>Data comes in a variety of formats. When we think about data we typically think about structured data, for example data that can be imported nicely into Excel or SPPS. There are a number of alternative data formats that come in a variety of data types from many different data sources. The links below demonstrate these data formats using existing sources. We begin to learn how to analyze the data using innovative data science packages. I have chosen to concentrate on available software that is easy to use, and can facilitate the interpretation, analysis and visualization of data beyond the typical tools (e.g., SPSS). I will note the benefits and drawbacks for each package we review.</p>
+<p><em>Note:</em> Throughout this class, I will provide examples from my own work to illustrate how I have applied these tools. This includes a couple of web scraping applications (one which scrapes data from the <a href="https://homicide.latimes.com/">Los Angeles Homicide Report</a> and one to automate downloading data from the <a href="https://www.census.gov/data/datasets.html">U.S. Census Bureau’s Household Pulse Survey</a> The goal is to show you what can be done, with the disclaimer that you will probably not be able to do this by the end of this course. Learning about data is a long-term goal but I am here to help you if at some point you want to implement any of this for your own work.</p>
+</section>
+<section id="show-me-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="show-me-the-data">Show me the data!</h3>
+<p>There is tons of data available to download on the internet from reliable sources. I am going to review the datasets that I find most interesting and useful for social work. We will select a few datasets to analyze, visualize, and map. This requires knowing how to download and merge the data for analysis. These datasets provide a rich source of contextual information for your research, including your dissertation. As you will see, knowing about them, how to use them, and how to incorporate them into your research, is extremely powerful.</p>
+</section>
+<section id="your-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="your-tasks">🎯 Your Tasks</h2>
+<ul class="task-list">
+<li><input type="checkbox">Become familiar with open source software to use for different types of statistical analyses</li>
+<li><input type="checkbox">Download and install <em>jamovi</em> and <em>JASP</em> onto your laptop (as required)</li>
+<li><input type="checkbox">Learn how to install add-ons for SPSS, jamovi and JASP software</li>
+<li><input type="checkbox">Run simple descriptive statistics and create APA formatted tables</li>
+<li><input type="checkbox">Learn about the types of datasets (repositories and publicly available data) that are of great interest to public health scholars and practitioners</li>
+</ul>
+</section>
+<section id="open-data-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="open-data-repositories">Open data repositories</h2>
+<section id="free-publicly-available-data-for-download" class="level3">
+<h3 class="anchored" data-anchor-id="free-publicly-available-data-for-download">Free, Publicly Available Data for Download</h3>
+<section id="stand-alone-data" class="level4">
+<h4 class="anchored" data-anchor-id="stand-alone-data">Stand Alone data</h4>
+<ul>
+<li><a href="https://data.cpc.unc.edu/projects/2/view">Adolescent Health Data</a>
+<ul>
+<li>Here is my tutorial on using the <a href="https://bigdataforsocialjustice.github.io/databootcamp/add-health.html">Add Health data</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="points-of-interest-poi-data" class="level4">
+<h4 class="anchored" data-anchor-id="points-of-interest-poi-data">Points of Interest (POI) data</h4>
+<ul>
+<li>Safegraph Places
+<ul>
+<li>Google Places API</li>
+</ul></li>
+</ul>
+</section>
+<section id="mobility-data" class="level4">
+<h4 class="anchored" data-anchor-id="mobility-data">Mobility data</h4>
+<ul>
+<li><a href="https://www.google.com/covid19/mobility/">Google</a> Mobility Indices</li>
+<li><a href="https://covid19.apple.com/mobility">Apple</a> Mobility Indices</li>
+<li><a href="https://www.safegraph.com/neighborhood-patterns">Safegraph</a> Mobility Indices</li>
+</ul>
+</section>
+<section id="data-with-a-specific-focus" class="level4">
+<h4 class="anchored" data-anchor-id="data-with-a-specific-focus">Data with a specific focus</h4>
+<ul>
+<li>Liquor licenses
+<ul>
+<li><a href="https://www.comapps.ohio.gov/liqr/liqr_apps/PermitLookup/PermitHolder.aspx">Ohio : Liquor Control : Web Database Search</a>
+<ul>
+<li>Let’s look carefully at this data, we will illustrate the search tool and download option</li>
+</ul></li>
+<li><a href="https://www.abc.ca.gov/licensing/licensing-reports/">Licensing Reports | Alcoholic Beverage Control (ca.gov)</a></li>
+<li>Search google for other states</li>
+</ul></li>
+<li><a href="https://www.newyorkfed.org/microeconomics/hhdc">Household Debt and Credit Report - FEDERAL RESERVE BANK of NEW YORK (newyorkfed.org)</a> data</li>
+<li><a href="https://www.consumerfinance.gov/data-research/consumer-complaints/">Consumer Complaint Database | Consumer Financial Protection Bureau</a>
+<ul>
+<li>This is a very cool website that is totally underutilized in our field.</li>
+<li>Here is an example of what we can do with the [[Consumer Complaints]] database!!</li>
+</ul></li>
+<li>Government sponsored racism data
+<ul>
+<li><a href="https://www.urbandisplacement.org/maps/los-angeles-gentrification-and-displacement/">Gentrification &amp; Displacement</a>
+<ul>
+<li>This website has a github repository where the data are stored. It is called the <a href="https://www.urbandisplacement.org/about/open-source/">Urban Displacement Project’s GitHub</a></li>
+<li>They have made maps for several cities including this map of <a href="https://urban-displacement.github.io/displacement-typologies/maps/cleveland_udp.html">Gentrification in Cleveland</a></li>
+<li>Following their example requires really advanced programming skills, but you can still download and use the data in</li>
+</ul></li>
+<li>Redlining
+<ul>
+<li><a href="https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58">Mapping Inequality (richmond.edu)</a></li>
+<li><a href="https://www.openicpsr.org/openicpsr/project/141121/version/V2/view">Historic Redlining Scores for 2010 and 2020 US Census Tracts (openicpsr.org)</a></li>
+<li><a href="https://www.diversitydatakids.org/research-library/blog/mapping-redlining-grades-todays-neighborhoods">Mapping Redlining Grades to Today’s Neighborhoods | diversitydatakids.org</a></li>
+</ul></li>
+<li>Police data
+<ul>
+<li>Police residence: <a href="https://github.com/fivethirtyeight/data/tree/master/police-locals">https://github.com/fivethirtyeight/data/tree/master/police-locals</a></li>
+<li>Police killings: <a href="https://github.com/fivethirtyeight/data/tree/master/police-killings">https://github.com/fivethirtyeight/data/tree/master/police-killings</a> –&gt; see how I have used <a href="../resource/fatal_police_shooting.html">these data</a></li>
+<li>Police deaths: <a href="https://github.com/fivethirtyeight/data/tree/master/police-deaths">https://github.com/fivethirtyeight/data/tree/master/police-deaths</a></li>
+</ul></li>
+</ul></li>
+<li>Housing &amp; Transportation data
+<ul>
+<li><a href="https://htaindex.cnt.org/">Welcome to The H+T Affordability Index</a>
+<ul>
+<li>[[Housing and Transportation Affordability Index|Click here]] to see my explanation of this data and the maps I made of Franklin County</li>
+</ul></li>
+<li><a href="https://evictionlab.org/map/?m=modeled&amp;c=p&amp;b=efr&amp;s=all&amp;r=counties&amp;y=2018&amp;lang=en">Eviction Map &amp; Data (Version 2.0) | Eviction Lab</a>
+<ul>
+<li><em>Note:</em> it is not always easy to find the data, but you must persist. This website is no exception. See if you can locate the link to download the data before simply <a href="https://evictionlab.org/get-the-data">clicking here</a> To access the data, you need to provide your email, a small price to pay for this rich data.</li>
+<li>The data can be found in the Bootcamp/ex/Eviction folder, open it now.</li>
+</ul></li>
+<li><a href="https://www.consumerfinance.gov/data-research/hmda/">Home Mortgage Disclosure Act (HMDA) Data | Consumer Financial Protection Bureau (consumerfinance.gov)</a></li>
+<li><a href="https://ohtrafficdata.dps.ohio.gov/crashstatistics/home">Ohio Crash Statistics System</a></li>
+<li>The National <a href="https://edg.epa.gov/EPADataCommons/public/OA/WalkabilityIndex.zip">Walkability Index</a></li>
+</ul></li>
+<li>Food
+<ul>
+<li><a href="https://www.ers.usda.gov/data-products/food-access-research-atlas/">USDA ERS - Food Access Research Atlas</a></li>
+<li><a href="https://www.fns.usda.gov/snap/retailer/data">SNAP Retailer Data | Food and Nutrition Service (usda.gov)</a></li>
+</ul></li>
+<li>Health data
+<ul>
+<li><a href="https://cdphe.colorado.gov/center-for-health-and-environmental-data">Center for Health and Environmental Data | Department of Public Health &amp; Environment (colorado.gov)</a></li>
+<li><a href="https://data.cdc.gov/">Data | Centers for Disease Control and Prevention (cdc.gov)</a>
+<ul>
+<li>See my note on about <a href="https://bigdataforsocialjustice.github.io/databootcamp/analyzing-places-data.html">Analyzing Places Data</a></li>
+</ul></li>
+<li>New Mexico <a href="https://nmcdc.maps.arcgis.com/">Community Data Collaborative</a></li>
+</ul></li>
+<li>Housing and Urban Development
+<ul>
+<li><a href="https://hudgis-hud.opendata.arcgis.com/">HUD Open Data Site (arcgis.com)</a>
+<ul>
+<li>Racially or Ethnically Concentrated Areas of Poverty (R/ECAPs)</li>
+<li>Low-Income Housing Tax Credit (LIHTC): Property Level Data</li>
+<li>Location Affordability Index v1, v2 and v3</li>
+</ul></li>
+<li>Urbanization index: <a href="https://github.com/fivethirtyeight/data/tree/master/urbanization-index">https://github.com/fivethirtyeight/data/tree/master/urbanization-index</a></li>
+<li>National Center for Homelessness: <a href="https://nche.ed.gov/data/">https://nche.ed.gov/data/</a></li>
+</ul></li>
+<li><a href="https://findtreatment.gov/">SAMSHA Home - FindTreatment.gov</a>
+<ul>
+<li>I used these data to calculate accessibility to SAMSHA behavioral health centers for a 20 min travel time by public transit + walking in San Francisco[[Pasted image 20230806133127.png]]</li>
+</ul></li>
+<li>Environmental Health Hazards Index</li>
+<li>Child Maltreatment
+<ul>
+<li>Child Opportunity Index: <a href="https://www.diversitydatakids.org/">COI</a></li>
+<li><a href="https://www.ndacan.acf.hhs.gov/">National Data Archive on Child Abuse and Neglect</a> (you need to request access but it is not a difficult process)
+<ul>
+<li>NSCAW I and II
+<ul>
+<li>I used this data for this paper <a href="https://pdf.sciencedirectassets.com/271783/1-s2.0-S0145213417X00094/1-s2.0-S0145213417303381/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjELn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIGNuPpvyiiEwvmsqwP%2B%2FqSyK0qWpPvGUuvkVTSwbbaIJAiEAkblain6nHu0ej1QrbGsKBxtUwHPFwhLcFpP6lj7NIiAqswUIYhAFGgwwNTkwMDM1NDY4NjUiDMUNk6Fx2P8yAkpQOyqQBS8H2teuU6ONki%2Ba%2BtwnJVua8JDmW%2Bgo5fHAyaD0UAkXsXmbplY8oHYo%2Bbnv8xdlh%2BOxllfKvG14fUPE5Ui7sK9JESZTVWIhriyU4uIJaivNcTuB6dTDAr6kygkHRQ9XYUrihRliAuNEk5GqRxE9g96PWc%2FhRx1A6zj8SKrpKKOH9ug9H25IRvKugOkKSNS0kQhu4EDXR7VmOC2Qt0dKZ6m0zzOwcpTFvRfA8Yz0CXWUo4URLWi0hptkZJrkuKcGYu7DBh8z3KZas5goe9jjGkfJ7ZNb%2FdaaHVxmAi1diC%2FXuGlB1%2FBu9T5obre2k%2F3fM6lxKyo8lWe7J2O%2FIwpYLdYfFDLWVyobBuL49FY6nsXoX4G1zPobxzI87Xyf8rfpOnZbQFx1tiX0UGqaG9cEFY%2F7fQD4ng%2BaTxYEpGfT%2BEcnGeNyTZ2hEjI71xn36W1KZNoHPRdBwrozwEWB0Kgi%2FWc%2BIyzWG4lUS%2BKvB0u87l0NiT81Xg1Z7ZiOqH765qM6dElpFPB1JJmj11Jv3Xt4WMvq6kIXpvumi%2BvU8JID%2BCVVlX%2B9xB970PLJEZt1NKnBX977%2BrdEjrXlru%2B8bCMZJ6F4X7Er3qRZ9LCkQs9ATk56dJaxCTEplKY8jRMTETaeGDg%2B41P349S3BniucI4%2FljpsdYZkNKgGO7qCLCFemmVbuq%2BtOuAs%2BEydU8tC6z0j%2FUJcJ%2FXIXkUFHdL8ehNQeJnC4HwtgXzXii195uUWPIU9BqchetQaUPNFzI0AgTjyrR0yqG%2B8VSlRvlYiARQWd69sxGOxRad%2BcEk8NhpGoS9YFmgHHpZSFx8D0f53%2ByONcwhpAUHoHaSQkK2sB3ZUvPHanXqMtH3OMPKQ6JDTksnaMJ%2BVv6YGOrEBVvtZKIhIuwsHx3uykUVdZi7%2F1h4z0glgNebGk1MT8mDQtXAbQ6cmOlMz22yIkWgR1aQVj1iWdxj2D7B2GIG98d69A5pSKhczpgUBt5MB8f4p8YxURMUdhH0a4%2FMbEu7IJN%2FKzbCroKOYdwTFVDqO2NKfjD5EKWLvxE7V3ApP3fHeCOU5LiUi3Fu7MRWMkzI7b8uJ7l6zQQnKU6TvDKdQSNetk8MSc%2FESWAxfhgZ7p3kY&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20230806T173401Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Credential=ASIAQ3PHCVTYW2TLRD2R%2F20230806%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=4b18527da70434a488863f14cd88d90eb73f1f4dbcc8f3b97a5f3345c99f5985&amp;hash=0f9ec26af8ae9365b957de4465d42dd62ea7cd3318edada555caf27d273355b7&amp;host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&amp;pii=S0145213417303381&amp;tid=spdf-443d107e-25aa-44c2-a017-52246e64a1c0&amp;sid=ee9e8f1581244944c83ba1d-3f714dde44fegxrqa&amp;type=client&amp;tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;ua=10145807535e56555759&amp;rr=7f290738382d1074&amp;cc=us">Trajectories of post-traumatic stress and externalizing psychopathology among maltreated foster care youth_ A parallel process latent growth curve model (sciencedirectassets.com)</a> and also here <a href="https://www.sciencedirect.com/science/article/pii/S0190740917302967?casa_token=mhiiXl3g048AAAAA:fT6mRwOVD_bJzrLiI35y508fK-QNtR5luoV8iBMcFkeizpXoSvqsacq6YB2eEZBzF_P0KqgIrh2l">Longitudinal growth of post-traumatic stress and depressive symptoms following a child maltreatment allegation: An examination of violence exposure, family risk and placement type - ScienceDirect</a></li>
+</ul></li>
+<li>AFCARS (multiple years)</li>
+<li>Multisite Evaluation of Foster Youth Programs (Chaffee Independent Living Evaluation Project (2001-2010))
+<ul>
+<li>I used this data for this paper <a href="https://www.sciencedirect.com/science/article/pii/S0190740922002250?casa_token=5c_B1b57YfsAAAAA:jQyniy5vclpF1vPbVEK_RPJxffV25KnEmr3wU0c4XQv_4g9PoVVaLt4m1hyH8uHIMbAYU2Y_7TlF">A network analysis of post-traumatic stress among youth aging out of the foster care system - ScienceDirect</a> and also here <a href="https://link.springer.com/article/10.1007/s40653-023-00548-8">Early Child Adversity and Delinquent Behavior in Foster Care Youth: Do Future Expectations and Sexual Identity Moderate the Mediating Role of Posttraumatic Stress? | SpringerLink</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Census Bureau
+<ul>
+<li>National Survey of Child Health - Data Resource Center for Child and Adolescent Health</li>
+<li><a href="https://bigdataforsocialjustice.github.io/databootcamp/national-survey-of-child-health.html">Click here</a> to see my analysis of these data
+<ul>
+<li>The data are located here: <a href="https://www.census.gov/programs-surveys/nsch/data/datasets.html">NSCH</a></li>
+</ul></li>
+<li><a href="https://www.census.gov/programs-surveys/household-pulse-survey/data.html">Household Pulse Survey Data Tables</a>
+<ul>
+<li>I was working on a project about debt in Colorado and I wanted to use these files, but I did not want to download and unzip them by hand, so I wrote a script in R that automatically finds the data on the webpage, downloads it for each year, unzips them after they are downloaded, and makes a couple of graphs. You can take a look at the script here [[Household Pulse Survey Data Tables]]</li>
+</ul></li>
+<li>Georeferenced Census Data
+<ul>
+<li><a href="https://www.neighborhoodatlas.medicine.wisc.edu/">Neighborhood Atlas - Home (wisc.edu)</a></li>
+<li><a href="https://www.atsdr.cdc.gov/placeandhealth/svi/index.html">CDC/ATSDR Social Vulnerability Index (SVI)</a></li>
+</ul></li>
+</ul></li>
+<li>Migration data portal: <a href="https://migrationdataportal.org/data?i=stock_abs_&amp;t=2019">https://migrationdataportal.org/data?i=stock_abs_&amp;t=2019</a></li>
+<li>Global data on human trafficking: <a href="https://www.ctdatacollaborative.org/">https://www.ctdatacollaborative.org</a></li>
+<li>The <a href="https://innocenceproject.org/research-resources/">Innocence Project</a></li>
+<li>The national registry of exonerations: <a href="https://www.law.umich.edu/special/exoneration/Pages/detaillist.aspx">https://www.law.umich.edu/special/exoneration/Pages/detaillist.aspx</a></li>
+<li>Gun violence archive: <a href="https://www.gunviolencearchive.org/charts-and-maps">https://www.gunviolencearchive.org/charts-and-maps</a></li>
+</ul>
+</section>
+<section id="data-collections" class="level4">
+<h4 class="anchored" data-anchor-id="data-collections">Data Collections</h4>
+<ul>
+<li><a href="https://www.icpsr.umich.edu/web/pages/ICPSR/index.html">ICPSR (umich.edu)</a></li>
+<li>Government open data portals
+<ul>
+<li><a href="https://data.lacity.org/">LA: Information, Insights, and Analysis from the City of Angels | Los Angeles - Open Data Portal</a>
+<ul>
+<li>See [[A note on data mining]] with an example using this data</li>
+</ul></li>
+<li><a href="https://data.austintexas.gov/">Open Data | City of Austin Texas | Open Data | City of Austin Texas</a></li>
+<li><a href="https://opendata.dc.gov/">Open Data DC</a></li>
+</ul></li>
+<li>Environmental Data
+<ul>
+<li><a href="https://www.epa.gov/data">Open Data | US EPA</a></li>
+<li><a href="https://data-oepa.opendata.arcgis.com/">Ohio Environmental Protection Agency (arcgis.com)</a></li>
+<li><a href="https://calepa.ca.gov/environmental-mapping-tools-and-data/">Environmental Mapping Tools and Data | CalEPA</a>
+<ul>
+<li>My favorite: <a href="https://storymaps.arcgis.com/stories/f167b251809c43778a2f9f040f43d2f5">Pollution and Prejudice (arcgis.com)</a></li>
+</ul></li>
+</ul></li>
+<li>Data repositories
+<ul>
+<li><a href="https://www.sandiegodata.org/">San Diego Regional Data Library – Providing Data For Civic and Social Development (sandiegodata.org)</a>
+<ul>
+<li>Here is an example of how I used this data: <a href="https://bigdataforsocialjustice.github.io/databootcamp/san-diego-regional-data-library-data-example.html">San Diego Regional Data Library data example</a></li>
+</ul></li>
+<li><a href="https://www.urban.org/">Data and evidence to advance upward mobility and equity | Urban Institute</a>
+<ul>
+<li>Education data explorer: <a href="https://educationdata.urban.org/data-explorer/">https://educationdata.urban.org/data-explorer/</a></li>
+<li>Rental Assistance Priority Index</li>
+<li>Estimated Low Income Jobs Lost to COVID-19</li>
+<li>State-by-State Spending on Kids Dataset</li>
+<li>Medicaid Spending and Prescriptions for the Treatment of Opioid Use Disorder and Opioid Overdose</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="examples-of-datasets-and-their-uses" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-datasets-and-their-uses">Examples of Datasets and their Uses</h3>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Demographic</th>
+<th>Income</th>
+<th>Employment</th>
+<th>Housing</th>
+<th>Neighborhood</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Population trends</td>
+<td>HH, Family and per capita income</td>
+<td>Jobs Proximity Index</td>
+<td>Rent Burden</td>
+<td>Environmental Health Index</td>
+</tr>
+<tr class="even">
+<td>Age and Sex Characteristics</td>
+<td>RE/Caps</td>
+<td>Labor Market Engagement Index</td>
+<td>Available Housing Units</td>
+<td>Environmental Health Index</td>
+</tr>
+<tr class="odd">
+<td>Race/Ethnicity</td>
+<td>Special housing need profiles</td>
+<td></td>
+<td>Housing supply</td>
+<td>Social vulnerability</td>
+</tr>
+<tr class="even">
+<td>Disability Type</td>
+<td></td>
+<td>Transit trips</td>
+<td>Home ownership</td>
+<td>Area Deprivation</td>
+</tr>
+<tr class="odd">
+<td>Racial Integration</td>
+<td></td>
+<td>Low transportation cost index</td>
+<td>Housing condition</td>
+<td>Child lead poisoning</td>
+</tr>
+<tr class="even">
+<td>Dissimilarity Index</td>
+<td></td>
+<td>Major employers</td>
+<td>Affordable housing</td>
+<td>Food insecurity/deserts</td>
+</tr>
+<tr class="odd">
+<td>School Proficiency Index</td>
+<td></td>
+<td>Jobs</td>
+<td>Evictions</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Housing and Household Projections</td>
+<td></td>
+<td></td>
+<td>Foreclosures</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Datasets</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>U.S. Census Bureau, American Housing Survey</td>
+<td>Office of Housing &amp; Urban Dev.</td>
+<td>Federal Reserve</td>
+<td>Loan originations</td>
+<td>CDC</td>
+</tr>
+<tr class="odd">
+<td>Co.&nbsp;Department of Local Affairs</td>
+<td>Point in Time Homeless estimates</td>
+<td>Denver Office of Economic Dev.</td>
+<td></td>
+<td>EPA</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Child opportunity index</td>
+<td>Lodes data</td>
+<td></td>
+<td>Wisconsin Medical School</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>USDA</td>
+</tr>
+</tbody>
+</table>
+<section id="data-types" class="level4">
+<h4 class="anchored" data-anchor-id="data-types">Data Types</h4>
+<p>Before starting an analysis it is important to know the kind of data that you have. This requires understanding not only the distinction between qualitative and quantitative data, but also the difference between structured and unstructured data, time series data, spatial data, etc. We wills start by briefly reviewing the different types of data that are available and the multiple ways in which data can be measured. This is of particular importance because the analysis you choose is driven by the type of data you have. In other words, you cannot make your data fit the analysis you know, but rather you must learn how to analyze the data you have.</p>
+<ul>
+<li>Qualitative v Quantitative</li>
+<li>Structured v unstructured data</li>
+<li>Data types</li>
+<li>Data innovation
+<ul>
+<li>being creative with data: here we address the question: what really constitutes data?</li>
+</ul></li>
+</ul>
+<p>Over the years, I have learned that even advanced students do not really know how to properly identify data that <em>can be used</em> in an analysis.</p>
+<p>Below are some examples of how I have utilized different data sources in my analyses.</p>
+<ol type="1">
+<li><p><a href="https://homicide.latimes.com/">Los Angeles Homicide Report</a> See how I’ve scraped this website and used the data in my own work –&gt; <a href="https://bigdataforsocialjustice.github.io/databootcamp/final-web-scrap-medium.html">Final web scrap medium|Female Homicide Victims 2000-2023</a></p></li>
+<li><p><a href="https://www.aclu.org/legislative-attacks-on-lgbtq-rights">Mapping Attacks on LGBTQ Rights in U.S. State Legislatures | American Civil Liberties Union (aclu.org)</a></p></li>
+<li><p><a href="https://pcaky.org/information-data/child-maltreatment-and-data-statistics/">Child Maltreatment and Data Statistics – PCAKY</a> by County in Kentucky</p></li>
+<li><p><a href="https://data.chhs.ca.gov/">California Health and Human Services Open Data Portal</a> - [<a href="https://bigdataforsocialjustice.github.io/databootcamp/example-1.html">Example 1</a> uses the data set <a href="https://data.chhs.ca.gov/dataset/hospice-utilization-patient-demographics">Hospice Utilization - Patient Demographics - Datasets - California Health and Human Services Open Data Portal</a> to explore differences in referral types by race/ethnicity and county.</p></li>
+<li><p>Other examples</p></li>
+</ol>
+<ul>
+<li>Show me the data</li>
+<li>Finding, downloading and filtering data on the Internet</li>
+<li>Publicly available <a href="https://bigdataforsocialjustice.github.io/databootcamp/datasets.html">Datasets</a> for public health research</li>
+<li>Examples
+<ul>
+<li>How does the CDC’s social vulnerability index ([SVI]) in Franklin County compare to Los Angeles County?</li>
+<li>What is the relationship between <a href="https://bigdataforsocialjustice.github.io/databootcamp/in-school-suspensions-and-academic-achievement.html">In-school suspensions and academic achievement</a> for schools in the state of Ohio?</li>
+<li>How can I download the <a href="">area level deprivation index</a> to use in my own research? —</li>
+</ul></li>
+</ul>
+</section>
+<section id="your-turn" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn">❓ Your turn</h4>
+<ul class="task-list">
+<li><input type="checkbox">Identify a dataset that is not listed above</li>
+<li><input type="checkbox">Find the codebook associated with the dataset</li>
+<li><input type="checkbox">Download the data
+<ul>
+<li>What limitations are there for analyzing the data?</li>
+<li>What types of research questions have these data been used to address?</li>
+<li>How could you use the data in your own research?</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2024 by <a href="https://bigdataforsocialjustice.github.io/">Gia Barboza-Salerno</a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/bigdataforsocialjustice.com/phhbhp7534/">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

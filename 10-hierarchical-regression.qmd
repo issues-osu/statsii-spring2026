@@ -1,0 +1,34 @@
+---
+title: "Hierarchical Regression and Dummy Variables"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: sandstone
+---
+
+# Week 8: February 24, 2025
+
+## Introduction to the Topic
+
+
+---
+
+---
+
+
+---
+
+
+---
+
+---
+
+
+---
+
+---
+
+
+---
+
