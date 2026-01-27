@@ -11,7 +11,12 @@ library(learnr)  # For creating interactive tutorials
 library(dplyr)   # For data manipulation and analysis
 library(ggplot2) # For creating visualizations
 library(foreign) # For reading SPSS (.sav) files
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE
+)
+
 
 # Load the dataset
 hrs_data <- read.spss("HRS2020_CLEAN.sav", to.data.frame = TRUE)
@@ -48,7 +53,7 @@ The **Historic Redlining Scores (HRS)** dataset quantifies the long-term impacts
 
 To begin your journey, locate the **Historic Redlining Scores dataset**. Use the link below to access it:
 
-[Historic Redlining Scores Dataset (OpenICPSR)](https://www.openicpsr.org/openicpsr/project/141121/version/V2/view?path=/openicpsr/141121/fcr:versions/V2/HRS2010B.sav&type=file).
+[2020 Historic Redlining Scores Dataset (OpenICPSR)](https://www.openicpsr.org/openicpsr/project/141121/version/V2/view?path=/openicpsr/141121/fcr:versions/V2/HRS2020B.sav&type=file).
 
 ### Challenge:
 
@@ -66,14 +71,14 @@ question("What is the purpose of this dataset?",
 
 ### Instructions:
 
-Download the dataset and save it as `HRS2010B.sav` in the `data` folder of your project.
+Download the dataset and save it as `HRS2020B.sav` in the `data` folder of your project.
 
 ### Challenge:
 
 ```{r room2_question1}
 question("What is the size of the downloaded file in MB?",
-  answer("Approximately 10 MB.", correct = TRUE),
-  answer("Approximately 50 MB.", correct = FALSE),
+  answer("Approximately 871 KB.", correct = TRUE),
+  answer("Approximately 3240 KB.", correct = FALSE),
   allow_retry = TRUE
 )
 ```
@@ -99,10 +104,10 @@ Once you have downloaded the dataset, you will need to open it in R. The dataset
 1.  Ensure the dataset is saved as `HRS2020B.sav` in the `data` folder of your project.
 2.  Use the `read.spss()` function from the `foreign` package to load the dataset into R.
 
-#### Example Code (Hidden in Exercise):
+#### Example Code:
 
 ```{r open_dataset, echo=TRUE}
-hrs_data <- read.spss("HRS2020_CLEAN.sav", to.data.frame = TRUE)
+hrs_data <- read.spss("HRS2020B.sav", to.data.frame = TRUE)
 hrs_data$METRO_NAME <- trimws(hrs_data$METRO_NAME)  # Ensures consistent names
 ```
 
@@ -173,7 +178,8 @@ The following code demonstrates how to calculate average redlining scores for se
 ```{r room5_code, echo=TRUE}
 average_hrs <- hrs_data %>%
   dplyr::filter(
-    METRO_NAME %in% c("Los Angeles", "Chicago")
+    METRO_NAME == "Los Angeles-Long Beach, CA" |
+    METRO_NAME == "Chicago-Naperville-Elgin, IL-I"    
   ) %>%
   dplyr::group_by(METRO_NAME) %>%
   dplyr::summarize(Average_HRS = mean(HRS2020, na.rm = TRUE))
