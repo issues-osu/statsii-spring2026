@@ -8,7 +8,7 @@ format:
     number-sections: false
     theme: sandstone
 bibliography: references.bib
-csl: apa-with-abstract.csl # Optional, specify a citation style
+csl: apa-with-abstract.csl  
 ---
 
 ## Dataset Description

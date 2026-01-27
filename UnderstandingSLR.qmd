@@ -1,5 +1,5 @@
 ---
-title: "Understanding Simple Linear Regression"
+title: "Lab 2: Simple Linear Regression"
 subtitle: "An in-class prediction exercise"
 author: "Barboza-Salerno"
 format:

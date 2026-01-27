@@ -1,5 +1,5 @@
 ---
-title: "In Class Assignment"
+title: "Intro to SLR using R"
 author: "Dr. Gia Elise Barboza-Salerno"
 format:
   html:

@@ -8,7 +8,6 @@ format:
     theme: flatly
 ---
 
-
 ## Miscellaneous Course Policies
 
 Please download the OSU and CSW [course policies](misc_course_policies.docx) that are incorporated by reference within this course.
@@ -24,267 +23,317 @@ Please download the OSU and CSW [course policies](misc_course_policies.docx) tha
 
 This course will push you to think creatively about statistics in the social work context, exploring regression, measurement, and latent variable models with an emphasis on real-world application. Each week will involve hands-on learning, storytelling through data, and team-based projects. By the end, you'll not only master regression techniques but also apply them to innovative social work challenges.
 
----
+------------------------------------------------------------------------
 
 [Click here](reading.qmd) for the required reading and software needed for the course.
 
----
+------------------------------------------------------------------------
 
 # Weekly Schedule & Activities
 
-### Week 1: January 13, 2026  
+### Week 1: January 13, 2026
+
 **No Class**
 
-**Assessment**  
+**Assessment**
 
-**Activity**:  
-- Complete a pre-course assessment to evaluate your understanding of statistics and R.  
+**Activity**:\
+- Complete a pre-course assessment to evaluate your understanding of statistics and R.
 
-- **[Access the Assessment](stats_I_assessment.pdf)** 
----
+-   
 
-### Week 2: January 20, 2026  
- 
-**Introduction to the course**  
+    ## [**Access the Assessment**](stats_I_assessment.pdf)
 
-- **Topics**:  
-  Course structure, and role of statistics in social work.  
+### Week 2: January 20, 2026
 
-- **Innovative Approach**:  
- We are using innovative data science tools to help us learn the material.  
+**Introduction to the course**
 
-- **R Lab**:  
-  - Introduction to R for data analysis and graphing
-  - Introduction to the RStudio Interface
-  - Opening files in R
-  - Data wrangling
-  
-  - Skills: Use `foreign`, `dplyr` and `ggplot2` to open, clean and visualize data.  
+-   **Topics**:\
+    Course structure, and role of statistics in social work.
 
-- **Social Justice Policy Application**:  
-  Begin thinking about how to use data to reclaim your story.
+-   **Innovative Approach**:\
+    We are using innovative data science tools to help us learn the material.
 
-- **Overview**:
-  - [Review assessment answers](assessment_ans.qmd)
-  - [My motivation, Your motivation](motivation.pptx)
-  - [Introduction to R for Data Analysis](lab_1-sp2025.pptx)
-  - [Lab 1: Data Analysis Example](Monitoring-the-future-example.qmd)
-  - [In Class Lab 1: Student Safety and School Absence](Monitoring-the-future-example.qmd)
-  - [Intro to R - Rmarkdown file](intro to r.Rmd): Note: Right click and save as, then open in RStudio
-  - [Intro to JASP: Food Insecurity Example](data/FOODINS.jasp)
-  
----
+-   **R Lab**:
 
-### [Week 3: January 27, 2026](02-simple-regression.qmd)  
-**Simple Regression: Foundations and Application**  
+    -   Introduction to R for data analysis and graphing
 
-- **Topics**:  
-  Slope, intercept, residuals, and regression output.  
+    -   Introduction to the RStudio Interface
 
-::: {.callout-note}
+    -   Opening files in R
+
+    -   Data wrangling
+
+    -   Skills: Use `foreign`, `dplyr` and `ggplot2` to open, clean and visualize data.
+
+-   **Social Justice Policy Application**:\
+    Begin thinking about how to use data to reclaim your story.
+
+-   **Overview of Class Period**:
+
+    -   [Review assessment answers](assessment_ans.qmd)
+    -   [My motivation, Your motivation](motivation.pptx)
+    -   [Introduction to R for Data Analysis](lab_1-sp2025.pptx)
+    -   [Lab 1: Data Analysis Example](Monitoring-the-future-example.qmd)
+    -   [In Class Lab 1: Student Safety and School Absence](Monitoring-the-future-example.qmd)
+    -   [Intro to R - Rmarkdown file](intro%20to%20r.Rmd): Note: Right click and save as, then open in RStudio
+    -   [Intro to JASP: Food Insecurity Example](data/FOODINS.jasp)
+
+------------------------------------------------------------------------
+
+### [Week 3: January 27, 2026](02-simple-regression.qmd)
+
+**Simple Regression: Foundations and Application**
+
+-   **Topics**:\
+    Slope, intercept, residuals, and regression output.
+
+::: callout-note
 Note: Unfortunately, the R Cloud has stopped allowing apps to run and so I need to figure a workaround. Until then, you will have to download the R script to run it. This will require installing the `learnr` package.
 :::
-- **Innovative Approach**:  
-   Interactive Data [Escape Room](escape_room_redlining.Rmd): Step-by-step example to illustrate working with data from the web.  Learn more about how to use and install [`learnr` here](https://rstudio.github.io/learnr/articles/learnr.html). Download the Historic Redlining Scores [here](HRS2020B.sav)
 
-- **R Lab**:  
-  Fit simple regression models using `lm()` and create dynamic visuals with `ggplot2`.  
+-   **Innovative Approach**:\
+    Interactive Data [Escape Room](escape_room_redlining.Rmd): Step-by-step example to illustrate working with data from the web. Learn more about how to use and install [`learnr` here](https://rstudio.github.io/learnr/articles/learnr.html). Download the Historic Redlining Scores [here](HRS2020B.sav)
 
-- **Social Justice Policy Application**:  
-  [Read our paper](static/HRS and child maltreatment.pdf) on historic redlining and child welfare investigations in Los Angeles County.
+-   **R Lab**:\
+    Fit simple regression models using `lm()` and create dynamic visuals with `ggplot2`.
 
-**Introduction: Turning Data Into Stories**  
+-   **Social Work Policy Application**:\
+    Example uses data on historic redlining scores in the Escape Room.
 
-- **Topics**:  
-  Finding Data  
+**Introduction: Turning Data Into Stories**
 
-- **Innovative Approach**:  
-  Data Makeover Challenge: Reimagine data using effective storytelling   
+-   **Topics**:\
+    Finding Data
 
-- **R Lab**:  
-  Introduction to R, JASP and SPSS  
+-   **Innovative Approach**:\
+    Data Makeover Challenge: Reimagine data using effective storytelling
 
-- **Social Justice Policy Application**:  
-  Are there differences in [infant mortality](infant_mortality.qmd) by race?
+-   **R Lab**:\
+    Introduction to R and JASP
 
----
+-   **Social Work Policy Application**:\
+    Are there differences in [infant mortality](infant_mortality.qmd) by race?
 
-### [Week 4: February 3, 2026](03-multiple-regression.qmd)  
-**Multiple Regression: Hypothesis Testing and Decomposition of Effects**  
+-   **Overview of Class Period**:
 
-- **Topics**:  
-  F-tests, p-values, R², and decomposition of effects.  
+-   **Finish Week 2**
 
-- **Innovative Approach**:  
-  Hypothesis Auction: Students "bid" on testable hypotheses and justify their choices.  
+    -   Data Basics and Data Transformations Lecture (Intro to R)
 
-- **R Lab**:  
-  Fit and interpret multiple regression models with `lm()` and conduct diagnostic checks.  
+    -   [The Escape Room Exercise](escape_room_redlining.Rmd)
 
-- **Social Justice Policy Application**:  
-  Explain the results of a multiple regression analysis to a argue for policy change.
+    -   [Example: Monitoring the future Data Analysis Example](Monitoring-the-future-example.qmd)
 
-- **Assignment 1** will be distributed today and due at the end of Week 9 (March 3, 2026).
+    -   [Example: Student Safety and School Absence](Monitoring-the-future-example.qmd)
 
----
+-   **Week 3**
 
-### [Week 5: February 10, 2026](04-effect-sizes.qmd)  
-**Effect Sizes & Confidence Intervals: Moving Beyond P-Values**  
+    -   Discuss the final project
 
-- **Topics**:  
-  Practical significance, confidence intervals, effect sizes.  
+    -   [Lecture: Simple Linear Regression](slides/SLR_files/SLR-final.pptx)
 
-- **Innovative Approach**:  
-  Data Debate: Teams debate the practical and legal significance of statistical findings in a social work context.  
+    -   SLR in R: Example from the Behavioral Risk Factor Surveillance System (BRFSS)
 
-- **R Lab**:  
-  Calculate and interpret effect sizes with the `effectsize` package and create visual confidence intervals with `ggdist`.  
+        -   [Lab Instructions](slides/inclass.html)
+        -   [Lab Dataset](slides/brfss_aces_subset.sav)
+        -   [Lab Worksheet](static/BRFSS%20ACEs.docx)
+        -   [R code for lab](slides/SLR_files/brfss-script.R)
 
-- **Social Justice Policy Application**:  
-  Write an op-ed arguing for or against the practical significance of debated findings.
+    -   [JASP file: SLR Mechanics Explained](slides/SLR_files/brfss_aces_subset.jasp)
 
----
+    -   [Lab 2: Understanding SLR](UnderstandingSLR.qmd)
+    
+    -   [Handout](docs/SLR_files/Handout%20SSE.docx) on minimizing the sum of squared errors
 
-### [Week 6: February 17, 2026](05-assumptions.qmd)  
-**Assumptions and Violations of Assumptions**  
+------------------------------------------------------------------------
 
-- **Topics**:  
-  Diagnosing and addressing regression assumption violations.  
+### [Week 4: February 3, 2026](03-multiple-regression.qmd)
 
-- **Innovative Approach**:  
-  Assumption Diagnosis Clinic: Diagnose and "treat" assumption violations in datasets.  
+**Multiple Regression: Hypothesis Testing and Decomposition of Effects**
 
-- **R Lab**:  
-  Conduct diagnostic checks with the `car` and `performance` packages.  
+-   **Topics**:\
+    F-tests, p-values, R², and decomposition of effects.
 
-- **Social Justice Policy Application**:  
-  Create a "prescription card" summarizing diagnostics and fixes for your dataset.
+-   **Innovative Approach**:\
+    Hypothesis Auction: Students "bid" on testable hypotheses and justify their choices.
 
----
+-   **R Lab**:\
+    Fit and interpret multiple regression models with `lm()` and conduct diagnostic checks.
 
-### [Week 7: March 24, 2026](07-logistic-regression.qmd)  
-**Logistic Regression: Predicting Dichotomous Outcomes**  
+-   **Social Justice Policy Application**:\
+    Explain the results of a multiple regression analysis to a argue for policy change.
 
-- **Topics**:  
-  Odds ratios, ROC curves, interpreting results.  
+-   **Assignment 1** will be distributed today and due at the end of Week 9 (March 3, 2026).
 
-- **Innovative Approach**:  
-  Predictive Policy Game: Prediction scenarious to tackle social work interventions.  
+------------------------------------------------------------------------
 
-- **R Lab**:  
-  Fit logistic regression models with `glm()` and create ROC curves with `pROC`.  
+### [Week 5: February 10, 2026](04-effect-sizes.qmd)
 
-- **Social Justice Policy Application**:  
-  Create a policy recommendation informed by logistic regression findings.  
+**Effect Sizes & Confidence Intervals: Moving Beyond P-Values**
 
-- **Assignment 1 Due Today.**
----
+-   **Topics**:\
+    Practical significance, confidence intervals, effect sizes.
 
-### [Week 8/9: March 3, 2026](06-mediation.qmd)    
-**Mediation & Suppressor Variables**  
+-   **Innovative Approach**:\
+    Data Debate: Teams debate the practical and legal significance of statistical findings in a social work context.
 
-- **Topics**:  
-  Mediation analysis and identifying suppressor effects.  
+-   **R Lab**:\
+    Calculate and interpret effect sizes with the `effectsize` package and create visual confidence intervals with `ggdist`.
 
-- **Innovative Approach**:  
-  Data Detective Roleplay: Investigate intervention mechanisms using mediation analysis.  
+-   **Social Justice Policy Application**:\
+    Write an op-ed arguing for or against the practical significance of debated findings.
 
-- **R Lab**:  
-  Perform mediation analysis with the `mediation` package and visualize indirect effects.  
+------------------------------------------------------------------------
 
-- **Social Justice Policy Application**:  
-  Examine a "case file" documenting your mediation analysis, including visualizations and key takeaways.  
+### [Week 6: February 17, 2026](05-assumptions.qmd)
 
-- **Assignment 2** will be distributed today and due at the end of Week 15 (around April 21, 2026).
+**Assumptions and Violations of Assumptions**
 
----
+-   **Topics**:\
+    Diagnosing and addressing regression assumption violations.
+
+-   **Innovative Approach**:\
+    Assumption Diagnosis Clinic: Diagnose and "treat" assumption violations in datasets.
+
+-   **R Lab**:\
+    Conduct diagnostic checks with the `car` and `performance` packages.
+
+-   **Social Justice Policy Application**:\
+    Create a "prescription card" summarizing diagnostics and fixes for your dataset.
+
+------------------------------------------------------------------------
+
+### [Week 7: March 24, 2026](07-logistic-regression.qmd)
+
+**Logistic Regression: Predicting Dichotomous Outcomes**
+
+-   **Topics**:\
+    Odds ratios, ROC curves, interpreting results.
+
+-   **Innovative Approach**:\
+    Predictive Policy Game: Prediction scenarious to tackle social work interventions.
+
+-   **R Lab**:\
+    Fit logistic regression models with `glm()` and create ROC curves with `pROC`.
+
+-   **Social Justice Policy Application**:\
+    Create a policy recommendation informed by logistic regression findings.
+
+-   
+
+    ## **Assignment 1 Due Today.**
+
+### [Week 8/9: March 3, 2026](06-mediation.qmd)
+
+**Mediation & Suppressor Variables**
+
+-   **Topics**:\
+    Mediation analysis and identifying suppressor effects.
+
+-   **Innovative Approach**:\
+    Data Detective Roleplay: Investigate intervention mechanisms using mediation analysis.
+
+-   **R Lab**:\
+    Perform mediation analysis with the `mediation` package and visualize indirect effects.
+
+-   **Social Justice Policy Application**:\
+    Examine a "case file" documenting your mediation analysis, including visualizations and key takeaways.
+
+-   **Assignment 2** will be distributed today and due at the end of Week 15 (around April 21, 2026).
+
+------------------------------------------------------------------------
 
 ### Week 10: March 17, 2026
+
 **Spring Break**
 
+------------------------------------------------------------------------
 
----
+### [Week 11: March 24, 2026](07-moderation.qmd)
 
-### [Week 11: March 24, 2026](07-moderation.qmd)  
+**Moderation (Interactions) in Regression**
 
-**Moderation (Interactions) in Regression**  
+-   **Topics**:\
+    Interactions, visualization, and interpretation.
 
-- **Topics**:  
-  Interactions, visualization, and interpretation.  
+-   **Innovative Approach**:\
+    Build-a-Story Workshop: Create narratives around moderation analysis results using regions of significance.
 
-- **Innovative Approach**:  
-  Build-a-Story Workshop: Create narratives around moderation analysis results using regions of significance.  
+-   **R Lab**:\
+    Use interactions to plot and interpret effects.
 
-- **R Lab**:  
-  Use interactions to plot and interpret effects.  
+-   **Social Justice Policy Application**:\
+    Submit a 1-page illustrated story using moderation findings.
 
-- **Social Justice Policy Application**:  
-  Submit a 1-page illustrated story using moderation findings.  
+------------------------------------------------------------------------
 
----
+### [Week 12: March 31, 2026](11-efa.qmd)
 
-### [Week 12: March 31, 2026](11-efa.qmd)  
-**Exploratory Factor Analysis (EFA)**  
+**Exploratory Factor Analysis (EFA)**
 
-- **Topics**:  
-Factor extraction, analysis and visualization.  
+-   **Topics**:\
+    Factor extraction, analysis and visualization.
 
-- **Innovative Approach**:  
-Factor Scavenger Hunt: Interpret factor loadings to uncover insights using [EFAShiny](https://psychilin.shinyapps.io/EFAshiny/)
+-   **Innovative Approach**:\
+    Factor Scavenger Hunt: Interpret factor loadings to uncover insights using [EFAShiny](https://psychilin.shinyapps.io/EFAshiny/)
 
-- **R Lab**:  
-Conduct EFA with `psych` and visualize results with `corrplot`.  
+-   **R Lab**:\
+    Conduct EFA with `psych` and visualize results with `corrplot`.
 
-- **Social Justice Policy Application**:  
-Create an infographic summarizing EFA findings and what they mean.  
+-   **Social Justice Policy Application**:\
+    Create an infographic summarizing EFA findings and what they mean.
 
----
+------------------------------------------------------------------------
 
-### [Week 13: April 7, 2026](12-cfa.qmd)  
-**Confirmatory Factor Analysis (CFA)**  
+### [Week 13: April 7, 2026](12-cfa.qmd)
 
-- **Topics**:  
-Model fit and parameter estimates.  
+**Confirmatory Factor Analysis (CFA)**
 
-- **Innovative Approach**:  
-Model Critique Workshop: Propose refinements to a provided CFA model.  
+-   **Topics**:\
+    Model fit and parameter estimates.
 
-- **R Lab**:  
-Conduct CFA with `lavaan` and visualize results with `semPlot`.  
+-   **Innovative Approach**:\
+    Model Critique Workshop: Propose refinements to a provided CFA model.
 
-- **Social Justice Policy Application**:  
-Evaluate the CFA model and suggesting refinements.  
+-   **R Lab**:\
+    Conduct CFA with `lavaan` and visualize results with `semPlot`.
 
----
+-   **Social Justice Policy Application**:\
+    Evaluate the CFA model and suggesting refinements.
 
-### [Week 14: April 14, 2026](13-lca.qmd)  
-**Latent Class Analysis (LCA)**  
+------------------------------------------------------------------------
 
-- **Topics**:  
-Identifying latent subgroups.  
+### [Week 14: April 14, 2026](13-lca.qmd)
 
-- **Innovative Approach**:  
-Latent Storytelling: Use LCA findings to understand lived experiences of a group of your choice.  
+**Latent Class Analysis (LCA)**
 
-- **R Lab**:  
-Perform LCA with `poLCA` and visualize latent profiles.  
+-   **Topics**:\
+    Identifying latent subgroups.
 
-- **Social Justice Policy Application**:  
-Create a "persona deck" illustrating latent group characteristics.  
+-   **Innovative Approach**:\
+    Latent Storytelling: Use LCA findings to understand lived experiences of a group of your choice.
 
-- **Assignment 2 Due Today.**
----
+-   **R Lab**:\
+    Perform LCA with `poLCA` and visualize latent profiles.
 
-### Week 15: April 21, 2026  
-**Student Presentations**
-**Review**
----
+-   **Social Justice Policy Application**:\
+    Create a "persona deck" illustrating latent group characteristics.
 
-### Final Exam: April 28, 2026  
-**Create, Validate, and Apply Scales**  
+-   
 
-**Task**:  
-Take the final exam, or submit a publishable manuscript.  
+    ## **Assignment 2 Due Today.**
+
+### Week 15: April 21, 2026
+
+**Student Presentations** **Review** ---
+
+### Final Exam: April 28, 2026
+
+**Create, Validate, and Apply Scales**
+
+**Task**:\
+Take the final exam, or submit a publishable manuscript.
 
 ## Contact Information
 

@@ -6,13 +6,56 @@ format:
     toc: true
     number-sections: false
     theme: sandstone
+bibliography: SLR.bib
+csl: apa-with-abstract.csl  
 ---
 
 # Week 3: January 27, 2026
 
 ## Today's Reading
 
-- Diez et al., Chapter 8, pp. 304-340. Intro to linear regression. Be sure to check out the embedded videos.
+-   Diez et al., Chapter 8, pp. 304-340. Intro to linear regression. Be sure to check out the embedded videos.
+
+### Optional Reading
+
+#### Redlining, Reverse Redlining and its Modern Day Impact
+
+I have written or co-authored several papers demonstrating that historical redlining, a 1930s federal practice that assigned risk grades to neighborhoods based largely on racial composition, continues to serve as a critical analytical framework for understanding modern-day structural inequalities across multiple sectors. In the context of child welfare, research utilizes these historical maps to show that neighborhoods with poorer Home Owners’ Loan Corporation (HOLC) grades experience significantly higher rates of child protective services reports, illustrating how racist housing policies have created distressed environments where families lack the necessary resources for wellbeing (@littletonHistoricalRedliningNeighborhood2024b).
+
+Furthermore, redlining trajectories—which combine historic maps with contemporary lending data—have been applied to medical research to demonstrate that structural racism modifies the efficacy of health interventions (@wingTrajectoryLongitudinalLending2025). For instance, a skills-based intervention for stroke survivors was found to be least effective in areas categorized by declining investment, suggesting that neighborhood contexts shaped by persistent discrimination can impede individual health recovery efforts (@wingTrajectoryLongitudinalLending2025).
+
+Finally, spatial analyses of redlining are used to link housing discrimination to public health crises such as gun violence; neighborhoods facing "sustained disinvestment" (both historical redlining and modern predatory lending) are at a significantly higher risk for firearm-related homicides, reinforcing Ruth Gillmore's concept of "organized abandonment" where resources are systematically withdrawn from communities of color (@barboza-salernoRedliningReinvestmentRacial2025c).
+
+Collectively, previous research suggests that redlining is not merely a historical artifact but a foundational cause of present-day disparities, necessitating multisector policy reforms to address these long-term structural inequities
+
+### Required Reading
+
+#### Exploring the relationships between self-care and well-being outcomes among child welfare professionals
+
+The study by Clark et al. (2025) analyzes baseline survey data to examine the relationship between self-care and well-being among child welfare professionals (@clarkExploringRelationshipsSelfcare2025). Conducted in a Midwestern state, the study was embedded within a larger five-year federally funded research collaborative involving one public agency and five private providers. The researchers utilized an online survey platform (REDCap) to collect data in November 2020 from a final analytical sample of 305 direct service and supervisor professionals, representing a 23.3% response rate from the 1,308 individuals originally invited via email.
+
+To operationalize workforce well-being, the methodology employed the Professional Quality of Life (ProQol) measure. This instrument consists of three 10-item subscales used as the study’s primary dependent variables: Secondary Traumatic Stress (STS) (α = 0.88), Burnout (α = 0.71), and Compassion Satisfaction (α = 0.89). Each item was rated on a five-point frequency scale, with researchers verifying that the data did not severely deviate from normality through skewness and kurtosis assessments.
+
+The independent variables focused on two dimensions of self-care: frequency and variety. The number of self-care activities was measured using an eight-item index developed in consultation with a professional steering committee, covering physical, psychological, social, and spiritual domains (e.g., exercise, sleep, spending time with family). The frequency of self-care was captured through a single item asking participants how often they intentionally practiced these behaviors, with responses ranging from "Never" to "At least daily". Statistical analysis was conducted in three phases using Stata 17.0. First, univariate analyses established descriptive profiles of the sample. Second, simple linear regressions tested the direct associations between self-care and well-being. Finally, multivariate linear regressions were performed to control for various covariates, including years of experience, education level, geographic region, agency role, licensure status, race/ethnicity, and gender. To ensure the integrity of the results, the researchers implemented Little’s test, which confirmed that missing data (ranging from 0% to 12.13%) were Missing Completely at Random (MCAR). Consequently, they utilized the Full Information Maximum Likelihood (FIML) approach to reduce estimate and standard error biases. For the multivariate models, effect sizes were reported using Cohen’s $f^2$, categorized as small (≥ 0.02), medium (≥ 0.15), or large (≥ 0.35). Participants who identified as "outliers" were assessed but ultimately retained because their removal did not substantially alter the study’s findings
+
+### Measures and Instruments: Clark et al. (2025)
+
+| Variable Category | Measure Name | Instrument/Source | Scaling and Operationalization | Reliability (α) |
+|-----------|-----------|-----------|-----------------------------|-----------|
+| Dependent | Secondary Traumatic Stress (STS) | ProQOL Subscale | 10 items; 5-point scale (1 = Never to 5 = Very Often). Scores: ≤22 Low, 23–41 Average, ≥42 High. | 0.88 |
+| Dependent | Burnout | ProQOL Subscale | 10 items; 5-point scale (1 = Never to 5 = Very Often). Scores: ≤22 Low, 23–41 Average, ≥42 High. | 0.71 |
+| Dependent | Compassion Satisfaction | ProQOL Subscale | 10 items; 5-point scale (1 = Never to 5 = Very Often). Scores: ≤22 Low, 23–41 Average, ≥42 High. | 0.89 |
+| Independent | Number of Self-Care Activities | 8-Item Index | Sum of 8 activities (friends/family, hobby, time off, exercise, spiritual, sleep, healthy food, other). Range 0–8. | N/A |
+| Independent | Frequency of Self-Care | Single-item | 5-point scale: 1 (Never), 2 (1–2 days/week), 3 (3–4 days/week), 4 (5–6 days/week), 5 (Daily). | N/A |
+| Covariate | Years of Experience | Demographic Survey | Categories: \<1 yr, 1–3 yrs (ref), 4–6 yrs, 7–9 yrs, 10+ yrs. | N/A |
+| Covariate | Education Level | Demographic Survey | Categories: Less than 4-year degree, 4-year degree (ref), Master’s degree. | N/A |
+| Covariate | Geographic Region | Public Agency Data | Six geographic regions defined by the state agency (Region 4 as ref). | N/A |
+| Covariate | Agency Role | Demographic Survey | Binary: 0 = Direct Service Staff; 1 = Supervisor. | N/A |
+| Covariate | Licensure Status | Demographic Survey | Binary: 0 = No professional license; 1 = Licensed (LMSW, LPC, etc.). | N/A |
+| Covariate | Race/Ethnicity | Demographic Survey | Binary: 0 = White/European American (ref); 1 = People of Color (PoC). | N/A |
+| Covariate | Gender | Demographic Survey | Binary: 0 = Female (ref); 1 = Male. | N/A |
+
+You can download my references for this week [here](SLR.bib) and add it to your zotero manager.
 
 ## Simple Linear Regression – Introduction to the Topic
 
@@ -20,60 +63,64 @@ This week, we will delve into **Simple Linear Regression**, a foundational tool 
 
 In this unit we will learn to quantify the relationship between two numerical variables, as well as modeling numerical response variables using a numerical or categorical explanatory variable.
 
----
+------------------------------------------------------------------------
 
 ### What will students learn this week?
 
-- The fundamental components of a simple linear regression model (slope, intercept, and residuals).
-- How to interpret regression output, including unstandardized and standardized coefficients.
-- The practical steps to fit a simple linear regression model in R using `lm()`.
-- How to visualize regression results and residuals using `ggplot2`.
+-   The fundamental components of a simple linear regression model (slope, intercept, and residuals).
+-   How to interpret regression output, including unstandardized and standardized coefficients.
+-   The practical steps to fit a simple linear regression model in R using `lm()`.
+-   How to visualize regression results and residuals using `ggplot2`.
 
----
+------------------------------------------------------------------------
 
 ### Why is this topic important?
 
 Simple Linear Regression serves as the building block for more advanced statistical methods, such as multiple regression, moderation, and mediation analysis. It allows social work researchers to identify relationships between variables, predict outcomes, and inform data-driven decision-making. Mastering this concept is essential for understanding more complex techniques later in the course.
 
----
+------------------------------------------------------------------------
 
 ### How does it relate to previous or future content?
 
-- **Ties to previous content**: Builds upon last week's review of descriptive statistics and introduces the concept of relationships between variables.
-- **Prepares for future topics**: Provides a foundation for upcoming topics like multiple regression (Week 5), where we will expand from one predictor to multiple predictors, and interaction effects (Week 9), where regression will be used to explore moderating relationships.
+-   **Ties to previous content**: Builds upon last week's review of descriptive statistics and introduces the concept of relationships between variables.
+-   **Prepares for future topics**: Provides a foundation for upcoming topics like [multiple regression](03-multiple-regression.qmd), where we will expand from one predictor to multiple predictors, and [interaction effects](07-moderation.qmd), where regression will be used to explore moderating relationships.
 
----
+------------------------------------------------------------------------
 
 This session emphasizes the practical and theoretical importance of regression analysis, helping students connect statistical techniques to real-world social work applications.
-
 
 ## Class Files
 
 ### Lecture Notes
 
 -   [Today's Lecture Notes](slides/SLR_files/SLR-final.pptx)
--   [Handout](docs/SLR_files/Handout SSE.docx)
+-   [Handout](docs/SLR_files/Handout%20SSE.docx) on minimizing the sum of squared errors
 
 ### R Lecture
 
--   [Introduction to R](slides/R labs/lab_1-sp2025.pptx)
+-   [Introduction to R](slides/R%20labs/lab_1-sp2025.pptx)
 
 ## Today's Reading
 
--   **Primary Reading**: [Simple Linear Regression](static/Exploring the relationships between self-care and well-being outcomes among child welfare professionals.pdf)
--   **Optional Reading**: [Extrapolatoin](static/431525a.pdf) - an example of what **not** to do despite the potential publication in a highly regarded journal
+-   **Primary Reading**: [Simple Linear Regression](static/Exploring%20the%20relationships%20between%20self-care%20and%20well-being%20outcomes%20among%20child%20welfare%20professionals.pdf)
+-   **Optional Reading**: [Extrapolation](static/431525a.pdf) - an example of what **not** to do despite the potential publication in a highly regarded journal
 
 ## R Lab Files
 
--   [Lab Instructions](slides/inclass.html)
--   [Lab Dataset](slides/brfss_aces_subset.sav)
--   [Lab Worksheet](static/BRFSS ACEs.docx)
--   [R code for lab](slides/SLR_files/brfss-script.R)
--   [Jasp annotated output](slides/SLR_files/brfss_aces_subset.jasp)
+-   SLR in R: Example from the Behavioral Risk Factor Surveillance System (BRFSS)
+
+    -   [Lab Instructions](slides/inclass.html)
+    -   [Lab Dataset](slides/brfss_aces_subset.sav)
+    -   [Lab Worksheet](static/BRFSS%20ACEs.docx)
+    -   [Lab Dataset](slides/brfss_aces_subset.sav)
+    -   [R code for lab](slides/SLR_files/brfss-script.R)
+
+-   [JASP file: SLR Mechanics Explained](slides/SLR_files/brfss_aces_subset.jasp)
 -   [The Escape Room Exercise](escape_room_redlining.Rmd)
+-   [Lab 2: Understanding SLR](UnderstandingSLR.qmd)
 
 ## Additional Notes
 
-- Remain calm
+-   Remain calm
 
 ------------------------------------------------------------------------
