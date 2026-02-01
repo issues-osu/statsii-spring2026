@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Statistics for Social Work",
     "section": "",
-    "text": "Welcome to SW 8409: Statistics II\nThis book integrates statistical concepts with real-world applications, focusing on equitable data analysis and actionable insights. It is designed for social work researchers, activists, and students seeking to harness the power of data for transformative change.\n\n\n\n\n\n\nNote\n\n\n\nI created this list of some really cool datasets for you to review.\n\n\nThe book is built for my Stats II course in the College of Social Work at The Ohio State University.",
+    "text": "Welcome to SW 8409: Statistics II\nThis book integrates statistical concepts with real-world applications, focusing on equitable data analysis and actionable insights. It is designed for social work researchers, activists, and students seeking to harness the power of data for transformative change.\n\n\n\n\n\n\nNote\n\n\n\nPlease check out Wickham and Grolemund’s R for Data Science. It goes over many in-depth examples for how to import, tidy, transform, , visualze and model data.\n\n\nThe book is built for my Stats II course in the College of Social Work at The Ohio State University.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Statistics for Social Work</span>"
     ]
@@ -102,7 +102,7 @@
     "href": "02-simple-regression.html#class-files",
     "title": "Introduction to Simple Linear Regression",
     "section": "Class Files",
-    "text": "Class Files\n\nLecture Notes\n\nToday’s Lecture Notes\nHandout on minimizing the sum of squared errors\n\n\n\nR Lecture\n\nIntroduction to R",
+    "text": "Class Files\n\nLecture Notes\n\nToday’s Lecture Notes\nHandout on minimizing the sum of squared errors\n\n\n\nR Code\n\nSLR in R: Predicting Math SAT scores\nGapminder visualization for modeling\n\n\n\nR Lecture\n\nIntroduction to R",
     "crumbs": [
       "Regression Mechanics",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
@@ -135,7 +135,7 @@
     "href": "02-simple-regression.html#r-lab-files",
     "title": "Introduction to Simple Linear Regression",
     "section": "R Lab Files",
-    "text": "R Lab Files\n\nSLR in R: Example from the Behavioral Risk Factor Surveillance System (BRFSS)\n\nLab Instructions\nLab Dataset\nLab Worksheet\nLab Dataset\nR code for lab\n\nJASP file: SLR Mechanics Explained\nThe Escape Room Exercise\nLab 2: Understanding SLR",
+    "text": "R Lab Files\n\nSLR in R: Example from the Behavioral Risk Factor Surveillance System (BRFSS)\n\nLab Instructions\nLab Dataset\nLab Worksheet\nLab Dataset\nR code for lab",
     "crumbs": [
       "Regression Mechanics",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
@@ -1480,7 +1480,7 @@
     "text": "Introduction\nThis analysis examines the Area Deprivation Index (ADI) across U.S. counties. The goal is to assess disparities between areas of high- and low-deprivation (by county) and quantify the effect size using Cohen’s d.\nThe ADI provides a measure of socioeconomic disadvantage, with higher values indicating greater deprivation. We also map ADI values across counties and exclude non-contiguous U.S. states and territories.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
     ]
   },
   {
@@ -1488,10 +1488,10 @@
     "href": "cohensd.html#data-collection-preparation",
     "title": "Analysis of Area Deprivation Disparities Using Cohen’s D",
     "section": "Data Collection & Preparation",
-    "text": "Data Collection & Preparation\n\n# Install and load required packages\n# install.packages(\"sociome\")\n# install.packages(\"ggplot2\")\n# install.packages(\"dplyr\")\n# install.packages(\"sf\")\n# install.packages(\"tigris\")\n# install.packages(\"effectsize\")\n\nlibrary(sociome)     # For ADI data\nlibrary(ggplot2)     # For visualization\nlibrary(dplyr)       # For data manipulation\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(sf)          # For mapping spatial data\n\nLinking to GEOS 3.11.2, GDAL 3.7.2, PROJ 9.3.0; sf_use_s2() is TRUE\n\nlibrary(tigris)      # For county boundaries\n\nTo enable caching of data, set `options(tigris_use_cache = TRUE)`\nin your R script or .Rprofile.\n\nlibrary(effectsize)  # For Cohen's d calculation\n\nWarning: package 'effectsize' was built under R version 4.3.3\n\n\nWe first retrieve the ADI data for 2020 at the county level.\n\n# --- Step 1: Get ADI Data by County ---\nadi_data &lt;- get_adi(year = 2020, geography = \"county\")\n\n# Extract GEOID, county name, and ADI\nadi_data &lt;- adi_data %&gt;%\n  dplyr::select(GEOID, NAME, ADI)\n\n\nExcluding Non-Contiguous U.S. States and Territories\nTo focus on the contiguous U.S., we exclude: - Alaska (02) & Hawaii (15) - U.S. territories: Puerto Rico, Guam, American Samoa, Northern Mariana Islands, U.S. Virgin Islands.\n\n# List of FIPS codes for non-contiguous states/territories\nnon_contiguous_fips &lt;- c(\"02\", \"15\", \"60\", \"66\", \"69\", \"72\", \"78\")  \n\n# Load county boundaries and exclude non-contiguous areas\ncounties &lt;- counties(cb = TRUE, resolution = \"20m\", year = 2020) %&gt;%\n  filter(!STATEFP %in% non_contiguous_fips)\n\n\n  |                                                                            \n  |                                                                      |   0%\n  |                                                                            \n  |                                                                      |   1%\n  |                                                                            \n  |=                                                                     |   1%\n  |                                                                            \n  |=                                                                     |   2%\n  |                                                                            \n  |==                                                                    |   2%\n  |                                                                            \n  |==                                                                    |   3%\n  |                                                                            \n  |==                                                                    |   4%\n  |                                                                            \n  |===                                                                   |   4%\n  |                                                                            \n  |===                                                                   |   5%\n  |                                                                            \n  |====                                                                  |   5%\n  |                                                                            \n  |====                                                                  |   6%\n  |                                                                            \n  |=====                                                                 |   7%\n  |                                                                            \n  |=====                                                                 |   8%\n  |                                                                            \n  |======                                                                |   8%\n  |                                                                            \n  |======                                                                |   9%\n  |                                                                            \n  |=======                                                               |   9%\n  |                                                                            \n  |=======                                                               |  10%\n  |                                                                            \n  |========                                                              |  11%\n  |                                                                            \n  |========                                                              |  12%\n  |                                                                            \n  |=========                                                             |  12%\n  |                                                                            \n  |=========                                                             |  13%\n  |                                                                            \n  |==========                                                            |  14%\n  |                                                                            \n  |==========                                                            |  15%\n  |                                                                            \n  |===========                                                           |  15%\n  |                                                                            \n  |===========                                                           |  16%\n  |                                                                            \n  |============                                                          |  18%\n  |                                                                            \n  |=============                                                         |  18%\n  |                                                                            \n  |=============                                                         |  19%\n  |                                                                            \n  |==============                                                        |  20%\n  |                                                                            \n  |==============                                                        |  21%\n  |                                                                            \n  |===============                                                       |  21%\n  |                                                                            \n  |===============                                                       |  22%\n  |                                                                            \n  |================                                                      |  23%\n  |                                                                            \n  |================                                                      |  24%\n  |                                                                            \n  |=================                                                     |  24%\n  |                                                                            \n  |=================                                                     |  25%\n  |                                                                            \n  |==================                                                    |  26%\n  |                                                                            \n  |====================                                                  |  28%\n  |                                                                            \n  |=====================                                                 |  30%\n  |                                                                            \n  |======================                                                |  32%\n  |                                                                            \n  |=======================                                               |  33%\n  |                                                                            \n  |=========================                                             |  35%\n  |                                                                            \n  |==========================                                            |  37%\n  |                                                                            \n  |===========================                                           |  39%\n  |                                                                            \n  |============================                                          |  41%\n  |                                                                            \n  |===============================                                       |  44%\n  |                                                                            \n  |===================================                                   |  50%\n  |                                                                            \n  |=======================================                               |  55%\n  |                                                                            \n  |=========================================                             |  59%\n  |                                                                            \n  |============================================                          |  63%\n  |                                                                            \n  |=============================================                         |  65%\n  |                                                                            \n  |==============================================                        |  66%\n  |                                                                            \n  |================================================                      |  68%\n  |                                                                            \n  |=================================================                     |  70%\n  |                                                                            \n  |=====================================================                 |  76%\n  |                                                                            \n  |======================================================                |  77%\n  |                                                                            \n  |==========================================================            |  83%\n  |                                                                            \n  |===========================================================           |  85%\n  |                                                                            \n  |============================================================          |  86%\n  |                                                                            \n  |==============================================================        |  88%\n  |                                                                            \n  |===============================================================       |  90%\n  |                                                                            \n  |================================================================      |  92%\n  |                                                                            \n  |==================================================================    |  94%\n  |                                                                            \n  |====================================================================  |  97%\n  |                                                                            \n  |======================================================================| 100%\n\n# Merge ADI data with county geometries\nadi_map_data &lt;- counties %&gt;%\n  left_join(adi_data, by = c(\"GEOID\" = \"GEOID\"))",
+    "text": "Data Collection & Preparation\n\n# Install and load required packages\n# install.packages(\"sociome\")\n# install.packages(\"ggplot2\")\n# install.packages(\"dplyr\")\n# install.packages(\"sf\")\n# install.packages(\"tigris\")\n# install.packages(\"effectsize\")\n\nlibrary(sociome)     # For ADI data\nlibrary(ggplot2)     # For visualization\nlibrary(dplyr)       # For data manipulation\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(sf)          # For mapping spatial data\n\nLinking to GEOS 3.11.2, GDAL 3.7.2, PROJ 9.3.0; sf_use_s2() is TRUE\n\nlibrary(tigris)      # For county boundaries\n\nTo enable caching of data, set `options(tigris_use_cache = TRUE)`\nin your R script or .Rprofile.\n\nlibrary(effectsize)  # For Cohen's d calculation\n\nWarning: package 'effectsize' was built under R version 4.3.3\n\n\nWe first retrieve the ADI data for 2020 at the county level.\n\n# --- Step 1: Get ADI Data by County ---\nadi_data &lt;- get_adi(year = 2020, geography = \"county\")\n\n# Extract GEOID, county name, and ADI\nadi_data &lt;- adi_data %&gt;%\n  dplyr::select(GEOID, NAME, ADI)\n\n\nExcluding Non-Contiguous U.S. States and Territories\nTo focus on the contiguous U.S., we exclude: - Alaska (02) & Hawaii (15) - U.S. territories: Puerto Rico, Guam, American Samoa, Northern Mariana Islands, U.S. Virgin Islands.\n\n# List of FIPS codes for non-contiguous states/territories\nnon_contiguous_fips &lt;- c(\"02\", \"15\", \"60\", \"66\", \"69\", \"72\", \"78\")  \n\n# Load county boundaries and exclude non-contiguous areas\ncounties &lt;- counties(cb = TRUE, resolution = \"20m\", year = 2020) %&gt;%\n  filter(!STATEFP %in% non_contiguous_fips)\n\n\n  |                                                                            \n  |                                                                      |   0%\n  |                                                                            \n  |==                                                                    |   3%\n  |                                                                            \n  |====                                                                  |   5%\n  |                                                                            \n  |=====                                                                 |   7%\n  |                                                                            \n  |=====                                                                 |   8%\n  |                                                                            \n  |======                                                                |   9%\n  |                                                                            \n  |=======                                                               |   9%\n  |                                                                            \n  |========                                                              |  11%\n  |                                                                            \n  |=========                                                             |  13%\n  |                                                                            \n  |============                                                          |  18%\n  |                                                                            \n  |=============                                                         |  18%\n  |                                                                            \n  |===============                                                       |  21%\n  |                                                                            \n  |================                                                      |  22%\n  |                                                                            \n  |================                                                      |  23%\n  |                                                                            \n  |=================                                                     |  24%\n  |                                                                            \n  |=================                                                     |  25%\n  |                                                                            \n  |==================                                                    |  25%\n  |                                                                            \n  |===================                                                   |  27%\n  |                                                                            \n  |====================                                                  |  29%\n  |                                                                            \n  |=====================                                                 |  31%\n  |                                                                            \n  |=======================                                               |  32%\n  |                                                                            \n  |========================                                              |  34%\n  |                                                                            \n  |=========================                                             |  36%\n  |                                                                            \n  |===========================                                           |  38%\n  |                                                                            \n  |============================                                          |  40%\n  |                                                                            \n  |=============================                                         |  42%\n  |                                                                            \n  |==============================                                        |  43%\n  |                                                                            \n  |================================                                      |  45%\n  |                                                                            \n  |==================================                                    |  49%\n  |                                                                            \n  |====================================                                  |  51%\n  |                                                                            \n  |=====================================                                 |  53%\n  |                                                                            \n  |======================================                                |  54%\n  |                                                                            \n  |=======================================                               |  56%\n  |                                                                            \n  |==========================================                            |  60%\n  |                                                                            \n  |===========================================                           |  62%\n  |                                                                            \n  |=============================================                         |  64%\n  |                                                                            \n  |===============================================                       |  67%\n  |                                                                            \n  |================================================                      |  69%\n  |                                                                            \n  |==================================================                    |  71%\n  |                                                                            \n  |===================================================                   |  73%\n  |                                                                            \n  |====================================================                  |  75%\n  |                                                                            \n  |========================================================              |  80%\n  |                                                                            \n  |=============================================================         |  87%\n  |                                                                            \n  |===============================================================       |  89%\n  |                                                                            \n  |=================================================================     |  93%\n  |                                                                            \n  |==================================================================    |  95%\n  |                                                                            \n  |===================================================================== |  98%\n  |                                                                            \n  |======================================================================| 100%\n\n# Merge ADI data with county geometries\nadi_map_data &lt;- counties %&gt;%\n  left_join(adi_data, by = c(\"GEOID\" = \"GEOID\"))",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
     ]
   },
   {
@@ -1502,7 +1502,7 @@
     "text": "Mapping ADI by County\nThe following map visualizes area deprivation across the contiguous U.S.. Darker areas represent higher deprivation levels.\nYou should play around with ggplot to get used to its functionality.\n\nlibrary(ggplot2)\nggplot(adi_map_data) +\n  geom_sf(aes(fill = ADI), color = NA) +\n  scale_fill_viridis_c(option = \"plasma\", name = \"ADI\") +\n  labs(\n    title = \"Area Deprivation by County (Contiguous U.S., ADI Data 2020)\",\n    subtitle = \"Excludes Alaska, Hawaii, & U.S. Territories\",\n    caption = \"Source: Sociome package ADI 2020\"\n  ) +\n  theme_void()",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
     ]
   },
   {
@@ -1513,7 +1513,7 @@
     "text": "ADI Disparities & Effect Size (Cohen’s d)\nWe divide counties into low-deprivation (least disadvantaged, bottom 25%) and high-deprivation (most disadvantaged, top 25%) groups. The income differences between these groups are quantified using Cohen’s d, a measure of standardized effect size.\n\n# Define thresholds: Top 25% (most deprived) vs. Bottom 25% (least deprived)\nquantiles &lt;- quantile(adi_data$ADI, probs = c(0.25, 0.75), na.rm = TRUE)\nlow_deprivation &lt;- adi_data %&gt;% filter(ADI &lt;= quantiles[1])\nhigh_deprivation &lt;- adi_data %&gt;% filter(ADI &gt;= quantiles[2])\n\n# Compute Cohen's d\ncohens_d_value &lt;- cohens_d(high_deprivation$ADI, low_deprivation$ADI)\n\n# Print Cohen's d result\nprint(cohens_d_value)",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
     ]
   },
   {
@@ -1524,7 +1524,7 @@
     "text": "Interpretation of Cohen’s d Results\nCohen’s d tells us how large the difference in ADI between low- and high-deprivation counties:\n\n( d = 0.2 ) → Small effect\n( d = 0.5 ) → Medium effect\n( d = 0.8+ ) → Large effect\n\nIf the result is negative, it means that high-deprivation counties have significantly higher ADI scores than low-deprivation counties. The absolute value of d still represents the effect size.\n\nKey Findings\n🔹 A large Cohen’s d suggests significant deprivation disparities between counties with low and high deprivation.\n🔹 This reinforces the need for economic policies addressing regional deprivation.\n🔹 Mapping ADI allows for geographically targeted interventions to reduce socioeconomic inequalities.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
     ]
   },
   {
@@ -1535,7 +1535,7 @@
     "text": "Conclusion\nThe effect size tells us that the ADI in low-deprivation counties is 3.39 standard deviations higher than in high-deprivation counties. Since Cohen’s d is standardized, this means the deprivation difference is very large in relative terms. This analysis confirms that county-level deprivation is strongly associated with huge disparities in ADI, with high-deprivation counties having more economic inequaltity, low educational attainment, and less financial strength. Future research could associate some outcome across levels of ADI.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Analysis of Area Deprivation Disparities Using Cohen's D</span>"
     ]
   },
   {
@@ -1546,7 +1546,7 @@
     "text": "Introduction\nThis code analyzes admissions data, focusing on predicting SAT Math scores using SAT Verbal scores and high school class size. The analysis employs linear regression models, including simple linear regression, multiple linear regression, correlation assessments, and visualizations to explore the relationships between these variables.\nHere is the admissions data and you can download the script to run in R here\n\n\nLoad Necessary Libraries\n\nlibrary(foreign)    # For reading .sav files\nlibrary(ggplot2)    # For visualization\nlibrary(dplyr)      # For data manipulation\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gtsummary)  # For creating regression tables\nlibrary(officer)    # For exporting to Word\nlibrary(flextable)  # For table formatting\n\n\nAttaching package: 'flextable'\n\n\nThe following object is masked from 'package:gtsummary':\n\n    continuous_summary\n\n\n\n\nLoad and Inspect Data\n\nadmissions &lt;- read.spss(\"data/admissions.sav\", to.data.frame = TRUE)\nhead(admissions) # Display first few rows\n\n  row_number paiddeposit scholarship_yes_no Type_of_scholarship_offered Female\n1          7           1                  0                                  0\n2         12           0                  0                                  0\n3         19           1                  0                                  0\n4         23           1                  0                                  0\n5         25           0                  0                                  0\n6         28           0                  0                                  1\n             Race HS_rank HS_class_size HS_Quintile HS_CODE\n1 white               190           281        4/5   392835\n2 white               111           223        3/5   393655\n3 white               109           371        2/5    51830\n4 Asian                88           266        2/5   390527\n5 white                NA            NA              390870\n6 white                59           382        1/5   392655\n                  HS_NAME SAT_verbal ACT Honors_college_eligible\n1 FRANKLIN_REGIONAL_SR_HI        560  NA                     no \n2 CENTRAL_CATHOLIC_HIGH_S        600  NA                     no \n3 WESTCHESTER_HIGH_SCHOOL        550  NA                     no \n4 CEDAR_CLIFF_HIGH_SCHOOL        520  NA                     no \n5 HOLY_GHOST_PREPARATORY         650  NA                     no \n6 PENN_MANOR_HIGH_SCHOOL         460  20                     no \n  distancefromPitt state Number_of_family_alumni father_alumni grand_alumni\n1        14.228946    PA                       0             0            0\n2         7.162134    PA                       0             0            0\n3       232.363382    PA                       0             0            0\n4       163.462296    PA                       0             0            0\n5       261.534151    PA                       0             0            0\n6       192.493359    PA                       0             0            0\n  mother_alumni sibling_alumni step_parent_alumni other_family_alumni\n1             0              0                  0                   0\n2             0              0                  0                   0\n3             0              0                  0                   0\n4             0              0                  0                   0\n5             0              0                  0                   0\n6             0              0                  0                   0\n  SAT_composite ACT_as_SAT Max_Test_Score Training from_PA\n1          1180         NA           1180        0       1\n2          1150         NA           1150        0       1\n3          1190         NA           1190        0       1\n4          1140         NA           1140        0       1\n5          1200         NA           1200        0       1\n6           940        950            950        0       1\n               alumniYN SAT_math\n1 Family is not an alum      620\n2 Family is not an alum      550\n3 Family is not an alum      640\n4 Family is not an alum      620\n5 Family is not an alum      550\n6 Family is not an alum      480\n\n\n\n\nData Preprocessing\n\nadmissions_clean &lt;- admissions %&gt;% \n  dplyr::select(SAT_math, SAT_verbal, HS_class_size) %&gt;% \n  na.omit()\n\n\n\nSimple Linear Regression: SAT Math ~ SAT Verbal\n\nsimple_model &lt;- lm(SAT_math ~ SAT_verbal, data = admissions_clean)\nsummary(simple_model) # Regression summary\n\n\nCall:\nlm(formula = SAT_math ~ SAT_verbal, data = admissions_clean)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-168.125  -43.568   -1.667   41.119  188.462 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 329.24934   19.49133   16.89   &lt;2e-16 ***\nSAT_verbal    0.45572    0.03448   13.22   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 61.42 on 689 degrees of freedom\nMultiple R-squared:  0.2023,    Adjusted R-squared:  0.2011 \nF-statistic: 174.7 on 1 and 689 DF,  p-value: &lt; 2.2e-16\n\n\n\nInterpretation:\n\nSAT Verbal has a positive effect on SAT Math scores (Estimate = 0.45572, p &lt; 0.001).\nModel explains ~20.2% of variance in SAT Math scores (Adjusted R² = 0.2011), meaning SAT Verbal alone is a moderate predictor.\nResiduals appear reasonably distributed, suggesting no major violations of normality assumptions.\n\n\n\n\nCompute Fitted Values and Residuals\n\nadmissions_clean$fitted_simple &lt;- fitted(simple_model)\nadmissions_clean$residuals_simple &lt;- residuals(simple_model)\n\n\n\nCompute Standardized Values\n\nadmissions_clean$std_fitted_simple &lt;- scale(admissions_clean$fitted_simple)\nadmissions_clean$std_residuals_simple &lt;- scale(admissions_clean$residuals_simple)\n\n\n\nVisualization: Residuals vs. Fitted\n\nggplot(admissions_clean, aes(x = std_fitted_simple, y = std_residuals_simple)) +\n  geom_point(color = \"blue\") +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"red\") +\n  labs(title = \"Standardized Residuals vs. Standardized Fitted Values (Simple Model)\",\n       x = \"Standardized Fitted Values\", y = \"Standardized Residuals\")\n\n\n\n\n\n\n\n\n\nInterpretation:\n\nResiduals are fairly symmetrically distributed around zero, suggesting the linear model is appropriate.\nNo major patterns in residuals indicate homoscedasticity.\n\n\n\n\nHistogram of Residuals\n\nggplot(admissions_clean, aes(x = residuals_simple)) +\n  geom_histogram(bins = 30, fill = \"lightblue\", color = \"black\") +\n  labs(title = \"Histogram of Residuals (Simple Model)\", x = \"Residuals\", y = \"Frequency\")\n\n\n\n\n\n\n\n\n\nInterpretation:\n\nResiduals follow a normal-like distribution, supporting the assumption of normality.\n\n\n\n\nCorrelation Analysis\n\ncor(admissions_clean[, c(\"SAT_math\", \"SAT_verbal\", \"fitted_simple\", \"residuals_simple\")], use = \"complete.obs\")\n\n                  SAT_math    SAT_verbal fitted_simple residuals_simple\nSAT_math         1.0000000  4.497305e-01  4.497305e-01     8.931643e-01\nSAT_verbal       0.4497305  1.000000e+00  1.000000e+00    -5.014076e-16\nfitted_simple    0.4497305  1.000000e+00  1.000000e+00    -1.828283e-15\nresiduals_simple 0.8931643 -5.014076e-16 -1.828283e-15     1.000000e+00\n\n\n\nInterpretation:\n\nStrong positive correlation between SAT Math and SAT Verbal (r ≈ 0.45).\nFitted values highly correlate with SAT Verbal, confirming its predictive power.\n\n\n\n\nMultiple Linear Regression: SAT Math ~ SAT Verbal + HS Class Size\n\nmultiple_model &lt;- lm(SAT_math ~ SAT_verbal + HS_class_size, data = admissions_clean)\nsummary(multiple_model)\n\n\nCall:\nlm(formula = SAT_math ~ SAT_verbal + HS_class_size, data = admissions_clean)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-165.924  -44.589   -1.418   40.825  197.261 \n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   314.14654   19.47735  16.129  &lt; 2e-16 ***\nSAT_verbal      0.44864    0.03401  13.192  &lt; 2e-16 ***\nHS_class_size   0.06030    0.01295   4.656 3.88e-06 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 60.52 on 688 degrees of freedom\nMultiple R-squared:  0.2266,    Adjusted R-squared:  0.2244 \nF-statistic: 100.8 on 2 and 688 DF,  p-value: &lt; 2.2e-16\n\n\n\nInterpretation:\n\nHS Class Size has a small but significant positive effect (Estimate = 0.06030, p &lt; 0.001).\nExplained variance increases to 22.4%, showing a slight improvement over the simple model.\n\n\n\n\nVisualization of SAT Verbal Effect\n\nggplot(admissions_clean, aes(x = SAT_verbal, y = SAT_math)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", col = \"blue\") +\n  labs(title = \"Effect of SAT Verbal on SAT Math\", x = \"SAT Verbal\", y = \"SAT Math\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nGenerate Regression Summary Table\n\nmlr_table &lt;- multiple_model %&gt;% \n  tbl_regression(label = list(SAT_verbal = \"SAT Verbal Score\", HS_class_size = \"High School Class Size\")) %&gt;%\n  modify_caption(\"Table 1: Multiple Linear Regression Results\") %&gt;%\n  add_n()\n\n\n\nSave Table to Word\n\nmlr_flextable &lt;- as_flex_table(mlr_table)\ndoc &lt;- read_docx()\ndoc &lt;- body_add_flextable(doc, value = mlr_flextable)\nprint(doc, target = \"MLR_Results.docx\")\n\n\n\nConclusion\n\nKey Findings:\n\nSAT Verbal scores significantly predict SAT Math scores, explaining ~20% of the variance.\nAdding HS Class Size improves the model slightly, raising the explained variance to 22.4%.\nBoth models suggest a linear relationship, with residuals showing normality and no major violations.\n\n\n\nImplications:\n\nSchools aiming to improve SAT Math scores may focus on strengthening verbal skills.\nClass size appears to play a small but relevant role in performance.\nFurther research could explore additional predictors (e.g., socioeconomic factors, study habits).",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Admissions Data Analysis</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Admissions Data Analysis</span>"
     ]
   },
   {
@@ -1557,7 +1557,7 @@
     "text": "Introduction\nThis exercise explores child aggression and trauma using the NSCAW I dataset. Because this is designed for you to do, I supressed all of the output. The chunks of code give you a hints regarding the code that will answer each question. Create an R script and answer each question below. Cut and paste the chunk of code into your script, and fill it in so that it runs.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1568,7 +1568,7 @@
     "text": "Step 1: Load the Data\nMake sure all of these libraries are installed or you will not be able to run the code. Also, make sure that your data set is in a subdirectory called data in the same directory as the one in which your R script is saved.\n\n# Load necessary libraries\nlibrary(foreign)    # For reading SPSS files\nlibrary(dplyr)      # For data manipulation\nlibrary(ggplot2)    # For visualization\nlibrary(gtsummary)  # For creating regression tables\nlibrary(officer)    # For exporting tables to Word\nlibrary(flextable)  # For table formatting\n\n# Load NSCAW I dataset\nnscaw &lt;- read.spss(\"data/nscaw.sav\", to.data.frame = TRUE)\n\n# Inspect the first few rows\nhead(nscaw)\n\nQuestion: What type of variables are included in the dataset?\nTo get a sense of the variables in the dataset click here.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1579,7 +1579,7 @@
     "text": "Step 2: Select Variables & Handle Missing Data\n\n# Select relevant variables\nnscaw_clean &lt;- nscaw %&gt;% \n  dplyr::select(FILL THE VARIABLES IN HERE) \n\n# Remove missing values\nnscaw_clean &lt;- na.omit(nscaw_clean)\n\n# View summary statistics\nsummary(nscaw_clean)\n\nHint: Look at the summary statistics—do any variables have extreme values?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1590,7 +1590,7 @@
     "text": "Step 3: Compute Correlations\n\n# Compute correlation matrix\ncor(nscaw_clean, use = \"complete.obs\")\n\nQuestion: Which variables are most strongly correlated? Does the direction make sense?\n\nRun the regression of child aggression on trauma score and age",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1601,7 +1601,7 @@
     "text": "Step 4: Run a Multiple Regression Model\n\n# Run regression: Predict aggression using trauma score and age\nreg_model &lt;- lm(WRITE THE CODE TO RUN THE REGRESSION)\n\n# Display model summary\nsummary(reg_model)\n\nHint: Examine the coefficients and p-values. Is trauma a significant predictor of aggression?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1612,7 +1612,7 @@
     "text": "Step 5: Compute Fitted Values & Residuals\n\n# Compute fitted values and residuals\nnscaw_clean$fitted &lt;- fitted(PROVIDE THE CODE HERE)\nnscaw_clean$residuals &lt;- residuals(reg_model)\n\n# Compute standardized residuals\nnscaw_clean$std_residuals &lt;- PROVIDE THE CODE HERE(nscaw_clean$residuals)\n\nQuestion: Why do we standardize residuals? What does this help us understand?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1623,7 +1623,7 @@
     "text": "Step 6: Visualize Residuals\n\n# Plot histogram of residuals\nggplot(nscaw_clean, aes(x = residuals)) +\n  PROVIDE THE CODE HERE(bins = 30, fill = \"lightblue\", color = \"black\") +\n  labs(title = \"Histogram of Residuals\", x = \"Residuals\", y = \"Frequency\")\n\nHint: Look for skewness—are residuals normally distributed?\n\n\n# Plot standardized residuals vs. predicted values\nggplot(nscaw_clean, aes(x = fitted, y = std_residuals)) +\n  geom_point(PROVIDE THE CODE HERE) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"red\") +\n  labs(PROVIDE THE CODE HERE)\n\nHint: If you see patterns in the residuals, what assumption may be violated?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1634,7 +1634,7 @@
     "text": "Step 7: Create & Export Regression Table\n\n# Generate regression summary table\nreg_table &lt;- reg_model %&gt;% \n  tbl_regression(\n    label = list(tra1 = \"PTS Score\", bcagg1 = \"Aggressive Behavior\", ageY = \"Age\")\n  ) %&gt;% \n  modify_caption(\"Table 1: Regression Results for Aggression\")\n\n# Convert to flextable and export to Word\nreg_flextable &lt;- as_flex_table(reg_table)\ndoc &lt;- read_docx()\ndoc &lt;- body_add_flextable(doc, value = reg_flextable)\nprint(doc, target = \"Regression_Results.docx\")\n\nHint: Where does the p-value appear in the regression table? How does it inform significance?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1645,7 +1645,7 @@
     "text": "Deliverables\nDiscuss the following:\n\nCorrelation matrix output\nRegression model summary\nHistogram of residuals\nResiduals vs. fitted plot\nRegression results table (Word document)",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1656,7 +1656,7 @@
     "text": "Discussion Questions\n\nBased on your results, does trauma significantly predict aggression?\nHow does child age influence the relationship between trauma and aggression?\nAre the residuals normally distributed? If not, what would you do differently?\nIf the p-value for trauma is significant, what does that imply in real-world terms?\nHow could you improve this model?\n\nFinal Thought: This exercise helps you develop a deeper understanding of how trauma influences child behavior. Future analyses could incorporate more variables (e.g., social support, environment) for better predictions.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1667,7 +1667,7 @@
     "text": "Required Texts",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Required Course Materials</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Required Course Materials</span>"
     ]
   },
   {
@@ -1678,7 +1678,7 @@
     "text": "Required Software\n\nOpen Source Software\n\nJASP (Just Another Statistics Program)\n\nWe will use JASP to perform some analyses that SPSS does not. JASP is free, open source software available for both Mac, Linux and Windows platforms. To download this software please visit https://jasp-stats.org/download\n\n\n\nProcess for SPSS\n\nAn SPSS macro that runs dozens of mediation, moderation and conditional process models written by Andrew Hayes. Download the macro here https://www.processmacro.org/download.html and follow the installation instructions.\n\n\n\n\nProprietary\n\nSPSS",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Required Course Materials</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Required Course Materials</span>"
     ]
   },
   {
@@ -1689,7 +1689,7 @@
     "text": "Reading List",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>References</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>References</span>"
     ]
   },
   {
@@ -1700,7 +1700,7 @@
     "text": "Linear Regression\n\nThis paper Razak (2019) provides an example of Simple Linear Regression.\nThis paper Littleton et al. (2024) provides an example of using Historic Redlining Scores to understand higher rates of child welfare reporting.\nPenn State has a nice tutorial with examples on how to conduct linear regression in R\n\n\n\nLogistic Regression\n\nThis paper uses the glm function to model the presence of fictional fantastic characters Corlatti (2021). Super cool.\nWhile we do not cover it here, this paper explains how to use multilevel modeling with a categorical dependent variable: Merlo et al. (2006).\nA recent co-authored manuscript used logistic regression, you can read it: Meshelemiah et al. (2024)\n\n\n\nMediation and Moderation\n\nThis paper Livingston & Haardörfer (2019) should be read together with Glick et al. (2019).\nThis paper is a tutorial on how to use the SPSS PROCESS macro by Hayes Clement & Bradley-Garcia (2022)\nI have used moderation and mediation in several papers, here is one example: Barboza-Salerno & Meshelemiah (2024)\n\n\n\nFactor Analysis\n\nThis paper has some cool visualizations: Štiglic et al. (2023) and I downloaded it here\nI have used factor analytic techniques in many papers, here is one example: Elise Barboza & Siller (2021)\n\n\n\nPower Analysis\nThis paper is good to follow if you need to calculate power for causal models Qin (2023)\n\n\nDummy Variable Coding\nThis paper is a must read Johfre & Freese (2021)\n\n\nSocial Justice Applications",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>References</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>References</span>"
     ]
   },
   {
@@ -1711,7 +1711,7 @@
     "text": "While not directly stating it, in this paper Barboza-Salerno (2020) I found increases in post-partum parenting stress is linked to poor socio-emotional adjustment in children. My examination of the PRAMS data set suggests that psychosocial stressors during pregnancy, a vulnerable period for many, increases the risk of intimate partner violence.\n\n\n\n\nBarboza-Salerno, G. E. (2020). Cognitive readiness to parent, stability and change in postpartum parenting stress and social-emotional problems in early childhood: A second order growth curve model. Children and Youth Services Review, 113, 104958.\n\n\nBarboza-Salerno, G. E., & Meshelemiah, J. C. (2024). Associations between early child adversity and lifetime suicide attempts among gender diverse individuals: A moderated mediation. Child Abuse & Neglect, 149, 106705.\n\n\nClement, L. M., & Bradley-Garcia, M. (2022). A step-by-step tutorial for performing a moderated mediation analysis using PROCESS. The Quantitative Methods for Psychology, 18(3), 258–271.\n\n\nCorlatti, L. (2021). Regression Models, Fantastic Beasts, and Where to Find Them: A Simple Tutorial for Ecologists Using R. Bioinformatics and Biology Insights, 15, 11779322211051522. https://doi.org/10.1177/11779322211051522Regression modeling is a workhorse of statistical ecology that allows to find relationships between a response variable and a set of explanatory variables. Despite being one of the fundamental statistical ideas in ecological curricula, regression modeling can be complex and subtle. This paper is intended as an applied protocol to help students understand the data, select the most appropriate models, verify assumptions, and interpret the output. Basic ecological questions are tackled using data from a fictional series, ?Fantastic beasts and where to find them,? with the aim to show how statistical thinking can foster curiosity, creativity and imagination in ecology, from the formulation of hypotheses to the interpretation of results.\n\n\nElise Barboza, G., & Siller, L. A. (2021). Child maltreatment, school bonds, and adult violence: A serial mediation model. Journal of Interpersonal Violence, 36(11-12), NP5839–NP5873.\n\n\nGlick, A. F., Farkas, J. S., Mendelsohn, A. L., Fierman, A. H., Tomopoulos, S., Rosenberg, R. E., Dreyer, B. P., Melgar, J., Varriano, J., & Yin, H. S. (2019). Discharge Instruction Comprehension and Adherence Errors: Interrelationship Between Plan Complexity and Parent Health Literacy. The Journal of Pediatrics, 214, 193–200.e3. https://doi.org/10.1016/j.jpeds.2019.04.052Objective To examine associations between parent health literacy, discharge plan complexity, and parent comprehension of and adherence to inpatient discharge instructions. Study design This was a prospective cohort study of English/Spanish-speaking parents (n = 165) of children \\(\\leq\\)12 years discharged on \\(\\geq\\)1 daily medication from an urban, public hospital. Outcome variables were parent comprehension (survey) of and adherence (survey, in-person dosing assessment, chart review) to discharge instructions. Predictor variables included low parent health literacy (Newest Vital Sign score 0-3) and plan complexity. Generalized estimating equations were used to account for the assessment of multiple types of comprehension and adherence errors for each subject, adjusting for ethnicity, language, child age, length of stay, and chronic disease status. Similar analyses were performed to assess for mediation and moderation. Results Error rates were highest for comprehension of medication side effects (50%), adherence to medication dose (34%), and return precaution (78%) instructions. Comprehension errors were associated with adherence errors (aOR, 8.7; 95% CI, 5.9-12.9). Discharge plan complexity was associated with comprehension (aOR, 7.0; 95% CI, 5.4-9.1) and adherence (aOR, 5.5; 95% CI, 4.0-7.6) errors. Low health literacy was indirectly associated with adherence errors through comprehension errors. The association between plan complexity and comprehension errors was greater in parents with low (aOR, 8.3; 95% CI, 6.2-11.2) compared with adequate (aOR, 3.8; 95% CI, 2.2-6.5) health literacy (interaction term P = .004). Conclusions Parent health literacy and discharge plan complexity play key roles in comprehension and adherence errors. Future work will focus on the development of health literacy-informed interventions to promote discharge plan comprehension.\n\n\nJohfre, S. S., & Freese, J. (2021). Reconsidering the reference category. Sociological Methodology, 51(2), 253–269.\n\n\nLittleton, T., Freisthler, B., Boyd, R., Smith, A. M., & Barboza-Salerno, G. (2024). Historical redlining, neighborhood disadvantage, and reports of child maltreatment in a large urban county. Child Abuse & Neglect, 156, 107011.\n\n\nLivingston, M. D., & Haardörfer, R. (2019). A gentle introduction to mediation and moderation. The Journal of Pediatrics, 214, 246–248.\n\n\nMerlo, J., Chaix, B., Ohlsson, H., Beckman, A., Johnell, K., Hjerpe, P., Råstam, L., & Larsen, K. (2006). A brief conceptual tutorial of multilevel analysis in social epidemiology: Using measures of clustering in multilevel logistic regression to investigate contextual phenomena. Journal of Epidemiology & Community Health, 60(4), 290–297.\n\n\nMeshelemiah, J. C., Dellor, E., Karandikar, S., Munshi, A., Barboza-Salerno, G., & Steinke, H. R. (2024). Adverse childhood experiences, women who are sex trafficked, and social service utilization: Implications for social work. Social Work, swae024.\n\n\nQin, X. (2023). Sample size and power calculations for causal mediation analysis: A Tutorial and Shiny App. Behavior Research Methods, 56(3), 1738–1769. https://doi.org/10.3758/s13428-023-02118-0\n\n\nRazak, M. R. R. (2019). Child social welfare institution participation in the implementation of good governance.\n\n\nŠtiglic, G., Budler, L. C., & Watson, R. (2023). 15 running a confirmatory factor analysis in r: A step-by-step tutorial. In K. Č. Trifkovič, M. Lorber, N. M. Reljić, & G. Štiglic (Eds.), Education and research (pp. 207–222). De Gruyter. https://doi.org/doi:10.1515/9783110786088-015",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>References</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>References</span>"
     ]
   },
   {
@@ -1722,7 +1722,7 @@
     "text": "Dataset: Pregnancy Risk Assessment Monitoring System (PRAMS)\nThe data for this study were drawn from the Kentucky Pregnancy Risk Assessment Monitoring System (PRAMS), a state-based surveillance system that collects data on maternal behaviors and experiences before, during, and shortly after pregnancy. The dataset used in this study, KSPRAMS_SUB_WEIGHT_ANALYSIS.csv, included key variables such as maternal smoking during the first trimester (CIG_1TRI), history of abuse (Any_Abuse), Adverse Childhood Experiences (ACEs_Scale), perinatal depression (BPG_DEPRS8), and race/ethnicity (Race_Ethnicity). To ensure data integrity, cases with missing values were omitted, resulting in a final analytical sample of 5,172 participants.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Assignment 1 Write-up</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Assignment 1 Write-up</span>"
     ]
   },
   {
@@ -1733,7 +1733,7 @@
     "text": "Bonus\n\nAPHA Abstract\nThe APHA abstracts are due at the end of March. If the assumptions of this model were not violated we could submit an abstract based on these results. Here is my sample abstract (~250 words) based on the above write-up, and formatted for the conference.\n\nBackground\nMaternal smoking during pregnancy remains a significant public health concern, with implications for both maternal and child health. Psychosocial risk factors such as adverse childhood experiences (ACEs), a history of abuse, and perinatal depression may contribute to smoking behaviors. This study investigates the association between these factors and smoking during the first trimester of pregnancy while also examining racial/ethnic disparities.\n\n\nMethods\nData were drawn from the Kentucky Pregnancy Risk Assessment Monitoring System (PRAMS). The final analytical sample consisted of 5,172 participants. Linear regression models were used to examine the association between smoking during the first trimester and key psychosocial risk factors. Race/ethnicity was included to assess disparities. Diagnostic tests were performed to evaluate model assumptions, including multicollinearity, normality, and heteroscedasticity.\n\n\nResults\nA history of abuse was associated with a 2.29-unit increase in smoking (p &lt; 0.001). Each additional ACE was linked to a 0.44-unit increase (p &lt; 0.001), with a one standard deviation increase (1.41 points) predicting a 0.62-unit increase and an interquartile range increase (2 points) predicting a 0.89-unit increase. Perinatal depression was associated with a 1.04-unit increase in smoking (p &lt; 0.001). Mothers with a history of abuse smoked 1.85 more cigarettes per day than those without abuse. Hispanic mothers exhibited significantly lower smoking rates compared to Non-Hispanic Whites (p &lt; 0.001).\n\n\nConclusion\nPsychosocial factors play a crucial role in maternal smoking behaviors. Targeted interventions incorporating mental health and trauma-informed care are essential in reducing prenatal smoking rates, particularly among at-risk populations.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Assignment 1 Write-up</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Assignment 1 Write-up</span>"
     ]
   },
   {
@@ -1744,7 +1744,7 @@
     "text": "Instructions\nAssignment 2 uses several datasets. Please read the instructions carefully. There are five questions. The first question asks you to perform a multiple linear regression analysis. The second question asks you to conduct a logistic regression. The third question is a latent class analysis. The fourth question is a factor analysis. And finally, a mediation, moderation, and mediated moderation (the last of which is optional).\n\n\nData\n\nQuestion 1: social2.sav\nQuestion 2: depress.sav\nQuestion 3: lca.csv\nQuestion 4: wiscsem.sav\nQuestion 5: employee.sav\n\n\n\nVideo\nAfter our review session, I will post the video here.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Assignment 2</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Assignment 2</span>"
     ]
   },
   {
@@ -1755,7 +1755,7 @@
     "text": "Instructions\nLength: 2–3 double-spaced pages (not including tables, figures, or references)\nRequired Outputs: Two tables and one figure, the following analysis detailed below\nDue Date: Monday, April 28, 2025\nSubmission: Email to barboza-salerno.1@osu.edu\nSoftware: R, SPSS, JASP, or a combination.\nExample:\nSoftware Used: R (lavaan, mclust, psych), SPSS (PROCESS macro v4.2), JASP\nFor your final 2–3 page paper, you will conduct a statistical analysis using one of the datasets we’ve worked with in class (e.g., the Pregnancy Risk Assessment Monitoring System (PRAMS), Census/American Community Survey, the Well-Being of LGB Populations, etc.) OR you may use your own dataset with prior approval. This project gives you the opportunity to demonstrate mastery of one or more multivariate statistical techniques. You must select one of the following:\nYou must include two well-formatted tables and one figure illustrating your findings.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1766,7 +1766,7 @@
     "text": "Multiple linear regression\nLogistic regression\nModeration\nMediation\nConditional process modeling\nFactor analysis\nLatent class analysis (LCA)",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1777,7 +1777,7 @@
     "text": "1. Dataset and Variables (1 paragraph)\nDescribe the dataset and provide context—what is it, where did it come from, what does it measure, what years were the data collected? Be specific about your sample size, time frame, unit of analysis, and any relevant information. Then clearly define all variables used in your analysis, including your outcome, predictors, moderators, mediators, latent constructs, or class indicators. If you collapsed, transformed, or recoded any variables, explain why. Specify the research question, and the hypotheses you are testing.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1788,7 +1788,7 @@
     "text": "2. Statistical Model and Justification (2–3 paragraphs)\nSpecify which statistical technique you used and why it fits your research question and data. If you selected a model based on the nature of your outcome (e.g., binary, continuous, or latent), explain this. Provide a conceptual diagram of your model. Also address the assumptions of your model, how you evaluated them, and any diagnostic checks performed.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1799,7 +1799,7 @@
     "text": "3. Results (2–4 paragraphs)\nPresent your model results in a narrative that clearly communicates the key findings. Include:\n\nTable 1: Descriptive statistics (e.g., means, SDs, frequencies)\nTable 2: Model summary (e.g., regression table, factor loadings, odds ratios, or class-specific probabilities)\nFigure 1: A plot showing model results (e.g., interaction graph, path diagram, factor analysis diagram, etc.)",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1810,7 +1810,7 @@
     "text": "4. Interpretation and Assumptions (1 paragraph)\nExplain what your results mean in theoretical or applied terms. Reflect on effect sizes, statistical significance, and implications. Discuss how assumptions were met or violated, and whether transformations or adjustments were necessary.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -1821,7 +1821,7 @@
     "text": "Model-Specific Guidelines\n\nMultiple Linear Regression\nUse when your outcome is continuous. Justify your inclusion of predictors and check assumptions including linearity, homoscedasticity, and multicollinearity. Report R², adjusted R², and residual diagnostics.\n\n\nLogistic Regression\nUse when the outcome is binary. Report odds ratios, confidence intervals, and predicted probabilities. Describe how you assessed model fit (i.e., sensitivity, specificity).\n\n\nModeration\nUse when you suspect the effect of a predictor on the outcome varies by another variable. Report interaction terms and simple effects (non-interaction terms). Use plots to illustrate interaction effects like we created using Excel, or in R.\n\n\nMediation\nUse to test indirect effects. Clearly define paths. Use bootstrapped CIs for indirect effects and report estimates.\n\n\nConditional Process Modeling\nUse when a mediator and moderator interact. Identify moderated paths, report conditional indirect effects, and include a conceptual diagram.\n\n\nFactor Analysis\nUse when identifying latent dimensions. Report KMO, eigenvalues, scree plot, factor loadings, variance explained, rotation method, and reliability.\n\n\nLatent Class Analysis (LCA)\nUse to uncover latent subgroups. Report number of classes tested, AIC, BIC, entropy, conditional probabilities, and class prevalence.",
     "crumbs": [
       "Assignments",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Final Stats II Assignment</span>"
     ]
   },
   {
@@ -2206,7 +2206,7 @@
     "text": "R in the wild\nI highly recommend subscribing to the R Weekly newsletter. This e-mail is sent every Monday and is full of helpful tutorials about how to do stuff with R.\nSearching for help with R on Google can sometimes be tricky because the program name is a single letter. Google is generally smart enough to figure out what you mean when you search for “r scatterplot”, but if it does struggle, try searching for “rstats” instead (e.g. “rstats scatterplot”).\nIf you use Twitter, post R-related questions and content with #rstats. The community there is exceptionally generous and helpful. Also check out StackOverflow (a Q&A site with hundreds of thousands of answers to all sorts of programming questions) and RStudio Community (a forum specifically designed for people using RStudio and the tidyverse (i.e. you)).\nThese resources are also really really helpful:\nR for Data Science: A free online book for learning the basics of R and the tidyverse.\nR and RStudio cheat sheets: A large collection of simple cheat sheets for RStudio, ggplot2, and other R-related things.\nStat 545: Dr. Jenny Bryan at RStudio has an entire introductory course in R, visualization, and data analysis online.\nSTA 112FS: Data Science: Dr. Mine Çetinkaya-Rundel at the University of Edinburgh / Duke University has an entire introductory course in R, visualization, and data science online.\nCSE 631: Principles & Practice of Data Visualization: Yet another introductory course for R and ggplot2 by Dr. Alison Presmanes Hill at RStudio.\nA popular (and increasingly standard) way for sharing your analyses and visualizations is to post an annotated explanation of your process somewhere online. RStudio allows you to publish knitted HTML files directly to RPubs, but you can also post your output to a blog or other type of website.1 Reading these kinds of posts is one of the best ways to learn R, since they walk you through each step of the process and show the code and output.\nHere are some of the best examples I’ve come across:\nText analysis of Trump’s tweets confirms he writes only the (angrier) Android half (with a follow-up)\nBob Ross - Joy of Painting\nBechdel analysis using the tidyverse: There are also a bunch of other examples using data from FiveThirtyEight.\nSexism on the Silver Screen: Exploring film’s gender divide\nComparison of Quentin Tarantino Movies by Box Office and the Bechdel Test\nWho came to vote in Utah’s caucuses?\nHealth care indicators in Utah counties\nSong lyrics across the United States\nA decade (ish) of listening to Sigur Rós\nWhen is Tom peeping these days?\nMapping Fall Foliage\nGeneral (Attys) Distributions\nDisproving Approval\nFootnotes\n1 This list of resources was compiled by Andrew Weiss↩︎",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Learning R</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Learning R</span>"
     ]
   },
   {
@@ -2228,7 +2228,7 @@
     "text": "Statistical Software Packages\nThere are a wide variety of different open source and proprietary software tools that are simple to learn and make data management and analysis easier, more effective and fun. Here is my list of the most important tools to be familiar with. The items in bold are the software that we will use during the course of the week.\nThe software is listed by availability (i.e., open source, license, package add-on)",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Open Source Software</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Open Source Software</span>"
     ]
   },
   {
@@ -2239,7 +2239,7 @@
     "text": "Open Source Software\n\nR\nIMHO the best statistical analysis tool ever created (yes, better than python for statistics)\n\nIn this class we will use both R and RStudio (the GUI for R) which can be downloaded here: RStudio Desktop - Posit\n\n\n\njamovi\nThe next best option, it is built on an R framework, nobody will know you are NOT using R :)\njamovi is a new “3rd generation” statistical spreadsheet designed from the ground up to be easy to use. jamovi is a compelling alternative to costly statistical products such as SPSS and SAS. It is also a simpler alternative to R that is built on top of the R statistical language.\nFeatures:\n\nAnalyses: jamovi provides a complete suite of analyses for (not just) the social sciences; t-tests, ANOVAs, correlation and regression, non-parametric tests, contingency tables, reliability and factor analysis. The jamovi library contains many more libraries that will allow you to perform additional analyses from simple crosstabs to multilevel modeling and more.\nExcel integration: jamovi is a fully functional spreadsheet, immediately familiar to anyone. Enter, copy/paste data, filter rows, compute new values, perform transforms across many columns at once – jamovi provides a streamlined spreadsheet experience, optimized for statistical data.\nR syntax: Love R? Check out jamovi’s “syntax mode”, where the underlying R syntax for each analysis is made available. Just copy and paste this into R for a seamless transition. Alternatively, run R code directly inside jamovi with the Rj Editor.\n\nTwo versions of jamovi:\n\njamovi Cloud\njamovi desktop – downloads and installs jamovi onto your desktop\n\nIt is available for Windows, Mac and Linux\n\n\n\n\nJASP - A Fresh Way to Do Statistics\n“Just Another Statistics Program” JASP offers another great alternative to SPSS. Visit jasp-stats.org\n\nIn some ways JASP is better than jamovi, but it seems less stable and so it is my second best option\nThere are some benefits to using JASP including flexibility in making plots and nice visualizations for the statistical analyses you are conducting\nClick here to download JASP\nJASP in particular provides a great way to both learn statistics and R at the same time\nLet’s take a look at the data library in JASP now\n\n\n\nQGIS\n“Quantum Geographical Information Systems” allows you to do geospatial analysis like a (ArcGIS) pro – QGIS is great for creating, editing, visualizing, analyzing and publishing geospatial information\n\nThe Applications page gives you a sense of all the cool things you can do with QGIS\nTo download the software click here\n\n\n\nPSPP\nPSPP - GNU Project - Free Software Foundation is an open source equivalent to SPSS and it is freely downloadable. It is not very robust and so I would not recommend it.",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Open Source Software</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Open Source Software</span>"
     ]
   },
   {
@@ -2250,7 +2250,7 @@
     "text": "Proprietary Software\nOSU has obtained a license for the following software packages:\n\nSPSS: It’s like a necessary evil - everyone must know how to use SPSS. There are some things that are actually easier in SPSS\nSAS: ugh!\nEXCEL: Can be great to clean your data, particularly if you use the built-in functions\nArcGIS Map, Pro\njmp: This is a very cool data science program from the makers of SAS (the archaic and soon to be extinct software program)\n\nTo download these software packages: Log In to the Office of Business and Finance",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Open Source Software</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Open Source Software</span>"
     ]
   },
   {
@@ -2261,7 +2261,7 @@
     "text": "Introduction\nR is fairly forgiving about how you type code (unlike other languages like Python, where miscounting spaces can ruin your code!). All of these things will do exactly the same thing:\nBut you’ll notice that only a few of those iterations (the first three) are easily readable.\nTo help improve readability and make it easier to share code with others, there’s an unofficial style guide for writing R code. It’s fairly short and just has lots of examples of good and bad ways of writing code (naming variables, dealing with long lines, using proper indentation levels, etc.)—you should glance through it some time.",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>R Style Suggestions</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>R Style Suggestions</span>"
     ]
   },
   {
@@ -2272,7 +2272,7 @@
     "text": "mpg %&gt;% \n  filter(cty &gt; 10, class == \"compact\")\n\nmpg %&gt;% filter(cty &gt; 10, class == \"compact\")\n\nmpg %&gt;% \n  filter(cty &gt; 10, \n         class == \"compact\")\n\nmpg %&gt;% filter(cty&gt;10, class==\"compact\")\n\nfilter(mpg,cty&gt;10,class==\"compact\")\n\nmpg %&gt;% \nfilter(cty &gt; 10, \n                        class == \"compact\")\n\nfilter ( mpg,cty&gt;10,     class==\"compact\" )\n\n\n\n\n\n\n\n\nTipRStudio Auto-formatting\n\n\n\nRStudio has a built-in way of cleaning up your code. Select some code, press Ctrl + I (on Windows) or ⌘ + I (on macOS), and R will reformat the code for you. It’s not always perfect, but it’s really helpful for getting indentation right without having to manually hit space a billion times.",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>R Style Suggestions</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>R Style Suggestions</span>"
     ]
   },
   {
@@ -2283,7 +2283,7 @@
     "text": "Main Style Things to Pay Attention to for This Class\n\n\n\n\n\n\nNoteImportant Note\n\n\n\nI won’t ever grade you on any of this! If you submit something like filter(mpg,cty&gt;10,class==\"compact\"), I might recommend adding spaces, but it won’t affect your grade or points or anything.\n\n\n\nSpacing\nSee the “Spacing” section in the tidyverse style guide.\nPut spaces after commas (like in regular English):\n\nGoodBad\n\n\nfilter(mpg, cty &gt; 10)\n\n\nfilter(mpg , cty &gt; 10)\nfilter(mpg ,cty &gt; 10)\nfilter(mpg,cty &gt; 10)\n\n\n\nPut spaces around operators like +, -, &gt;, =, etc.:\n\nGoodBad\n\n\nfilter(mpg, cty &gt; 10)\n\n\nfilter(mpg, cty&gt;10)\nfilter(mpg, cty&gt; 10)\nfilter(mpg, cty &gt;10)\n\n\n\nDon’t put spaces around parentheses that are parts of functions:\n\nGoodBad\n\n\nfilter(mpg, cty &gt; 10)\n\n\nfilter (mpg, cty &gt; 10)\nfilter ( mpg, cty &gt; 10)\nfilter( mpg, cty &gt; 10 )\n\n\n\n\n\nLong Lines\nSee the “Long lines” section in the tidyverse style guide.\nIt’s generally good practice to not have really long lines of code. A good suggestion is to keep lines at a maximum of 80 characters.\n\n\n\n\n\n\nTipShow Margin in RStudio\n\n\n\nInstead of counting characters by hand (ew), in RStudio go to “Tools” &gt; “Global Options” &gt; “Code” &gt; “Display” and check the box for “Show margin”. You should now see a really thin line indicating 80 characters. Again, you can go beyond this—that’s fine. It’s just good practice to avoid going too far past it.\n\n\nYou can add line breaks inside longer lines of code. Line breaks should come after commas, and things like function arguments should align within the function:\n\nGoodBadBetter\n\n\nfilter(mpg, cty &gt; 10, class == \"compact\")\n\nfilter(mpg, cty &gt; 10, \n       class == \"compact\")\n\nfilter(mpg,\n       cty &gt; 10,\n       class == \"compact\")\n\n\nfilter(mpg, cty &gt; 10, class %in% c(\"compact\", \"pickup\", \"midsize\", \"subcompact\", \"suv\", \"2seater\", \"minivan\"))\n\n\nfilter(mpg, \n       cty &gt; 10, \n       class %in% c(\"compact\", \"pickup\", \"midsize\", \"subcompact\", \n                    \"suv\", \"2seater\", \"minivan\"))\n\n\n\n\n\nPipes (%&gt;%) and ggplot Layers (+)\nggplot layers: Put each layer of a ggplot plot on separate lines, with the + at the end of the line, indented with two spaces:\n\nGoodBadSuper BadSuper Bad (Won’t Work!)\n\n\nggplot(mpg, aes(x = cty, y = hwy, color = class)) +\n  geom_point() +\n  geom_smooth() +\n  theme_bw()\n\n\nggplot(mpg, aes(x = cty, y = hwy, color = class)) +\n  geom_point() + geom_smooth() +\n  theme_bw()\n\n\nggplot(mpg, aes(x = cty, y = hwy, color = class)) + geom_point() + geom_smooth() + theme_bw()\n\n\nggplot(mpg, aes(x = cty, y = hwy, color = class))\n  + geom_point()\n  + geom_smooth() \n  + theme_bw()\n\n\n\ndplyr pipelines: Put each step in a dplyr pipeline on separate lines, with the %&gt;% at the end of the line, indented with two spaces:\n\nGoodBadSuper BadSuper Bad (Won’t Work!)\n\n\nmpg %&gt;% \n  filter(cty &gt; 10) %&gt;% \n  group_by(class) %&gt;% \n  summarize(avg_hwy = mean(hwy))\n\n\nmpg %&gt;% filter(cty &gt; 10) %&gt;% group_by(class) %&gt;% \n  summarize(avg_hwy = mean(hwy))\n\n\nmpg %&gt;% filter(cty &gt; 10) %&gt;% group_by(class) %&gt;% summarize(avg_hwy = mean(hwy))\n\n\nmpg %&gt;% \n  filter(cty &gt; 10)\n  %&gt;% group_by(class)\n  %&gt;% summarize(avg_hwy = mean(hwy))\n\n\n\n\n\nComments\nSee the “Comments” section in the tidyverse style guide.\nComments should start with a comment symbol and a single space: #\n\nGoodBad\n\n\n# Good\n\n\n#Bad\n\n    #Bad\n\n\n\nIf the comment is really short (and won’t cause you to go over 80 characters in the line), you can include it in the same line as the code, separated by at least two spaces (it works with one space, but using a couple can enhance readability):\nmpg %&gt;% \n  filter(cty &gt; 10) %&gt;%  # Only rows where cty is 10 +\n  group_by(class) %&gt;%  # Divide into class groups\n  summarize(avg_hwy = mean(hwy))  # Find the average hwy in each group\nYou can add extra spaces to get inline comments to align, if you want:\nmpg %&gt;% \n  filter(cty &gt; 10) %&gt;%            # Only rows where cty is 10 +\n  group_by(class) %&gt;%             # Divide into class groups\n  summarize(avg_hwy = mean(hwy))  # Find the average hwy in each group\nIf the comment is really long, you can break it into multiple lines. RStudio can do this for you if you go to “Code” &gt; “Reflow comment”\n\nGoodBad\n\n\n# Happy families are all alike; every unhappy family is unhappy in its own way.\n# Everything was in confusion in the Oblonskys' house. The wife had discovered\n# that the husband was carrying on an intrigue with a French girl, who had been\n# a governess in their family, and she had announced to her husband that she\n# could not go on living in the same house with him. This position of affairs\n# had now lasted three days, and not only the husband and wife themselves, but\n# all the members of their family and household, were painfully conscious of it.\n\n\n# Happy families are all alike; every unhappy family is unhappy in its own way. Everything was in confusion in the Oblonskys' house. The wife had discovered that the husband was carrying on an intrigue with a French girl, who had been a governess in their family, and she had announced to her husband that she could not go on living in the same house with him. This position of affairs had now lasted three days, and not only the husband and wife themselves, but all the members of their family and household, were painfully conscious of it.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThough, if you’re dealing with comments that are that long, consider putting the text in R Markdown instead and having it be actual prose.",
     "crumbs": [
       "Additional Resources",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>R Style Suggestions</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>R Style Suggestions</span>"
     ]
   },
   {
@@ -2680,6 +2680,347 @@
     "crumbs": [
       "Solutions",
       "<span class='chapter-number'>40</span>  <span class='chapter-title'>Statistics II Initial Assessment</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html",
+    "href": "admissions_SLR_example.html",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "",
+    "text": "Introduction\nIn this analysis, we will explore the relationship between SAT Verbal scores (Independent Variable) and SAT Math scores (Dependent Variable). We aim to build a simple linear regression model to predict math scores based on verbal scores.",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#data-loading",
+    "href": "admissions_SLR_example.html#data-loading",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Data Loading",
+    "text": "Data Loading\nFirst, we load the necessary libraries and the dataset.\n\n\n\n\n\n\nWarning\n\n\n\nIt is good practice to reference dplyr functions with the package name explicity, as in dplyr::select\n\n\n\n# Load the dataset from the specified path\nadmissions &lt;- read_csv(\"C:/Users/barboza-salerno.1/Desktop/statsii-deploy/data/admissions.csv\")\n\nRows: 880 Columns: 30\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (6): Type_of_scholarship_offered, Race, HS_Quintile, HS_NAME, Honors_co...\ndbl (24): row_number, paiddeposit, scholarship_yes_no, Female, HS_rank, HS_c...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# Select only the variables we need for this specific analysis\ndf_analysis &lt;- admissions %&gt;% \n  dplyr::select(SAT_verbal, SAT_math) %&gt;% \n  drop_na() # Ensure we remove any missing values",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#correlation-analysis",
+    "href": "admissions_SLR_example.html#correlation-analysis",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Correlation Analysis",
+    "text": "Correlation Analysis\nWe calculate the Pearson Correlation Coefficient (\\(r\\)) to quantify the strength and direction of the linear relationship.\n\ncor_test &lt;- cor.test(df_analysis$SAT_verbal, df_analysis$SAT_math)\nr_value &lt;- cor_test$estimate\np_value &lt;- cor_test$p.value\n\nInterpretation: The correlation is \\(r = 0.464\\). *\nMagnitude: This indicates a moderate-to-strong relationship. *\nDirection: The positive sign indicates that as Verbal scores increase, Math scores also tend to increase.",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#simple-linear-regression-model",
+    "href": "admissions_SLR_example.html#simple-linear-regression-model",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Simple Linear Regression Model",
+    "text": "Simple Linear Regression Model\nWe fit the following linear model:\n\\[ \\text{SAT\\_math} = \\beta_0 + \\beta_1 \\cdot \\text{SAT\\_verbal} + \\epsilon \\]\n\n# Fit the model\nmodel &lt;- lm(SAT_math ~ SAT_verbal, data = df_analysis)",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#interpretation-of-coefficients",
+    "href": "admissions_SLR_example.html#interpretation-of-coefficients",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Interpretation of Coefficients",
+    "text": "Interpretation of Coefficients\nLet’s break down what these numbers mean:\n\nIntercept (\\(\\beta_0\\)):\n\nValue: 328.66\nInterpretation: This is the predicted SAT Math score for a student who scored 0 on SAT Verbal.\nNote: Since a score of 0 is effectively impossible/outside the normal range, this value serves mostly as a mathematical anchor for the regression line.\n\nSlope (\\(\\beta_1\\) - SAT Verbal):\n\nValue: 0.46\nInterpretation: For every 1 point increase in SAT Verbal score, we expect the SAT Math score to increase by approximately 0.46 points.\nThis quantifies the “exchange rate” between verbal and math skills in this dataset.",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#model-performance",
+    "href": "admissions_SLR_example.html#model-performance",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Model Performance",
+    "text": "Model Performance\n\nR-Squared (\\(R^2\\)): 0.215\n\nMeaning: Approximately 21.5% of the variance in SAT Math scores can be explained by SAT Verbal scores. The remaining variance is due to other factors not in our model.\n\nResidual Standard Error (Sigma/MSE): 60.82\n\nMeaning: On average, our model’s predictions are off by about 60.82 points. This represents the average “miss” distance of our regression line.",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#hypothesis-testing-explained",
+    "href": "admissions_SLR_example.html#hypothesis-testing-explained",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Hypothesis Testing Explained",
+    "text": "Hypothesis Testing Explained\nIn regression, we test the following hypotheses about the slope (\\(\\beta_1\\)):\n\nNull Hypothesis (\\(H_0\\)): \\(\\beta_1 = 0\\)\n\nTranslation: There is NO relationship between Verbal and Math scores. Changing the Verbal score does not help predict the Math score. The slope of the line is flat.\n\nAlternative Hypothesis (\\(H_1\\)): \\(\\beta_1 \\neq 0\\)\n\nTranslation: There IS a relationship. Knowing the Verbal score does give us information about the Math score. The slope is not flat.\n\n\n\nInterpreting the P-Value\n\nThe p-value for our SAT Verbal coefficient is &lt; 0.001.\nDecision: Since \\(p &lt; 0.05\\) (our standard threshold for significance), we reject the Null Hypothesis.\nConclusion: We have statistically significant evidence that SAT Verbal scores are a predictor of SAT Math scores. The relationship we see in the data is unlikely to be due to random chance.",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#descriptive-statistics",
+    "href": "admissions_SLR_example.html#descriptive-statistics",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\nBefore modeling, we examine the distribution of our variables. We interpret the Mean (average), Standard Deviation (spread), Minimum, and Maximum values.\n\n# Create a summary table\ndf_analysis %&gt;%\n  tbl_summary(\n    type = all_continuous() ~ \"continuous2\",\n    statistic = all_continuous() ~ c(\"{mean} ({sd})\", \"{min}, {max}\"),\n    label = list(\n      SAT_verbal ~ \"SAT Verbal Score\",\n      SAT_math   ~ \"SAT Math Score\"\n    )\n  ) %&gt;%\n  bold_labels() %&gt;%\n  as_flex_table()\n\nCharacteristicN = 864SAT Verbal ScoreMean (SD)565 (69)Min, Max370, 800SAT Math ScoreMean (SD)589 (69)Min, Max420, 800",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#regression-results",
+    "href": "admissions_SLR_example.html#regression-results",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Regression Results",
+    "text": "Regression Results\n\n# Create a formatted table of results\ntbl_regression(model, intercept = TRUE) %&gt;% \n  bold_p() %&gt;% \n  add_glance_source_note(\n    include = c(r.squared, sigma, statistic, p.value)\n  ) %&gt;% \n  as_flex_table()\n\n\n\nTable 29.1\n\n\n\nCharacteristicBeta95% CIp-value(Intercept)329295, 362&lt;0.001SAT_verbal0.460.40, 0.52&lt;0.001Abbreviation: CI = Confidence IntervalR² = 0.215; Sigma = 60.8; Statistic = 236; p-value = &lt;0.001",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "admissions_SLR_example.html#visualization",
+    "href": "admissions_SLR_example.html#visualization",
+    "title": "Simple Linear Regression: SAT Math predicted by SAT Verbal",
+    "section": "Visualization",
+    "text": "Visualization\nWe create a scatter plot to visualize this relationship, adding marginal density plots to show the distribution of each variable individually.\n\n# Base Scatter Plot\np &lt;- ggplot(df_analysis, aes(x = SAT_verbal, y = SAT_math)) +\n  geom_point(color = \"grey50\", alpha = 0.6) +\n  geom_smooth(method = \"lm\", se = TRUE, color = \"blue\", linetype = \"dashed\") +\n  labs(\n    x = \"SAT Verbal (Independent Variable)\",\n    y = \"SAT Math (Dependent Variable)\",\n    title = paste0(\"Relationship between SAT Scores (r = \", round(r_value, 3), \")\")\n  ) +\n  theme_classic()\n\n# Add Marginal Histograms/Density\nggMarginal(p, type = \"density\", fill = \"grey80\")\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\nScatter plot of SAT Math vs. SAT Verbal with marginal density distributions.",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Simple Linear Regression: SAT Math predicted by SAT Verbal</span>"
+    ]
+  },
+  {
+    "objectID": "gapminder-dv-example.html",
+    "href": "gapminder-dv-example.html",
+    "title": "Gapminder data visualization example",
+    "section": "",
+    "text": "Gapminder Example\nThis example is from R for Data Science page 399. It is a good example of the power of visualizations prior to modeling.\nlibrary(gapminder)\nlibrary(tidyverse) # Includes ggplot2, dplyr, tidyr, etc.\nlibrary(modelr)    # Required for add_predictions and add_residuals\nlibrary(broom)     # Helps clean up model outputs\nIn this case study, we’re going to focus on just three variables to answer the question “How does life expectancy (lifeExp) change over time (year) for each country (country)?” A good place to start is with a plot:\ngapminder %&gt;%\n  ggplot(aes(year, lifeExp, group = country)) +\n  geom_line(alpha = 1/3)",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Gapminder data visualization example</span>"
+    ]
+  },
+  {
+    "objectID": "gapminder-dv-example.html#gapminder-example",
+    "href": "gapminder-dv-example.html#gapminder-example",
+    "title": "Gapminder data visualization example",
+    "section": "",
+    "text": "Note\n\n\n\nWhy visualize first? Before running 100+ regressions for every country, we look at the “Spaghetti Plot” below. It shows us that while most countries are improving (going up), the paths are messy. Our goal is to separate the Linear Trend (simple progress) from the Residuals (complex events like wars, famines, or rapid industrialization).",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Gapminder data visualization example</span>"
+    ]
+  },
+  {
+    "objectID": "gapminder-dv-example.html#zooming-in-on-one-country",
+    "href": "gapminder-dv-example.html#zooming-in-on-one-country",
+    "title": "Gapminder data visualization example",
+    "section": "Zooming in on One Country",
+    "text": "Zooming in on One Country\nTo understand the model, let’s look at just one country first: New Zealand.\n\nnz &lt;- gapminder %&gt;% \n  filter(country == \"New Zealand\")\n\n# Plot the raw data\nnz %&gt;%\n  ggplot(aes(year, lifeExp)) +\n  geom_line() +\n  ggtitle(\"Full data (New Zealand)\")\n\n\n\n\n\n\n\n\n\nFitting the Model\nWe fit a linear model (lm) where Life Expectancy is predicted by Year. \\[ \\text{lifeExp} = \\beta_0 + \\beta_1 \\cdot \\text{year} + \\epsilon \\]\nVariables:\n\nDependent Variable (\\(Y\\)): Life Expectancy (lifeExp) - The outcome we are trying to predict.\nIndependent Variable (\\(X\\)): Year (year) - The predictor we are using to explain the change.\n\nInterpretation:\n\nIntercept (\\(\\beta_0\\)): The predicted life expectancy when year = 0. Since year 0 is thousands of years ago, this number is just a mathematical anchor for the line and doesn’t have a practical biological meaning in this context.\nSlope (\\(\\beta_1\\)): The yearly rate of improvement. It tells us how much life expectancy increases (or decreases) on average for every single year that passes.\n\nExample: If the slope is \\(0.5\\), people live about 6 months longer for every calendar year that passes.\n\n\n\nnz_mod &lt;- lm(lifeExp ~ year, data = nz)\nsummary(nz_mod)\n\n\nCall:\nlm(formula = lifeExp ~ year, data = nz)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.28745 -0.63700  0.06345  0.64442  0.91192 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -307.69963   26.63039  -11.55 4.17e-07 ***\nyear           0.19282    0.01345   14.33 5.41e-08 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8043 on 10 degrees of freedom\nMultiple R-squared:  0.9536,    Adjusted R-squared:  0.9489 \nF-statistic: 205.4 on 1 and 10 DF,  p-value: 5.407e-08\n\n\n\n\n1. Visualizing the Prediction (The Trend)\nadd_predictions adds the fitted line. This tells us: If New Zealand followed a perfectly straight path, where would it be?\n\n\n\n\n\n\nNote\n\n\n\nThe fitted line is also called a marginal effects plot, and we just saw an example of how to create this using JASP\n\n\n\nnz %&gt;%\n  add_predictions(nz_mod) %&gt;%\n  ggplot(aes(year, pred)) +\n  geom_line() +\n  ggtitle(\"Linear trend (The Model)\")\n\n\n\n\n\n\n\n\n\n\n2. Visualizing the Residuals (The “Noise”)\nThink of the linear model as a “prediction machine” that only knows how to draw straight lines. add_residuals calculates the mistake the machine made for every single year.\nThe Formula: \\(\\text{Residual} = \\text{Reality} - \\text{Prediction}\\)\n\nResidual = 0: The model was perfect. Since \\(\\text{Residual} = \\text{Reality} - \\text{Prediction}\\), a zero means \\(\\text{Reality} = \\text{Prediction}\\) (e.g., \\(75 - 75 = 0\\)).\nPositive Residual: Reality was better than predicted.\nNegative Residual: Reality was worse than predicted (e.g., war, famine, economic crash).\n\nBy looking only at the residuals, we remove the easy-to-predict trend (the slope) and focus purely on the unexpected events. Deviations from the flat zero line show us where “history happened.”\n\nnz %&gt;%\n  add_residuals(nz_mod) %&gt;%\n  ggplot(aes(year, resid)) +\n  geom_hline(yintercept = 0, color = \"white\", linewidth = 3) +\n  geom_line() +\n  ggtitle(\"Remaining pattern (Residuals)\")",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Gapminder data visualization example</span>"
+    ]
+  },
+  {
+    "objectID": "gapminder-dv-example.html#scaling-up-analysis-for-every-country",
+    "href": "gapminder-dv-example.html#scaling-up-analysis-for-every-country",
+    "title": "Gapminder data visualization example",
+    "section": "Scaling Up: Analysis for Every Country",
+    "text": "Scaling Up: Analysis for Every Country\nThe key question is “How can we easily fit that model to every country?”\nTo do this, we use the nest() function.\n\nUnderstanding nest() and the List-Column\nUsually, a dataframe is a rectangle of numbers and strings. But in the “tidyverse”, a dataframe can hold anything—even other dataframes.\n\nby_country &lt;- gapminder %&gt;%\n  group_by(country, continent) %&gt;%\n  nest()\n\nby_country\n\n# A tibble: 142 × 3\n# Groups:   country, continent [142]\n   country     continent data             \n   &lt;fct&gt;       &lt;fct&gt;     &lt;list&gt;           \n 1 Afghanistan Asia      &lt;tibble [12 × 4]&gt;\n 2 Albania     Europe    &lt;tibble [12 × 4]&gt;\n 3 Algeria     Africa    &lt;tibble [12 × 4]&gt;\n 4 Angola      Africa    &lt;tibble [12 × 4]&gt;\n 5 Argentina   Americas  &lt;tibble [12 × 4]&gt;\n 6 Australia   Oceania   &lt;tibble [12 × 4]&gt;\n 7 Austria     Europe    &lt;tibble [12 × 4]&gt;\n 8 Bahrain     Asia      &lt;tibble [12 × 4]&gt;\n 9 Bangladesh  Asia      &lt;tibble [12 × 4]&gt;\n10 Belgium     Europe    &lt;tibble [12 × 4]&gt;\n# ℹ 132 more rows\n\n\nWhat just happened? We squished the data. Instead of 1,704 rows (12 years x 142 countries), we now have exactly 142 rows—one per country. The data column is special: it is a List Column. Each cell in that column contains the entire 12-year dataset for that specific country.\n\n\nInspecting the List Column\nWe can inspect the data for the first country in our list (Afghanistan) by accessing the first element of the data column: by_country$data[[1]].\n\n# Look at the dataframe for the first country\nby_country$data[[1]]\n\n# A tibble: 12 × 4\n    year lifeExp      pop gdpPercap\n   &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1  1952    28.8  8425333      779.\n 2  1957    30.3  9240934      821.\n 3  1962    32.0 10267083      853.\n 4  1967    34.0 11537966      836.\n 5  1972    36.1 13079460      740.\n 6  1977    38.4 14880372      786.\n 7  1982    39.9 12881816      978.\n 8  1987    40.8 13867957      852.\n 9  1992    41.7 16317921      649.\n10  1997    41.8 22227415      635.\n11  2002    42.1 25268405      727.\n12  2007    43.8 31889923      975.\n\n\nThere are exactly 142 countries in our dataset. We can confirm this by checking the number of rows or the length of the list column.\n\nnrow(by_country)\n\n[1] 142\n\n\nWhy does index 143 fail? If we try to access by_country$data[[143]], we will get an error (Subscription out of bounds) because the list only has 142 “drawers” (slots). There is no 143rd country in this specific dataset.\n\n# This will error because there are only 142 countries\nby_country$data[[143]]\n\nError in by_country$data[[143]]: subscript out of bounds",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Gapminder data visualization example</span>"
+    ]
+  },
+  {
+    "objectID": "gapminder-dv-example.html#fitting-models-to-all-countries",
+    "href": "gapminder-dv-example.html#fitting-models-to-all-countries",
+    "title": "Gapminder data visualization example",
+    "section": "Fitting Models to All Countries",
+    "text": "Fitting Models to All Countries\nNow we create a function to fit our linear model, and we map it to every country’s data at once.\n\n# Define the modeling function\ncountry_model &lt;- function(df) {\n  lm(lifeExp ~ year, data = df)\n}\n\n# Apply (map) the model to every single row\nby_country &lt;- by_country %&gt;% \n  mutate(model = map(data, country_model))\n\nhead(by_country)\n\n# A tibble: 6 × 4\n# Groups:   country, continent [6]\n  country     continent data              model \n  &lt;fct&gt;       &lt;fct&gt;     &lt;list&gt;            &lt;list&gt;\n1 Afghanistan Asia      &lt;tibble [12 × 4]&gt; &lt;lm&gt;  \n2 Albania     Europe    &lt;tibble [12 × 4]&gt; &lt;lm&gt;  \n3 Algeria     Africa    &lt;tibble [12 × 4]&gt; &lt;lm&gt;  \n4 Angola      Africa    &lt;tibble [12 × 4]&gt; &lt;lm&gt;  \n5 Argentina   Americas  &lt;tibble [12 × 4]&gt; &lt;lm&gt;  \n6 Australia   Oceania   &lt;tibble [12 × 4]&gt; &lt;lm&gt;  \n\n\nNow we have a model column where each cell holds a full fitted linear regression model!",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Gapminder data visualization example</span>"
+    ]
+  },
+  {
+    "objectID": "gapminder-dv-example.html#visualizing-results-for-specific-countries",
+    "href": "gapminder-dv-example.html#visualizing-results-for-specific-countries",
+    "title": "Gapminder data visualization example",
+    "section": "Visualizing Results for Specific Countries",
+    "text": "Visualizing Results for Specific Countries\nWe can now calculate residuals for everyone and unnest the data so we can plot it.\n\n# Add residuals to each country's data\nby_country &lt;- by_country %&gt;% \n  mutate(\n    resids = map2(data, model, add_residuals)\n  )\n\n# Unnest expands the list-columns back into a regular big dataframe\nresids &lt;- unnest(by_country, resids)\n\nresids\n\n# A tibble: 1,704 × 9\n# Groups:   country, continent [142]\n   country     continent data     model   year lifeExp     pop gdpPercap   resid\n   &lt;fct&gt;       &lt;fct&gt;     &lt;list&gt;   &lt;list&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n 1 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1952    28.8  8.43e6      779. -1.11  \n 2 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1957    30.3  9.24e6      821. -0.952 \n 3 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1962    32.0  1.03e7      853. -0.664 \n 4 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1967    34.0  1.15e7      836. -0.0172\n 5 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1972    36.1  1.31e7      740.  0.674 \n 6 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1977    38.4  1.49e7      786.  1.65  \n 7 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1982    39.9  1.29e7      978.  1.69  \n 8 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1987    40.8  1.39e7      852.  1.28  \n 9 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1992    41.7  1.63e7      649.  0.754 \n10 Afghanistan Asia      &lt;tibble&gt; &lt;lm&gt;    1997    41.8  2.22e7      635. -0.534 \n# ℹ 1,694 more rows\n\n\n\nPlotting 4 Selected Countries\nLet’s see how the model fits differently for a few diverse examples: New Zealand, Canada, Afghanistan, and Rwanda.\n\n# Select specific countries\nresids %&gt;%\n  filter(country %in% c(\"New Zealand\", \"Canada\", \"Afghanistan\", \"Rwanda\")) %&gt;%\n  ggplot(aes(year, resid)) +\n  geom_line() +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"red\") +\n  facet_wrap(~country, scales = \"free_y\") +\n  theme_minimal() +\n  labs(title = \"Residuals by Country\", \n       subtitle = \"Flat lines = Model fits well. Wavy/Spiked lines = Model misses important patterns.\",\n       y = \"Residuals (Difference from Trend)\")\n\n\n\n\n\n\n\n\n\nCanada & NZ: The residuals are small and wavy, meaning the linear trend captures most of the reality.\nAfghanistan: Huge deviations, suggesting a linear line fails to capture the complexity of the war years.\nRwanda: A massive spike downward in the 1990s (the genocide) which a linear model cannot predict.",
+    "crumbs": [
+      "Case Studies & Data Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Gapminder data visualization example</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html",
+    "href": "UnderstandingSLR.html",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "",
+    "text": "What We Are Doing Today\nToday we are going to build a prediction equation together using real housing data that you collected in class.\nWe are not calculating regression coefficients yet.\nWe are learning what a regression equation is trying to say.\nBy the end of this exercise, you should understand:",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#what-we-are-doing-today",
+    "href": "UnderstandingSLR.html#what-we-are-doing-today",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "",
+    "text": "What a predicted value (\\(\\hat{y}\\)) represents\n\nHow an equation encodes a prediction rule\n\nWhy predictions can be wrong even when they seem reasonable",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-1-collecting-housing-data-in-class",
+    "href": "UnderstandingSLR.html#step-1-collecting-housing-data-in-class",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 1: Collecting Housing Data (In Class)",
+    "text": "Step 1: Collecting Housing Data (In Class)\nEach student is assigned one U.S. state from a group of states that share the same first letter.\nEach student will:\n\nGo to a Zillow\nChoose 10 homes from their assigned state (filter = Homes)\nRecord only the following into the shared Excel spreadsheet:\n\nSquare footage (sq ft)\nSale or listing price (USD)\nState abbreviation\n\n\nDo not record:\n\nNumber of bedrooms\nNeighborhood\nYear built\nAny other features",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-2-entering-data-into-the-shared-spreadsheet",
+    "href": "UnderstandingSLR.html#step-2-entering-data-into-the-shared-spreadsheet",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 2: Entering Data into the Shared Spreadsheet",
+    "text": "Step 2: Entering Data into the Shared Spreadsheet\nEach student enters their 10 homes into the shared class spreadsheet using the provided template.\nEach row represents one home.\n\n\n\nState\nSquare Footage (sq ft)\nPrice ($)\n\n\n\n\nXX\nXXXX\nXXXXX",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-3-what-are-we-predicting",
+    "href": "UnderstandingSLR.html#step-3-what-are-we-predicting",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 3: What Are We Predicting?",
+    "text": "Step 3: What Are We Predicting?\nOur goal for today is to predict:\n\nHouse price\n\nUsing only:\n\nSquare footage\n\nWe are pretending to be a national housing price prediction system.\nIt is obvious that larger homes tend to cost more. Our goal is not to state that fact, but to be precise about it.\nSpecifically, we want to do two things:\n\nQuantify the change in cost (\\(y\\)) associated with each increase in square footage (\\(x\\)).\nIn other words, as a home gets larger, how much more expensive do we expect it to be?\nUse that relationship to make predictions. Given a specific square footage, we want the model to produce a predicted home price, particularlyn for homes we have not directly observed.\n\nThis is what a simple linear regression model is designed to do.\nImportant constraint:\n\nWe are allowed to use only square footage.\nWe are not allowed to use state, neighborhood, or any other information.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-4-thinking-in-terms-of-change-not-ratios",
+    "href": "UnderstandingSLR.html#step-4-thinking-in-terms-of-change-not-ratios",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 4: Thinking in Terms of Change (Not Ratios)",
+    "text": "Step 4: Thinking in Terms of Change (Not Ratios)\nWe are not asking:\n\n“What is the price per square foot?”\n\nInstead, we are asking:\n\n“As square footage increases, how much does price tend to increase?”\n\nThis is a question about change, not division.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-5-the-class-prediction-rule-verbal",
+    "href": "UnderstandingSLR.html#step-5-the-class-prediction-rule-verbal",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 5: The Class Prediction Rule (Verbal)",
+    "text": "Step 5: The Class Prediction Rule (Verbal)\nAs a class, we agree on one rule that applies to all homes:\n\nFor every additional 100 square feet of house size, the predicted price increases by approximately $XXXX.\n\nThe value $XXXX is chosen by the class based on the pooled data.\nWhy do we talk about 100 square feet instead of 1 square foot?\nIn theory, we could describe the change in price for every single additional square foot.\nIn practice, that change would be very small and hard to interpret.\nHousing prices typically change by thousands of dollars, not by a few dollars at a time.\nIf we used 1 square foot as the unit, the number would be tiny and not very meaningful on its own.\nUsing 100 square feet:\n\nMatches the scale at which people think about home size (rooms, additions, renovations)\nProduces numbers that are easier to read, compare, and discuss\nMakes it clearer how changes in size translate into noticeable changes in price\n\nThis choice does not change the relationship between size and price.\nIt only changes how we describe that relationship in words.\n\n\n\n\n\n\nNoteWhy we do not use 1 square foot (and why this matters for storytelling)\n\n\n\nBy default, a regression model calculates change for a 1-unit increase in the predictor.\nIn this case, that means the model naturally estimates the change in price for 1 additional square foot.\nThere is nothing mathematically wrong with that.\nHowever, 1 square foot is not a meaningful unit for telling a housing story.\nFor example, suppose the model estimates that price increases by:\n\n$2.50 for every additional square foot\n\nThat is a correct statement—but it sounds trivial.\nNow tell the same story using a more meaningful unit:\n\n$2.50 per 1 sq ft\n$250 per 100 sq ft\n$2,500 per 1,000 sq ft\n\nAll three describe the same relationship.\nNone of them change the model.\nWhat changes is how clearly the story communicates real-world impact.\nThis is why we choose to talk about 100 square feet:\n\nIt reflects how people actually think about housing size\nIt turns a tiny coefficient into a meaningful narrative\nIt makes the effect of size on price easier to interpret and discuss\n\nChoosing the unit is not changing the model—it is choosing how to tell the story of the model.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-5.5-converting-the-default-1-unit-change-into-a-100-unit-change",
+    "href": "UnderstandingSLR.html#step-5.5-converting-the-default-1-unit-change-into-a-100-unit-change",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 5.5: Converting the Default 1-Unit Change into a 100-Unit Change",
+    "text": "Step 5.5: Converting the Default 1-Unit Change into a 100-Unit Change\nRegression models are built around a simple idea: a coefficient describes the change in predicted \\(y\\) for a 1-unit increase in \\(x\\).\nBy default, a regression model estimates the change in price for a 1-unit increase in square footage.\nThat means the model first produces a number that represents:\n\nHow much the predicted price changes for one additional square foot.\n\nWe label that number using a symbol, called the coefficient for square footage, written as \\(b_1\\).\nFor example, if the model estimates:\n\\[\nb_1 = 2.50\n\\]\nthen the story is:\n\nFor every additional 1 square foot, the predicted price increases by $2.50.\n\nBut we usually want a more meaningful story unit—like 100 square feet.\n\nConverting from 1 sq ft to 100 sq ft\nA 100 sq ft increase is just 100 one-sq-ft increases. So:\n\\[\n\\text{Change for 100 sq ft} = 100 \\times (\\text{change for 1 sq ft})\n\\]\nThat means:\n\\[\n\\text{Dollars per 100 sq ft} = 100 \\times b_1\n\\]\n\n\nExample (so you can see the difference in the story)\nSuppose a model gives:\n\\[\nb_1 = 2.50\n\\]\nThis means:\n\nPer 1 sq ft: predicted price increases by $2.50\nPer 100 sq ft: predicted price increases by:\n\n\\[\n100 \\times 2.50 = 250\n\\]\nSo the same relationship can be told as:\n\n“For every additional 1 sq ft, price increases by $2.50.”\n\n“For every additional 100 sq ft, price increases by $250.”\n\nThese statements are mathematically identical, but the second one is usually a clearer real-world story.\n\n\nHow we are using this in class today\nToday, the class will choose $XXXX per 100 sq ft directly because it is a meaningful unit for housing.\nIf we wanted to express the same rule as a “default” 1 sq ft change, we would divide by 100:\n\\[\n\\text{Dollars per 1 sq ft} = \\frac{\\text{XXXX}}{100}\n\\]\nSo:\n\n\\(XXXX\\) per 100 sq ft is the same as \\(\\frac{XXXX}{100}\\) per 1 sq ft.\n\nWe are not changing the model—we are choosing a unit that helps us interpret and communicate the relationship clearly.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-6-writing-the-prediction-equation",
+    "href": "UnderstandingSLR.html#step-6-writing-the-prediction-equation",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 6: Writing the Prediction Equation",
+    "text": "Step 6: Writing the Prediction Equation\nNow we translate the verbal rule into an equation.\nThis equation does not describe what actually happened.\nIt describes how our model makes predictions.\nThe prediction equation has the form:\n\\[\n\\hat{y} = b_0 + b_1(\\text{square footage})\n\\]\nWhere:\n\n\\(\\hat{y}\\) = predicted house price\n\n\\(b_1\\) = how much price changes as square footage increases\n\n\\(b_0\\) = a baseline price\n\nUsing the class-chosen value, the equation becomes:\n\\[\n\\hat{y} = b_0 + (\\text{XXXX per 100 sq ft}) \\times \\text{square footage}\n\\]\nThis is our equation.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-7-predicting-a-house-we-do-not-observe",
+    "href": "UnderstandingSLR.html#step-7-predicting-a-house-we-do-not-observe",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 7: Predicting a House We Do Not Observe",
+    "text": "Step 7: Predicting a House We Do Not Observe\nNow we use the equation to predict the price of a house that does not appear in the dataset.\n\nPrediction Question\nIf a house is exactly 1,725 square feet, what price does our equation predict?\nUsing the class equation:\n\\[\n\\hat{y}_{1725} = b_0 + (\\text{XXXX per 100 sq ft}) \\times 1725\n\\]\nThis predicted value is written as \\(\\hat{y}\\).\n\n\\(\\hat{y}\\) is the model’s guess for a house size we have never observed.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-8-comparing-predictions-to-reality",
+    "href": "UnderstandingSLR.html#step-8-comparing-predictions-to-reality",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 8: Comparing Predictions to Reality",
+    "text": "Step 8: Comparing Predictions to Reality\nFor selected homes in the dataset, we:\n\nPlug their square footage into the equation\n\nCompute a predicted price (\\(\\hat{y}\\))\n\nCompare it to the actual price (\\(y\\))\n\nPrediction error is defined as:\n\\[\n\\text{Error} = y - \\hat{y}\n\\]\nInterpretation:\n\nPositive error → the model under-valued the home\n\nNegative error → the model over-valued the home",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#step-9-diagnosing-the-model",
+    "href": "UnderstandingSLR.html#step-9-diagnosing-the-model",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Step 9: Diagnosing the Model",
+    "text": "Step 9: Diagnosing the Model\nAs a class, we ask:\n\nAre errors small or large?\nAre they random?\nDo errors appear to cluster by state?\n\nWe do not fix the model yet.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#reflection",
+    "href": "UnderstandingSLR.html#reflection",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "Reflection",
+    "text": "Reflection\nWhat is your response to the following questions:\n\nWhat does square footage predict well about housing prices?\nWhat important information does this equation ignore?\nWhy might one prediction equation work better in some states than others?",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "UnderstandingSLR.html#what-you-should-take-away-from-today",
+    "href": "UnderstandingSLR.html#what-you-should-take-away-from-today",
+    "title": "Lab 2: Simple Linear Regression",
+    "section": "What You Should Take Away from Today",
+    "text": "What You Should Take Away from Today\nBy the end of today, you should understand that:\n\nA regression equation is a prediction rule\n\\(\\hat{y}\\) is a model-based guess\nCoefficients describe change, not ratios\nError reveals missing structure, not failure\n\nNext week, we will ask:\n\nWhat information should be added to improve this equation?",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lab 2: Simple Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "02-simple-regression.html#worked-examples-from-class",
+    "href": "02-simple-regression.html#worked-examples-from-class",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Worked Examples from Class",
+    "text": "Worked Examples from Class\n\nJASP file: SLR Mechanics Explained\nJASP file: Predicting Math SAT scores\nLab 2: Understanding SLR",
+    "crumbs": [
+      "Regression Mechanics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
     ]
   }
 ]
