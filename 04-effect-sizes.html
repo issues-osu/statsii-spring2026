@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Effect Sizes – Statistics for Social Work</title>
+<title>MLR Part 2: Effect Sizes – Statistics for Social Work</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +103,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-simple-regression.html">Regression Mechanics</a></li><li class="breadcrumb-item"><a href="./04-effect-sizes.html"><span class="chapter-title">Effect Sizes</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-simple-regression.html">Regression Mechanics</a></li><li class="breadcrumb-item"><a href="./04-effect-sizes.html"><span class="chapter-title">MLR Part 2: Effect Sizes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -175,12 +175,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-multiple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Multiple Linear Regression</span></a>
+  <a href="./03-multiple-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MLR Part 2: Intro</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-effect-sizes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Effect Sizes</span></a>
+  <a href="./04-effect-sizes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">MLR Part 2: Effect Sizes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -268,7 +268,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/inclass.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">In Class Assignment</span></a>
+  <a href="./slides/inclass.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Intro to SLR using R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./UnderstandingSLR.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 2: Simple Linear Regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -309,6 +314,16 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./gapminder-dv-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Gapminder data visualization example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./admissions_SLR_example.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Simple Linear Regression: SAT Math predicted by SAT Verbal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./PRAMS_Correlation_Analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Partial and Semi-Partial Correlation Analysis with PRAMS 8 Data</span></a>
   </div>
 </li>
@@ -319,7 +334,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./admissions_R_ex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Admissions Data Analysis</span></a>
+  <a href="./admissions_R_ex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Multiple Linear Regression: SAT Math predicted by SAT Verbal &amp; Class Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -459,9 +474,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-simple-regression.html">Regression Mechanics</a></li><li class="breadcrumb-item"><a href="./04-effect-sizes.html"><span class="chapter-title">Effect Sizes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-simple-regression.html">Regression Mechanics</a></li><li class="breadcrumb-item"><a href="./04-effect-sizes.html"><span class="chapter-title">MLR Part 2: Effect Sizes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Effect Sizes</span></h1>
+<h1 class="title"><span class="chapter-title">MLR Part 2: Effect Sizes</span></h1>
 </div>
 
 
@@ -532,8 +547,12 @@ div.csl-indent {
 <section id="data-sets" class="level3">
 <h3 class="anchored" data-anchor-id="data-sets">Data Sets</h3>
 <ul>
+<li><a href="data/KSPRAMS_SUB_COR.csv">Pregnancy Risk Assessment Monitoring System Data file</a>:</li>
+<li><a href="slides/MLR/KSPRAMS_SUB_COR.jasp">Annotated JASP file</a> for PRAMS data</li>
+<li>Use this file to run <a href="slides/MLR/correlate.R">correlate.R</a></li>
 <li><a href="data/admissions.sav">Admissions Data</a> (in lecture notes)</li>
 <li><a href="data/gregpa.sav">GRE and graduate student GPA Data</a> (in lecture notes)</li>
+<li><a href="slides/MLR/LSD.jasp">Annotated JASP file</a> (in lecture notes)</li>
 </ul>
 </section>
 </section>
@@ -969,8 +988,8 @@ Barboza-Salerno, G. E. (2023). The neighborhood deprivation gradient and child p
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-multiple-regression.html" class="pagination-link" aria-label="Multiple Linear Regression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Multiple Linear Regression</span></span>
+      <a href="./03-multiple-regression.html" class="pagination-link" aria-label="MLR Part 2: Intro">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">MLR Part 2: Intro</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
