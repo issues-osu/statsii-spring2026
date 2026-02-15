@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Regression Assumptions – Statistics for Social Work</title>
+<title>Fast Dummies – Statistics for Social Work</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./07-logistic-regression.html" rel="next">
-<link href="./04-effect-sizes.html" rel="prev">
+<link href="./slides/medmod/mediationR.html" rel="next">
+<link href="./UnderstandingSLR.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-simple-regression.html">Regression Mechanics</a></li><li class="breadcrumb-item"><a href="./05-assumptions.html"><span class="chapter-title">Regression Assumptions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-final-project.html">Applications</a></li><li class="breadcrumb-item"><a href="./dummies.html"><span class="chapter-title">Fast Dummies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-assumptions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Regression Assumptions</span></a>
+  <a href="./05-assumptions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regression Assumptions</span></a>
   </div>
 </li>
       </ul>
@@ -258,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dummies.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fast Dummies</span></a>
+  <a href="./dummies.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Fast Dummies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -437,36 +472,37 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#week-6-february-17-2026" id="toc-week-6-february-17-2026" class="nav-link active" data-scroll-target="#week-6-february-17-2026">Week 6: February 17, 2026</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#load-and-explore-data" id="toc-load-and-explore-data" class="nav-link" data-scroll-target="#load-and-explore-data">Load and Explore Data</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
+  <li><a href="#creating-dummy-variables" id="toc-creating-dummy-variables" class="nav-link" data-scroll-target="#creating-dummy-variables">Creating Dummy Variables</a>
   <ul class="collapse">
-  <li><a href="#introduction-to-the-topic" id="toc-introduction-to-the-topic" class="nav-link" data-scroll-target="#introduction-to-the-topic">Introduction to the Topic</a></li>
-  <li><a href="#i-am-also-going-to-review-sampling-distributions-to-prepare-us-for-the-upcoming-topic-on-mediation." id="toc-i-am-also-going-to-review-sampling-distributions-to-prepare-us-for-the-upcoming-topic-on-mediation." class="nav-link" data-scroll-target="#i-am-also-going-to-review-sampling-distributions-to-prepare-us-for-the-upcoming-topic-on-mediation.">I am also going to review sampling distributions to prepare us for the upcoming topic on Mediation.</a></li>
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts:</a></li>
-  <li><a href="#relevance" id="toc-relevance" class="nav-link" data-scroll-target="#relevance">Relevance:</a></li>
-  <li><a href="#why-this-is-important" id="toc-why-this-is-important" class="nav-link" data-scroll-target="#why-this-is-important">Why This Is Important:</a></li>
-  <li><a href="#how-this-ties-into-the-overall-course" id="toc-how-this-ties-into-the-overall-course" class="nav-link" data-scroll-target="#how-this-ties-into-the-overall-course">How This Ties Into the Overall Course:</a></li>
-  <li><a href="#dummy-variables" id="toc-dummy-variables" class="nav-link" data-scroll-target="#dummy-variables">Dummy Variables</a>
+  <li><a href="#the-wrong-way-automatic-removal" id="toc-the-wrong-way-automatic-removal" class="nav-link" data-scroll-target="#the-wrong-way-automatic-removal">The Wrong Way (Automatic Removal)</a></li>
+  <li><a href="#the-better-way-keep-all-variables" id="toc-the-better-way-keep-all-variables" class="nav-link" data-scroll-target="#the-better-way-keep-all-variables">The Better Way (Keep All Variables)</a></li>
+  <li><a href="#merge-back-to-original-data" id="toc-merge-back-to-original-data" class="nav-link" data-scroll-target="#merge-back-to-original-data">Merge Back to Original Data</a></li>
+  </ul></li>
+  <li><a href="#regression-analysis-with-different-reference-groups" id="toc-regression-analysis-with-different-reference-groups" class="nav-link" data-scroll-target="#regression-analysis-with-different-reference-groups">Regression Analysis with Different Reference Groups</a>
   <ul class="collapse">
-  <li><a href="#what-are-dummy-variables" id="toc-what-are-dummy-variables" class="nav-link" data-scroll-target="#what-are-dummy-variables">What are Dummy Variables?</a></li>
+  <li><a href="#model-1-only-asian-dummy-omitting-all-other-groups" id="toc-model-1-only-asian-dummy-omitting-all-other-groups" class="nav-link" data-scroll-target="#model-1-only-asian-dummy-omitting-all-other-groups">Model 1: Only Asian Dummy (Omitting All Other Groups)</a></li>
+  <li><a href="#model-2-multiple-groups-included" id="toc-model-2-multiple-groups-included" class="nav-link" data-scroll-target="#model-2-multiple-groups-included">Model 2: Multiple Groups Included</a></li>
+  <li><a href="#model-3-perfect-multicollinearity" id="toc-model-3-perfect-multicollinearity" class="nav-link" data-scroll-target="#model-3-perfect-multicollinearity">Model 3: Perfect Multicollinearity</a></li>
   </ul></li>
-  <li><a href="#class-files" id="toc-class-files" class="nav-link" data-scroll-target="#class-files">Class Files</a>
+  <li><a href="#handling-small-group-sizes" id="toc-handling-small-group-sizes" class="nav-link" data-scroll-target="#handling-small-group-sizes">Handling Small Group Sizes</a></li>
+  <li><a href="#comparing-specific-groups" id="toc-comparing-specific-groups" class="nav-link" data-scroll-target="#comparing-specific-groups">Comparing Specific Groups</a>
   <ul class="collapse">
-  <li><a href="#lecture-notes" id="toc-lecture-notes" class="nav-link" data-scroll-target="#lecture-notes">Lecture Notes</a></li>
-  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code">R Code</a></li>
-  <li><a href="#data-sets" id="toc-data-sets" class="nav-link" data-scroll-target="#data-sets">Data Sets</a></li>
+  <li><a href="#how-would-you-compare-asian-and-white-students" id="toc-how-would-you-compare-asian-and-white-students" class="nav-link" data-scroll-target="#how-would-you-compare-asian-and-white-students">How would you compare Asian and White students?</a></li>
   </ul></li>
-  <li><a href="#r-lab-files" id="toc-r-lab-files" class="nav-link" data-scroll-target="#r-lab-files">R Lab Files</a></li>
-  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes</a></li>
-  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-simple-regression.html">Regression Mechanics</a></li><li class="breadcrumb-item"><a href="./05-assumptions.html"><span class="chapter-title">Regression Assumptions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-final-project.html">Applications</a></li><li class="breadcrumb-item"><a href="./dummies.html"><span class="chapter-title">Fast Dummies</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Regression Assumptions</span></h1>
+<h1 class="title"><span class="chapter-title">Fast Dummies</span></h1>
 </div>
 
 
@@ -483,114 +519,306 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="week-6-february-17-2026" class="level1">
-<h1>Week 6: February 17, 2026</h1>
-<section id="introduction-to-the-topic" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-the-topic">Introduction to the Topic</h2>
-<p>Today we are finishing up last week’s discussion of effect sizes and <strong>regression assumptions</strong>. Then we will turn to an even more exciting topic: dummy variables. Regression assumptions are foundational principles that must be met for linear regression models to provide valid and reliable results. Understanding and testing these assumptions is essential for sound statistical inference.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This document demonstrates the creation of dummy variables for categorical data and explores the implications of choosing different reference groups in regression analysis.</p>
 </section>
-<section id="i-am-also-going-to-review-sampling-distributions-to-prepare-us-for-the-upcoming-topic-on-mediation." class="level2">
-<h2 class="anchored" data-anchor-id="i-am-also-going-to-review-sampling-distributions-to-prepare-us-for-the-upcoming-topic-on-mediation.">I am also going to review sampling distributions to prepare us for the upcoming topic on <a href="./06-mediation.html">Mediation</a>.</h2>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>First, ensure all required packages are installed:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fastDummies)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts:</h2>
+<section id="load-and-explore-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-and-explore-data">Load and Explore Data</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the admissions data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>admissions <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"data/admissions.sav"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the Race variable</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(admissions<span class="sc">$</span>Race)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+American_Indian           Asian           black        Hispanic   not_indicated 
+              3              59              69              15              21 
+          white 
+            713 </code></pre>
+</div>
+</div>
+</section>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<p>Filter out cases where race is not indicated:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>admissions_sub <span class="ot">&lt;-</span> admissions <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(row_number, Race) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">!=</span> <span class="st">"not_indicated"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(admissions_sub<span class="sc">$</span>Race)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+American_Indian           Asian           black        Hispanic           white 
+              3              59              69              15             713 </code></pre>
+</div>
+</div>
+</section>
+<section id="creating-dummy-variables" class="level2">
+<h2 class="anchored" data-anchor-id="creating-dummy-variables">Creating Dummy Variables</h2>
+<section id="the-wrong-way-automatic-removal" class="level3">
+<h3 class="anchored" data-anchor-id="the-wrong-way-automatic-removal">The Wrong Way (Automatic Removal)</h3>
+<p>The <code>fastDummies</code> package can automatically remove the first dummy variable, but this can lead to unintended consequences:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This approach removes the first category automatically</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>admissions_wrong <span class="ot">&lt;-</span> fastDummies<span class="sc">::</span><span class="fu">dummy_cols</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  admissions_sub,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">select_columns =</span> <span class="st">"Race"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">remove_first_dummy =</span> <span class="cn">TRUE</span>,        <span class="co"># creates k-1 dummies</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">remove_selected_columns =</span> <span class="cn">FALSE</span>    <span class="co"># if TRUE drops original race variable</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect result</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(admissions_wrong)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(admissions_wrong)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>What do you notice?</strong> The function removed the first variable, which was Native American. This is problematic because:</p>
+<ol type="1">
+<li>We may not realize which category was dropped</li>
+<li>The dropped category may have too few cases</li>
+<li>We lose control over our reference group</li>
+</ol>
+</section>
+<section id="the-better-way-keep-all-variables" class="level3">
+<h3 class="anchored" data-anchor-id="the-better-way-keep-all-variables">The Better Way (Keep All Variables)</h3>
+<p>It’s better to keep all dummy variables and explicitly control which one to omit in regression:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create dummy variables WITHOUT automatic removal</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>admissions_sub <span class="ot">&lt;-</span> fastDummies<span class="sc">::</span><span class="fu">dummy_cols</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  admissions_sub,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">select_columns =</span> <span class="st">"Race"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">remove_first_dummy =</span> <span class="cn">FALSE</span>,        <span class="co"># Keep all dummies</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">remove_selected_columns =</span> <span class="cn">FALSE</span>    <span class="co"># Keep original race variable</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(admissions_sub)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  row_number Race  Race_American_Indian Race_Asian Race_black Race_Hispanic
+       &lt;dbl&gt; &lt;chr&gt;                &lt;int&gt;      &lt;int&gt;      &lt;int&gt;         &lt;int&gt;
+1          7 white                    0          0          0             0
+2         12 white                    0          0          0             0
+3         19 white                    0          0          0             0
+4         23 Asian                    0          1          0             0
+5         25 white                    0          0          0             0
+6         28 white                    0          0          0             0
+# ℹ 1 more variable: Race_white &lt;int&gt;</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(admissions_sub)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "row_number"           "Race"                 "Race_American_Indian"
+[4] "Race_Asian"           "Race_black"           "Race_Hispanic"       
+[7] "Race_white"          </code></pre>
+</div>
+</div>
+</section>
+<section id="merge-back-to-original-data" class="level3">
+<h3 class="anchored" data-anchor-id="merge-back-to-original-data">Merge Back to Original Data</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>admissions <span class="ot">&lt;-</span> <span class="fu">left_join</span>(admissions, admissions_sub, <span class="at">by =</span> <span class="st">"row_number"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="regression-analysis-with-different-reference-groups" class="level2">
+<h2 class="anchored" data-anchor-id="regression-analysis-with-different-reference-groups">Regression Analysis with Different Reference Groups</h2>
+<section id="model-1-only-asian-dummy-omitting-all-other-groups" class="level3">
+<h3 class="anchored" data-anchor-id="model-1-only-asian-dummy-omitting-all-other-groups">Model 1: Only Asian Dummy (Omitting All Other Groups)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(SAT_math <span class="sc">~</span> SAT_verbal <span class="sc">+</span> HS_class_size <span class="sc">+</span> Race_Asian, admissions))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = SAT_math ~ SAT_verbal + HS_class_size + Race_Asian, 
+    data = admissions)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-161.06  -45.22   -0.25   39.72  198.74 
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   317.69345   19.51449  16.280  &lt; 2e-16 ***
+SAT_verbal      0.44170    0.03410  12.953  &lt; 2e-16 ***
+HS_class_size   0.05480    0.01296   4.228 2.69e-05 ***
+Race_Asian     37.66234   10.20424   3.691 0.000242 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 60.09 on 675 degrees of freedom
+  (201 observations deleted due to missingness)
+Multiple R-squared:  0.2379,    Adjusted R-squared:  0.2345 
+F-statistic: 70.22 on 3 and 675 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>Question:</strong> What racial group is omitted here?</p>
+<p><strong>Answer:</strong> All groups except XXXX are in the reference category (XXXX vs.&nbsp;all others combined).</p>
+</section>
+<section id="model-2-multiple-groups-included" class="level3">
+<h3 class="anchored" data-anchor-id="model-2-multiple-groups-included">Model 2: Multiple Groups Included</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(SAT_math <span class="sc">~</span> SAT_verbal <span class="sc">+</span> HS_class_size <span class="sc">+</span> Race_Asian <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                    Race_Hispanic <span class="sc">+</span> Race_American_Indian <span class="sc">+</span> Race_white, admissions))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = SAT_math ~ SAT_verbal + HS_class_size + Race_Asian + 
+    Race_Hispanic + Race_American_Indian + Race_white, data = admissions)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-162.00  -44.99   -0.92   40.12  197.71 
+
+Coefficients:
+                      Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)          303.04927   20.83157  14.548  &lt; 2e-16 ***
+SAT_verbal             0.44085    0.03417  12.903  &lt; 2e-16 ***
+HS_class_size          0.05475    0.01295   4.229 2.67e-05 ***
+Race_Asian            52.81164   13.52459   3.905 0.000104 ***
+Race_Hispanic          3.14069   21.10011   0.149 0.881719    
+Race_American_Indian  91.14012   43.38417   2.101 0.036033 *  
+Race_white            16.19126    9.49918   1.704 0.088752 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 59.94 on 672 degrees of freedom
+  (201 observations deleted due to missingness)
+Multiple R-squared:  0.2452,    Adjusted R-squared:  0.2385 
+F-statistic: 36.38 on 6 and 672 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>Question:</strong> What racial group is omitted?</p>
+<p><strong>Answer:</strong> XXX students are the omitted/reference group.</p>
+</section>
+<section id="model-3-perfect-multicollinearity" class="level3">
+<h3 class="anchored" data-anchor-id="model-3-perfect-multicollinearity">Model 3: Perfect Multicollinearity</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(SAT_math <span class="sc">~</span> SAT_verbal <span class="sc">+</span> HS_class_size <span class="sc">+</span> Race_Asian <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                    Race_Hispanic <span class="sc">+</span> Race_American_Indian <span class="sc">+</span> Race_white <span class="sc">+</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                    Race_black, admissions))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = SAT_math ~ SAT_verbal + HS_class_size + Race_Asian + 
+    Race_Hispanic + Race_American_Indian + Race_white + Race_black, 
+    data = admissions)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-162.00  -44.99   -0.92   40.12  197.71 
+
+Coefficients: (1 not defined because of singularities)
+                      Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)          303.04927   20.83157  14.548  &lt; 2e-16 ***
+SAT_verbal             0.44085    0.03417  12.903  &lt; 2e-16 ***
+HS_class_size          0.05475    0.01295   4.229 2.67e-05 ***
+Race_Asian            52.81164   13.52459   3.905 0.000104 ***
+Race_Hispanic          3.14069   21.10011   0.149 0.881719    
+Race_American_Indian  91.14012   43.38417   2.101 0.036033 *  
+Race_white            16.19126    9.49918   1.704 0.088752 .  
+Race_black                  NA         NA      NA       NA    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 59.94 on 672 degrees of freedom
+  (201 observations deleted due to missingness)
+Multiple R-squared:  0.2452,    Adjusted R-squared:  0.2385 
+F-statistic: 36.38 on 6 and 672 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>What happens?</strong> R automatically drops one variable due to perfect multicollinearity (the dummy variable trap).</p>
+</section>
+</section>
+<section id="handling-small-group-sizes" class="level2">
+<h2 class="anchored" data-anchor-id="handling-small-group-sizes">Handling Small Group Sizes</h2>
+<p>When a category has very few observations (like American Indian in this dataset), it may be appropriate to exclude those cases:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove American Indian students due to small sample size</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>admissions <span class="ot">&lt;-</span> admissions <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Race_American_Indian <span class="sc">!=</span> <span class="dv">1</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-run model</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(SAT_math <span class="sc">~</span> SAT_verbal <span class="sc">+</span> HS_class_size <span class="sc">+</span> Race_Asian <span class="sc">+</span> </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                    Race_Hispanic <span class="sc">+</span> Race_white, admissions))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = SAT_math ~ SAT_verbal + HS_class_size + Race_Asian + 
+    Race_Hispanic + Race_white, data = admissions)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-162.015  -45.066   -0.928   40.488  197.714 
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   303.04094   20.84705  14.536  &lt; 2e-16 ***
+SAT_verbal      0.44085    0.03419  12.893  &lt; 2e-16 ***
+HS_class_size   0.05478    0.01296   4.227 2.69e-05 ***
+Race_Asian     52.80861   13.53458   3.902 0.000105 ***
+Race_Hispanic   3.14120   21.11565   0.149 0.881786    
+Race_white     16.19053    9.50618   1.703 0.089002 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 59.98 on 671 degrees of freedom
+  (179 observations deleted due to missingness)
+Multiple R-squared:  0.2442,    Adjusted R-squared:  0.2386 
+F-statistic: 43.37 on 5 and 671 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>Question:</strong> What racial group is omitted now?</p>
+<p><strong>Answer:</strong> Black students remain the omitted/reference group.</p>
+</section>
+<section id="comparing-specific-groups" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-specific-groups">Comparing Specific Groups</h2>
+<section id="how-would-you-compare-asian-and-white-students" class="level3">
+<h3 class="anchored" data-anchor-id="how-would-you-compare-asian-and-white-students">How would you compare Asian and White students?</h3>
+<p>To compare Asian and White students directly, you have several options:</p>
+<section id="option-1-coefficient-interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="option-1-coefficient-interpretation">Option 1: Coefficient Interpretation</h4>
+<p>In the model above, both <code>Race_Asian</code> and <code>Race_white</code> coefficients are relative to Black students (the reference group). To compare Asian to White students:</p>
 <ul>
-<li><strong>Linearity</strong>: The relationship between predictors and the outcome variable should be linear.</li>
-<li><strong>Independence</strong>: Observations should be independent of each other.</li>
-<li><strong>Homoscedasticity</strong>: The variance of errors should be consistent across levels of predictors.</li>
-<li><strong>Normality of Residuals</strong>: Residuals (errors) should follow a normal distribution.</li>
-<li><strong>Multicollinearity</strong>: Predictors should not be highly correlated with each other.</li>
-</ul>
-<hr>
-</section>
-<section id="relevance" class="level2">
-<h2 class="anchored" data-anchor-id="relevance">Relevance:</h2>
-<ul>
-<li>Students will learn how to evaluate each regression assumption using diagnostic tests and visualizations.</li>
-<li>Students will gain skills to address violations of assumptions, such as transforming variables or using robust regression methods.</li>
-</ul>
-<hr>
-</section>
-<section id="why-this-is-important" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-is-important">Why This Is Important:</h2>
-<ul>
-<li>Violations of regression assumptions can lead to biased estimates, incorrect conclusions, and reduced model reliability.</li>
-<li>By understanding these assumptions, students can ensure the validity of their regression analyses and effectively communicate findings.</li>
-</ul>
-<hr>
-</section>
-<section id="how-this-ties-into-the-overall-course" class="level2">
-<h2 class="anchored" data-anchor-id="how-this-ties-into-the-overall-course">How This Ties Into the Overall Course:</h2>
-<ul>
-<li>Builds upon prior topics like linear regression by adding a deeper layer of model evaluation and diagnostics.</li>
-<li>Prepares students for advanced topics like generalized linear models and robust regression techniques, which relax some assumptions.</li>
-</ul>
-<p>By the end of this week, students will be able to test and address regression assumptions, ensuring their models meet the necessary criteria for accurate and reliable results.</p>
-</section>
-<section id="dummy-variables" class="level2">
-<h2 class="anchored" data-anchor-id="dummy-variables">Dummy Variables</h2>
-<p>In regression analysis, many predictors are categorical rather than numerical. However, standard regression models require numerical inputs. Dummy variables are a way to include categorical variables in a regression model by converting them into numerical representations.</p>
-<section id="what-are-dummy-variables" class="level3">
-<h3 class="anchored" data-anchor-id="what-are-dummy-variables">What are Dummy Variables?</h3>
-<p>A dummy variable is a binary variable (0 or 1) that represents different categories of a categorical predictor. It allows regression models to account for group differences. We will learn how to recode variables in SPSS, and R, and include them in our models. This requires understanding how to select the reference category. <a href="static/johfre-freese-2021-reconsidering-the-reference-category.pdf">Read this article</a> for a social justice application of selecting reference variables in regression models. I used this idea to code <code>trans man</code> as the reference category in <a href="static/acestrans.pdf">this paper</a> .</p>
-<section id="why-use-dummy-variables" class="level4">
-<h4 class="anchored" data-anchor-id="why-use-dummy-variables">Why Use Dummy Variables?</h4>
-<ul>
-<li><p>They quantify categorical differences in a regression model.</p></li>
-<li><p>They allow us to compare groups while controlling for other factors.</p></li>
-<li><p>They help capture interaction effects when combined with numerical predictors.</p></li>
+<li>Calculate the difference: <code>Race_Asian coefficient - Race_white coefficient</code></li>
+<li>This gives you the Asian vs.&nbsp;White effect, holding other variables constant</li>
 </ul>
 </section>
-<section id="extending-dummy-variables" class="level4">
-<h4 class="anchored" data-anchor-id="extending-dummy-variables">Extending Dummy Variables:</h4>
-<ul>
-<li><p>For variables with more than two categories, we create multiple dummy variables (e.g., for “Region: North, South, West,” we need two dummy variables to represent three categories).</p></li>
-<li><p>Reference category: One category is omitted to prevent multicollinearity, and all other categories are compared against it.</p></li>
-</ul>
+<section id="option-2-change-the-reference-group" class="level4">
+<h4 class="anchored" data-anchor-id="option-2-change-the-reference-group">Option 2: Change the Reference Group</h4>
+<p>Make White students the reference group by excluding <code>Race_white</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(SAT_math <span class="sc">~</span> SAT_verbal <span class="sc">+</span> HS_class_size <span class="sc">+</span> Race_Asian <span class="sc">+</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                    Race_Hispanic <span class="sc">+</span> Race_black, admissions))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now <code>Race_Asian</code> directly represents the difference between Asian and White students.</p>
+</section>
+<section id="option-3-use-contrast-coding" class="level4">
+<h4 class="anchored" data-anchor-id="option-3-use-contrast-coding">Option 3: Use Contrast Coding</h4>
+<p>For formal hypothesis testing of Asian vs.&nbsp;White differences, consider using contrast coding or post-hoc comparisons.</p>
 </section>
 </section>
 </section>
-<section id="class-files" class="level2">
-<h2 class="anchored" data-anchor-id="class-files">Class Files</h2>
-<section id="lecture-notes" class="level3">
-<h3 class="anchored" data-anchor-id="lecture-notes">Lecture Notes</h3>
-<ul>
-<li><a href="slides/dummy/dummy_vars2026.pptx">Today’s Lecture Notes (continued from last week)</a></li>
-</ul>
-</section>
-<section id="r-code" class="level3">
-<h3 class="anchored" data-anchor-id="r-code">R Code</h3>
-<ul>
-<li><a href="slides/dummy/asap.R">Script 1: CLT</a> Application of Central Limit Theorem to A$AP Rocky’s case: Should he get a new trial?</li>
-<li><a href="slides/dummy/clt_fun.R">Script 2: CLT</a> More CLT Fun</li>
-<li><a href="slides/dummy/dag_ex.R">Directed Acyclic Graph - DAGS</a> And even more fun, check out how you can create diagrams, including DAGS, in R.</li>
-</ul>
-</section>
-<section id="data-sets" class="level3">
-<h3 class="anchored" data-anchor-id="data-sets">Data Sets</h3>
-<ul>
-<li><a href="./data/nscaw.sav">National Survey of Child and Adolescent Well-Being</a>: We are going to examine the following research question using a subset of the dataset: Do children who are removed from the home have higher levels of post-traumatic stress controlling for demographic and exposure variables?</li>
-<li>Influence, Outliers, and Leverage <a href="./data/influence1.sav">Part I</a>, <a href="./data/influence2.sav">Part II</a>, <a href="./data/influence3.sav">Part III</a>, <a href="./data/influence4.sav">Part IV</a></li>
-</ul>
-</section>
-</section>
-<section id="r-lab-files" class="level2">
-<h2 class="anchored" data-anchor-id="r-lab-files">R Lab Files</h2>
-<ul>
-<li><a href="./dummies.html">Fast Dummy Example</a> explains coding and modeling dummy variables. <a href="dummies.R">Click here</a> for the R script.</li>
-<li><a href="./nscaw.html">Lab Instructions</a> We are going to run some simple and multiple regressions using R with the <a href="./data/nscaw.sav">National Survey of Child and Adolescent Well-Being</a>.</li>
-<li><a href="./slides/inclass.html">Practice assignment for home</a> using the BRFSS. Check it out and see if you can answer the questions.</li>
-</ul>
-<hr>
-</section>
-<section id="additional-notes" class="level2">
-<h2 class="anchored" data-anchor-id="additional-notes">Additional Notes</h2>
-<ul>
-<li>Keep calm and be influential.</li>
-</ul>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><strong>Always know your reference group</strong> - Don’t let software automatically choose it</li>
+<li><strong>Consider sample sizes</strong> - Small groups may need special handling</li>
+<li><strong>Think about interpretation</strong> - Choose a reference group that makes sense for your research question</li>
+<li><strong>Avoid the dummy variable trap</strong> - Use k-1 dummies in regression models</li>
+<li><strong>Be explicit</strong> - Manually control which variables to include rather than relying on defaults</li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -996,13 +1224,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-effect-sizes.html" class="pagination-link" aria-label="MLR Part 2: Effect Sizes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">MLR Part 2: Effect Sizes</span></span>
+      <a href="./UnderstandingSLR.html" class="pagination-link" aria-label="Lab 2: Simple Linear Regression">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Lab 2: Simple Linear Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07-logistic-regression.html" class="pagination-link" aria-label="Logistic Regression">
-        <span class="nav-page-text"><span class="chapter-title">Logistic Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./slides/medmod/mediationR.html" class="pagination-link" aria-label="Simple Mediation">
+        <span class="nav-page-text"><span class="chapter-title">Simple Mediation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
