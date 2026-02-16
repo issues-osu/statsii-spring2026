@@ -333,7 +333,7 @@
     "href": "05-assumptions.html#introduction-to-the-topic",
     "title": "Regression Assumptions",
     "section": "Introduction to the Topic",
-    "text": "Introduction to the Topic\nToday we are finishing up last week’s discussion of effect sizes and regression assumptions. Then we will turn to an even more exciting topic: dummy variables. Regression assumptions are foundational principles that must be met for linear regression models to provide valid and reliable results. Understanding and testing these assumptions is essential for sound statistical inference.",
+    "text": "Introduction to the Topic\nToday we are finishing up last week’s discussion of effect sizes and regression assumptions. Then we will turn to an even more exciting topic: dummy variables. Regression assumptions are foundational principles that must be met for linear regression models to provide valid and reliable results. Understanding and testing these assumptions is essential for sound statistical inference.\nI am also going to review sampling distributions to prepare us for the upcoming topic on Mediation.",
     "crumbs": [
       "Regression Mechanics",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Regression Assumptions</span>"
