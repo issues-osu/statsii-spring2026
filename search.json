@@ -1557,7 +1557,7 @@
     "text": "Introduction\nThis exercise explores child aggression and trauma using the NSCAW I dataset. Because this is designed for you to do, I supressed all of the output. The chunks of code give you a hints regarding the code that will answer each question. Create an R script and answer each question below. Cut and paste the chunk of code into your script, and fill it in so that it runs.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1568,7 +1568,7 @@
     "text": "Step 1: Load the Data\nMake sure all of these libraries are installed or you will not be able to run the code. Also, make sure that your data set is in a subdirectory called data in the same directory as the one in which your R script is saved.\n\n# Load necessary libraries\nlibrary(foreign)    # For reading SPSS files\nlibrary(dplyr)      # For data manipulation\nlibrary(ggplot2)    # For visualization\nlibrary(gtsummary)  # For creating regression tables\nlibrary(officer)    # For exporting tables to Word\nlibrary(flextable)  # For table formatting\n\n# Load NSCAW I dataset\nnscaw &lt;- read.spss(\"data/nscaw.sav\", to.data.frame = TRUE)\n\n# Inspect the first few rows\nhead(nscaw)\n\nQuestion: What type of variables are included in the dataset?\nTo get a sense of the variables in the dataset click here.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1579,7 +1579,7 @@
     "text": "Step 2: Select Variables & Handle Missing Data\n\n# Select relevant variables\nnscaw_clean &lt;- nscaw %&gt;% \n  dplyr::select(FILL THE VARIABLES IN HERE) \n\n# Remove missing values\nnscaw_clean &lt;- na.omit(nscaw_clean)\n\n# View summary statistics\nsummary(nscaw_clean)\n\nHint: Look at the summary statistics—do any variables have extreme values?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1590,7 +1590,7 @@
     "text": "Step 3: Compute Correlations\n\n# Compute correlation matrix\ncor(nscaw_clean, use = \"complete.obs\")\n\nQuestion: Which variables are most strongly correlated? Does the direction make sense?\n\nRun the regression of child aggression on trauma score and age",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1601,7 +1601,7 @@
     "text": "Step 4: Run a Multiple Regression Model\n\n# Run regression: Predict aggression using trauma score and age\nreg_model &lt;- lm(WRITE THE CODE TO RUN THE REGRESSION)\n\n# Display model summary\nsummary(reg_model)\n\nHint: Examine the coefficients and p-values. Is trauma a significant predictor of aggression?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1612,7 +1612,7 @@
     "text": "Step 5: Compute Fitted Values & Residuals\n\n# Compute fitted values and residuals\nnscaw_clean$fitted &lt;- fitted(PROVIDE THE CODE HERE)\nnscaw_clean$residuals &lt;- residuals(reg_model)\n\n# Compute standardized residuals\nnscaw_clean$std_residuals &lt;- PROVIDE THE CODE HERE(nscaw_clean$residuals)\n\nQuestion: Why do we standardize residuals? What does this help us understand?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1623,7 +1623,7 @@
     "text": "Step 6: Visualize Residuals\n\n# Plot histogram of residuals\nggplot(nscaw_clean, aes(x = residuals)) +\n  PROVIDE THE CODE HERE(bins = 30, fill = \"lightblue\", color = \"black\") +\n  labs(title = \"Histogram of Residuals\", x = \"Residuals\", y = \"Frequency\")\n\nHint: Look for skewness—are residuals normally distributed?\n\n\n# Plot standardized residuals vs. predicted values\nggplot(nscaw_clean, aes(x = fitted, y = std_residuals)) +\n  geom_point(PROVIDE THE CODE HERE) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"red\") +\n  labs(PROVIDE THE CODE HERE)\n\nHint: If you see patterns in the residuals, what assumption may be violated?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1634,7 +1634,7 @@
     "text": "Step 7: Create & Export Regression Table\n\n# Generate regression summary table\nreg_table &lt;- reg_model %&gt;% \n  tbl_regression(\n    label = list(tra1 = \"PTS Score\", bcagg1 = \"Aggressive Behavior\", ageY = \"Age\")\n  ) %&gt;% \n  modify_caption(\"Table 1: Regression Results for Aggression\")\n\n# Convert to flextable and export to Word\nreg_flextable &lt;- as_flex_table(reg_table)\ndoc &lt;- read_docx()\ndoc &lt;- body_add_flextable(doc, value = reg_flextable)\nprint(doc, target = \"Regression_Results.docx\")\n\nHint: Where does the p-value appear in the regression table? How does it inform significance?",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1645,7 +1645,7 @@
     "text": "Deliverables\nDiscuss the following:\n\nCorrelation matrix output\nRegression model summary\nHistogram of residuals\nResiduals vs. fitted plot\nRegression results table (Word document)",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
@@ -1656,7 +1656,7 @@
     "text": "Discussion Questions\n\nBased on your results, does trauma significantly predict aggression?\nHow does child age influence the relationship between trauma and aggression?\nAre the residuals normally distributed? If not, what would you do differently?\nIf the p-value for trauma is significant, what does that imply in real-world terms?\nHow could you improve this model?\n\nFinal Thought: This exercise helps you develop a deeper understanding of how trauma influences child behavior. Future analyses could incorporate more variables (e.g., social support, environment) for better predictions.",
     "crumbs": [
       "Case Studies & Data Applications",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>NSCAW I In-Class Exercise</span>"
     ]
   },
   {
