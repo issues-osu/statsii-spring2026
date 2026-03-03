@@ -443,7 +443,7 @@
     "href": "07-logistic-regression.html#reading",
     "title": "Logistic Regression",
     "section": "Reading",
-    "text": "Reading\n\nDiez et al. Chapter 9: Logistic Regression, from pp 371; sec. 9.5\nRanganathan, P., Aggarwal, R., & Pramesh, C. S. (2015). Common pitfalls in statistical analysis: Odds versus risk. Perspectives in clinical research, 6(4), 222-224.\nSee resources",
+    "text": "Reading\n\nDiez et al. Chapter 9: Logistic Regression, from pp 371; sec. 9.5\nRanganathan, P., Aggarwal, R., & Pramesh, C. S. (2015). Common pitfalls in statistical analysis: Odds versus risk. Perspectives in clinical research, 6(4), 222-224.\nHernandez, D. C., Daundasekara, S. S., Arlinghaus, K. R., Tobar, N., Reitzel, L. R., Kendzor, D. E., & Businelle, M. S. (2019). Cumulative risk factors associated with food insecurity among adults who experience homelessness. Health behavior research, 2(1), 7.",
     "crumbs": [
       "Advanced Regression Techniques",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Logistic Regression</span>"
@@ -3131,6 +3131,17 @@
     "crumbs": [
       "Applications",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Fast Dummies</span>"
+    ]
+  },
+  {
+    "objectID": "write-ups.html",
+    "href": "write-ups.html",
+    "title": "Example Writeup",
+    "section": "",
+    "text": "Model analysis and write-up\n\nExample write-up for an OLS regression of the association between various aspects of the socio-environment and school discipline",
+    "crumbs": [
+      "Analysis Write-ups",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Example Writeup</span>"
     ]
   }
 ]
