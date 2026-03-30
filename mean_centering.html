@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dr.&nbsp;Gia Elise Barboza-Salerno">
-<meta name="dcterms.date" content="2026-01-03">
 
-<title>Statistics for Social Work</title>
+<title>Centering and Interaction: What Changes and What Does Not – Statistics for Social Work</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -35,7 +68,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./syllabus.html" rel="next">
+<link href="./moderation_example_r.html" rel="next">
+<link href="./slides/moderation/moderation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-12eeb4b20e9f5a2b0bfc604bfaf942bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3e54a2ba524a9c641b796d074eb695a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -86,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Statistics for Social Work</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-final-project.html">Applications</a></li><li class="breadcrumb-item"><a href="./mean_centering.html"><span class="chapter-title">Centering and Interaction: What Changes and What Does Not</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Statistics for Social Work</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Statistics for Social Work</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -281,7 +315,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mean_centering.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Centering and Interaction: What Changes and What Does Not</span></a>
+  <a href="./mean_centering.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Centering and Interaction: What Changes and What Does Not</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -466,36 +500,49 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome-to-sw-8409-statistics-ii" id="toc-welcome-to-sw-8409-statistics-ii" class="nav-link active" data-scroll-target="#welcome-to-sw-8409-statistics-ii">Welcome to <em>SW 8409: Statistics II</em></a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#model-without-centering" id="toc-model-without-centering" class="nav-link" data-scroll-target="#model-without-centering">Model Without Centering</a>
+  <ul class="collapse">
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#centering-the-moderator" id="toc-centering-the-moderator" class="nav-link" data-scroll-target="#centering-the-moderator">Centering the Moderator</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#model-with-centering" id="toc-model-with-centering" class="nav-link" data-scroll-target="#model-with-centering">Model With Centering</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-2" id="toc-interpretation-2" class="nav-link" data-scroll-target="#interpretation-2">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#direct-comparison-of-coefficients" id="toc-direct-comparison-of-coefficients" class="nav-link" data-scroll-target="#direct-comparison-of-coefficients">Direct Comparison of Coefficients</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-3" id="toc-interpretation-3" class="nav-link" data-scroll-target="#interpretation-3">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#key-comparison-interaction-term" id="toc-key-comparison-interaction-term" class="nav-link" data-scroll-target="#key-comparison-interaction-term">Key Comparison: Interaction Term</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-4" id="toc-interpretation-4" class="nav-link" data-scroll-target="#interpretation-4">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-5" id="toc-interpretation-5" class="nav-link" data-scroll-target="#interpretation-5">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-final-project.html">Applications</a></li><li class="breadcrumb-item"><a href="./mean_centering.html"><span class="chapter-title">Centering and Interaction: What Changes and What Does Not</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Statistics for Social Work</h1>
-<p class="subtitle lead">A Practical Guide to Statistical Analysis</p>
+<h1 class="title"><span class="chapter-title">Centering and Interaction: What Changes and What Does Not</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Dr.&nbsp;Gia Elise Barboza-Salerno </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 3, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -505,23 +552,242 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome-to-sw-8409-statistics-ii" class="level1">
-<h1>Welcome to <em>SW 8409: Statistics II</em></h1>
-<p>This book integrates statistical concepts with real-world applications, focusing on equitable data analysis and actionable insights. It is designed for social work researchers, activists, and students seeking to harness the power of data for transformative change.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This demonstration shows that centering a moderator does not change the interaction effect. It only changes how the main effects are interpreted. This distinction is critical for correctly explaining moderation models in manuscripts and dissertation defenses.</p>
+<hr>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">W =</span> <span class="fu">rnorm</span>(n, <span class="fl">4.2</span>, <span class="dv">1</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y =</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.5</span><span class="sc">*</span>X <span class="sc">+</span> <span class="fl">0.3</span><span class="sc">*</span>W <span class="sc">+</span> <span class="fl">0.4</span><span class="sc">*</span>X<span class="sc">*</span>W <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+</section>
+<section id="model-without-centering" class="level2">
+<h2 class="anchored" data-anchor-id="model-without-centering">Model Without Centering</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model_uncentered <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X <span class="sc">*</span> W, <span class="at">data =</span> data)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_uncentered)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Y ~ X * W, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.7189 -0.6929  0.0148  0.6765  3.2949 
+
+Coefficients:
+            Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept)  1.78656    0.19195   9.307 &lt; 0.0000000000000002 ***
+X            0.66407    0.19440   3.416             0.000688 ***
+W            0.35629    0.04439   8.026  0.00000000000000737 ***
+X:W          0.37562    0.04547   8.261  0.00000000000000132 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.9924 on 496 degrees of freedom
+Multiple R-squared:  0.8333,    Adjusted R-squared:  0.8323 
+F-statistic: 826.7 on 3 and 496 DF,  p-value: &lt; 0.00000000000000022</code></pre>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>The first assignment is now posted. Click <a href="applied_assignment.pdf">here</a> for the applied part for Part I and <a href="theoretical_exam.pdf">here</a> for Part II.</p>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<p>In this model, the coefficient for <strong>X</strong> represents the effect of X on Y when W = 0.</p>
+<p>This is often not meaningful. In this example, W has a mean of approximately 4.2, and values near 0 are outside the observed or realistic range. As a result, the main effect of X is anchored to a value of W that does not represent the data.</p>
+<p>The interaction term (X:W) captures how the effect of X changes as W changes. This term reflects the relationship of interest in moderation and does not depend on where zero is defined.</p>
+<hr>
+</section>
+</section>
+<section id="centering-the-moderator" class="level2">
+<h2 class="anchored" data-anchor-id="centering-the-moderator">Centering the Moderator</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">W_c =</span> W <span class="sc">-</span> <span class="fu">mean</span>(W))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>W_c)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.0000000000000002077447</code></pre>
 </div>
 </div>
-<p>The book is built for my <a href="syllabus.html">Stats II course</a> in the College of Social Work at The Ohio State University.</p>
+<section id="interpretation-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
+<p>Centering shifts the scale of W so that its mean becomes zero. This does not change the distribution or relationships among variables. It only redefines the reference point.</p>
+<p>After centering, W = 0 corresponds to the average level of W in the sample.</p>
+<hr>
+</section>
+</section>
+<section id="model-with-centering" class="level2">
+<h2 class="anchored" data-anchor-id="model-with-centering">Model With Centering</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>model_centered <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X <span class="sc">*</span> W_c, <span class="at">data =</span> data)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_centered)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Y ~ X * W_c, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.7189 -0.6929  0.0148  0.6765  3.2949 
+
+Coefficients:
+            Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept)  3.28212    0.04447  73.812 &lt; 0.0000000000000002 ***
+X            2.24078    0.04577  48.957 &lt; 0.0000000000000002 ***
+W_c          0.35629    0.04439   8.026  0.00000000000000737 ***
+X:W_c        0.37562    0.04547   8.261  0.00000000000000132 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.9924 on 496 degrees of freedom
+Multiple R-squared:  0.8333,    Adjusted R-squared:  0.8323 
+F-statistic: 826.7 on 3 and 496 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+</div>
+</div>
+<section id="interpretation-2" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-2">Interpretation</h3>
+<p>In this model, the coefficient for <strong>X</strong> now represents the effect of X on Y at the average value of W. This is typically the most interpretable and defensible version of the main effect.</p>
+<p>The interaction term (X:W_c) represents the same quantity as before: how the slope of X changes as W changes.</p>
+<hr>
+</section>
+</section>
+<section id="direct-comparison-of-coefficients" class="level2">
+<h2 class="anchored" data-anchor-id="direct-comparison-of-coefficients">Direct Comparison of Coefficients</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)    1.787      0.192   9.307    0.000
+X              0.664      0.194   3.416    0.001
+W              0.356      0.044   8.026    0.000
+X:W            0.376      0.045   8.261    0.000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)    3.282      0.044  73.812        0
+X              2.241      0.046  48.957        0
+W_c            0.356      0.044   8.026        0
+X:W_c          0.376      0.045   8.261        0</code></pre>
+</div>
+</div>
+<section id="interpretation-3" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-3">Interpretation</h3>
+<p>You should observe that:</p>
+<ul>
+<li>The intercept changes</li>
+<li>The main effect of X changes</li>
+<li>The main effect of W changes</li>
+</ul>
+<p>These changes occur because the reference point has shifted.</p>
+<hr>
+</section>
+</section>
+<section id="key-comparison-interaction-term" class="level2">
+<h2 class="anchored" data-anchor-id="key-comparison-interaction-term">Key Comparison: Interaction Term</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>    Estimate Std. Error t value Pr(&gt;|t|)
+X:W    0.376      0.045   8.261        0</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Estimate Std. Error t value Pr(&gt;|t|)
+X:W_c    0.376      0.045   8.261        0</code></pre>
+</div>
+</div>
+<section id="interpretation-4" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-4">Interpretation</h3>
+<p>The interaction term is identical across both models. The coefficient, standard error, and p-value do not change.</p>
+<p>This is because the interaction term represents a difference in slopes. Centering shifts the scale of W but does not change how the slope of X varies across values of W.</p>
+<p>In the <strong>centered model</strong>, the coefficient for X represents the effect of X on Y when W is at its average value.</p>
+<ul>
+<li><p>X (b = 2.241): For every one-unit increase in X, Y increases by 2.241 units, on average, when W is at its mean.</p></li>
+<li><p>W_c (b = 0.356): For every one-unit increase in W (relative to its mean), Y increases by 0.356 units, on average, when X = 0.</p></li>
+<li><p>Interaction (X:W_c = 0.376): For every one-unit increase in W, the effect (slope) of X on Y increases by 0.376 units.</p></li>
+<li><p>In other words, the relationship between X and Y becomes stronger as W increases.</p></li>
+<li><p>Intercept (b = 3.282): When X = 0 and W is at its mean, the expected value of Y is 3.282.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y, <span class="at">color =</span> W)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Uncentered Model"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation:
+colour.
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mean_centering_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y, <span class="at">color =</span> W_c)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Centered Model"</span>, <span class="at">color =</span> <span class="st">"W_c"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation:
+colour.
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mean_centering_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretation-5" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-5">Interpretation</h3>
+<p>The visual pattern of the relationship between X and Y is unchanged. The relative differences across values of W are identical. Only the labeling of the moderator has shifted.</p>
+<hr>
+</section>
+</section>
+<section id="why-this-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
+<p>Centering is not a statistical correction. It does not fix bias, improve model fit, or change significance.</p>
+<p>It changes the interpretation of coefficients by redefining the reference point.</p>
+<p>Without centering, main effects are interpreted at W = 0, which may not exist or be meaningful. With centering, main effects are interpreted at the average level of W, which is typically more appropriate for reporting and discussion.</p>
+<p>The interaction term, which represents the core moderation effect, is unaffected by centering. This means that conclusions about moderation do not depend on whether centering is applied.</p>
+<hr>
+</section>
+<section id="key-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h2>
+<p>Centering changes the interpretation of main effects but does not change the interaction, its uncertainty, or its statistical significance. Any claim that centering alters the presence or strength of moderation is incorrect.</p>
 
 
 </section>
@@ -929,10 +1195,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./slides/moderation/moderation.html" class="pagination-link" aria-label="Moderation Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Moderation Analysis</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./syllabus.html" class="pagination-link" aria-label="Syllabus: Statistics for Social Work">
-        <span class="nav-page-text"><span class="chapter-title">Syllabus: Statistics for Social Work</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./moderation_example_r.html" class="pagination-link" aria-label="Moderation Analysis Using PROCESS-Style Models in R">
+        <span class="nav-page-text"><span class="chapter-title">Moderation Analysis Using PROCESS-Style Models in R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

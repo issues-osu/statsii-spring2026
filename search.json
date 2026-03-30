@@ -806,7 +806,7 @@
     "href": "07a-moderation.html#lab-files",
     "title": "Mediation, Moderation, and Conditional Process Models (Part 3)",
     "section": "Lab Files",
-    "text": "Lab Files\nMediation: You are going to do this lab using the NSCAW data to examine whether (1) children investigated for abuse or neglect who have witnessed severe violence at Wave 1 (EV_W1) are more likely to engage in externalizing behavior at Wave 3 (bcext3); and (2) post-traumatic stress at Wave 1 (tra1) is the mechanism violence exposure is linked to externalizing behavior.\nModeration: I have created some Excel output so you can learn how to take the output and visualize the results. One file plots the effect moderation for age on the association between post-traumatic stress and delinquent behaviors using a subset of the NSCAW. Now, you can use this file to practice making a similar chart using excel to answer the question: What is the effect moderation of sexual minority status on the association between post-traumatic stress and delinquent behavior?\nModeration in R: I have written the code to show you how to implement moderation in R.\n\nLecture Notes & Class Files\n\nDownload today’s slides here\nI want us to assess our knowledge of mediation today",
+    "text": "Lab Files\nMediation: You are going to do this lab using the NSCAW data to examine whether (1) children investigated for abuse or neglect who have witnessed severe violence at Wave 1 (EV_W1) are more likely to engage in externalizing behavior at Wave 3 (bcext3); and (2) post-traumatic stress at Wave 1 (tra1) is the mechanism violence exposure is linked to externalizing behavior.\nModeration: I have created some Excel output so you can learn how to take the output and visualize the results. One file plots the effect moderation for age on the association between post-traumatic stress and delinquent behaviors using a subset of the NSCAW. Now, you can use this file to practice making a similar chart using excel to answer the question: What is the effect moderation of sexual minority status on the association between post-traumatic stress and delinquent behavior?\nModeration in R: I have written the code to show you how to implement moderation in R.\n\nLecture Notes & Class Files\n\nDownload today’s slides here\nAssess your knowledge of mediation today\nSlide 9: Moderation Analysis Worksheet (PROCESS Model 1) that uses the NSCAW dataset\nModeration Analysis in R (click here to download the script), and a quick example re-running the example using MICE to handle missingness\nSlide 13: Mean centering variables\nSlide 48: What models do you need?\nSlide 62: Full analysis of PROCESS models 7, 8 and 59\nSlide 63: Model 59 (again): Does trust mediate the relationship between delay of gratification and behavioral success, and does this mediation process vary with caregiver support?\nSlide 63: Paper analysis of this paper (slides/medmod2/s12144-021-02185-6.pdf) that uses Model 59 (full moderated mediation).\nSlide 63: Premier moderated mediation worksheet",
     "crumbs": [
       "Advanced Regression Techniques",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Mediation, Moderation, and Conditional Process Models (Part 3)</span>"
@@ -3142,6 +3142,171 @@
     "crumbs": [
       "Analysis Write-ups",
       "<span class='chapter-number'>45</span>  <span class='chapter-title'>Example Writeup</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html",
+    "href": "mean_centering.html",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "",
+    "text": "Overview\nThis demonstration shows that centering a moderator does not change the interaction effect. It only changes how the main effects are interpreted. This distinction is critical for correctly explaining moderation models in manuscripts and dissertation defenses.\nlibrary(tidyverse)\n\nset.seed(123)\n\nn &lt;- 500\n\ndata &lt;- tibble(\n  X = rnorm(n, 0, 1),\n  W = rnorm(n, 4.2, 1)\n)\n\ndata &lt;- data %&gt;%\n  mutate(\n    Y = 2 + 0.5*X + 0.3*W + 0.4*X*W + rnorm(n, 0, 1)\n  )",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#model-without-centering",
+    "href": "mean_centering.html#model-without-centering",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Model Without Centering",
+    "text": "Model Without Centering\n\nmodel_uncentered &lt;- lm(Y ~ X * W, data = data)\nsummary(model_uncentered)\n\n\nCall:\nlm(formula = Y ~ X * W, data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.7189 -0.6929  0.0148  0.6765  3.2949 \n\nCoefficients:\n            Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept)  1.78656    0.19195   9.307 &lt; 0.0000000000000002 ***\nX            0.66407    0.19440   3.416             0.000688 ***\nW            0.35629    0.04439   8.026  0.00000000000000737 ***\nX:W          0.37562    0.04547   8.261  0.00000000000000132 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.9924 on 496 degrees of freedom\nMultiple R-squared:  0.8333,    Adjusted R-squared:  0.8323 \nF-statistic: 826.7 on 3 and 496 DF,  p-value: &lt; 0.00000000000000022\n\n\n\nInterpretation\nIn this model, the coefficient for X represents the effect of X on Y when W = 0.\nThis is often not meaningful. In this example, W has a mean of approximately 4.2, and values near 0 are outside the observed or realistic range. As a result, the main effect of X is anchored to a value of W that does not represent the data.\nThe interaction term (X:W) captures how the effect of X changes as W changes. This term reflects the relationship of interest in moderation and does not depend on where zero is defined.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#centering-the-moderator",
+    "href": "mean_centering.html#centering-the-moderator",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Centering the Moderator",
+    "text": "Centering the Moderator\n\ndata &lt;- data %&gt;%\n  mutate(W_c = W - mean(W))\n\nmean(data$W_c)\n\n[1] -0.0000000000000002077447\n\n\n\nInterpretation\nCentering shifts the scale of W so that its mean becomes zero. This does not change the distribution or relationships among variables. It only redefines the reference point.\nAfter centering, W = 0 corresponds to the average level of W in the sample.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#model-with-centering",
+    "href": "mean_centering.html#model-with-centering",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Model With Centering",
+    "text": "Model With Centering\n\nmodel_centered &lt;- lm(Y ~ X * W_c, data = data)\nsummary(model_centered)\n\n\nCall:\nlm(formula = Y ~ X * W_c, data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.7189 -0.6929  0.0148  0.6765  3.2949 \n\nCoefficients:\n            Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept)  3.28212    0.04447  73.812 &lt; 0.0000000000000002 ***\nX            2.24078    0.04577  48.957 &lt; 0.0000000000000002 ***\nW_c          0.35629    0.04439   8.026  0.00000000000000737 ***\nX:W_c        0.37562    0.04547   8.261  0.00000000000000132 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.9924 on 496 degrees of freedom\nMultiple R-squared:  0.8333,    Adjusted R-squared:  0.8323 \nF-statistic: 826.7 on 3 and 496 DF,  p-value: &lt; 0.00000000000000022\n\n\n\nInterpretation\nIn this model, the coefficient for X now represents the effect of X on Y at the average value of W. This is typically the most interpretable and defensible version of the main effect.\nThe interaction term (X:W_c) represents the same quantity as before: how the slope of X changes as W changes.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#direct-comparison-of-coefficients",
+    "href": "mean_centering.html#direct-comparison-of-coefficients",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Direct Comparison of Coefficients",
+    "text": "Direct Comparison of Coefficients\n\n\n            Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)    1.787      0.192   9.307    0.000\nX              0.664      0.194   3.416    0.001\nW              0.356      0.044   8.026    0.000\nX:W            0.376      0.045   8.261    0.000\n\n\n            Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)    3.282      0.044  73.812        0\nX              2.241      0.046  48.957        0\nW_c            0.356      0.044   8.026        0\nX:W_c          0.376      0.045   8.261        0\n\n\n\nInterpretation\nYou should observe that:\n\nThe intercept changes\nThe main effect of X changes\nThe main effect of W changes\n\nThese changes occur because the reference point has shifted.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#key-comparison-interaction-term",
+    "href": "mean_centering.html#key-comparison-interaction-term",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Key Comparison: Interaction Term",
+    "text": "Key Comparison: Interaction Term\n\n\n    Estimate Std. Error t value Pr(&gt;|t|)\nX:W    0.376      0.045   8.261        0\n\n\n      Estimate Std. Error t value Pr(&gt;|t|)\nX:W_c    0.376      0.045   8.261        0\n\n\n\nInterpretation\nThe interaction term is identical across both models. The coefficient, standard error, and p-value do not change.\nThis is because the interaction term represents a difference in slopes. Centering shifts the scale of W but does not change how the slope of X varies across values of W.\nIn the centered model, the coefficient for X represents the effect of X on Y when W is at its average value.\n\nX (b = 2.241): For every one-unit increase in X, Y increases by 2.241 units, on average, when W is at its mean.\nW_c (b = 0.356): For every one-unit increase in W (relative to its mean), Y increases by 0.356 units, on average, when X = 0.\nInteraction (X:W_c = 0.376): For every one-unit increase in W, the effect (slope) of X on Y increases by 0.376 units.\nIn other words, the relationship between X and Y becomes stronger as W increases.\nIntercept (b = 3.282): When X = 0 and W is at its mean, the expected value of Y is 3.282.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#visualization",
+    "href": "mean_centering.html#visualization",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Visualization",
+    "text": "Visualization\n\nlibrary(ggplot2)\nggplot(data, aes(x = X, y = Y, color = W)) +\n  geom_point(alpha = 0.3) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Uncentered Model\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\n\nggplot(data, aes(x = X, y = Y, color = W_c)) +\n  geom_point(alpha = 0.3) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Centered Model\", color = \"W_c\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\n\nInterpretation\nThe visual pattern of the relationship between X and Y is unchanged. The relative differences across values of W are identical. Only the labeling of the moderator has shifted.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#why-this-matters",
+    "href": "mean_centering.html#why-this-matters",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nCentering is not a statistical correction. It does not fix bias, improve model fit, or change significance.\nIt changes the interpretation of coefficients by redefining the reference point.\nWithout centering, main effects are interpreted at W = 0, which may not exist or be meaningful. With centering, main effects are interpreted at the average level of W, which is typically more appropriate for reporting and discussion.\nThe interaction term, which represents the core moderation effect, is unaffected by centering. This means that conclusions about moderation do not depend on whether centering is applied.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "mean_centering.html#key-takeaway",
+    "href": "mean_centering.html#key-takeaway",
+    "title": "Centering and Interaction: What Changes and What Does Not",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway\nCentering changes the interpretation of main effects but does not change the interaction, its uncertainty, or its statistical significance. Any claim that centering alters the presence or strength of moderation is incorrect.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Centering and Interaction: What Changes and What Does Not</span>"
+    ]
+  },
+  {
+    "objectID": "moderation_example_r.html",
+    "href": "moderation_example_r.html",
+    "title": "Moderation Analysis Using PROCESS-Style Models in R",
+    "section": "",
+    "text": "Overview\nThis document walks through two moderation analyses using the processR package in R — a close analogue to Hayes’ PROCESS macro. In both examples, we examine whether a moderator variable changes the relationship between childhood trauma (tra1) and delinquent behavior (bcdel1).\nModeration (also called interaction) asks: Does the effect of X on Y depend on a third variable W? When it does, W is called a moderator.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Moderation Analysis Using PROCESS-Style Models in R</span>"
+    ]
+  },
+  {
+    "objectID": "moderation_example_r.html#setup",
+    "href": "moderation_example_r.html#setup",
+    "title": "Moderation Analysis Using PROCESS-Style Models in R",
+    "section": "Setup",
+    "text": "Setup\nWe begin by installing and loading all required packages, and reading in the SPSS data file.\n\n# Install processR from GitHub if needed\nif (!require(devtools)) install.packages(\"devtools\")\ndevtools::install_github(\"cardiomoon/processR\", force = FALSE)\n\n# Load packages\nlibrary(haven)        # Read SPSS (.sav) files\nlibrary(processR)     # PROCESS-style moderation/mediation models\nlibrary(ggplot2)      # Plotting\nlibrary(dplyr)        # Data manipulation\nlibrary(interactions) # Johnson-Neyman technique\n\n# Load data\ndata &lt;- read_sav(\"slides/medmod2/pts vex mod mediation.sav\")\n\n\nNote: Update the file path in read_sav() to match where your .sav file is stored on your machine.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Moderation Analysis Using PROCESS-Style Models in R</span>"
+    ]
+  },
+  {
+    "objectID": "moderation_example_r.html#example-1-binary-moderator-neglect-negever",
+    "href": "moderation_example_r.html#example-1-binary-moderator-neglect-negever",
+    "title": "Moderation Analysis Using PROCESS-Style Models in R",
+    "section": "Example 1: Binary Moderator — Neglect (negever)",
+    "text": "Example 1: Binary Moderator — Neglect (negever)\n\nConceptual Model\nIn this first model:\n\nX = tra1 — Childhood trauma score\nY = bcdel1 — Delinquent behavior (outcome)\nW = negever — History of neglect (0 = No neglect, 1 = Neglect)\n\nThe research question is: Does neglect history change how strongly trauma predicts delinquency?\n\n\nSpecifying and Fitting the Model\nregEquation() from processR constructs the regression formula in PROCESS style. The argument site = list(\"c\") places the moderator on the path from X to Y (the standard moderation path).\n\nequations &lt;- regEquation(\n  X = \"tra1\",\n  Y = \"bcdel1\",\n  moderator = list(name = \"negever\", site = list(\"c\"))\n)\n\ncat(equations)\n\nbcdel1 ~  tra1+tra1*negever\n\n\nThe printed formula shows that negever and the product term tra1:negever are both entered as predictors — this is the standard way to test moderation via ordinary least squares (OLS) regression.\n\nfit &lt;- lm(as.formula(equations), data = data)\nsummary(fit)\n\n\nCall:\nlm(formula = as.formula(equations), data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-12.764  -7.595  -1.168   6.282  34.268 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  51.19547    1.73784  29.459  &lt; 2e-16 ***\ntra1          0.14220    0.03476   4.091 4.54e-05 ***\nnegever       9.03734    2.36240   3.825 0.000136 ***\ntra1:negever -0.10933    0.04634  -2.359 0.018439 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.328 on 1399 degrees of freedom\n  (661 observations deleted due to missingness)\nMultiple R-squared:  0.05067,   Adjusted R-squared:  0.04863 \nF-statistic: 24.89 on 3 and 1399 DF,  p-value: 1.087e-15\n\n\n\n\nInterpreting the Coefficients\n\nmodelsSummary(\n  list(fit),\n  labels = list(X = \"tra1\", Y = \"bcdel1\", W = \"negever\")\n)\n\n=============================================================== \n                                       Consequent               \n                         -------------------------------------- \n                                       bcdel1(Y)              \n                         -------------------------------------  \n       Antecedent               Coef     SE      t       p     \n--------------------------------------------------------------- \n         tra1(X)          c1   0.142   0.035   4.091   &lt;.001  \n       negever(W)         c2   9.037   2.362   3.825   &lt;.001  \n    tra1:negever(X:W)     c3  -0.109   0.046  -2.359    .018  \n        Constant          iY  51.195   1.738  29.459   &lt;.001  \n--------------------------------------------------------------- \n      Observations                       1403                 \n           R2                            0.051                \n       Adjusted R2                       0.049                \n       Residual SE                9.328 ( df = 1399)          \n       F statistic           F(3,1399) = 24.891, p &lt; .001     \n=============================================================== \n\n\n\n\n\n\n\n\n\n\nTerm\nEstimate\nInterpretation\n\n\n\n\ntra1 (c1)\n0.142\nEffect of trauma on delinquency when neglect = 0 (simple slope for the No Neglect group)\n\n\nnegever (c2)\n9.037\nDifference in delinquency between neglect groups when trauma = 0\n\n\ntra1:negever (c3)\n−0.109\nThe moderation effect: how much the trauma→delinquency slope changes per unit increase in the moderator\n\n\nIntercept\n51.195\nPredicted delinquency when both tra1 = 0 and negever = 0\n\n\n\nKey result: The interaction term tra1:negever is statistically significant (b = −0.109, p = .018). This means the effect of trauma on delinquency differs depending on neglect history. Specifically, the positive relationship between trauma and delinquency is weaker (flatter slope) for children who experienced neglect compared to those who did not.\nThe model accounts for about 5% of the variance in delinquency (R² = .051), which is modest but the overall model is highly significant (F(3, 1399) = 24.89, p &lt; .001).\n\n\nVisualizing the Interaction\nTo plot the interaction, we manually compute predicted values across the range of tra1 for each level of the moderator.\n\n# Extract coefficients\ncoefs &lt;- coef(fit)\nb0 &lt;- coefs[1]\nb1 &lt;- coefs[\"tra1\"]\nb2 &lt;- coefs[\"negever\"]\nb3 &lt;- coefs[\"tra1:negever\"]\n\n# Create a sequence of trauma values\ntra_seq &lt;- seq(min(data$tra1, na.rm = TRUE),\n               max(data$tra1, na.rm = TRUE),\n               length.out = 100)\n\n# Build a grid of trauma × neglect combinations\nplot_data &lt;- expand.grid(\n  tra1    = tra_seq,\n  negever = c(0, 1)\n)\n\n# Apply the regression equation: Y = b0 + b1*X + b2*W + b3*X*W\nplot_data$pred &lt;- b0 +\n  b1 * plot_data$tra1 +\n  b2 * plot_data$negever +\n  b3 * plot_data$tra1 * plot_data$negever\n\n# Label the moderator levels\nplot_data$negever &lt;- factor(plot_data$negever,\n                            levels = c(0, 1),\n                            labels = c(\"No Neglect\", \"Neglect\"))\n\n# Plot\nggplot(plot_data, aes(x = tra1, y = pred, color = negever)) +\n  geom_line(linewidth = 1.2) +\n  labs(\n    title = \"Moderation of Trauma on Delinquent Behavior by Neglect\",\n    x     = \"Trauma (tra1)\",\n    y     = \"Predicted Delinquent Behavior (bcdel1)\",\n    color = \"Neglect Status\"\n  ) +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nReading the plot: Both groups show a positive trauma→delinquency relationship, but the slope is steeper for the No Neglect group. Children without neglect show a stronger increase in delinquency as trauma increases, whereas children with a neglect history show a flatter relationship. This pattern is consistent with the negative interaction coefficient.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Moderation Analysis Using PROCESS-Style Models in R</span>"
+    ]
+  },
+  {
+    "objectID": "moderation_example_r.html#example-2-continuous-moderator-internalizing-distress-cidi1",
+    "href": "moderation_example_r.html#example-2-continuous-moderator-internalizing-distress-cidi1",
+    "title": "Moderation Analysis Using PROCESS-Style Models in R",
+    "section": "Example 2: Continuous Moderator — Internalizing Distress (cidi1)",
+    "text": "Example 2: Continuous Moderator — Internalizing Distress (cidi1)\n\nConceptual Model\nIn this second model, the moderator is continuous:\n\nX = tra1 — Childhood trauma score\nY = bcdel1 — Delinquent behavior\nW = cidi1 — Internalizing distress (CIDI scores; higher = more distress)\n\nThe research question becomes: At what levels of internalizing distress does trauma significantly predict delinquency?\n\n\nSpecifying and Fitting the Model\n\nequations_cidi &lt;- regEquation(\n  X = \"tra1\",\n  Y = \"bcdel1\",\n  moderator = list(name = \"cidi1\", site = list(\"c\"))\n)\n\ncat(equations_cidi)\n\nbcdel1 ~  tra1+tra1*cidi1\n\n\n\nfit_cidi &lt;- lm(as.formula(equations_cidi), data = data)\nsummary(fit_cidi)\n\n\nCall:\nlm(formula = as.formula(equations_cidi), data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-19.604  -8.252  -1.233   6.941  32.453 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 38.042598   4.463865   8.522  &lt; 2e-16 ***\ntra1         0.246797   0.084423   2.923  0.00350 ** \ncidi1        0.450213   0.088369   5.095 3.84e-07 ***\ntra1:cidi1  -0.004711   0.001568  -3.005  0.00269 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.379 on 1905 degrees of freedom\n  (155 observations deleted due to missingness)\nMultiple R-squared:  0.05867,   Adjusted R-squared:  0.05719 \nF-statistic: 39.58 on 3 and 1905 DF,  p-value: &lt; 2.2e-16\n\n\n\n\nInterpreting the Coefficients\n\nmodelsSummary(\n  list(fit_cidi),\n  labels = list(X = \"tra1\", Y = \"bcdel1\", W = \"cidi1\")\n)\n\n=============================================================== \n                                       Consequent               \n                         -------------------------------------- \n                                       bcdel1(Y)              \n                         -------------------------------------  \n       Antecedent               Coef     SE      t       p     \n--------------------------------------------------------------- \n         tra1(X)          c1   0.247   0.084   2.923    .004  \n        cidi1(W)          c2   0.450   0.088   5.095   &lt;.001  \n     tra1:cidi1(X:W)      c3  -0.005   0.002  -3.005    .003  \n        Constant          iY  38.043   4.464   8.522   &lt;.001  \n--------------------------------------------------------------- \n      Observations                       1909                 \n           R2                            0.059                \n       Adjusted R2                       0.057                \n       Residual SE                9.379 ( df = 1905)          \n       F statistic           F(3,1905) = 39.580, p &lt; .001     \n=============================================================== \n\n\n\n\n\n\n\n\n\n\nTerm\nEstimate\nInterpretation\n\n\n\n\ntra1 (c1)\n0.247\nEffect of trauma on delinquency when cidi1 = 0 (rarely meaningful for a continuous moderator; interpret conditional effects instead)\n\n\ncidi1 (c2)\n0.450\nEffect of internalizing distress on delinquency when trauma = 0\n\n\ntra1:cidi1 (c3)\n−0.005\nThe moderation effect: for each 1-unit increase in cidi1, the trauma slope decreases by 0.005\n\n\nIntercept\n38.043\nPredicted delinquency when both tra1 = 0 and cidi1 = 0\n\n\n\nKey result: The interaction is again significant (b = −0.005, p = .003). The negative coefficient means that as internalizing distress increases, the effect of trauma on delinquency weakens. The model explains about 6% of variance (R² = .059).\n\n\nConditional Effects at Representative Values\nFor a continuous moderator, we probe the interaction at three meaningful values of W: the 16th, 50th, and 84th percentiles (analogous to −1 SD, mean, and +1 SD in PROCESS).\nThe conditional effect of X on Y at a given W is: \\[\\theta_{X \\to Y} = b_1 + b_3 \\times W\\]\n\n# Extract coefficients\ncoefs_cidi &lt;- coef(fit_cidi)\nb0 &lt;- coefs_cidi[1]\nb1 &lt;- coefs_cidi[\"tra1\"]\nb2 &lt;- coefs_cidi[\"cidi1\"]\nb3 &lt;- coefs_cidi[\"tra1:cidi1\"]\n\n# Percentile values of the moderator\nw_vals &lt;- quantile(data$cidi1, probs = c(.16, .50, .84), na.rm = TRUE)\n\n# Compute conditional effects\ncond_effects &lt;- data.frame(\n  cidi1  = as.numeric(w_vals),\n  effect = b1 + b3 * as.numeric(w_vals)\n)\n\ncond_effects\n\n  cidi1      effect\n1    39  0.06305985\n2    47  0.02537021\n3    61 -0.04058667\n\n\nInterpretation of conditional effects:\n\n\n\n\n\n\n\n\ncidi1 Value\nLevel\nConditional Effect of Trauma\n\n\n\n\n39 (16th %ile)\nLow distress\nb = 0.063, p &lt; .05 — trauma positively predicts delinquency\n\n\n47 (50th %ile)\nModerate distress\nb = 0.025 — smaller positive effect\n\n\n61 (84th %ile)\nHigh distress\nb = −0.041 — trauma relationship reverses (may not be significant)\n\n\n\nThis pattern shows that trauma is most predictive of delinquency among youth with low internalizing distress, and the effect diminishes (or reverses) as distress increases.\n\n\nVisualizing the Interaction\n\n# Range of trauma values\ntra_seq &lt;- seq(min(data$tra1, na.rm = TRUE),\n               max(data$tra1, na.rm = TRUE),\n               length.out = 100)\n\n# Grid of trauma × moderator percentile combinations\nplot_data_cidi &lt;- expand.grid(\n  tra1  = tra_seq,\n  cidi1 = as.numeric(w_vals)\n)\n\n# Apply the regression equation\nplot_data_cidi$pred &lt;- b0 +\n  b1 * plot_data_cidi$tra1 +\n  b2 * plot_data_cidi$cidi1 +\n  b3 * plot_data_cidi$tra1 * plot_data_cidi$cidi1\n\n# Label the moderator groups\nplot_data_cidi$cidi_group &lt;- factor(\n  plot_data_cidi$cidi1,\n  labels = c(\"Low Distress (16th %ile)\",\n             \"Moderate Distress (50th %ile)\",\n             \"High Distress (84th %ile)\")\n)\n\n# Plot\nggplot(plot_data_cidi,\n       aes(x = tra1, y = pred, color = cidi_group)) +\n  geom_line(linewidth = 1.2) +\n  labs(\n    title = \"Moderation of Trauma by Internalizing Distress\",\n    x     = \"Trauma (tra1)\",\n    y     = \"Predicted Delinquent Behavior (bcdel1)\",\n    color = \"Internalizing Distress\"\n  ) +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nReading the plot: The three lines have different slopes. The Low Distress line rises most steeply, indicating a stronger trauma→delinquency effect. The High Distress line is nearly flat (or slightly negative), suggesting that trauma is no longer a meaningful predictor at high levels of internalizing distress.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Moderation Analysis Using PROCESS-Style Models in R</span>"
+    ]
+  },
+  {
+    "objectID": "moderation_example_r.html#johnson-neyman-analysis",
+    "href": "moderation_example_r.html#johnson-neyman-analysis",
+    "title": "Moderation Analysis Using PROCESS-Style Models in R",
+    "section": "Johnson-Neyman Analysis",
+    "text": "Johnson-Neyman Analysis\nThe Johnson-Neyman (JN) technique is a more precise way to probe a continuous moderator interaction. Rather than picking arbitrary percentile values, it identifies the exact range of W values where the effect of X on Y crosses the significance threshold (p = .05).\n\njn &lt;- johnson_neyman(\n  model = fit_cidi,\n  pred  = tra1,\n  modx  = cidi1,\n  alpha = 0.05\n)\n\njn\n\nJOHNSON-NEYMAN INTERVAL \n\nWhen cidi1 is OUTSIDE the interval [40.29, 65.25], the slope of tra1 is p &lt;\n.05.\n\nNote: The range of observed values of cidi1 is [34.00, 100.00]\n\n\n\n\n\n\n\n\n\n\nInterpreting the JN Output\nThe output states:\n\nWhen cidi1 is OUTSIDE the interval [40.29, 65.25], the slope of tra1 is p &lt; .05.\n\nThis means:\n\nBelow cidi1 = 40.29: The effect of trauma on delinquency is statistically significant and positive — trauma meaningfully increases delinquency among youth with low internalizing distress.\nBetween 40.29 and 65.25: The effect is not statistically significant — we cannot confidently say trauma predicts delinquency at these moderate distress levels.\nAbove cidi1 = 65.25: The effect is again significant, but the slope is negative — at very high distress levels, more trauma is associated with less delinquency (though this is likely a small and practically complex effect).\nObserved range of cidi1: [34, 100], so both boundary values fall within the observed data — this is important because JN boundaries outside the observed range would not be interpretable.",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Moderation Analysis Using PROCESS-Style Models in R</span>"
+    ]
+  },
+  {
+    "objectID": "moderation_example_r.html#summary",
+    "href": "moderation_example_r.html#summary",
+    "title": "Moderation Analysis Using PROCESS-Style Models in R",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\n\n\nFeature\nExample 1\nExample 2\n\n\n\n\nModerator type\nBinary (neglect: yes/no)\nContinuous (CIDI distress score)\n\n\nInteraction term\ntra1 × negever\ntra1 × cidi1\n\n\nInteraction b\n−0.109, p = .018\n−0.005, p = .003\n\n\nInterpretation\nNeglect weakens the trauma→delinquency link\nHigher distress weakens the trauma→delinquency link\n\n\nProbing method\nSimple slopes at W = 0 and W = 1\nConditional effects at 16th, 50th, 84th %iles + JN technique\n\n\n\nBoth analyses converge on a consistent pattern: childhood trauma positively predicts delinquency, but this relationship is attenuated when the child also experiences neglect or high internalizing distress. The Johnson-Neyman analysis further reveals that the trauma effect is only statistically significant at relatively low levels of distress (cidi1 &lt; 40.29).",
+    "crumbs": [
+      "Applications",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Moderation Analysis Using PROCESS-Style Models in R</span>"
     ]
   }
 ]
